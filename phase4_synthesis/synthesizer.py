@@ -27,6 +27,22 @@ if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
         pass
+
+# Automatically load environment variables from models.env or .env if present
+try:
+    from dotenv import load_dotenv
+    for p in [
+        Path.cwd() / "models.env",
+        Path.cwd().parent / "models.env",
+        Path.home() / "OneDrive" / "Documents" / "Kuku FM" / "models.env",
+        Path.cwd() / ".env",
+        Path.cwd().parent / ".env"
+    ]:
+        if p.exists() and p.is_file():
+            load_dotenv(dotenv_path=str(p), override=True)
+            break
+except ImportError:
+    pass
 import numpy as np
 import pandas as pd
 from pydantic import BaseModel, Field, ValidationError
@@ -375,6 +391,27 @@ class CrossEpisodeSynthesizerEngine:
         self.output_path = Path(output_path)
         self.model_name = model_name
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY")
+
+        # Defensive path resolution: if a directory is passed, resolve to canonical json file
+        if self.ast_path.is_dir():
+            for cand in [
+                self.ast_path / "01_structured_episodes.json",
+                self.ast_path.parent / "01_structured_episodes.json",
+                Path.cwd() / "01_structured_episodes.json"
+            ]:
+                if cand.exists() and cand.is_file():
+                    self.ast_path = cand
+                    break
+
+        if self.extractions_path.is_dir():
+            for cand in [
+                self.extractions_path / "02_batch_extractions.json",
+                self.extractions_path.parent / "02_batch_extractions.json",
+                Path.cwd() / "02_batch_extractions.json"
+            ]:
+                if cand.exists() and cand.is_file():
+                    self.extractions_path = cand
+                    break
 
         if not self.ast_path.exists():
             raise FileNotFoundError(f"AST not found at {self.ast_path}. Run build_ast.ipynb first!")

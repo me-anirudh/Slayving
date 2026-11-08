@@ -1,0 +1,1620 @@
+{
+  "timestamp": 1794160689.0408125,
+  "pipeline_stages": {
+    "step1_mechanical_gate": {
+      "initial_pool_count": 45,
+      "surviving_count": 45,
+      "rejected_count": 0,
+      "rejections": []
+    },
+    "step2_deduplication": {
+      "surviving_count": 40,
+      "dropped_count": 5,
+      "dropped": [
+        {
+          "dropped_id": "EP19_EL026_EP19_EL050",
+          "episode": 19,
+          "score": 19,
+          "reason": "Containment 1.000 >= 0.85 against higher-scoring EP19_EL027_EP19_EL050"
+        },
+        {
+          "dropped_id": "EP23_EL039_EP23_EL067",
+          "episode": 23,
+          "score": 20,
+          "reason": "Containment 1.000 >= 0.85 against higher-scoring EP23_EL039_EP23_EL067"
+        },
+        {
+          "dropped_id": "EP26_EL037_EP26_EL051",
+          "episode": 26,
+          "score": 19,
+          "reason": "Containment 1.000 >= 0.85 against higher-scoring EP26_EL037_EP26_EL051"
+        },
+        {
+          "dropped_id": "EP27_EL067_EP27_EL095",
+          "episode": 27,
+          "score": 20,
+          "reason": "Containment 1.000 >= 0.85 against higher-scoring EP27_EL068_EP27_EL095"
+        },
+        {
+          "dropped_id": "EP28_EL072_EP28_EL096",
+          "episode": 28,
+          "score": 19,
+          "reason": "Containment 1.000 >= 0.85 against higher-scoring EP28_EL065_EP28_EL096"
+        }
+      ]
+    },
+    "step3_rubric_sort": {
+      "sorted_count": 40,
+      "rankings": [
+        {
+          "rank": 1,
+          "candidate_id": "EP03_EL048_EP03_EL083",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 2,
+          "candidate_id": "EP11_EL068_EP11_EL085",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 3,
+          "candidate_id": "EP16_EL012_EP16_EL046",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 4,
+          "candidate_id": "EP19_EL027_EP19_EL050",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 5,
+          "candidate_id": "EP23_EL039_EP23_EL067",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 6,
+          "candidate_id": "EP27_EL068_EP27_EL095",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 7,
+          "candidate_id": "EP24_EL024_EP24_EL069",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 8,
+          "candidate_id": "EP30_EL048_EP30_EL067",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 9,
+          "candidate_id": "EP31_EL070_EP31_EL087",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 10,
+          "candidate_id": "EP32_EL090_EP32_EL117",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 11,
+          "candidate_id": "EP36_EL090_EP36_EL121",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 12,
+          "candidate_id": "EP39_EL038_EP39_EL059",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 13,
+          "candidate_id": "EP41_EL033_EP41_EL053",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 14,
+          "candidate_id": "EP43_EL056_EP43_EL087",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 15,
+          "candidate_id": "EP45_EL048_EP45_EL074",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 16,
+          "candidate_id": "EP50_EL016_EP50_EL040",
+          "mode": "single_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 17,
+          "candidate_id": "SYNTH_MULTI_01",
+          "mode": "multi_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 18,
+          "candidate_id": "EP26_EL037_EP26_EL051",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            4,
+            19
+          ]
+        },
+        {
+          "rank": 19,
+          "candidate_id": "SYNTH_MULTI_02",
+          "mode": "multi_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            4,
+            19
+          ]
+        },
+        {
+          "rank": 20,
+          "candidate_id": "EP01_EL063_EP01_EL092",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 21,
+          "candidate_id": "EP15_EL030_EP15_EL055",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 22,
+          "candidate_id": "EP18_EL031_EP18_EL052",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 23,
+          "candidate_id": "EP21_EL003_EP21_EL025",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 24,
+          "candidate_id": "EP25_EL009_EP25_EL039",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 25,
+          "candidate_id": "EP46_EL031_EP46_EL048",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 26,
+          "candidate_id": "EP07_EL031_EP07_EL052",
+          "mode": "single_episode",
+          "score": 18,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            4,
+            18
+          ]
+        },
+        {
+          "rank": 27,
+          "candidate_id": "EP16_EL034_EP16_EL064",
+          "mode": "single_episode",
+          "score": 18,
+          "sort_key": [
+            true,
+            5,
+            5,
+            4,
+            4,
+            18
+          ]
+        },
+        {
+          "rank": 28,
+          "candidate_id": "EP12_EL024_EP12_EL055",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            4,
+            5,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 29,
+          "candidate_id": "EP28_EL065_EP28_EL096",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            4,
+            5,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 30,
+          "candidate_id": "EP34_EL090_EP34_EL116",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            4,
+            5,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 31,
+          "candidate_id": "EP44_EL017_EP44_EL054",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            4,
+            5,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 32,
+          "candidate_id": "EP47_EL042_EP47_EL070",
+          "mode": "single_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            5,
+            4,
+            5,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 33,
+          "candidate_id": "EP04_EL086_EP04_EL109",
+          "mode": "single_episode",
+          "score": 18,
+          "sort_key": [
+            true,
+            5,
+            4,
+            4,
+            5,
+            18
+          ]
+        },
+        {
+          "rank": 34,
+          "candidate_id": "EP20_EL036_EP20_EL053",
+          "mode": "single_episode",
+          "score": 18,
+          "sort_key": [
+            true,
+            5,
+            4,
+            4,
+            5,
+            18
+          ]
+        },
+        {
+          "rank": 35,
+          "candidate_id": "SYNTH_MULTI_03",
+          "mode": "multi_episode",
+          "score": 19,
+          "sort_key": [
+            true,
+            4,
+            5,
+            5,
+            5,
+            19
+          ]
+        },
+        {
+          "rank": 36,
+          "candidate_id": "EP22_EL063_EP22_EL081",
+          "mode": "single_episode",
+          "score": 18,
+          "sort_key": [
+            true,
+            4,
+            4,
+            5,
+            5,
+            18
+          ]
+        },
+        {
+          "rank": 37,
+          "candidate_id": "EP09_EL070_EP09_EL089",
+          "mode": "single_episode",
+          "score": 17,
+          "sort_key": [
+            true,
+            4,
+            4,
+            5,
+            4,
+            17
+          ]
+        },
+        {
+          "rank": 38,
+          "candidate_id": "EP35_EL058_EP35_EL072",
+          "mode": "single_episode",
+          "score": 17,
+          "sort_key": [
+            true,
+            4,
+            4,
+            5,
+            4,
+            17
+          ]
+        },
+        {
+          "rank": 39,
+          "candidate_id": "EP29_EL029_EP29_EL051",
+          "mode": "single_episode",
+          "score": 16,
+          "sort_key": [
+            true,
+            4,
+            4,
+            4,
+            4,
+            16
+          ]
+        },
+        {
+          "rank": 40,
+          "candidate_id": "EP37_EL064_EP37_EL079",
+          "mode": "single_episode",
+          "score": 16,
+          "sort_key": [
+            true,
+            4,
+            4,
+            4,
+            4,
+            16
+          ]
+        }
+      ]
+    },
+    "step4_quality_critic": {
+      "buffer_size": 20,
+      "reviews": {
+        "EP03_EL048_EP03_EL083": {
+          "candidate_id": "EP03_EL048_EP03_EL083",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP11_EL068_EP11_EL085": {
+          "candidate_id": "EP11_EL068_EP11_EL085",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP16_EL012_EP16_EL046": {
+          "candidate_id": "EP16_EL012_EP16_EL046",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP19_EL027_EP19_EL050": {
+          "candidate_id": "EP19_EL027_EP19_EL050",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP23_EL039_EP23_EL067": {
+          "candidate_id": "EP23_EL039_EP23_EL067",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP27_EL068_EP27_EL095": {
+          "candidate_id": "EP27_EL068_EP27_EL095",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP24_EL024_EP24_EL069": {
+          "candidate_id": "EP24_EL024_EP24_EL069",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP30_EL048_EP30_EL067": {
+          "candidate_id": "EP30_EL048_EP30_EL067",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP31_EL070_EP31_EL087": {
+          "candidate_id": "EP31_EL070_EP31_EL087",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP32_EL090_EP32_EL117": {
+          "candidate_id": "EP32_EL090_EP32_EL117",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP36_EL090_EP36_EL121": {
+          "candidate_id": "EP36_EL090_EP36_EL121",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP39_EL038_EP39_EL059": {
+          "candidate_id": "EP39_EL038_EP39_EL059",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP41_EL033_EP41_EL053": {
+          "candidate_id": "EP41_EL033_EP41_EL053",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP43_EL056_EP43_EL087": {
+          "candidate_id": "EP43_EL056_EP43_EL087",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP45_EL048_EP45_EL074": {
+          "candidate_id": "EP45_EL048_EP45_EL074",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP50_EL016_EP50_EL040": {
+          "candidate_id": "EP50_EL016_EP50_EL040",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "SYNTH_MULTI_01": {
+          "candidate_id": "SYNTH_MULTI_01",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP26_EL037_EP26_EL051": {
+          "candidate_id": "EP26_EL037_EP26_EL051",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "SYNTH_MULTI_02": {
+          "candidate_id": "SYNTH_MULTI_02",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
+        "EP01_EL063_EP01_EL092": {
+          "candidate_id": "EP01_EL063_EP01_EL092",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        }
+      }
+    },
+    "step5_final_promos": {
+      "final_count": 15,
+      "demoted_count": 0,
+      "backfill_count": 0,
+      "final_promos": [
+        {
+          "promo_id": "PROMO_001",
+          "rank": 1,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 38.5,
+          "total_duration_cs": 3850,
+          "hook_timestamp_offset_seconds": 0.6,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 3,
+              "scene": 2,
+              "start_element_id": "EP03_EL048",
+              "end_element_id": "EP03_EL083",
+              "start_timestamp": "01:00.00",
+              "end_timestamp": "01:38.50",
+              "duration_seconds": 38.5,
+              "duration_cs": 3850,
+              "trim_quote_hint": null,
+              "segment_summary": "Royal guards forcefully seize a weeping bride in white as she screams for help, instantly hooking scrolling viewers with intense physical conflict.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Let me go!",
+                "exact_ending_dialogue": "You cannot interfere in a family matter!",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Royal guards forcefully seize a weeping bride in white as she screams for help, instantly hooking scrolling viewers with intense physical conflict.",
+            "cliffhanger_explanation": "The scarred warrior drops a royal guard with a single punch and warns the family never to touch her again, leaving the cathedral in breathless shock.",
+            "standalone_coherence_explanation": "The scene shows an abandoned bride being violently cast out by armed guards until a towering, scarred stranger intervenes with lethal force to protect her."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_002",
+          "rank": 2,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 31.45,
+          "total_duration_cs": 3145,
+          "hook_timestamp_offset_seconds": 0.0,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 11,
+              "scene": 2,
+              "start_element_id": "EP11_EL068",
+              "end_element_id": "EP11_EL085",
+              "start_timestamp": "01:21.30",
+              "end_timestamp": "01:52.75",
+              "duration_seconds": 31.45,
+              "duration_cs": 3145,
+              "trim_quote_hint": null,
+              "segment_summary": "Gerald openly taunts Alexander to strike a gentleman, initiating a high-tension physical confrontation as the constable searches his coat.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "What is it, soldier? Going to strike a gentleman in front of his wife?",
+                "exact_ending_dialogue": "There it is. Ha!",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Gerald openly taunts Alexander to strike a gentleman, initiating a high-tension physical confrontation as the constable searches his coat.",
+            "cliffhanger_explanation": "The constable pulls Gerald's planted gold pocket watch from Alexander's trench coat as Gerald erupts into triumphant laughter.",
+            "standalone_coherence_explanation": "The scene clearly establishes an arrogant aristocrat framing a stoic veteran husband for theft while his protective wife watches in horror."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_003",
+          "rank": 3,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 40.1,
+          "total_duration_cs": 4010,
+          "hook_timestamp_offset_seconds": 0.1,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 16,
+              "scene": 1,
+              "start_element_id": "EP16_EL012",
+              "end_element_id": "EP16_EL046",
+              "start_timestamp": "00:14.30",
+              "end_timestamp": "00:54.40",
+              "duration_seconds": 40.1,
+              "duration_cs": 4010,
+              "trim_quote_hint": null,
+              "segment_summary": "An armed thug lunges roaring with an iron club, only for Alexander to catch the heavy weapon mid-air with his bare hand and effortlessly dismantle the attackers.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Aaargh!",
+                "exact_ending_dialogue": "Gerald...",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "An armed thug lunges roaring with an iron club, only for Alexander to catch the heavy weapon mid-air with his bare hand and effortlessly dismantle the attackers.",
+            "cliffhanger_explanation": "Alexander throttles the thug against the stone wall, forcing him to scream that Gerald Harrington paid for the attack, shattering Juliana with devastating betrayal.",
+            "standalone_coherence_explanation": "A first-time viewer instantly grasps that a capable protector is shielding a wounded woman against violent thugs, climaxing in an undeniable betrayal confession."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_004",
+          "rank": 4,
+          "composition_mode": "single_episode",
+          "archetype": "visual_anomaly_mystery_escalation",
+          "relationship_type": null,
+          "total_duration_seconds": 45.9,
+          "total_duration_cs": 4590,
+          "hook_timestamp_offset_seconds": 1.3,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 19,
+              "scene": 2,
+              "start_element_id": "EP19_EL027",
+              "end_element_id": "EP19_EL050",
+              "start_timestamp": "00:43.00",
+              "end_timestamp": "01:28.90",
+              "duration_seconds": 45.9,
+              "duration_cs": 4590,
+              "trim_quote_hint": null,
+              "segment_summary": "A mysterious informant emerges from misty woods and bows respectfully, addressing the supposed beggar veteran as 'Your Grace.'",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Your Grace.",
+                "exact_ending_dialogue": "Then Ashburg will remember who it belongs to.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "A mysterious informant emerges from misty woods and bows respectfully, addressing the supposed beggar veteran as 'Your Grace.'",
+            "cliffhanger_explanation": "Alexander learns his mother is an isolated prisoner in her manor and makes a lethal vow that Ashburg will remember its true Duke.",
+            "standalone_coherence_explanation": "Cold viewers immediately realize the humble scarred husband is actually a presumed-dead Duke whose title and captive mother were stolen by usurpers."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_005",
+          "rank": 5,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 53.0,
+          "total_duration_cs": 5300,
+          "hook_timestamp_offset_seconds": 0.5,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 23,
+              "scene": 1,
+              "start_element_id": "EP23_EL039",
+              "end_element_id": "EP23_EL067",
+              "start_timestamp": "01:18.50",
+              "end_timestamp": "02:11.50",
+              "duration_seconds": 53.0,
+              "duration_cs": 5300,
+              "trim_quote_hint": null,
+              "segment_summary": "Opens instantly with Juliana slamming her hands on her journal and declaring that the bedridden Duchess is being poisoned with arsenic.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Someone is poisoning her.",
+                "exact_ending_dialogue": "Juliana... someone is coming.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Opens instantly with Juliana slamming her hands on her journal and declaring that the bedridden Duchess is being poisoned with arsenic.",
+            "cliffhanger_explanation": "While Juliana frantically grinds an antidote, heavy footsteps approach and the brass door lever slowly turns open, catching her red-handed.",
+            "standalone_coherence_explanation": "A maid discovers an elderly noblewoman is being slowly assassinated with arsenic and races to prepare a charcoal remedy before the killer catches her."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_006",
+          "rank": 6,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 40.2,
+          "total_duration_cs": 4020,
+          "hook_timestamp_offset_seconds": 0.1,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 27,
+              "scene": 1,
+              "start_element_id": "EP27_EL068",
+              "end_element_id": "EP27_EL095",
+              "start_timestamp": "01:50.30",
+              "end_timestamp": "02:30.50",
+              "duration_seconds": 40.2,
+              "duration_cs": 4020,
+              "trim_quote_hint": null,
+              "segment_summary": "Arrogant nobles confront Juliana holding a medicine bottle, twisting her admission of poison into a confession of murder.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "An antidote to what?",
+                "exact_ending_dialogue": "Take her.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Arrogant nobles confront Juliana holding a medicine bottle, twisting her admission of poison into a confession of murder.",
+            "cliffhanger_explanation": "Rupert commands guards to seize Juliana for poisoning the Duchess, dragging her away as a helpless scapegoat.",
+            "standalone_coherence_explanation": "A heroic maid who came to give an antidote is maliciously framed for attempted murder by the very nobles who administered the poison."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_007",
+          "rank": 7,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 57.3,
+          "total_duration_cs": 5730,
+          "hook_timestamp_offset_seconds": 0.3,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 24,
+              "scene": 1,
+              "start_element_id": "EP24_EL024",
+              "end_element_id": "EP24_EL069",
+              "start_timestamp": "00:32.50",
+              "end_timestamp": "01:29.80",
+              "duration_seconds": 57.3,
+              "duration_cs": 5730,
+              "trim_quote_hint": null,
+              "segment_summary": "A cruel noblewoman whips Juliana across the torso with a riding crop, sneering that a maid's opinion does not matter.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "The noblewoman suddenly rears back her riding crop and strikes Juliana violently across the torso.",
+                "exact_ending_dialogue": "I will return. You cannot stop the healer.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "A cruel noblewoman whips Juliana across the torso with a riding crop, sneering that a maid's opinion does not matter.",
+            "cliffhanger_explanation": "Forced onto her knees to scrub black soot, Juliana touches the hidden antidote vial in her apron and vows silent vengeance: 'You cannot stop the healer.'",
+            "standalone_coherence_explanation": "The power dynamics are crystal clear: an abusive mistress humiliates and beats a servant, unaware that the servant is a disguised noble healer holding the secret cure."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_008",
+          "rank": 8,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 49.0,
+          "total_duration_cs": 4900,
+          "hook_timestamp_offset_seconds": 0.1,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 30,
+              "scene": 2,
+              "start_element_id": "EP30_EL048",
+              "end_element_id": "EP30_EL067",
+              "start_timestamp": "01:34.50",
+              "end_timestamp": "02:23.50",
+              "duration_seconds": 49.0,
+              "duration_cs": 4900,
+              "trim_quote_hint": null,
+              "segment_summary": "An elder aristocrat commands Rupert and Catherine to manufacture evidence, buy the jury, and let the State hang Juliana for witchcraft.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Do not hide the evidence, manufacture it. Drag her before the magistrate tomorrow, frame the trial, buy the jury, and let the State hang her.",
+                "exact_ending_dialogue": "Tomorrow, she stops being a prisoner. She becomes a witch.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "An elder aristocrat commands Rupert and Catherine to manufacture evidence, buy the jury, and let the State hang Juliana for witchcraft.",
+            "cliffhanger_explanation": "The villains seal the arrest warrant to ensure that by tomorrow Juliana stops being a prisoner and is executed as a witch.",
+            "standalone_coherence_explanation": "A cold viewer sees aristocrats conspire to execute an innocent prisoner by manipulating the legal system and manufacturing witchcraft charges."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_009",
+          "rank": 9,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 29.2,
+          "total_duration_cs": 2920,
+          "hook_timestamp_offset_seconds": 0.2,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 31,
+              "scene": 1,
+              "start_element_id": "EP31_EL070",
+              "end_element_id": "EP31_EL087",
+              "start_timestamp": "02:10.80",
+              "end_timestamp": "02:40.00",
+              "duration_seconds": 29.2,
+              "duration_cs": 2920,
+              "trim_quote_hint": null,
+              "segment_summary": "Catherine shrieks 'Enough!' and drives a scalding red-hot poker directly into the open pages of Juliana's late mother's botanical book.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Enough!",
+                "exact_ending_dialogue": "One flame, and your mother's life's work becomes ash.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Catherine shrieks 'Enough!' and drives a scalding red-hot poker directly into the open pages of Juliana's late mother's botanical book.",
+            "cliffhanger_explanation": "Catherine swings the red-hot branding poker directly toward Juliana's face, freezing inches from her eye as Juliana recoils in horror.",
+            "standalone_coherence_explanation": "A chained prisoner watches an aristocrat destroy her mother's heirloom before having a searing iron shoved into her face, creating instant stakes without prior lore."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_010",
+          "rank": 10,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 34.88,
+          "total_duration_cs": 3488,
+          "hook_timestamp_offset_seconds": 0.1,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 32,
+              "scene": 1,
+              "start_element_id": "EP32_EL090",
+              "end_element_id": "EP32_EL117",
+              "start_timestamp": "01:59.50",
+              "end_timestamp": "02:34.38",
+              "duration_seconds": 34.88,
+              "duration_cs": 3488,
+              "trim_quote_hint": null,
+              "segment_summary": "Catherine snaps hysterically, raising a glowing branding iron and screaming 'Silence! Silence!' as Juliana relentlessly exposes her cowardice.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Silence! Silence!",
+                "exact_ending_dialogue": "Then let's see how brave you are when it touches your skin!",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Catherine snaps hysterically, raising a glowing branding iron and screaming 'Silence! Silence!' as Juliana relentlessly exposes her cowardice.",
+            "cliffhanger_explanation": "Catherine plunges the glowing branding rod directly at Juliana's face, leaving the searing orange tip hovering millimeters from her pupil before an abrupt blackout.",
+            "standalone_coherence_explanation": "The moral clash between an unbroken chained woman and a raging aristocrat holding a scalding iron delivers clear villainy and life-or-death tension."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_011",
+          "rank": 11,
+          "composition_mode": "single_episode",
+          "archetype": "emotional_reversal_turning_point",
+          "relationship_type": null,
+          "total_duration_seconds": 54.95,
+          "total_duration_cs": 5495,
+          "hook_timestamp_offset_seconds": 0.7,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 36,
+              "scene": 1,
+              "start_element_id": "EP36_EL090",
+              "end_element_id": "EP36_EL121",
+              "start_timestamp": "02:25.80",
+              "end_timestamp": "03:20.75",
+              "duration_seconds": 54.95,
+              "duration_cs": 5495,
+              "trim_quote_hint": null,
+              "segment_summary": "Alexander discovers his treacherous relatives are marrying in two days and scheduling his wife's public execution right after the ceremony.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "What wedding?",
+                "exact_ending_dialogue": "...their dead Duke is coming home.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Alexander discovers his treacherous relatives are marrying in two days and scheduling his wife's public execution right after the ceremony.",
+            "cliffhanger_explanation": "Alexander walks into the snowy blizzard and roars a vow of vengeance that their dead Duke is coming home.",
+            "standalone_coherence_explanation": "A husband in hiding learns his rival is marrying his enemy and executing his wife in two days, igniting an explosive vow to return from the dead and reclaim his title."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_012",
+          "rank": 12,
+          "composition_mode": "single_episode",
+          "archetype": "emotional_reversal_turning_point",
+          "relationship_type": null,
+          "total_duration_seconds": 37.21,
+          "total_duration_cs": 3721,
+          "hook_timestamp_offset_seconds": 0.8,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 39,
+              "scene": 4,
+              "start_element_id": "EP39_EL038",
+              "end_element_id": "EP39_EL059",
+              "start_timestamp": "01:01.20",
+              "end_timestamp": "01:38.41",
+              "duration_seconds": 37.21,
+              "duration_cs": 3721,
+              "trim_quote_hint": null,
+              "segment_summary": "Alexander reveals his freshly groomed face in the mirror and declares the Duke who was buried three years ago is coming home.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Enough hiding.",
+                "exact_ending_dialogue": "And I am bringing my wife home.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "Alexander reveals his freshly groomed face in the mirror and declares the Duke who was buried three years ago is coming home.",
+            "cliffhanger_explanation": "Alexander strides through the snow in his full ducal regalia, fiercely vowing to reclaim his house and bring his wife home as screen cuts to black.",
+            "standalone_coherence_explanation": "A scarred warrior discards his disguise, dons regal ducal garments, receives the homage of his soldiers, and sets out to storm a cathedral and rescue his condemned wife."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_013",
+          "rank": 13,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 38.29,
+          "total_duration_cs": 3829,
+          "hook_timestamp_offset_seconds": 0.2,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 41,
+              "scene": 1,
+              "start_element_id": "EP41_EL033",
+              "end_element_id": "EP41_EL053",
+              "start_timestamp": "00:57.80",
+              "end_timestamp": "01:36.09",
+              "duration_seconds": 38.29,
+              "duration_cs": 3829,
+              "trim_quote_hint": null,
+              "segment_summary": "A bruised woman in chains defiantly mocks an arrogant bride in front of an entire aristocratic congregation.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "You needed an entire chapel to feel powerful over one chained woman?",
+                "exact_ending_dialogue": "Extreme close-up pushing in on Juliana's bruised face. Her expression shifts from grim resolve into awe, breathless realization, and blooming hope as the orchestral score swells into an abrupt cliffhanger.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "A bruised woman in chains defiantly mocks an arrogant bride in front of an entire aristocratic congregation.",
+            "cliffhanger_explanation": "A catastrophic explosion obliterates the cathedral doors, and armed silhouettes emerge through the smoke as the chained woman realizes who has arrived.",
+            "standalone_coherence_explanation": "The dynamic between the cruel aristocratic bride at the altar and the defiant woman chained in prison garb is immediately apparent. The shocking breach of the wedding by an attacking force creates an instant high-stakes rescue mystery."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_014",
+          "rank": 14,
+          "composition_mode": "single_episode",
+          "archetype": "immediate_shock_opener",
+          "relationship_type": null,
+          "total_duration_seconds": 46.16,
+          "total_duration_cs": 4616,
+          "hook_timestamp_offset_seconds": 0.2,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 43,
+              "scene": 1,
+              "start_element_id": "EP43_EL056",
+              "end_element_id": "EP43_EL087",
+              "start_timestamp": "01:08.80",
+              "end_timestamp": "01:54.96",
+              "duration_seconds": 46.16,
+              "duration_cs": 4616,
+              "trim_quote_hint": null,
+              "segment_summary": "A towering scarred nobleman accuses a cowering aristocrat at the altar of treason and wartime slaughter.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "You sold my men to the enemy.",
+                "exact_ending_dialogue": "Going somewhere, Lord Sterling?",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "A towering scarred nobleman accuses a cowering aristocrat at the altar of treason and wartime slaughter.",
+            "cliffhanger_explanation": "The fleeing co-conspirator reaches the church side door only to find his escape cut off by a waiting Crown constable.",
+            "standalone_coherence_explanation": "The dialogue immediately clarifies the conflict: Rupert betrayed Alexander's troops to the enemy and usurped his title, with official Crown documents verifying the treachery before the court."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        },
+        {
+          "promo_id": "PROMO_015",
+          "rank": 15,
+          "composition_mode": "single_episode",
+          "archetype": "emotional_reversal_turning_point",
+          "relationship_type": null,
+          "total_duration_seconds": 50.55,
+          "total_duration_cs": 5055,
+          "hook_timestamp_offset_seconds": 0.3,
+          "segments": [
+            {
+              "segment_index": 1,
+              "episode": 45,
+              "scene": 2,
+              "start_element_id": "EP45_EL048",
+              "end_element_id": "EP45_EL074",
+              "start_timestamp": "01:11.20",
+              "end_timestamp": "02:01.75",
+              "duration_seconds": 50.55,
+              "duration_cs": 5055,
+              "trim_quote_hint": null,
+              "segment_summary": "The Duke triumphantly raises the hand of his chained beloved and proclaims her Duchess before high society.",
+              "trim_recommendation": {
+                "exact_opening_dialogue": "Before the Crown and before God...",
+                "exact_ending_dialogue": "Catherine raises her chin, a vindictive smirk spreading across her lips as she realizes her rival's claim has just been torn to pieces.",
+                "verbatim_trim_quote": null,
+                "boundary_type": "element_boundary",
+                "requires_manual_editor_verification": false
+              }
+            }
+          ],
+          "rubric_scores": {
+            "standalone_coherence": 5,
+            "hook_strength": 5,
+            "cliffhanger_strength": 5,
+            "emotional_impact": 5,
+            "total_score": 20
+          },
+          "editorial_rationale": {
+            "hook_explanation": "The Duke triumphantly raises the hand of his chained beloved and proclaims her Duchess before high society.",
+            "cliffhanger_explanation": "A High Priest storms into the chapel declaring the marriage legally invalid before the Crown, while the disgraced rival bride smiles venomously.",
+            "standalone_coherence_explanation": "The ultimate triumph of vindicating an abused woman is immediately upended by an institutional legal obstacle, setting up instant jeopardy for any first-time viewer."
+          },
+          "critic_review": {
+            "critic_status": "APPROVE",
+            "makes_sense_standalone": true,
+            "compelling_within_3s": true,
+            "leaves_unresolved_cliffhanger": true,
+            "spoiler_free": true,
+            "continuity_preserved": true,
+            "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+          }
+        }
+      ]
+    }
+  },
+  "summary_metrics": {}
+}
