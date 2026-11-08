@@ -2,7 +2,7 @@
 **Track:** Problem 1 — Find the Promos (Ads) Across Microdrama Series  
 **Candidate Name:** Anirudh Singh  
 **Series Evaluated:** *"I Married a Broken Soldier. He was a Duke"* (50 Episodes, 3,727 Screenplay Elements)  
-**Deliverables Produced:** [`final_promos.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/final_promos.json) (Top 15 Promo Blueprints) | [`editorial_report.md`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/editorial_report.md) | [`execution_trace.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/execution_trace.json)  
+**Deliverables Produced:** [`final_promos.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker/final_promos.json) (Top 15 Promo Blueprints) | [`editorial_report.md`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker/editorial_report.md) | [`execution_trace.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker/execution_trace.json)  
 
 ---
 
@@ -19,7 +19,7 @@ This problem represents the quintessential AI engineering challenge: **large lan
 ---
 
 ### 2. What I Built
-I designed and implemented the **Kuku Promo Finder**, a production-grade 5-phase engine that ingests 50 raw screenplay text files, parses them into a mathematically verifiable Abstract Syntax Tree (AST), extracts single-episode and cross-episode candidate clips, and subjects them to an uncompromising mechanical and editorial evaluation pipeline.
+I designed and implemented the **Kuku Promo Finder**, a production-grade modular engine that ingests 50 raw screenplay text files, parses them into a mathematically verifiable Abstract Syntax Tree (AST), extracts single-episode and cross-episode candidate clips, and subjects them to an uncompromising mechanical and editorial evaluation pipeline.
 
 #### Key System Deliverables:
 - **`01_structured_episodes.json`:** 3,727 atomic screenplay elements across 50 episodes with integer centisecond timestamps ($1\text{s} = 100\text{cs}$) and tag decomposition (Camera, Action, Dialogue, Sound FX).

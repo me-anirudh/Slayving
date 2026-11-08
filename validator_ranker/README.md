@@ -1,4 +1,4 @@
-# 🎬 Phase 5: Ranking & Quality Validation Engine (`validator_ranker`)
+# 🎬 Quality Validation & Ranking Engine (`validator_ranker`)
 
 This directory contains the production implementation of **Phase 5: Ranking & Quality Validation** for the 50-episode microdrama series *"I Married a Broken Soldier. He was a Duke"*.
 
@@ -9,10 +9,10 @@ It enforces the strict **5-Step Sequential Pipeline** designed to eliminate rank
 ## 📁 Directory Structure
 
 ```text
-phase5_validator_ranker/
+validator_ranker/
 ├── __init__.py                                 # Package export symbols
 ├── validator_ranker.py                         # Standalone Python module & CLI
-├── phase5_validator_ranker.ipynb               # Interactive Jupyter notebook with pre-executed outputs
+├── validator_ranker.ipynb               # Interactive Jupyter notebook with pre-executed outputs
 ├── final_promos.json                           # Canonical final Top 15 output artifact (Page 14 schema)
 ├── editorial_report.md                         # Executive & editorial analysis report
 ├── execution_trace.json                        # End-to-end mechanical audit trace across all 5 steps
@@ -23,20 +23,20 @@ phase5_validator_ranker/
 
 ## 🚀 Strict 5-Step Pipeline Implementation
 
-### Step 1 — Mechanical Gate (`Fix 2 & Fix 4`)
+### Step 1 — Mechanical Gate (Duration & Hook Bounds)
 * **Inputs:** Pools all single-episode candidates (`02_batch_extractions.json`) and multi-episode candidates (`03_synthesized_candidates.json`).
 * **Validation Invariants:**
   1. **AST Existence & Monotonicity:** Every segment `start_element_id` and `end_element_id` is verified against the 3,727 canonical AST elements in `01_structured_episodes.json` with $0 \le \text{start\_cs} < \text{end\_cs}$.
   2. **Total Duration Gate:** Strictly $2,000\text{ cs} \le \text{duration\_cs} \le 6,000\text{ cs}$ ($20.00\text{s} - 60.00\text{s}$). Invalid durations ($< 20.00\text{s}$ or $> 60.00\text{s}$) are rejected outright and recorded in `execution_trace.json` rather than auto-extending to prevent cliffhanger resolution risks.
   3. **Hook Timing Gate:** $0.0\text{s} \le \text{hook\_timestamp\_offset\_seconds} \le 3.0\text{s}$, verifying that the opening hook element initiates within $300\text{ cs}$ of clip start.
 
-### Step 2 — High-Overlap Deduplication (`Fix 5`)
+### Step 2 — High-Overlap Deduplication (Containment & Climax)
 * **Pairwise Comparison:** Evaluates same-episode candidates and drops the lower-scoring clip if:
   $$\text{containment} = \frac{\text{intersection\_cs}}{\min(\text{dur\_a\_cs}, \text{dur\_b\_cs})} \ge 0.85$$
   **OR** if overlap $\ge 0.60$ and both candidates share the exact same `end_element_id` (shared climax).
 * Preserves distinct dramatic moments while removing repetitive overlapping variations.
 
-### Step 3 — Deterministic Rubric Sort (`Fix 3`)
+### Step 3 — Deterministic Rubric Sort (Lexicographic Key)
 * **Lexicographic Sort Key:** Sorts all surviving candidates using the exact tuple:
   ```python
   passes_min_floor = (
@@ -55,7 +55,7 @@ phase5_validator_ranker/
   ```
 * Ensures high cold coherence ($\ge 4$) and visceral hooks take absolute priority over raw sums.
 
-### Step 4 — Cold-First Quality Critic (`Fix 7 & Revision 5`)
+### Step 4 — Cold-First Quality Critic (Isolated Clip Buffer)
 * **20-Candidate Buffer Optimization:** Evaluates a 20-candidate buffer instead of just 15 so that if up to 5 clips are demoted, replacements are already Critic-approved and avoid `UNREVIEWED_BACKFILL` tags.
 * **Cold-First Prompt Structure:**
   - **(a) Isolated Clip Transcript first:** Verbatim dialogue and action lines without backstory.
@@ -82,7 +82,7 @@ phase5_validator_ranker/
 ## 🛠️ Usage Instructions
 
 ### Option A: Interactive Jupyter Notebook
-Open and run `phase5_validator_ranker/phase5_validator_ranker.ipynb` in VS Code or JupyterLab.
+Open and run `validator_ranker/validator_ranker.ipynb` in VS Code or JupyterLab.
 All 19 cells are pre-executed with complete outputs, markdown diagrams, and inspection tables.
 
 ### Option B: Standalone Python CLI
@@ -90,10 +90,10 @@ Run the ranking engine directly:
 
 ```powershell
 # Standard run
-python phase5_validator_ranker/validator_ranker.py
+python validator_ranker/validator_ranker.py
 
 # Custom paths and buffer size
-python phase5_validator_ranker/validator_ranker.py --ast 01_structured_episodes.json --extractions 02_batch_extractions.json --synthesized 03_synthesized_candidates.json --buffer 20
+python validator_ranker/validator_ranker.py --ast 01_structured_episodes.json --extractions 02_batch_extractions.json --synthesized 03_synthesized_candidates.json --buffer 20
 ```
 
 ---
@@ -102,6 +102,6 @@ python phase5_validator_ranker/validator_ranker.py --ast 01_structured_episodes.
 
 | Deliverable | Location | Description |
 | :--- | :--- | :--- |
-| **`final_promos.json`** | [`phase5_validator_ranker/final_promos.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase5_validator_ranker/final_promos.json) | Top 15 ranked promotional blueprints conforming to Page 14 schema with timestamps, segment trims, rubric scores, editorial rationales, and critic review. |
-| **`editorial_report.md`** | [`phase5_validator_ranker/editorial_report.md`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase5_validator_ranker/editorial_report.md) | Executive and marketing analysis report with archetype breakdowns and segment-level trim blueprints for video editors. |
-| **`execution_trace.json`** | [`phase5_validator_ranker/execution_trace.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase5_validator_ranker/execution_trace.json) | Complete mechanical audit logging raw candidate pool (27), Step 1 rejections (2), Step 2 deduplications (2), Step 3 rubric rankings, Step 4 critic reviews, and Step 5 final 15 selection. |
+| **`final_promos.json`** | [`validator_ranker/final_promos.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker/final_promos.json) | Top 15 ranked promotional blueprints conforming to Page 14 schema with timestamps, segment trims, rubric scores, editorial rationales, and critic review. |
+| **`editorial_report.md`** | [`validator_ranker/editorial_report.md`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker/editorial_report.md) | Executive and marketing analysis report with archetype breakdowns and segment-level trim blueprints for video editors. |
+| **`execution_trace.json`** | [`validator_ranker/execution_trace.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker/execution_trace.json) | Complete mechanical audit logging raw candidate pool (27), Step 1 rejections (2), Step 2 deduplications (2), Step 3 rubric rankings, Step 4 critic reviews, and Step 5 final 15 selection. |

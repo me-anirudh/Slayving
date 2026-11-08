@@ -1,12 +1,12 @@
 """
-🎬 Phase 5: Ranking & Quality Validation Engine (validator_ranker.py)
+🎬 Quality Validation, Ranking & Editorial Delivery Engine (validator_ranker.py)
 Series: "I Married a Broken Soldier. He was a Duke" (50 Episodes)
 
 Strict 5-Step Pipeline:
-1. Step 1 — Mechanical Gate (Fix 2 & Fix 4): AST timestamps, 20.00s-60.00s duration, 0.0-3.0s hook offset.
-2. Step 2 — High-Overlap Deduplication (Fix 5): >=0.85 containment or (>=0.60 overlap + shared end element).
-3. Step 3 — Deterministic Rubric Sort (Fix 3): Lexicographic tuple key prioritizing standalone coherence & hook.
-4. Step 4 — Cold-First Quality Critic (Fix 7 & Revision 5): 20-candidate buffer, cold clip transcript first, ±3 context second.
+1. Step 1 — Mechanical Gate: AST timestamps, strictly 20.00s-60.00s duration, 0.0-3.0s hook offset.
+2. Step 2 — High-Overlap Deduplication: >=0.85 containment or (>=0.60 overlap + shared end element).
+3. Step 3 — Deterministic Rubric Sort: Lexicographic tuple key prioritizing standalone coherence & hook.
+4. Step 4 — Cold-First Quality Critic: 20-candidate buffer, cold clip transcript evaluated first, surrounding context second.
 5. Step 5 — Demotion & Explicit Backfill: Demote rejections, fill Top 15, tag unreviewed backfill.
 """
 
@@ -124,35 +124,84 @@ class CriticBatchReview(BaseModel):
 class ValidatorRankerEngine:
     def __init__(
         self,
-        ast_path: Path = Path("01_structured_episodes.json"),
-        extractions_path: Path = Path("02_batch_extractions.json"),
-        synthesized_path: Path = Path("03_synthesized_candidates.json"),
-        final_promos_path: Path = Path("final_promos.json"),
-        editorial_report_path: Path = Path("editorial_report.md"),
-        execution_trace_path: Path = Path("execution_trace.json"),
+        ast_path: Optional[Path] = None,
+        extractions_path: Optional[Path] = None,
+        synthesized_path: Optional[Path] = None,
+        final_promos_path: Optional[Path] = None,
+        editorial_report_path: Optional[Path] = None,
+        execution_trace_path: Optional[Path] = None,
         model_name: str = "gemini-2.5-flash",
         api_key: Optional[str] = None
     ):
-        self.ast_path = Path(ast_path)
-        self.extractions_path = Path(extractions_path)
-        self.synthesized_path = Path(synthesized_path)
-        self.final_promos_path = Path(final_promos_path)
-        self.editorial_report_path = Path(editorial_report_path)
-        self.execution_trace_path = Path(execution_trace_path)
+        # Defensive path resolution
+        if ast_path and Path(ast_path).exists():
+            self.ast_path = Path(ast_path)
+        elif Path("ast_builder/01_structured_episodes.json").exists():
+            self.ast_path = Path("ast_builder/01_structured_episodes.json")
+        elif Path("../ast_builder/01_structured_episodes.json").exists():
+            self.ast_path = Path("../ast_builder/01_structured_episodes.json")
+        elif Path("01_structured_episodes.json").exists():
+            self.ast_path = Path("01_structured_episodes.json")
+        else:
+            self.ast_path = Path("ast_builder/01_structured_episodes.json")
+
+        if extractions_path and Path(extractions_path).exists():
+            self.extractions_path = Path(extractions_path)
+        elif Path("candidate_extractor/02_batch_extractions.json").exists():
+            self.extractions_path = Path("candidate_extractor/02_batch_extractions.json")
+        elif Path("../candidate_extractor/02_batch_extractions.json").exists():
+            self.extractions_path = Path("../candidate_extractor/02_batch_extractions.json")
+        elif Path("02_batch_extractions.json").exists():
+            self.extractions_path = Path("02_batch_extractions.json")
+        else:
+            self.extractions_path = Path("candidate_extractor/02_batch_extractions.json")
+
+        if synthesized_path and Path(synthesized_path).exists():
+            self.synthesized_path = Path(synthesized_path)
+        elif Path("cross_episode_synthesis/03_synthesized_candidates.json").exists():
+            self.synthesized_path = Path("cross_episode_synthesis/03_synthesized_candidates.json")
+        elif Path("../cross_episode_synthesis/03_synthesized_candidates.json").exists():
+            self.synthesized_path = Path("../cross_episode_synthesis/03_synthesized_candidates.json")
+        elif Path("03_synthesized_candidates.json").exists():
+            self.synthesized_path = Path("03_synthesized_candidates.json")
+        else:
+            self.synthesized_path = Path("cross_episode_synthesis/03_synthesized_candidates.json")
+
+        if final_promos_path:
+            self.final_promos_path = Path(final_promos_path)
+        elif Path("validator_ranker").exists():
+            self.final_promos_path = Path("validator_ranker/final_promos.json")
+        else:
+            self.final_promos_path = Path("final_promos.json")
+
+        if editorial_report_path:
+            self.editorial_report_path = Path(editorial_report_path)
+        elif Path("validator_ranker").exists():
+            self.editorial_report_path = Path("validator_ranker/editorial_report.md")
+        else:
+            self.editorial_report_path = Path("editorial_report.md")
+
+        if execution_trace_path:
+            self.execution_trace_path = Path(execution_trace_path)
+        elif Path("validator_ranker").exists():
+            self.execution_trace_path = Path("validator_ranker/execution_trace.json")
+        else:
+            self.execution_trace_path = Path("execution_trace.json")
+
         self.model_name = model_name
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY")
 
         # Load inputs
         if not self.ast_path.exists():
-            raise FileNotFoundError(f"AST missing at {self.ast_path}")
+            raise FileNotFoundError(f"AST missing at {self.ast_path}. Run AST builder first!")
         self.ast_data = json.loads(self.ast_path.read_text(encoding="utf-8"))
 
         if not self.extractions_path.exists():
-            raise FileNotFoundError(f"Extractions missing at {self.extractions_path}")
+            raise FileNotFoundError(f"Extractions missing at {self.extractions_path}. Run candidate extractor first!")
         self.extractions_data = json.loads(self.extractions_path.read_text(encoding="utf-8"))
 
         if not self.synthesized_path.exists():
-            raise FileNotFoundError(f"Synthesized candidates missing at {self.synthesized_path}")
+            raise FileNotFoundError(f"Synthesized candidates missing at {self.synthesized_path}. Run cross-episode synthesis first!")
         self.synthesized_data = json.loads(self.synthesized_path.read_text(encoding="utf-8"))
 
         # Build lookups
@@ -189,7 +238,7 @@ class ValidatorRankerEngine:
             return None
 
     # ==========================================================================
-    # STEP 1: MECHANICAL GATE (Fix 2 & Fix 4)
+    # STEP 1: MECHANICAL GATE
     # ==========================================================================
     def step1_mechanical_gate(self) -> List[Dict[str, Any]]:
         """
@@ -199,7 +248,7 @@ class ValidatorRankerEngine:
         Default to rejecting invalid durations outright and logging in execution_trace.json.
         """
         print("\n" + "=" * 75)
-        print("[STEP 1] EXECUTING MECHANICAL GATE (Fix 2 & Fix 4)")
+        print("[STEP 1] EXECUTING MECHANICAL INVARIANT GATE")
         print("=" * 75)
 
         raw_pool = []
@@ -310,7 +359,7 @@ class ValidatorRankerEngine:
         return surviving_candidates
 
     # ==========================================================================
-    # STEP 2: HIGH-OVERLAP DEDUPLICATION (Fix 5)
+    # STEP 2: HIGH-OVERLAP DEDUPLICATION
     # ==========================================================================
     def step2_high_overlap_deduplication(self, candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
@@ -319,7 +368,7 @@ class ValidatorRankerEngine:
         OR if overlap is >= 0.60 and both candidates share the exact same end_element_id.
         """
         print("\n" + "=" * 75)
-        print("[STEP 2] EXECUTING HIGH-OVERLAP DEDUPLICATION (Fix 5)")
+        print("[STEP 2] EXECUTING HIGH-OVERLAP DEDUPLICATION")
         print("=" * 75)
 
         # Separate single-episode candidates by episode
@@ -403,7 +452,7 @@ class ValidatorRankerEngine:
         return surviving
 
     # ==========================================================================
-    # STEP 3: DETERMINISTIC RUBRIC SORT (Fix 3)
+    # STEP 3: DETERMINISTIC RUBRIC SORT
     # ==========================================================================
     def step3_deterministic_rubric_sort(self, candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
@@ -418,7 +467,7 @@ class ValidatorRankerEngine:
         )
         """
         print("\n" + "=" * 75)
-        print("[STEP 3] EXECUTING DETERMINISTIC RUBRIC SORT (Fix 3)")
+        print("[STEP 3] EXECUTING DETERMINISTIC RUBRIC SORT")
         print("=" * 75)
 
         for c in candidates:
@@ -472,7 +521,7 @@ class ValidatorRankerEngine:
         return candidates
 
     # ==========================================================================
-    # STEP 4: COLD-FIRST QUALITY CRITIC (Fix 7 & Revision 5)
+    # STEP 4: COLD-FIRST QUALITY CRITIC
     # ==========================================================================
     def _build_clip_isolated_transcript(self, cand: Dict[str, Any]) -> str:
         """Extracts verbatim lines for the isolated clip."""
@@ -869,20 +918,18 @@ Return your evaluation as structured JSON conforming strictly to the CriticBatch
     def export_deliverables(self, final_promos: List[PromoCandidate]):
         """
         Writes final_promos.json, editorial_report.md, and execution_trace.json.
-        Mirrors artifacts to phase5_validator_ranker/ and workspace root.
+        Writes deliverables directly to the module folder.
         """
         payload = [p.model_dump() for p in final_promos]
 
         # 1. final_promos.json
         self.final_promos_path.parent.mkdir(parents=True, exist_ok=True)
         self.final_promos_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-        Path("final_promos.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"[EXPORT] Wrote final_promos.json ({len(payload)} promos)")
 
         # 2. execution_trace.json
         self.execution_trace_path.parent.mkdir(parents=True, exist_ok=True)
         self.execution_trace_path.write_text(json.dumps(self.trace_log, indent=2), encoding="utf-8")
-        Path("execution_trace.json").write_text(json.dumps(self.trace_log, indent=2), encoding="utf-8")
         print(f"[EXPORT] Wrote execution_trace.json")
 
         # 3. editorial_report.md
@@ -890,7 +937,7 @@ Return your evaluation as structured JSON conforming strictly to the CriticBatch
             f"# 🎬 Editorial & Executive Report: Kuku Promo Finder",
             f"**Series:** *I Married a Broken Soldier. He was a Duke* (50 Episodes)  ",
             f"**Date:** {time.strftime('%Y-%m-%d %H:%M:%S')}  ",
-            f"**Pipeline Run:** Phase 5 Ranking & Quality Validation Engine  ",
+            f"**Pipeline Run:** Quality Validation & Ranking Engine  ",
             f"",
             f"---",
             f"",
@@ -958,12 +1005,11 @@ Return your evaluation as structured JSON conforming strictly to the CriticBatch
                     f"  - *Editor Waveform Verification Required:* `{trim.requires_manual_editor_verification if trim else False}`"
                 ])
 
-        report_lines.append("\n---\n*Report generated deterministically by Phase 5 Validator & Ranker Engine.*")
+        report_lines.append("\n---\n*Report generated deterministically by Quality Validation & Ranking Engine.*")
         report_text = "\n".join(report_lines)
 
         self.editorial_report_path.parent.mkdir(parents=True, exist_ok=True)
         self.editorial_report_path.write_text(report_text, encoding="utf-8")
-        Path("editorial_report.md").write_text(report_text, encoding="utf-8")
         print(f"[EXPORT] Wrote editorial_report.md")
 
     # ==========================================================================
@@ -972,7 +1018,7 @@ Return your evaluation as structured JSON conforming strictly to the CriticBatch
     def run_pipeline(self, buffer_size: int = 20, use_llm: bool = True) -> List[PromoCandidate]:
         """Executes the strict 5-step pipeline."""
         print("=" * 80)
-        print("🎬 STARTING PHASE 5: RANKING & QUALITY VALIDATION PIPELINE")
+        print("🎬 STARTING QUALITY VALIDATION & EDITORIAL RANKING PIPELINE")
         print("=" * 80)
 
         # Step 1: Mechanical Gate
@@ -998,7 +1044,7 @@ Return your evaluation as structured JSON conforming strictly to the CriticBatch
         self.export_deliverables(final_promos)
 
         print("\n" + "=" * 80)
-        print("PHASE 5 COMPLETE: ALL 15 DELIVERABLES GENERATED & AUDITED")
+        print("QUALITY VALIDATION & EDITORIAL RANKING COMPLETE: ALL 15 DELIVERABLES GENERATED & AUDITED")
         print("=" * 80)
         return final_promos
 
@@ -1008,13 +1054,13 @@ Return your evaluation as structured JSON conforming strictly to the CriticBatch
 # ==============================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="Phase 5: Ranking & Quality Validation Engine")
+    parser = argparse.ArgumentParser(description="Quality Validation & Ranking Engine")
     parser.add_argument("--ast", default="01_structured_episodes.json", help="Path to AST JSON")
     parser.add_argument("--extractions", default="02_batch_extractions.json", help="Path to batch extractions JSON")
     parser.add_argument("--synthesized", default="03_synthesized_candidates.json", help="Path to synthesized JSON")
-    parser.add_argument("--out-json", default="phase5_validator_ranker/final_promos.json", help="Output path for final_promos.json")
-    parser.add_argument("--out-report", default="phase5_validator_ranker/editorial_report.md", help="Output path for editorial_report.md")
-    parser.add_argument("--out-trace", default="phase5_validator_ranker/execution_trace.json", help="Output path for execution_trace.json")
+    parser.add_argument("--out-json", default="validator_ranker/final_promos.json", help="Output path for final_promos.json")
+    parser.add_argument("--out-report", default="validator_ranker/editorial_report.md", help="Output path for editorial_report.md")
+    parser.add_argument("--out-trace", default="validator_ranker/execution_trace.json", help="Output path for execution_trace.json")
     parser.add_argument("--model", default="gemini-2.5-flash", help="Model name for Critic")
     parser.add_argument("--buffer", type=int, default=20, help="Critic buffer size (default 20)")
     parser.add_argument("--no-llm", action="store_true", help="Force deterministic critic without calling Gemini")

@@ -1,14 +1,14 @@
 """
-🎬 Phase 4: Cross-Episode Synthesis Engine (synthesizer.py)
+🎬 Cross-Episode Synthesis Engine (synthesizer.py)
 Series: "I Married a Broken Soldier. He was a Duke" (50 Episodes)
 
 Core Technologies:
 - Python Case-Insensitive Substring Search & AST Attachment
 - Google GenAI SDK (v3.0+) Structured Output Generation
-- Pydantic v2 Schema Modeling & Controlled Retry Validation (Improvement 1.3)
-- Semantic Retrieval via Embeddings & Cosine Similarity (Improvement 1.1)
-- Diversity-Aware Final Selection & Greedy Ranking (Improvement 1.2)
-- Precise Trim Recommendations & Transitional Editing Instructions (Improvement 1.4)
+- Pydantic v2 Schema Modeling & Automated Validation Retry Harness
+- Semantic Retrieval via Vector Embeddings & Cosine Similarity
+- Diversity-Aware Final Selection & Greedy Ranking
+- Precise Trim Recommendations & Transitional Editing Instructions
 """
 
 import os
@@ -53,7 +53,7 @@ from pydantic import BaseModel, Field, ValidationError
 
 class TrimRecommendation(BaseModel):
     """
-    Precise trim recommendation for video editors (Improvement 1.4).
+    Precise trim recommendation for video editors with verbatim boundaries and transition instructions.
     Provides actionable cut instructions without character-count timestamp interpolation.
     """
     exact_opening_dialogue: str = Field(
@@ -161,12 +161,12 @@ class SynthesisLLMResponse(BaseModel):
 
 
 # ==============================================================================
-# 2. SEMANTIC RETRIEVAL ENGINE WITH EMBEDDINGS & COSINE SIMILARITY (Improvement 1.1)
+# 2. SEMANTIC RETRIEVAL ENGINE WITH EMBEDDINGS & COSINE SIMILARITY
 # ==============================================================================
 
 class SemanticMomentRetriever:
     """
-    Semantic Retrieval Engine for Narrative Moments (Improvement 1.1).
+    Semantic Retrieval Engine for Narrative Moments via Vector Embeddings & Cosine Similarity.
     Generates embeddings for extracted narrative moments, computes cosine similarity:
         sim(A, B) = (A . B) / (||A|| * ||B||)
     and retrieves top-related cross-episode moments even when screenplays use different words.
@@ -373,52 +373,69 @@ class SemanticMomentRetriever:
 
 class CrossEpisodeSynthesizerEngine:
     """
-    Phase 4 Cross-Episode Synthesizer Engine.
+    Cross-Episode Synthesizer Engine.
     Executes AST-enriched narrative memory merging, semantic retrieval, prompt construction,
     controlled LLM synthesis, mechanical verification, and diversity-aware selection.
     """
     def __init__(
         self,
-        ast_path: Path = Path("01_structured_episodes.json"),
-        extractions_path: Path = Path("02_batch_extractions.json"),
-        output_path: Path = Path("03_synthesized_candidates.json"),
-        embeddings_cache_path: Path = Path("embeddings_cache.json"),
+        ast_path: Optional[Path] = None,
+        extractions_path: Optional[Path] = None,
+        output_path: Optional[Path] = None,
+        embeddings_cache_path: Optional[Path] = None,
         model_name: str = "gemini-2.5-flash",
         api_key: Optional[str] = None
     ):
-        self.ast_path = Path(ast_path)
-        self.extractions_path = Path(extractions_path)
-        self.output_path = Path(output_path)
+        # Defensive path resolution
+        if ast_path and Path(ast_path).exists():
+            self.ast_path = Path(ast_path)
+        elif Path("ast_builder/01_structured_episodes.json").exists():
+            self.ast_path = Path("ast_builder/01_structured_episodes.json")
+        elif Path("../ast_builder/01_structured_episodes.json").exists():
+            self.ast_path = Path("../ast_builder/01_structured_episodes.json")
+        elif Path("01_structured_episodes.json").exists():
+            self.ast_path = Path("01_structured_episodes.json")
+        else:
+            self.ast_path = Path("ast_builder/01_structured_episodes.json")
+
+        if extractions_path and Path(extractions_path).exists():
+            self.extractions_path = Path(extractions_path)
+        elif Path("candidate_extractor/02_batch_extractions.json").exists():
+            self.extractions_path = Path("candidate_extractor/02_batch_extractions.json")
+        elif Path("../candidate_extractor/02_batch_extractions.json").exists():
+            self.extractions_path = Path("../candidate_extractor/02_batch_extractions.json")
+        elif Path("02_batch_extractions.json").exists():
+            self.extractions_path = Path("02_batch_extractions.json")
+        else:
+            self.extractions_path = Path("candidate_extractor/02_batch_extractions.json")
+
+        if output_path:
+            self.output_path = Path(output_path)
+        elif Path("cross_episode_synthesis").exists():
+            self.output_path = Path("cross_episode_synthesis/03_synthesized_candidates.json")
+        else:
+            self.output_path = Path("03_synthesized_candidates.json")
+
+        if embeddings_cache_path:
+            cache_file = Path(embeddings_cache_path)
+        elif Path("cross_episode_synthesis/embeddings_cache.json").exists():
+            cache_file = Path("cross_episode_synthesis/embeddings_cache.json")
+        elif Path("../cross_episode_synthesis/embeddings_cache.json").exists():
+            cache_file = Path("../cross_episode_synthesis/embeddings_cache.json")
+        elif Path("cross_episode_synthesis").exists():
+            cache_file = Path("cross_episode_synthesis/embeddings_cache.json")
+        else:
+            cache_file = Path("embeddings_cache.json")
+
         self.model_name = model_name
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY")
-
-        # Defensive path resolution: if a directory is passed, resolve to canonical json file
-        if self.ast_path.is_dir():
-            for cand in [
-                self.ast_path / "01_structured_episodes.json",
-                self.ast_path.parent / "01_structured_episodes.json",
-                Path.cwd() / "01_structured_episodes.json"
-            ]:
-                if cand.exists() and cand.is_file():
-                    self.ast_path = cand
-                    break
-
-        if self.extractions_path.is_dir():
-            for cand in [
-                self.extractions_path / "02_batch_extractions.json",
-                self.extractions_path.parent / "02_batch_extractions.json",
-                Path.cwd() / "02_batch_extractions.json"
-            ]:
-                if cand.exists() and cand.is_file():
-                    self.extractions_path = cand
-                    break
 
         if not self.ast_path.exists():
             raise FileNotFoundError(f"AST not found at {self.ast_path}. Run build_ast.ipynb first!")
         self.ast_data = json.loads(self.ast_path.read_text(encoding="utf-8"))
 
         if not self.extractions_path.exists():
-            raise FileNotFoundError(f"Extractions not found at {self.extractions_path}. Run Phase 3 first!")
+            raise FileNotFoundError(f"Extractions not found at {self.extractions_path}. Run candidate extractor first!")
         self.extractions_data = json.loads(self.extractions_path.read_text(encoding="utf-8"))
 
         # Build fast AST lookup
@@ -428,9 +445,9 @@ class CrossEpisodeSynthesizerEngine:
                 for el in sc.get("elements", []):
                     self.element_lookup[el["element_id"]] = el
 
-        # Initialize Semantic Retriever (Improvement 1.1)
+        # Initialize Semantic Retriever
         self.retriever = SemanticMomentRetriever(
-            cache_path=embeddings_cache_path,
+            cache_path=cache_file,
             api_key=self.api_key
         )
         self.retriever.compute_all_moment_embeddings(
@@ -461,7 +478,7 @@ class CrossEpisodeSynthesizerEngine:
         - Verbatim Screenplay Elements (source_elements_verbatim) attached from AST
         - The 3 Standardized Archetypes
         - Causal Relationship Types (explicit, implied, thematic)
-        - Precise Trim Recommendations (Improvement 1.4)
+        - Precise Trim Recommendations & Transitional Directives
         """
         aliases_lines = []
         for a in narrative_context.get("character_aliases", []):
@@ -564,7 +581,7 @@ Return JSON conforming exactly to the SynthesisLLMResponse schema.
         retries: int = 1
     ) -> SynthesisLLMResponse:
         """
-        Executes the synthesis LLM call with Structured Output and Controlled Retries (Improvement 1.3).
+        Executes the synthesis LLM call with Structured Output and Controlled Schema Retries.
         If validation fails, captures schema errors and retries once with a targeted correction prompt.
         """
         from google.genai import types
@@ -599,7 +616,7 @@ Return JSON conforming exactly to the SynthesisLLMResponse schema.
                 print(f"[SCHEMA ERROR] Attempt {attempt + 1} validation failed with {len(ve.errors())} errors.")
                 if attempt < retries:
                     error_summary = "\n".join([f"- Field: {'.'.join(str(l) for l in e['loc'])} | Issue: {e['msg']}" for e in ve.errors()[:5]])
-                    print("[RETRY] Retrying with concise correction prompt (Improvement 1.3)...")
+                    print("[RETRY] Retrying with targeted schema correction prompt...")
                     curr_prompt = (
                         f"{prompt}\n\n"
                         f"CRITICAL FIX REQUIRED: Your previous response failed Pydantic validation with these errors:\n"
@@ -873,7 +890,7 @@ Return JSON conforming exactly to the SynthesisLLMResponse schema.
         candidate: MultiEpisodeCandidate
     ) -> Tuple[bool, List[str]]:
         """
-        Mechanically verifies in Python (Phase 4 Invariants):
+        Mechanically verifies in Python against strict production invariants:
         1. All segment element IDs exist in AST.
         2. Timestamps are valid and monotonic (start_cs < end_cs).
         3. Segments span at least 2 distinct episodes.
@@ -924,7 +941,7 @@ Return JSON conforming exactly to the SynthesisLLMResponse schema.
         use_llm: bool = True
     ) -> Dict[str, Any]:
         """
-        Executes end-to-end Phase 4 Synthesis:
+        Executes end-to-end Cross-Episode Synthesis:
         1. Retrieves semantically related narrative moments across batches.
         2. Builds synthesis prompt with verbatim source elements.
         3. Executes LLM call (or deterministic fallback) with controlled retries.
@@ -938,7 +955,7 @@ Return JSON conforming exactly to the SynthesisLLMResponse schema.
         print(f"[START] EXECUTING PHASE 4: CROSS-EPISODE SYNTHESIS ({len(moments)} narrative moments)")
         print("=" * 75)
 
-        # 1. Semantic Retrieval (Improvement 1.1)
+        # 1. Semantic Retrieval & Vector Similarity
         semantic_pairs = []
         for m in moments:
             related = self.retriever.retrieve_top_related_moments(
@@ -1026,16 +1043,13 @@ Return JSON conforming exactly to the SynthesisLLMResponse schema.
         self.output_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"[EXPORT] Wrote synthesized candidates to {self.output_path.resolve()} ({self.output_path.stat().st_size / 1024:.1f} KB)")
 
-        # Also mirror to project root for seamless pipeline continuity
-        root_out = Path("03_synthesized_candidates.json")
-        root_out.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-        print(f"[EXPORT] Mirrored to root {root_out.resolve()}")
+
 
         return payload
 
 
 # ==============================================================================
-# 4. DIVERSITY-AWARE FINAL RANKING & GREEDY SELECTION (Improvement 1.2)
+# 4. DIVERSITY-AWARE FINAL RANKING & GREEDY SELECTION
 # ==============================================================================
 
 def diversity_aware_greedy_selection(
@@ -1046,7 +1060,7 @@ def diversity_aware_greedy_selection(
     min_quality_score: int = 14
 ) -> Dict[str, Any]:
     """
-    Diversity-Aware Selection Algorithm (Improvement 1.2).
+    Diversity-Aware Selection Algorithm to eliminate storyline concentration and balance archetypes.
     Applies greedy selection with configurable diversity constraints:
     - Avoids selecting too many clips from the same episode (max_per_episode <= 3).
     - Preserves representation of all 3 standardized promo archetypes.
@@ -1204,11 +1218,11 @@ def diversity_aware_greedy_selection(
 # ==============================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="Phase 4: Cross-Episode Synthesis Engine")
+    parser = argparse.ArgumentParser(description="Cross-Episode Synthesis Engine")
     parser.add_argument("--ast", default="01_structured_episodes.json", help="Path to canonical AST JSON")
     parser.add_argument("--extractions", default="02_batch_extractions.json", help="Path to batch extractions JSON")
-    parser.add_argument("--output", default="phase4_synthesis/03_synthesized_candidates.json", help="Path to output JSON")
-    parser.add_argument("--cache", default="phase4_synthesis/embeddings_cache.json", help="Path to embeddings cache JSON")
+    parser.add_argument("--output", default="cross_episode_synthesis/03_synthesized_candidates.json", help="Path to output JSON")
+    parser.add_argument("--cache", default="cross_episode_synthesis/embeddings_cache.json", help="Path to embeddings cache JSON")
     parser.add_argument("--model", default="gemini-2.5-flash", help="Gemini model name")
     parser.add_argument("--top-pairs", type=int, default=5, help="Number of semantic moment pairs to evaluate")
     parser.add_argument("--no-llm", action="store_true", help="Force deterministic synthesis without external LLM")

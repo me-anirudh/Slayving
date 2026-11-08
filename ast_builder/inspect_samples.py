@@ -1,17 +1,17 @@
 """
-Sample Files Inspector for Phase 1
-Inspects sample files (e.g., ep01.txt, ep25.txt, ep50.txt) to verify:
+Sample Screenplay Format Inspector & Structural Validator
+Inspects screenplay text files (e.g., ep01.txt, ep25.txt, ep50.txt) to verify:
 1. Episode headers (EPISODE NUMBER, EPISODE LOGLINE, CONTINUITY NOTES)
 2. Scene boundaries (SCENE <N>, Scene heading, Scene start, Scene end)
-3. Timestamps (MM:SS.ss format, validity, start < end)
-4. The 4 screenplay element tags (DIALOGUE, ACTION, CAMERA, SOUND FX)
+3. Timestamps (MM:SS.ss format, validity, start < end monotonicity)
+4. Screenplay element tags (DIALOGUE, ACTION, CAMERA, SOUND FX)
 """
 
 import re
 from pathlib import Path
 
 SAMPLE_FILES = ["ep01.txt", "ep25.txt", "ep50.txt"]
-INPUT_DIR = Path("input_scripts")
+INPUT_DIR = Path("input_scripts") if Path("input_scripts").exists() else Path("../input_scripts")
 
 def inspect_file(filename: str):
     file_path = INPUT_DIR / filename

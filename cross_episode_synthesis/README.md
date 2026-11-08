@@ -1,21 +1,21 @@
-# 🎬 Phase 4: Cross-Episode Synthesis Engine
+# 🎬 Cross-Episode Synthesis Engine
 
 This directory contains the production implementation of **Phase 4: Cross-Episode Synthesis** for the 50-episode microdrama series *"I Married a Broken Soldier. He was a Duke"*, enhanced with all four high-priority architectural improvements:
 
-1. **Semantic Retrieval using Embeddings & Cosine Similarity (Improvement 1.1)**
-2. **Diversity-Aware Final Ranking & Greedy Selection (Improvement 1.2)**
-3. **Structured Output Validation & Controlled Retries (Improvement 1.3)**
-4. **Precise Trim Recommendations & Transitional Editing Instructions (Improvement 1.4)**
+1. **Semantic Retrieval using Embeddings & Cosine Similarity (Vector Embeddings)**
+2. **Diversity-Aware Final Ranking & Greedy Selection (Greedy Diversity Selection)**
+3. **Structured Output Validation & Controlled Retries (Schema Retries)**
+4. **Precise Trim Recommendations & Transitional Editing Instructions (Editor Cut Directives)**
 
 ---
 
 ## 📁 Directory Structure
 
 ```text
-phase4_synthesis/
+cross_episode_synthesis/
 ├── __init__.py                                 # Package export symbols
 ├── synthesizer.py                              # Standalone Python module & CLI
-├── phase4_cross_episode_synthesis.ipynb        # Interactive Jupyter notebook with pre-executed outputs
+├── cross_episode_synthesis.ipynb        # Interactive Jupyter notebook with pre-executed outputs
 ├── embeddings_cache.json                       # Cached vector embeddings of narrative moments
 ├── 03_synthesized_candidates.json              # Canonical Phase 4 output artifact
 └── README.md                                   # Comprehensive documentation & architecture guide
@@ -84,7 +84,7 @@ Every synthesized candidate is audited against 5 non-negotiable Python invariant
 ## 🛠️ Usage Instructions
 
 ### Option A: Interactive Jupyter Notebook
-Open and run `phase4_synthesis/phase4_cross_episode_synthesis.ipynb` in VS Code or JupyterLab.
+Open and run `cross_episode_synthesis/cross_episode_synthesis.ipynb` in VS Code or JupyterLab.
 All cells are pre-executed with complete outputs, markdown diagrams, and inspection tables.
 
 ### Option B: Standalone Python CLI
@@ -92,10 +92,10 @@ Run the synthesizer engine directly:
 
 ```powershell
 # Standard run with diversity-aware final ranking
-python phase4_synthesis/synthesizer.py --diversity-rank
+python cross_episode_synthesis/synthesizer.py --diversity-rank
 
 # Custom paths or model selection
-python phase4_synthesis/synthesizer.py --ast 01_structured_episodes.json --extractions 02_batch_extractions.json --output phase4_synthesis/03_synthesized_candidates.json --diversity-rank
+python cross_episode_synthesis/synthesizer.py --ast 01_structured_episodes.json --extractions 02_batch_extractions.json --output cross_episode_synthesis/03_synthesized_candidates.json --diversity-rank
 ```
 
 ### Environment Variables

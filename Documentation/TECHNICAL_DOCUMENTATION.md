@@ -63,7 +63,7 @@ The codebase implements a strict 5-stage sequential processing engine that pairs
 | :--- | :--- | :--- |
 | **Total Episodes Processed** | 50 full episodes | [`01_structured_episodes.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/01_structured_episodes.json) |
 | **Total AST Screenplay Elements** | 3,727 atomic elements | [`01_structured_episodes.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/01_structured_episodes.json) |
-| **Element Breakdown** | 1,754 Camera, 1,487 Dialogue, 372 Action, 114 Sound FX | [`UniversalScreenplayParser`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/2_build_ast.ipynb) |
+| **Element Breakdown** | 1,754 Camera, 1,487 Dialogue, 372 Action, 114 Sound FX | [`UniversalScreenplayParser`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/ast_builder/build_ast.ipynb) |
 | **Single-Episode Candidates Extracted** | 24 candidates | [`02_batch_extractions.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/02_batch_extractions.json) |
 | **Cross-Episode Moments Cataloged** | 11 AST-enriched moments | [`02_batch_extractions.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/02_batch_extractions.json) |
 | **Synthesized Multi-Episode Candidates** | 3 multi-episode candidates | [`03_synthesized_candidates.json`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/03_synthesized_candidates.json) |
@@ -150,19 +150,19 @@ flowchart LR
 
 | Requirement ID | Description | Implementation Status | Implemented Component / Function |
 | :--- | :--- | :--- | :--- |
-| **FR-01** | Ingest and parse 50 raw text screenplay files | **Implemented** | [`UniversalScreenplayParser`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/2_build_ast.ipynb#L40) in `2_build_ast.ipynb` |
+| **FR-01** | Ingest and parse 50 raw text screenplay files | **Implemented** | [`UniversalScreenplayParser`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/ast_builder/build_ast.ipynb#L40) in `ast_builder/build_ast.ipynb` |
 | **FR-02** | Generate atomic AST with integer centiseconds | **Implemented** | `ScreenplayElement` with `start_cs`, `end_cs`, `duration_cs` |
-| **FR-03** | Batch-extract single-episode candidates via LLM | **Implemented** | [`BatchExtractorEngine`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase3_extractor.ipynb#L80) using `gemini-2.5-flash` |
+| **FR-03** | Batch-extract single-episode candidates via LLM | **Implemented** | [`BatchExtractorEngine`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/candidate_extractor/candidate_extractor.ipynb#L80) using `gemini-2.5-flash` |
 | **FR-04** | Extract cross-episode building blocks & context store | **Implemented** | `RawNarrativeMoment` & `FlatNarrativeContext` in Phase 3 |
-| **FR-05** | Semantic retrieval of cross-episode moments | **Implemented** | [`SemanticMomentRetriever`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase4_synthesis/synthesizer.py#L151) via embeddings & cosine similarity |
-| **FR-06** | Synthesize multi-episode promo arcs (2–3 segments) | **Implemented** | [`CrossEpisodeSynthesizerEngine`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase4_synthesis/synthesizer.py#L358) |
+| **FR-05** | Semantic retrieval of cross-episode moments | **Implemented** | [`SemanticMomentRetriever`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/cross_episode_synthesis/synthesizer.py#L151) via embeddings & cosine similarity |
+| **FR-06** | Synthesize multi-episode promo arcs (2–3 segments) | **Implemented** | [`CrossEpisodeSynthesizerEngine`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/cross_episode_synthesis/synthesizer.py#L358) |
 | **FR-07** | Mechanical validation of duration ($20\text{s}–60\text{s}$) & hook ($\le 3\text{s}$) | **Implemented** | [`step1_mechanical_gate`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker.py#L194) |
 | **FR-08** | Overlap-based candidate deduplication | **Implemented** | [`step2_high_overlap_deduplication`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker.py#L315) |
 | **FR-09** | Deterministic 4-criterion rubric lexicographic sorting | **Implemented** | [`step3_deterministic_rubric_sort`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker.py#L408) |
 | **FR-10** | Cold-First LLM Quality Critic review | **Implemented** | [`step4_cold_first_quality_critic`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker.py#L607) |
 | **FR-11** | Demotion and explicit unreviewed backfill tracking | **Implemented** | [`step5_demotion_and_backfill`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/validator_ranker.py#L714) |
 | **FR-12** | Actionable editor trims & boundary flags | **Implemented** | `TrimRecommendation` across Phases 3, 4, and 5 |
-| **FR-13** | Multi-episode diversity-aware selection | **Implemented** | [`diversity_aware_greedy_selection`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase4_synthesis/synthesizer.py#L1004) |
+| **FR-13** | Multi-episode diversity-aware selection | **Implemented** | [`diversity_aware_greedy_selection`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/cross_episode_synthesis/synthesizer.py#L1004) |
 
 ### 5.2 Non-Functional Requirements
 
@@ -374,7 +374,7 @@ classDiagram
 3. **`emotional_reversal_turning_point`:**
    Opens within $\le 3.00\text{s}$ on an extreme status humiliation (e.g., being abandoned at the altar), building to an unresolved power inversion or vow of vengeance.
 
-### 9.3 Structured Output Validation & Controlled Retries (Improvement 1.3)
+### 9.3 Structured Output Validation & Controlled Retries (Automated Schema Retries)
 To prevent malformed JSON, truncated tokens, or out-of-range rubric scores from crashing the pipeline, the system utilizes Pydantic v2 validation alongside Gemini's native JSON Schema mode:
 
 ```python
@@ -430,31 +430,31 @@ To defeat the **Curse of Knowledge**, the Step 4 Critic prompt inverts standard 
 
 ```
 Kuku FM/
-├── 2_build_ast.ipynb                 # Phase 1 & 2: Regex Screenplay Parser & AST Builder
-├── phase3_extractor.ipynb            # Phase 3: Partitioned Batch Extraction Engine
-├── phase4_synthesis/
+├── ast_builder/build_ast.ipynb                 # Phase 1 & 2: Regex Screenplay Parser & AST Builder
+├── candidate_extractor/candidate_extractor.ipynb            # Phase 3: Partitioned Batch Extraction Engine
+├── cross_episode_synthesis/
 │   ├── synthesizer.py                # Phase 4: Standalone Synthesis Engine & CLI
 │   ├── phase4_cross_episode_synthesis.ipynb
 │   └── embeddings_cache.json         # Dense Vector Cache
-└── phase5_validator_ranker/
+└── validator_ranker/
     ├── validator_ranker.py           # Phase 5: 5-Step Validator & Ranker Engine
-    ├── phase5_validator_ranker.ipynb
+    ├── validator_ranker.ipynb
     ├── final_promos.json             # Canonical Top 15 Deliverable
     ├── editorial_report.md           # Marketing & Editorial Report
     └── execution_trace.json          # Complete Mechanical Audit Trace
 ```
 
-#### Module 1: `UniversalScreenplayParser` ([`2_build_ast.ipynb`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/2_build_ast.ipynb#L40))
+#### Module 1: `UniversalScreenplayParser` ([`ast_builder/build_ast.ipynb`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/ast_builder/build_ast.ipynb#L40))
 - **Responsibility:** Ingests raw screenplay files and builds strongly-typed AST structures.
 - **Key Method:** `time_to_centiseconds(ts_str: str) -> int` converts `MM:SS.ss` to integer centiseconds:
   $$\text{cs} = \text{minutes} \times 6000 + \text{seconds} \times 100 + \text{centiseconds}$$
 - **Key Method:** `decompose_tag(raw_tag_str: str)` decomposes headers like `MATRIARCH (Cold, Commanding):` into `ElementType.DIALOGUE`, speaker `"MATRIARCH"`, and delivery `"Cold, Commanding"`.
 
-#### Module 2: `BatchExtractorEngine` ([`phase3_extractor.ipynb`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase3_extractor.ipynb#L80))
+#### Module 2: `BatchExtractorEngine` ([`candidate_extractor/candidate_extractor.ipynb`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/candidate_extractor/candidate_extractor.ipynb#L80))
 - **Responsibility:** Splits 50 episodes into 5 batches of 10, pre-computes element durations, formats batch transcripts, and executes structured extraction with disk-based checkpointing (`raw_llm_outputs/batch_{idx}.json`).
 - **Key Method:** `enrich_narrative_moment_with_ast(moment)` attaches verbatim screenplay lines from `01_structured_episodes.json` to narrative moments for grounding.
 
-#### Module 3: `SemanticMomentRetriever` ([`phase4_synthesis/synthesizer.py#L151`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/phase4_synthesis/synthesizer.py#L151))
+#### Module 3: `SemanticMomentRetriever` ([`cross_episode_synthesis/synthesizer.py#L151`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/cross_episode_synthesis/synthesizer.py#L151))
 - **Responsibility:** Generates and caches dense embeddings for narrative moments; calculates pairwise cosine similarity:
   $$\operatorname{sim}(A, B) = \frac{A \cdot B}{\|A\| \|B\|} = \frac{\sum_{i=1}^n A_i B_i}{\sqrt{\sum_{i=1}^n A_i^2} \sqrt{\sum_{i=1}^n B_i^2}}$$
 - **Deterministic Offline Fallback:** If `GEMINI_API_KEY` is not present, computes a 128-dimensional unit-norm term-frequency hash vector, guaranteeing deterministic execution in isolated environments.
@@ -731,16 +731,16 @@ uv pip install -e .
 
 ```powershell
 # Step A: Parse raw screenplays and build canonical AST
-jupyter nbconvert --to notebook --execute 2_build_ast.ipynb
+jupyter nbconvert --to notebook --execute ast_builder/build_ast.ipynb
 
 # Step B: Execute Phase 3 Batch Extraction across all 50 episodes
-jupyter nbconvert --to notebook --execute phase3_extractor.ipynb
+jupyter nbconvert --to notebook --execute candidate_extractor/candidate_extractor.ipynb
 
 # Step C: Execute Phase 4 Cross-Episode Synthesis Engine
-python phase4_synthesis/synthesizer.py --diversity-rank
+python cross_episode_synthesis/synthesizer.py --diversity-rank
 
 # Step D: Execute Phase 5 Validator, Ranker & Quality Critic Engine
-python phase5_validator_ranker/validator_ranker.py
+python validator_ranker/validator_ranker.py
 
 # Verify deliverables
 dir final_promos.json, editorial_report.md, execution_trace.json
@@ -761,15 +761,15 @@ The **Kuku Promo Finder** demonstrates a disciplined, production-grade approach 
 c:\Users\Anirudh Singh\OneDrive\Documents\Kuku FM\
 ├── input_scripts/                      # 50 Raw Screenplays (ep01.txt .. ep50.txt)
 ├── raw_llm_outputs/                    # Disk Checkpoints (batch_1.json .. batch_5.json, critic review)
-├── phase4_synthesis/                   # Phase 4 Engine Package
+├── cross_episode_synthesis/                   # Phase 4 Engine Package
 │   ├── synthesizer.py                  # Standalone CLI & Synthesis Logic
 │   ├── phase4_cross_episode_synthesis.ipynb
 │   ├── embeddings_cache.json           # Cached text-embedding-004 vectors
 │   ├── 03_synthesized_candidates.json  # Phase 4 Artifact
 │   └── README.md
-├── phase5_validator_ranker/            # Phase 5 Engine Package
+├── validator_ranker/            # Phase 5 Engine Package
 │   ├── validator_ranker.py             # 5-Step Sequential Pipeline & CLI
-│   ├── phase5_validator_ranker.ipynb
+│   ├── validator_ranker.ipynb
 │   ├── final_promos.json               # Canonical Deliverable (Page 14 schema)
 │   ├── editorial_report.md             # Marketing & Editorial Analysis
 │   ├── execution_trace.json            # Mechanical Audit Trace
@@ -817,7 +817,7 @@ GEMINI_API_KEY="AIzaSy..."  # Required for live Gemini calls; fallback enabled i
 ```
 
 ### Appendix D: Representative Production Prompts
-*(Extracted verbatim from `phase3_extractor.ipynb` and `validator_ranker.py`)*
+*(Extracted verbatim from `candidate_extractor/candidate_extractor.ipynb` and `validator_ranker.py`)*
 
 #### D.1 Extraction System Prompt
 ```text
