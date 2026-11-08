@@ -1,0 +1,17 @@
+# Confidential Screenplay Corpus and Inputs
+input_scripts/
+*.txt
+
+# Raw LLM Outputs and Intermediate Checkpoints
+raw_llm_outputs/
+
+# Environment Variables and Secrets
+.env
+*.env
+*.key
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
