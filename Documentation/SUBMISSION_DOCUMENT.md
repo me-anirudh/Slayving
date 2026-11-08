@@ -24,7 +24,7 @@ I designed and implemented the **Kuku Promo Finder**, a production-grade modular
 #### Key System Deliverables:
 - **`01_structured_episodes.json`:** 3,727 atomic screenplay elements across 50 episodes with integer centisecond timestamps ($1\text{s} = 100\text{cs}$) and tag decomposition (Camera, Action, Dialogue, Sound FX).
 - **`02_batch_extractions.json`:** 24 single-episode candidate clips, 11 AST-enriched cross-episode narrative moments, and a flat narrative context store (character aliases, key clues, relationships).
-- **`03_synthesized_candidates.json`:** Multi-episode promo arcs stitched across disparate episodes using dense embeddings (`text-embedding-004`) and cosine similarity.
+- **`03_synthesized_candidates.json`:** Multi-episode promo arcs stitched across disparate episodes using the **3-Check Narrative Compatibility Architecture** (Embedding Similarity + Character/Entity Compatibility + LLM Narrative Progression Check).
 - **`final_promos.json`:** Top 15 ranked promotional blueprints strictly conforming to Kuku's concrete output schema, detailing exact start/end elements, verbatim opening and cliffhanger spoken lines, rubric scores, editorial rationales, and critic verdicts.
 - **`editorial_report.md` & `execution_trace.json`:** Executive marketing analysis and an exhaustive mechanical audit trace tracking every dropped duplicate and rejection.
 
@@ -95,6 +95,7 @@ Across all 50 episodes of *"I Married a Broken Soldier. He was a Duke"*:
 1. **Text-Only Modality:** The tool evaluates written screenplays. Directorial pacing, awkward actor delivery, or poor physical blocking in the actual filmed video cannot be detected from text alone. Human editor review remains necessary.
 2. **Premature Cliffhanger Cuts:** In dense dialogues, an element boundary may cut 1–2 seconds *after* an ultimatum is answered. The system mitigates this by generating `TrimRecommendation.verbatim_trim_quote` to instruct editors where to make internal cuts.
 3. **Inter-Batch Plot Separation:** Fixed 10-episode batching could miss an arc connecting Episode 10 to Episode 11 if not captured in the extracted narrative moments.
+4. **Context Window & Relational Representation (Embedding Sim vs. Graph Database):** Due to project time constraints, cross-episode context and character relationship dynamics were modeled using dense vector embeddings (`text-embedding-004`) and cosine similarity paired with a lightweight 3-check compatibility gate, rather than an explicit Graph Database (e.g., Neo4j / Knowledge Graph). While embeddings provide fast (<25ms), schema-free thematic matching, they fail at multi-hop relational reasoning ($A \to B \to C$) and cannot query dynamic temporal relationship states (e.g., tracking an active betrayal vs. an already-resolved retribution across 40 episodes).
 
 ---
 

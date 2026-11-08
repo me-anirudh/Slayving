@@ -1,11 +1,54 @@
 # 🎬 Cross-Episode Synthesis Engine
 
-This directory contains the production implementation of **Phase 4: Cross-Episode Synthesis** for the 50-episode microdrama series *"I Married a Broken Soldier. He was a Duke"*, enhanced with all four high-priority architectural improvements:
+This directory contains the production implementation of the **Cross-Episode Synthesis Engine** for the 50-episode microdrama series *"I Married a Broken Soldier. He was a Duke"*.
 
-1. **Semantic Retrieval using Embeddings & Cosine Similarity (Vector Embeddings)**
-2. **Diversity-Aware Final Ranking & Greedy Selection (Greedy Diversity Selection)**
-3. **Structured Output Validation & Controlled Retries (Schema Retries)**
-4. **Precise Trim Recommendations & Transitional Editing Instructions (Editor Cut Directives)**
+---
+
+## 🚀 Architectural Upgrade: 3-Check Narrative Compatibility Pipeline
+
+### The Fundamental Problem
+A naive approach relies exclusively on dense vector embeddings (`text-embedding-004`) and cosine similarity. While effective at finding thematic resonance, **semantic similarity does not necessarily mean narrative continuity**:
+
+* *Episode 1:* A woman is publicly humiliated at the altar.
+* *Episode 20:* A woman is threatened in a dark corridor.
+* *Episode 42:* The protagonist reveals her royal identity in ducal armor.
+
+Moments 1 and 2 often score high cosine similarity ($\operatorname{sim} \ge 0.85$) because both depict high-intensity female subjugation and betrayal vocabulary. However, **they involve disjoint characters and have zero narrative continuity**, making them ineffective when stitched into a promotional trailer.
+
+### The 3-Check Solution
+To solve this, we introduce a **three-tiered lightweight narrative compatibility pipeline**:
+
+```text
+Cross-Episode Candidate Retrieval
+│
+├── [Check 1: Semantic Similarity Retrieval]
+│   └── Are the moments contextually related? (Cosine similarity >= 0.75 via text-embedding-004)
+│
+├── [Check 2: Character & Entity Compatibility Gate]
+│   └── Do they involve the same relevant characters, objects, or relationships?
+│       - Resolves character aliases (e.g., "The Broken Soldier" -> "Alexander", "Lady Juliana" -> "Juliana")
+│       - Checks pivotal props & clues (Signet Ring, Bridal Gown, Herbal Grimoire)
+│       - Audits active relationship graph (Spouses, Betrayal, Adversaries)
+│       - Drops disjoint storyline beats
+│
+└── [Check 3: LLM Narrative Progression Check]
+    └── Does the second moment meaningfully escalate, resolve, or invert the first?
+        - Evaluates progression dynamics:
+          * power_inversion: e.g., altar humiliation -> ducal vindication
+          * revelation_or_twist: e.g., secret clue recognized -> identity unmasked
+          * setup_to_payoff: e.g., marriage vow -> battle alliance
+          * escalation_of_stakes: e.g., whipping subjugation -> overt defiance
+          * none: parallel or redundant threats without story movement (REJECTED)
+        - Structured Pydantic validation via Gemini 2.5 Flash (with deterministic fallback)
+│
+└── 🎯 Eligible Cross-Episode Combinations (High-converting promo trailer blueprints)
+```
+
+| Check | Target Question | Technical Mechanism | Rejection Criteria |
+|---|---|---|---|
+| **1. Semantic Similarity** | Are the moments contextually related? | Dense vector cosine similarity ($\ge 0.75$) with minimum 2-episode gap | Cosine score $< 0.75$ or within same episode window |
+| **2. Entity Compatibility** | Do they share characters, props, or relationships? | Canonical alias normalization, key prop tracking, relationship graph audit | Disjoint characters and no shared narrative clues |
+| **3. Narrative Progression** | Does Moment 2 escalate, resolve, or invert Moment 1? | Structured LLM critic + deterministic archetype transition engine | `progression_type == "none"` (redundant or non-progressing) |
 
 ---
 
@@ -15,58 +58,11 @@ This directory contains the production implementation of **Phase 4: Cross-Episod
 cross_episode_synthesis/
 ├── __init__.py                                 # Package export symbols
 ├── synthesizer.py                              # Standalone Python module & CLI
-├── cross_episode_synthesis.ipynb        # Interactive Jupyter notebook with pre-executed outputs
-├── embeddings_cache.json                       # Cached vector embeddings of narrative moments
-├── 03_synthesized_candidates.json              # Canonical Phase 4 output artifact
+├── cross_episode_synthesis.ipynb               # Interactive Jupyter notebook
+├── embeddings_cache.json                       # Cached vector embeddings (text-embedding-004)
+├── 03_synthesized_candidates.json              # Canonical output with 3-check audit trace
 └── README.md                                   # Comprehensive documentation & architecture guide
 ```
-
----
-
-## 🚀 Key Improvements Implemented
-
-### 1.1 Semantic Retrieval Using Embeddings (High Priority)
-* **Problem:** Simple case-insensitive keyword/alias matching fails when screenplay events describe the same story beat using different vocabulary (e.g., *"soldier examines royal signet"* in Ep 7 vs. *"ancestral seal is presented before court"* in Ep 42).
-* **Implementation:**
-  - Extracts rich semantic text representation for each narrative moment (summary + moment type + keywords + AST verbatim lines).
-  - Generates dense vector embeddings using Google GenAI `text-embedding-004` (with deterministic unit-norm vector fallback for offline execution).
-  - Caches embeddings in `embeddings_cache.json` on disk to avoid redundant API consumption.
-  - Computes pairwise cosine similarity:
-    $$\operatorname{sim}(A, B) = \frac{A \cdot B}{\|A\| \|B\|} = \frac{\sum_{i=1}^n A_i B_i}{\sqrt{\sum_{i=1}^n A_i^2} \sqrt{\sum_{i=1}^n B_i^2}}$$
-  - Retrieves the top 3–5 semantically related cross-episode moments and attaches verbatim source screenplay elements directly from `01_structured_episodes.json` before passing them to the LLM.
-
-### 1.2 Diversity-Aware Final Ranking (High Priority)
-* **Problem:** Ranking solely by raw sum of rubric scores leads to heavy storyline clustering (e.g., 10 recommendations all coming from Episode 42).
-* **Implementation:**
-  - Implements a **Greedy Diversity Selection Algorithm**:
-    - **Episode Concentration:** Maximum 3 recommendations per episode (for multi-episode promos, each constituent episode count increments).
-    - **Archetype Diversity:** Guaranteed representation across all 3 standardized promo archetypes (`immediate_shock_opener`, `visual_anomaly_mystery_escalation`, `emotional_reversal_turning_point`).
-    - **Composition Diversity:** Ensures a balanced mix of single-episode and cross-episode promos.
-    - **Quality First:** Never selects a low-quality clip (overall score $< 14$) merely to fill a diversity quota.
-  - Logs every selection decision and skip reason in a transparent audit log.
-
-### 1.3 LLM Output Reliability & Controlled Retries (High Priority)
-* **Problem:** LLM responses can contain invalid JSON, missing mandatory fields, incorrect element IDs, or scores out of range.
-* **Implementation:**
-  - Enforces strict Pydantic v2 schemas with constrained types (`Literal`, `Field(ge=1, le=5)`).
-  - Uses Gemini provider-supported structured output (`response_schema=SynthesisLLMResponse`, `response_mime_type="application/json"`).
-  - Implements a **Controlled Retry Harness**:
-    1. Captures raw response text.
-    2. Intercepts schema `ValidationError`.
-    3. Builds a concise, targeted correction prompt pointing out the exact field errors.
-    4. Retries once with the correction prompt.
-    5. Gracefully logs and falls back to deterministic AST-grounded synthesis if retries fail.
-
-### 1.4 Precise Trim Recommendations & Editing Instructions (High Priority)
-* **Problem:** Dialogue elements often contain trailing lines or dead air, but character-count interpolation without audio waveforms is ungrounded.
-* **Implementation:**
-  - Every candidate and constituent segment includes structured `TrimRecommendation`:
-    - `exact_opening_dialogue`: Verbatim spoken line (or initial visual description) that begins the clip.
-    - `exact_ending_dialogue`: Verbatim spoken line that ends the clip right before the cliffhanger cut.
-    - `verbatim_trim_quote`: Exact internal phrase/sentence for sentence-level internal cuts.
-    - `boundary_type`: `"element_boundary"` vs `"internal_cut"`.
-    - `requires_manual_editor_verification`: Flag indicating whether the cut requires audio waveform check.
-    - `transition_instructions`: Step-by-step editing directives between constituent segments (e.g., sound effects, match cuts, pacing).
 
 ---
 
@@ -83,20 +79,11 @@ Every synthesized candidate is audited against 5 non-negotiable Python invariant
 
 ## 🛠️ Usage Instructions
 
-### Option A: Interactive Jupyter Notebook
-Open and run `cross_episode_synthesis/cross_episode_synthesis.ipynb` in VS Code or JupyterLab.
-All cells are pre-executed with complete outputs, markdown diagrams, and inspection tables.
-
-### Option B: Standalone Python CLI
-Run the synthesizer engine directly:
-
+### Run Synthesis with Diversity Ranking
 ```powershell
-# Standard run with diversity-aware final ranking
-python cross_episode_synthesis/synthesizer.py --diversity-rank
+# Execute 3-check cross-episode synthesis with diversity-aware selection
+.venv\Scripts\python.exe cross_episode_synthesis/synthesizer.py --diversity-rank
 
-# Custom paths or model selection
-python cross_episode_synthesis/synthesizer.py --ast 01_structured_episodes.json --extractions 02_batch_extractions.json --output cross_episode_synthesis/03_synthesized_candidates.json --diversity-rank
+# Offline / Deterministic mode
+.venv\Scripts\python.exe cross_episode_synthesis/synthesizer.py --no-llm --diversity-rank
 ```
-
-### Environment Variables
-- `GEMINI_API_KEY`: *(Optional)* If set, calls Gemini 2.5 Flash for live cross-episode synthesis and text embeddings. If unset, automatically executes the deterministic AST-grounded semantic synthesis engine with 100% mechanical validity.

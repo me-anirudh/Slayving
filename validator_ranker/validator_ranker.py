@@ -262,7 +262,8 @@ class ValidatorRankerEngine:
             raw_pool.append(item)
 
         # Ingest multi-episode candidates
-        for c in self.synthesized_data.get("synthesized_candidates", []):
+        multi_list = self.synthesized_data.get("candidates") or self.synthesized_data.get("synthesized_candidates") or []
+        for c in multi_list:
             item = dict(c)
             item["composition_mode"] = "multi_episode"
             item["episode_num"] = [seg["episode_num"] for seg in c.get("segments", [])]

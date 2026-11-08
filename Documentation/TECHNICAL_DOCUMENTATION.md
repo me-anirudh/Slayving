@@ -132,7 +132,7 @@ flowchart LR
 - **100% Parsing Coverage:** Deterministically parse 50 unstructured screenplay text files into 3,727 atomic elements with integer centisecond timing.
 - **Strict Duration Enforcement:** Zero tolerance for duration drift. Any clip $<20.00\text{s}$ or $>60.00\text{s}$ is mechanically rejected.
 - **Strict Hook Timing Verification:** Enforce an explicit `hook_timestamp_offset_seconds` field ($\le 3.00\text{s}$) verified against the AST start.
-- **Cross-Episode Synthesis:** Combine early-season setup beats with late-season climaxes using semantic vector embeddings and cosine similarity.
+- **3-Check Narrative Compatibility Cross-Episode Synthesis:** Overcomes the fundamental failure mode where semantic similarity does not imply narrative continuity (e.g., matching unrelated humiliation scenes). Evaluates cross-episode candidate pairs through a 3-tier gating architecture: (1) Embedding Cosine Similarity, (2) Character/Entity Compatibility, and (3) LLM Narrative Progression Verification.
 - **Automated High-Overlap Deduplication:** Drop lower-scoring duplicate scenes based on exact mathematical containment ($\ge 85\%$) or shared climax ($\ge 60\%$).
 - **Cold-First Critic Pass:** Audit candidates through a simulated first-time mobile viewer prompt to eliminate curse-of-knowledge bias.
 - **Editor-Ready Trims:** Deliver verbatim opening and closing dialogue quotes with boundary flags to guide human video editors without ungrounded character-interpolation timing.
@@ -221,12 +221,14 @@ flowchart TD
         D --> E --> F --> G
     end
 
-    subgraph Phase4 ["4. Cross-Episode Synthesis Engine (Phase 4)"]
-        H["SemanticMomentRetriever<br>text-embedding-004 + Cosine Sim"]
-        I["CrossEpisodeSynthesizerEngine<br>Controlled Retry Harness"]
-        J[("03_synthesized_candidates.json<br>3 Multi-Episode Promos")]
-        G --> H --> I --> J
-        D -.-> I
+    subgraph CrossEpisodeSynthesis ["4. 3-Check Cross-Episode Synthesis Engine"]
+        H["1. Semantic Similarity Retrieval<br>text-embedding-004 + Cosine >= 0.75"]
+        I_check["2. Entity Compatibility Gate<br>Canonical Aliases & Shared Props"]
+        J_check["3. LLM Narrative Progression<br>Escalation, Inversion, or Payoff"]
+        K_synth["CrossEpisodeSynthesizerEngine<br>Controlled Retry Harness"]
+        L_synth[("03_synthesized_candidates.json<br>Eligible Multi-Episode Promos")]
+        G --> H --> I_check --> J_check --> K_synth --> L_synth
+        D -.-> K_synth
     end
 
     subgraph Phase5 ["5. 5-Step Validator & Ranker Engine (Phase 5)"]
@@ -235,7 +237,7 @@ flowchart TD
         M["Step 3: Deterministic Rubric Sort<br>Lexicographic Tuple Key"]
         N["Step 4: Cold-First Quality Critic<br>Gemini 2.5 Flash (20-Candidate Buffer)"]
         O["Step 5: Demotion & Explicit Backfill<br>Final Top 15 Selection"]
-        G & J --> K --> L --> M --> N --> O
+        G & L_synth --> K --> L --> M --> N --> O
         D -.-> K
     end
 
@@ -412,6 +414,61 @@ except ValidationError as e:
 To defeat the **Curse of Knowledge**, the Step 4 Critic prompt inverts standard context ordering:
 1. **Section A (Isolated Clip Transcript):** The verbatim dialogue and action lines of the candidate clip are presented *first*. The critic is instructed to evaluate whether the clip makes sense to a cold mobile user with zero prior context.
 2. **Section B (Surrounding Screenplay Context):** The episode logline and $\pm 3$ preceding and following screenplay elements are presented *second*. This allows the critic to detect whether the clip gives away major plot twists prematurely (spoilers) or violates narrative continuity.
+
+### 9.5 Three-Tiered Narrative Compatibility Architecture for Cross-Episode Synthesis
+A fundamental limitation of relying solely on vector embedding cosine similarity is that **semantic similarity does not imply narrative continuity**. For instance, an early-season scene of a woman being publicly humiliated (Episode 1) and a mid-season scene of a woman being publicly threatened (Episode 20) may register high cosine similarity (>0.85) due to overlapping vocabulary (betrayal, anger, social conflict), but they represent disjoint events that produce a jarring, incoherent promotional cut.
+
+To solve this, the pipeline introduces a **3-tier lightweight narrative compatibility check** before cross-episode candidate generation:
+
+```mermaid
+flowchart TD
+    A["Extracted Narrative Moments (N=84)<br>candidate_extractor/02_batch_extractions.json"] --> B["Check 1: Semantic Similarity Retrieval<br>text-embedding-004 dense vectors | Cosine >= 0.75"]
+    B --> C["Check 2: Character & Entity Compatibility Gate<br>Shared canonical aliases, key props/clues, or active relationships"]
+    C --> D["Check 3: LLM Narrative Progression Verification<br>Structured evaluation: escalation, inversion, payoff, or none"]
+    D --> E["Eligible Combinations Pool<br>3_check_compatibility audit passed"]
+    E --> F["Cross-Episode Synthesizer Engine<br>Controlled retry harness + transition direction"]
+    F --> G[("03_synthesized_candidates.json<br>Multi-Episode Promo Blueprints")]
+```
+
+#### Detailed Breakdown of the Three Checks
+
+| Gate | Check Name | Target Question | Technical Mechanism & Threshold |
+| :--- | :--- | :--- | :--- |
+| **Check 1** | **Semantic Similarity** | *Are the moments contextually and thematically related?* | `text-embedding-004` (768-dim) dense vector embeddings with pairwise cosine similarity $\ge 0.75$. Drops completely unrelated plot threads. |
+| **Check 2** | **Entity Compatibility** | *Do they involve the same relevant characters, objects, or relationships?* | Canonical alias dictionary matching (`{"Alexander", "The Duke", "Broken Soldier"}`), key props/clues (`ducal signet ring`, `will`), or active relationship graph edges (`Juliana <-> Alexander`). Disjoint pairs are rejected. |
+| **Check 3** | **Narrative Progression** | *Does the second moment meaningfully escalate, resolve, or invert the first?* | Evaluates dramatic dynamic: `power_inversion` (humiliation $	o$ ducal triumph), `revelation_or_twist` (secret $	o$ unmasking), `setup_to_payoff` (vow $	o$ execution), `escalation_of_stakes` (threat $	o$ confrontation). Static or repetitive pairings (`none`) are dropped. |
+
+#### Pydantic Data Contract (`cross_episode_synthesis/synthesizer.py`)
+```python
+class EntityCompatibilityResult(BaseModel):
+    is_compatible: bool
+    shared_characters: List[str]
+    shared_props_or_clues: List[str]
+    relationship_match: bool
+    rationale: str
+
+class ProgressionVerdict(BaseModel):
+    has_meaningful_progression: bool
+    progression_type: Literal[
+        "power_inversion",
+        "revelation_or_twist",
+        "setup_to_payoff",
+        "escalation_of_stakes",
+        "none"
+    ]
+    continuity_rationale: str
+
+class EligibleCombination(BaseModel):
+    pair_id: str
+    episode_a: int
+    moment_id_a: str
+    episode_b: int
+    moment_id_b: str
+    semantic_similarity: float
+    entity_compatibility: EntityCompatibilityResult
+    narrative_progression: ProgressionVerdict
+    retrieval_method: str = "3_check_compatibility"
+```
 
 ---
 
@@ -656,6 +713,44 @@ Through rigorous pipeline stress testing, five realistic failure modes were iden
 | **API Rate Limits / Outages** | Medium | 429 Too Many Requests or network disconnects during batch runs | **Handled** | Per-batch disk checkpointing (`raw_llm_outputs/batch_*.json`) ensures completed batches are never re-queried. |
 | **Token Limit Exhaustion** | Medium | Batch transcript exceeds context window | **Handled** | Sub-batch halving algorithm splits 10-episode batches into 5-episode slices (`batch_1a`, `batch_1b`) upon failure. |
 | **Credential Exposure** | High | Accidental commit of `GEMINI_API_KEY` to public repositories | **Handled** | Keys loaded via `models.env` and `.env`; `.gitignore` explicitly bars all `.env` files from version control. |
+| **Relational Blindness & Context Splintering (Vector vs Graph DB)** | High | Static vector cosine similarity cannot natively capture dynamic multi-hop character relationships, temporal status inversions, or transitive plot dependencies across 50 episodes | **Partially Handled / Accepted Engineering Vulnerability** | Mitigated via 3-Check Narrative Compatibility (Gate 2 canonical aliases + Gate 3 progression check). Graph Database (Neo4j/NetworkX) was deferred due to tight delivery constraints. |
+
+
+### 15.2 Architectural Vulnerability: Context Window Splintering & Relationship Analysis (Graph Database vs. Embedding Cosine Similarity)
+
+#### The Vulnerability & Context Modeling Dilemma
+In microdrama series like *"I Married a Broken Soldier. He was a Duke"*, character relationships are volatile, multi-layered, and undergo complete dynamic inversions across 50 episodes:
+- **Episode 1:** Lord Gerald is Juliana’s arrogant fiancé; Alexander is introduced as an anonymous, crippled beggar soldier.
+- **Episode 10:** Gerald is Juliana’s active public persecutor; Alexander is her nominal husband under pervasive social scorn.
+- **Episode 42:** Alexander is revealed as the supreme Duke of Ashburn; Gerald is a disgraced, ruined debtor stripped of noble rank.
+
+The **context window** of individual promo candidates cannot hold the entire 50-episode narrative state simultaneously. Ideally, tracking narrative continuity and complex relationship evolutions is best solved using a **Graph Database / Knowledge Graph** (e.g., Neo4j, Memgraph, or NetworkX) where characters, props, secrets, and locations are modeled as **Nodes** and their evolving interactions are modeled as **Typed, Time-Bound Directed Edges**:
+$$\text{Node}(\text{Juliana}) \xrightarrow[\text{weight}=-0.9, \;\text{ep}=1]{\text{BETRAYED\_BY}} \text{Node}(\text{Gerald})$$
+$$\text{Node}(\text{Juliana}) \xrightarrow[\text{weight}=1.0, \;\text{ep}=42]{\text{VINDICATED\_BY}} \text{Node}(\text{Alexander})$$
+
+Such a graph database architecture enables:
+1. **Multi-Hop Relational Traversal:** Tracing indirect causal chains ($A$ forges will $\to$ $B$ extorts $C \to$ $C$ hires assassin to silence $A$).
+2. **Temporal Relationship State Queries:** Querying the exact active power dynamic at any given episode index (e.g., `MATCH (c:Character)-[r:POWER_DYNAMIC {status: 'active'}]->(t:Character) WHERE r.episode <= 24`).
+3. **Graph-Ground Context Ingestion:** Injecting precise subgraph neighborhoods directly into the LLM context window to ground cross-episode promo candidates in verified relationship history.
+
+#### The Engineering Trade-off: Why We Used Embeddings + Cosine Similarity
+Due to strict delivery time constraints and the imperative for a lean, dependency-light microservice, implementing an end-to-end graph database pipeline (extracting graph triplets via LLM, maintaining graph schemas, running a local or cloud graph DBMS, and writing Cypher queries) was intentionally bypassed. Instead, we adopted the simpler, highly efficient alternative:
+- Generating dense 768-dimensional vector embeddings (`text-embedding-004`) for extracted narrative moments.
+- Calculating pairwise geometric proximity using cosine similarity:
+  $$\operatorname{sim}(A, B) = \frac{A \cdot B}{\|A\| \|B\|} = \frac{\sum_{i=1}^n A_i B_i}{\sqrt{\sum_{i=1}^n A_i^2} \sqrt{\sum_{i=1}^n B_i^2}}$$
+- Layering lightweight dictionary entity extraction and LLM progression checks (the 3-Check Narrative Compatibility architecture).
+
+#### Why Embedding + Cosine Similarity is a Strong Engineering Approach
+1. **Low Latency & High Computational Efficiency:** Pairwise cosine similarities across 84 moments ($O(N^2) \approx 3,486$ operations) compute in under 25 milliseconds using NumPy, requiring zero external database connections or graph query overhead.
+2. **Semantic & Tonal Resonance:** Vector embeddings capture thematic mood, emotional tension, vocabulary overlap, and dramatic genre tropes without requiring manual ontology curation or hardcoded graph edge schemas.
+3. **Cacheability & Portability:** The embeddings cache (`embeddings_cache.json`) serializes cleanly to disk, enabling instant sub-millisecond retrieval and offline evaluation without persistent DBMS infrastructure.
+
+#### Why and Where the Embedding + Cosine Approach Fails (The Vulnerability)
+Despite its practical strengths, relying on vector cosine similarity introduces several critical vulnerabilities:
+1. **Semantic Similarity $\neq$ Narrative Continuity:** Two scenes describing public humiliation or verbal threats share nearly identical semantic vectors (high cosine similarity $\ge 0.85$) despite belonging to completely disjoint plotlines involving different antagonist factions.
+2. **Blindness to Temporal Status Inversion:** In a vector space, `Alexander the crippled beggar` and `Alexander the Duke of Ashburn` map to similar semantic clusters (royalty, military, identity). The cosine similarity score alone cannot determine whether Episode 42 *resolves* Episode 1 or merely repeats it.
+3. **Loss of Multi-Hop Transitivity:** Vector similarity cannot resolve transitive relationships ($A \to B \to C$). If Moment 1 involves the ducal ring and Moment 3 involves the cathedral arrest, an embedding cannot determine that the arrest was triggered by the ring unless both explicitly share token distributions.
+4. **Context Window Dilution:** Compressing complex, multi-scene narrative context into a fixed-length 768-dimensional float array causes loss of fine-grained relationship subtleties (e.g., whether a threat was made in secret or in public).
 
 ---
 
@@ -685,6 +780,8 @@ To scale this architecture across Kuku's global production pipeline:
 1. **Text-Only Modality:** The pipeline analyzes screenplay scripts. It does not ingest rendered MP4 video or WAV audio. Pacing issues resulting from slow actor delivery or awkward directorial pauses require human editor verification.
 2. **Fixed 10-Episode Batch Slices:** Fixed batch boundaries can occasionally separate an episode setup from a resolution that occurs 11 episodes later if not captured in the 11 cross-episode narrative moments.
 3. **Subjective Rubric Calibration:** Rubric scores (1–5) are assigned by Gemini 2.5 Flash based on prompt instructions. While lexicographic sorting stabilizes the ranking, fine-grained differentiation between a 19/20 and 20/20 candidate reflects LLM perception.
+4. **Context Window & Relational Representation (Vector Embeddings vs. Graph Database):**
+   Due to time constraints, cross-episode context and character relationships are evaluated via dense vector embeddings (`text-embedding-004`) and pairwise cosine similarity rather than a persistent Graph Database (e.g., Neo4j / Knowledge Graph). While vector embeddings excel at capturing tonal, stylistic, and semantic similarity in under 25ms, they lack multi-hop relational transitivity and cannot query temporal relationship states (e.g., tracking how a dynamic inverts from betrayal to vindication across 40 episodes). Although mitigated by our 3-Check Compatibility gating (canonical aliases + LLM progression checks), deeply nested multi-character subplots remain an accepted vulnerability of the embedding-based approach.
 
 ---
 
