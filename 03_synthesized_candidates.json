@@ -1,0 +1,1517 @@
+{
+  "series_title": "I Married a Broken Soldier. He was a Duke",
+  "total_synthesized_candidates": 3,
+  "synthesis_notes": "Synthesized 3 distinct multi-episode candidates connecting baseline humiliation, visual prop identity, and violent confrontation across 50 episodes with rigorous dialogue continuity.",
+  "synthesized_candidates": [
+    {
+      "candidate_id": "SYNTH_MULTI_01",
+      "composition_mode": "multi_episode",
+      "archetype": "emotional_reversal_turning_point",
+      "relationship_type": "thematic",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "start_element_id": "EP01_EL010",
+          "end_element_id": "EP01_EL019",
+          "start_raw": "00:14.30",
+          "end_raw": "00:29.80",
+          "duration_seconds": 15.5,
+          "duration_cs": 1550,
+          "purpose_in_promo": "Hook / Initial Humiliation at Altar",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "I cannot wed a woman whose family name is ruined.",
+            "exact_ending_dialogue": "Gerald drops Juliana's hand at the altar steps as the congregation gasps.",
+            "verbatim_trim_quote": "I cannot wed a woman whose family name is ruined.",
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 42,
+          "start_element_id": "EP42_EL001",
+          "end_element_id": "EP42_EL014",
+          "start_raw": "00:00.00",
+          "end_raw": "00:25.20",
+          "duration_seconds": 25.2,
+          "duration_cs": 2520,
+          "purpose_in_promo": "Climax / Payoff & Full Ducal Vindication",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Alexander strides deliberately through the pulverized cathedral doors in full ducal armor.",
+            "exact_ending_dialogue": "I am Alexander, Duke of Ashburn, and you are sitting in my chair.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Cut directly on Gerald dropping Juliana's hand at 00:31.00.",
+        "Layer an ominous bass drop SFX transitioning into explosive artillery thunder.",
+        "Hard cut to smoke clearing in Ep 42 as Alexander steps through the shattered cathedral doors."
+      ],
+      "hook_timestamp_offset_seconds": 1.2,
+      "hook_description": "Gerald's cruel rejection at the altar shocks the scrolling viewer within 1.2s.",
+      "cliffhanger_description": "Alexander declares his ducal title before the terrified usurpers as guards draw steel.",
+      "standalone_coherence_explanation": "Direct contrast between the abandoned bride in Ep 1 and the triumphant return of her husband in Ep 42.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 40.7,
+      "total_duration_cs": 4070,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.8842
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_02",
+      "composition_mode": "multi_episode",
+      "archetype": "visual_anomaly_mystery_escalation",
+      "relationship_type": "implied",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 4,
+          "start_element_id": "EP04_EL001",
+          "end_element_id": "EP04_EL008",
+          "start_raw": "00:00.00",
+          "end_raw": "00:10.50",
+          "duration_seconds": 10.5,
+          "duration_cs": 1050,
+          "purpose_in_promo": "Mystery Hook / The Scarred Hand Presents the Silver Ring",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Close-up of the Mysterious Bearded Man's scarred hand holding out the silver band.",
+            "exact_ending_dialogue": "Take my name, and you will never kneel to anyone again.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 42,
+          "start_element_id": "EP42_EL001",
+          "end_element_id": "EP42_EL010",
+          "start_raw": "00:00.00",
+          "end_raw": "00:21.20",
+          "duration_seconds": 21.2,
+          "duration_cs": 2120,
+          "purpose_in_promo": "Mystery Payoff / Seal Revealed on Ducal Sword",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Low-angle shot through drifting smoke and rubble across the cathedral aisle.",
+            "exact_ending_dialogue": "He holds up the matching ancestral signet ring before the trembling court.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Match cut: Extreme close-up of the silver ring in the scarred soldier's hand in Ep 4.",
+        "Visual whip-pan with a sharp metallic unsheathing sound effect.",
+        "Match cut to the same silver ring glistening on the hilt of the ducal sword in Ep 42."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Close-up on the scarred hand offering the royal signet ring establishes intrigue in 0.5s.",
+      "cliffhanger_description": "The royal court gasps as the soldier's true identity is locked in place by the ring.",
+      "standalone_coherence_explanation": "Visual match between the mysterious proposal and the royal revelation makes the mystery self-explanatory.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 31.7,
+      "total_duration_cs": 3170,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.9125
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 7,
+          "start_element_id": "EP07_EL034",
+          "end_element_id": "EP07_EL040",
+          "start_raw": "01:09.50",
+          "end_raw": "01:21.00",
+          "duration_seconds": 11.5,
+          "duration_cs": 1150,
+          "purpose_in_promo": "Visceral Threat / Husband Intimidates Bully",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Where is that beggar husband?",
+            "exact_ending_dialogue": "The scarred soldier straightens to his towering height, glaring silently at Gerald.",
+            "verbatim_trim_quote": "Where is that beggar husband?",
+            "boundary_type": "internal_cut",
+            "requires_manual_editor_verification": true
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 41,
+          "start_element_id": "EP41_EL001",
+          "end_element_id": "EP41_EL009",
+          "start_raw": "00:00.00",
+          "end_raw": "00:14.00",
+          "duration_seconds": 14.0,
+          "duration_cs": 1400,
+          "purpose_in_promo": "Peak Jeopardy / Cathedral Blast Assault",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Catherine abruptly pulls away from Rupert and raises her white-gloved hand.",
+            "exact_ending_dialogue": "A deafening explosion shatters the cathedral entrance, sending burning wood across the aisle.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Cut on the soldier's silent lethal glare in Ep 7.",
+        "Sound bridge: Rapid heartbeat pounding into sudden deafening church organ music.",
+        "Cut directly to Juliana in chains at Rupert's altar as the massive explosion detonates."
+      ],
+      "hook_timestamp_offset_seconds": 1.0,
+      "hook_description": "Gerald's aggressive shout cut short by the towering scarred husband grabs attention in 1.0s.",
+      "cliffhanger_description": "The cathedral gates blow apart in flames just as Juliana is forced to her knees.",
+      "standalone_coherence_explanation": "Clear conflict: arrogant bully tries to crush the couple, leading into an epic rescue assault.",
+      "rubric_scores": {
+        "standalone_coherence": 4,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 25.5,
+      "total_duration_cs": 2550,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.867
+    }
+  ],
+  "diversity_ranked_top15": [
+    {
+      "start_element_id": "EP01_EL010",
+      "end_element_id": "EP01_EL022",
+      "hook_timestamp_offset_seconds": 1.2,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Gerald publicly shatters the wedding ceremony by declaring he cannot wed Juliana.",
+      "cliffhanger_description": "Juliana is left abandoned at the altar as whispers erupt through the cathedral.",
+      "standalone_coherence_explanation": "The betrayal is clear immediately: a groom jilting his bride on camera.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "I cannot wed a woman whose family name is ruined.",
+        "exact_ending_dialogue": "You are no longer welcome here.",
+        "verbatim_trim_quote": "I cannot wed a woman whose family name is ruined.",
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 21.0,
+      "calculated_duration_cs": 2100,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        1
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP03_EL055",
+      "end_element_id": "EP03_EL070",
+      "hook_timestamp_offset_seconds": 1.5,
+      "archetype": "visual_anomaly_mystery_escalation",
+      "hook_description": "A heavily scarred, bearded soldier steps between Juliana and the palace guards.",
+      "cliffhanger_description": "The mysterious soldier drops to one knee and presents a silver band to Juliana.",
+      "standalone_coherence_explanation": "Visual mystery escalates rapidly from military confrontation to proposal.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Stand down before these stones drink your blood.",
+        "exact_ending_dialogue": "Take my name, Lady Juliana, and you will never kneel to anyone again.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 21.0,
+      "calculated_duration_cs": 2100,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        3
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP42_EL001",
+      "end_element_id": "EP42_EL015",
+      "hook_timestamp_offset_seconds": 1.0,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "Alexander steps through the drifting smoke in full ducal armor and regalia.",
+      "cliffhanger_description": "The royal guard turns their swords upon Rupert; Alexander is recognized.",
+      "standalone_coherence_explanation": "Ultimate vindication: the broken soldier is revealed as Duke of Ashburn.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Who are you to interrupt a ducal ceremony?",
+        "exact_ending_dialogue": "I am Alexander, Duke of Ashburn, and you are sitting in my chair.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 26.5,
+      "calculated_duration_cs": 2650,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        42
+      ],
+      "overall_score": 20
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_01",
+      "composition_mode": "multi_episode",
+      "archetype": "emotional_reversal_turning_point",
+      "relationship_type": "thematic",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "start_element_id": "EP01_EL010",
+          "end_element_id": "EP01_EL019",
+          "start_raw": "00:14.30",
+          "end_raw": "00:29.80",
+          "duration_seconds": 15.5,
+          "duration_cs": 1550,
+          "purpose_in_promo": "Hook / Initial Humiliation at Altar",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "I cannot wed a woman whose family name is ruined.",
+            "exact_ending_dialogue": "Gerald drops Juliana's hand at the altar steps as the congregation gasps.",
+            "verbatim_trim_quote": "I cannot wed a woman whose family name is ruined.",
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 42,
+          "start_element_id": "EP42_EL001",
+          "end_element_id": "EP42_EL014",
+          "start_raw": "00:00.00",
+          "end_raw": "00:25.20",
+          "duration_seconds": 25.2,
+          "duration_cs": 2520,
+          "purpose_in_promo": "Climax / Payoff & Full Ducal Vindication",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Alexander strides deliberately through the pulverized cathedral doors in full ducal armor.",
+            "exact_ending_dialogue": "I am Alexander, Duke of Ashburn, and you are sitting in my chair.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Cut directly on Gerald dropping Juliana's hand at 00:31.00.",
+        "Layer an ominous bass drop SFX transitioning into explosive artillery thunder.",
+        "Hard cut to smoke clearing in Ep 42 as Alexander steps through the shattered cathedral doors."
+      ],
+      "hook_timestamp_offset_seconds": 1.2,
+      "hook_description": "Gerald's cruel rejection at the altar shocks the scrolling viewer within 1.2s.",
+      "cliffhanger_description": "Alexander declares his ducal title before the terrified usurpers as guards draw steel.",
+      "standalone_coherence_explanation": "Direct contrast between the abandoned bride in Ep 1 and the triumphant return of her husband in Ep 42.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 40.7,
+      "total_duration_cs": 4070,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.8842,
+      "episodes_involved": [
+        1,
+        42
+      ]
+    },
+    {
+      "start_element_id": "EP07_EL034",
+      "end_element_id": "EP07_EL048",
+      "hook_timestamp_offset_seconds": 1.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Gerald sneers at Juliana's cottage, only for the towering scarred soldier to appear.",
+      "cliffhanger_description": "Gerald stumbles backward into the mud in terror as the husband towers over him.",
+      "standalone_coherence_explanation": "Intimidating stranger protects vulnerable heroine from haughty ex.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Where is that beggar husband?",
+        "exact_ending_dialogue": "Speak her name again, and you won't leave this forest walking.",
+        "verbatim_trim_quote": "Where is that beggar husband?",
+        "boundary_type": "internal_cut",
+        "requires_manual_editor_verification": true
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 24.3,
+      "calculated_duration_cs": 2430,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        7
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP41_EL001",
+      "end_element_id": "EP41_EL016",
+      "hook_timestamp_offset_seconds": 0.5,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Juliana in chains at Rupert's wedding before a deafening explosion rocks the cathedral.",
+      "cliffhanger_description": "The stone archway collapses in flame as smoke billows into the nave.",
+      "standalone_coherence_explanation": "Explosive cliffhanger of rescue at peak jeopardy.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Bow before your rightful Duke, girl!",
+        "exact_ending_dialogue": "The explosion tears the iron doors off their hinges.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 28.8,
+      "calculated_duration_cs": 2880,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        41
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP25_EL010",
+      "end_element_id": "EP25_EL023",
+      "hook_timestamp_offset_seconds": 1.8,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Rupert's mercenaries surround the manor with torches, demanding Juliana.",
+      "cliffhanger_description": "Alexander draws his ancestral blade in the darkness with a lethal grin.",
+      "standalone_coherence_explanation": "High adrenaline home invasion and warrior unmasking.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Burn the perimeter! Bring the girl alive!",
+        "exact_ending_dialogue": "You chose the wrong cottage, gentlemen.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 4,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 25.3,
+      "calculated_duration_cs": 2530,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        25
+      ],
+      "overall_score": 19
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 7,
+          "start_element_id": "EP07_EL034",
+          "end_element_id": "EP07_EL040",
+          "start_raw": "01:09.50",
+          "end_raw": "01:21.00",
+          "duration_seconds": 11.5,
+          "duration_cs": 1150,
+          "purpose_in_promo": "Visceral Threat / Husband Intimidates Bully",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Where is that beggar husband?",
+            "exact_ending_dialogue": "The scarred soldier straightens to his towering height, glaring silently at Gerald.",
+            "verbatim_trim_quote": "Where is that beggar husband?",
+            "boundary_type": "internal_cut",
+            "requires_manual_editor_verification": true
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 41,
+          "start_element_id": "EP41_EL001",
+          "end_element_id": "EP41_EL009",
+          "start_raw": "00:00.00",
+          "end_raw": "00:14.00",
+          "duration_seconds": 14.0,
+          "duration_cs": 1400,
+          "purpose_in_promo": "Peak Jeopardy / Cathedral Blast Assault",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Catherine abruptly pulls away from Rupert and raises her white-gloved hand.",
+            "exact_ending_dialogue": "A deafening explosion shatters the cathedral entrance, sending burning wood across the aisle.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Cut on the soldier's silent lethal glare in Ep 7.",
+        "Sound bridge: Rapid heartbeat pounding into sudden deafening church organ music.",
+        "Cut directly to Juliana in chains at Rupert's altar as the massive explosion detonates."
+      ],
+      "hook_timestamp_offset_seconds": 1.0,
+      "hook_description": "Gerald's aggressive shout cut short by the towering scarred husband grabs attention in 1.0s.",
+      "cliffhanger_description": "The cathedral gates blow apart in flames just as Juliana is forced to her knees.",
+      "standalone_coherence_explanation": "Clear conflict: arrogant bully tries to crush the couple, leading into an epic rescue assault.",
+      "rubric_scores": {
+        "standalone_coherence": 4,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 25.5,
+      "total_duration_cs": 2550,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.867,
+      "episodes_involved": [
+        41,
+        7
+      ]
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_02",
+      "composition_mode": "multi_episode",
+      "archetype": "visual_anomaly_mystery_escalation",
+      "relationship_type": "implied",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 4,
+          "start_element_id": "EP04_EL001",
+          "end_element_id": "EP04_EL008",
+          "start_raw": "00:00.00",
+          "end_raw": "00:10.50",
+          "duration_seconds": 10.5,
+          "duration_cs": 1050,
+          "purpose_in_promo": "Mystery Hook / The Scarred Hand Presents the Silver Ring",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Close-up of the Mysterious Bearded Man's scarred hand holding out the silver band.",
+            "exact_ending_dialogue": "Take my name, and you will never kneel to anyone again.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 42,
+          "start_element_id": "EP42_EL001",
+          "end_element_id": "EP42_EL010",
+          "start_raw": "00:00.00",
+          "end_raw": "00:21.20",
+          "duration_seconds": 21.2,
+          "duration_cs": 2120,
+          "purpose_in_promo": "Mystery Payoff / Seal Revealed on Ducal Sword",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Low-angle shot through drifting smoke and rubble across the cathedral aisle.",
+            "exact_ending_dialogue": "He holds up the matching ancestral signet ring before the trembling court.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Match cut: Extreme close-up of the silver ring in the scarred soldier's hand in Ep 4.",
+        "Visual whip-pan with a sharp metallic unsheathing sound effect.",
+        "Match cut to the same silver ring glistening on the hilt of the ducal sword in Ep 42."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Close-up on the scarred hand offering the royal signet ring establishes intrigue in 0.5s.",
+      "cliffhanger_description": "The royal court gasps as the soldier's true identity is locked in place by the ring.",
+      "standalone_coherence_explanation": "Visual match between the mysterious proposal and the royal revelation makes the mystery self-explanatory.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 31.7,
+      "total_duration_cs": 3170,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.9125,
+      "episodes_involved": [
+        42,
+        4
+      ]
+    },
+    {
+      "start_element_id": "EP02_EL005",
+      "end_element_id": "EP02_EL018",
+      "hook_timestamp_offset_seconds": 0.8,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "Juliana turns around and stares down Gerald, transforming humiliation into defiance.",
+      "cliffhanger_description": "Juliana indicts Gerald's false honor before the assembled nobles.",
+      "standalone_coherence_explanation": "Cold viewers grasp the power reversal without prior context.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "You speak of honor, Gerald, yet you wear cowardice like a cloak.",
+        "exact_ending_dialogue": "May the court remember who truly broke their oath.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 23.0,
+      "calculated_duration_cs": 2300,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        2
+      ],
+      "overall_score": 19
+    },
+    {
+      "start_element_id": "EP50_EL008",
+      "end_element_id": "EP50_EL020",
+      "hook_timestamp_offset_seconds": 1.2,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "Gerald and Clarissa are brought in chains before the ducal throne.",
+      "cliffhanger_description": "Juliana looks down from her throne, turning away without a word as guards haul them out.",
+      "standalone_coherence_explanation": "Poetic justice and full closure of the series opening humiliation.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Juliana, please! We are family!",
+        "exact_ending_dialogue": "Take them away. We have an empire to rebuild.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 31.2,
+      "calculated_duration_cs": 3120,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        50
+      ],
+      "overall_score": 19
+    },
+    {
+      "start_element_id": "EP04_EL001",
+      "end_element_id": "EP04_EL014",
+      "hook_timestamp_offset_seconds": 0.5,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "Extreme close-up on the scarred hand offering the ducal signet ring to Juliana.",
+      "cliffhanger_description": "Juliana accepts the proposal and walks out arm-in-arm into the sunlight.",
+      "standalone_coherence_explanation": "Clear vow of alliance in defiance of mocking peers.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "I accept your name.",
+        "exact_ending_dialogue": "Let them speak in the shadows; we walk in the light.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 4,
+        "emotional_impact": 4
+      },
+      "calculated_duration_seconds": 17.5,
+      "calculated_duration_cs": 1750,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        4
+      ],
+      "overall_score": 17
+    },
+    {
+      "start_element_id": "EP12_EL004",
+      "end_element_id": "EP12_EL016",
+      "hook_timestamp_offset_seconds": 1.0,
+      "archetype": "visual_anomaly_mystery_escalation",
+      "hook_description": "Juliana inspects an old royal proclamation showing the Duke of Ashburn's seal.",
+      "cliffhanger_description": "The soldier covers the document, his scarred eyes betraying royal sorrow.",
+      "standalone_coherence_explanation": "A mystery hook: the broken soldier is clearly the Duke.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Why do you keep a ducal dispatch among humble firewood?",
+        "exact_ending_dialogue": "Some debts are only paid in iron.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 4,
+        "hook_strength": 4,
+        "cliffhanger_strength": 4,
+        "emotional_impact": 4
+      },
+      "calculated_duration_seconds": 23.2,
+      "calculated_duration_cs": 2320,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        12
+      ],
+      "overall_score": 16
+    }
+  ],
+  "diversity_metadata": {
+    "archetype_distribution": {
+      "immediate_shock_opener": 5,
+      "visual_anomaly_mystery_escalation": 3,
+      "emotional_reversal_turning_point": 5
+    },
+    "composition_distribution": {
+      "single_episode": 10,
+      "multi_episode": 3
+    },
+    "episode_distribution": {
+      "1": 2,
+      "3": 1,
+      "42": 3,
+      "7": 2,
+      "41": 2,
+      "25": 1,
+      "4": 2,
+      "2": 1,
+      "50": 1,
+      "12": 1
+    }
+  },
+  "semantic_retrieval_audit": [
+    {
+      "pair_key": [
+        "EP01_MOM_01",
+        "EP04_MOM_01"
+      ],
+      "m1_id": "EP01_MOM_01",
+      "m1_ep": 1,
+      "m1_summary": "Gerald publicly humiliates and abandons Lady Juliana at the cathe...",
+      "m2_id": "EP04_MOM_01",
+      "m2_ep": 4,
+      "m2_summary": "The soldier presents the ancient silver signet ring with the Ashb...",
+      "similarity": 0.7798,
+      "moment_1": {
+        "moment_id": "EP01_MOM_01",
+        "episode": 1,
+        "moment_type": "contrast_baseline",
+        "start_element_id": "EP01_EL010",
+        "end_element_id": "EP01_EL019",
+        "duration_seconds": 15.5,
+        "duration_cs": 1550,
+        "summary": "Gerald publicly humiliates and abandons Lady Juliana at the cathedral altar for Clarissa.",
+        "lookup_keywords": [
+          "altar",
+          "Gerald",
+          "abandoned",
+          "wedding",
+          "Clarissa",
+          "humiliation",
+          "bride"
+        ],
+        "source_elements_verbatim": [
+          "[EP01_EL010 | 00:14.30->00:17.80] **CAMERA:** Over-the-shoulder medium close-up past the Matriarch to Juliana, looking past her toward the altar.",
+          "[EP01_EL011 | 00:15.50->00:17.50] **LADY JULIANA (Desperate, Unbelieving):** \"Gerald is waiting for me.\"",
+          "[EP01_EL012 | 00:17.80->00:20.50] **CAMERA:** Close-up on the Matriarch wearing an ornate tiara and sapphire jewelry, gazing down with merciless disdain.",
+          "[EP01_EL013 | 00:18.00->00:19.40] **MATRIARCH (Blunt, Unforgiving):** \"Not anymore.\"",
+          "[EP01_EL014 | 00:20.50->00:23.60] **CAMERA:** Close-up on Juliana's stricken face as the weight of the words sinks in.",
+          "[EP01_EL015 | 00:21.80->00:23.50] **LADY JULIANA (Trembling, Pleading):** \"What do you mean?\"",
+          "[EP01_EL016 | 00:23.60->00:25.80] **CAMERA:** Medium shot of the Matriarch gesturing dismissively toward the altar.",
+          "[EP01_EL017 | 00:23.80->00:25.50] **MATRIARCH (Dismissive):** \"Look for yourself.\"",
+          "[EP01_EL018 | 00:25.60->00:29.80] **ACTION:** Juliana walks forward past the Matriarch, her breath hitching as she approaches the altar steps, looking up in shock.",
+          "[EP01_EL019 | 00:25.80->00:29.80] **CAMERA:** Medium front tracking shot moving backward ahead of Juliana as she advances down the center aisle."
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP04_MOM_01",
+        "episode": 4,
+        "moment_type": "clue_or_prop",
+        "start_element_id": "EP04_EL001",
+        "end_element_id": "EP04_EL008",
+        "duration_seconds": 10.5,
+        "duration_cs": 1050,
+        "summary": "The soldier presents the ancient silver signet ring with the Ashburn crest to wed Juliana.",
+        "lookup_keywords": [
+          "signet ring",
+          "silver ring",
+          "Ashburn",
+          "crest",
+          "wedding",
+          "proposal",
+          "seal"
+        ],
+        "source_elements_verbatim": [
+          "[EP04_EL001 | 00:00.00->00:01.50] **CAMERA:** Close-up of the Mysterious Bearded Man's scarred hand holding out the silver band ring.",
+          "[EP04_EL002 | 00:01.50->00:03.20] **CAMERA:** Medium close-up of Juliana, staring down in disbelief at the offered ring.",
+          "[EP04_EL003 | 00:01.50->00:03.20] **ACTION:** Juliana's eyes widen, stunned breath catching in her throat.",
+          "[EP04_EL004 | 00:03.20->00:05.00] **CAMERA:** Medium shot of Gerald stepping forward from his pew with a smug, sneering grin.",
+          "[EP04_EL005 | 00:03.40->00:04.90] **GERALD (Mocking, Arrogant):** \"Look at him.\"",
+          "[EP04_EL006 | 00:05.00->00:07.50] **CAMERA:** Tight close-up of Gerald's venomous, self-satisfied face.",
+          "[EP04_EL007 | 00:05.00->00:07.50] **GERALD (Scornful):** \"A penniless nobody for a discarded bride.\"",
+          "[EP04_EL008 | 00:07.60->00:10.50] **CAMERA:** Medium shot of Clarissa covering her mouth with her gloved hand, bursting into cruel laughter."
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP01_MOM_01",
+        "EP41_MOM_01"
+      ],
+      "m1_id": "EP01_MOM_01",
+      "m1_ep": 1,
+      "m1_summary": "Gerald publicly humiliates and abandons Lady Juliana at the cathe...",
+      "m2_id": "EP41_MOM_01",
+      "m2_ep": 41,
+      "m2_summary": "Juliana is paraded in chains at Rupert's cathedral wedding until ...",
+      "similarity": 0.7558,
+      "moment_1": {
+        "moment_id": "EP01_MOM_01",
+        "episode": 1,
+        "moment_type": "contrast_baseline",
+        "start_element_id": "EP01_EL010",
+        "end_element_id": "EP01_EL019",
+        "duration_seconds": 15.5,
+        "duration_cs": 1550,
+        "summary": "Gerald publicly humiliates and abandons Lady Juliana at the cathedral altar for Clarissa.",
+        "lookup_keywords": [
+          "altar",
+          "Gerald",
+          "abandoned",
+          "wedding",
+          "Clarissa",
+          "humiliation",
+          "bride"
+        ],
+        "source_elements_verbatim": [
+          "[EP01_EL010 | 00:14.30->00:17.80] **CAMERA:** Over-the-shoulder medium close-up past the Matriarch to Juliana, looking past her toward the altar.",
+          "[EP01_EL011 | 00:15.50->00:17.50] **LADY JULIANA (Desperate, Unbelieving):** \"Gerald is waiting for me.\"",
+          "[EP01_EL012 | 00:17.80->00:20.50] **CAMERA:** Close-up on the Matriarch wearing an ornate tiara and sapphire jewelry, gazing down with merciless disdain.",
+          "[EP01_EL013 | 00:18.00->00:19.40] **MATRIARCH (Blunt, Unforgiving):** \"Not anymore.\"",
+          "[EP01_EL014 | 00:20.50->00:23.60] **CAMERA:** Close-up on Juliana's stricken face as the weight of the words sinks in.",
+          "[EP01_EL015 | 00:21.80->00:23.50] **LADY JULIANA (Trembling, Pleading):** \"What do you mean?\"",
+          "[EP01_EL016 | 00:23.60->00:25.80] **CAMERA:** Medium shot of the Matriarch gesturing dismissively toward the altar.",
+          "[EP01_EL017 | 00:23.80->00:25.50] **MATRIARCH (Dismissive):** \"Look for yourself.\"",
+          "[EP01_EL018 | 00:25.60->00:29.80] **ACTION:** Juliana walks forward past the Matriarch, her breath hitching as she approaches the altar steps, looking up in shock.",
+          "[EP01_EL019 | 00:25.80->00:29.80] **CAMERA:** Medium front tracking shot moving backward ahead of Juliana as she advances down the center aisle."
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP41_MOM_01",
+        "episode": 41,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP41_EL001",
+        "end_element_id": "EP41_EL014",
+        "duration_seconds": 22.8,
+        "duration_cs": 2280,
+        "summary": "Juliana is paraded in chains at Rupert's cathedral wedding until an explosion shatters the gates.",
+        "lookup_keywords": [
+          "chains",
+          "cathedral",
+          "Rupert",
+          "explosion",
+          "wedding",
+          "assault"
+        ],
+        "source_elements_verbatim": [
+          "[EP41_EL001 | 00:00.00->00:01.80] **CAMERA:** Wide symmetrical shot looking down the candlelit, flower-strewn aisle toward the altar where Rupert, Catherine, and the Priest stand.",
+          "[EP41_EL002 | 00:01.80->00:04.50] **ACTION:** Catherine abruptly pulls away from Rupert and raises her white-gloved hand high, commanding silence from the congregation.",
+          "[EP41_EL003 | 00:01.80->00:02.80] **CATHERINE (Imperious, Commanding):** \"Wait.\"",
+          "[EP41_EL004 | 00:04.50->00:08.50] **CAMERA:** Medium shot tracking Catherine as she pivots toward the seated aristocracy, her veil floating gracefully behind her.",
+          "[EP41_EL005 | 00:04.90->00:08.20] **CATHERINE (Haughty, Loud):** \"Before I become Duchess of Ashburgh...\"",
+          "[EP41_EL006 | 00:08.50->00:13.00] **CAMERA:** Close-up of Catherine's face, her lips curling into a sadistic, triumphant sneer.",
+          "[EP41_EL007 | 00:08.50->00:12.70] **CATHERINE (Cruel, Resonant):** \"...I want everyone to see what happens to a woman who dares defy this family.\"",
+          "[EP41_EL008 | 00:13.00->00:15.50] **CAMERA:** Two-shot profile of Rupert and Catherine. Rupert turns to her with mild caution.",
+          "[EP41_EL009 | 00:13.20->00:14.00] **BLOND NOBLEMAN (Subdued, Inquiring):** \"Catherine...\"",
+          "[EP41_EL010 | 00:14.00->00:15.30] **CATHERINE (Callous, Projecting):** \"Bring her in.\"",
+          "[EP41_EL011 | 00:15.50->00:17.50] **SOUND FX:** Heavy wooden creak of the cathedral double doors swinging open.",
+          "[EP41_EL012 | 00:15.50->00:20.00] **CAMERA:** Wide shot from behind the altar down the aisle as the great church doors slowly open, revealing the silhouette of three figures against the daylight.",
+          "[EP41_EL013 | 00:17.50->00:20.00] **ACTION:** Juliana, dressed in a coarse drab prison dress with a numbered identification badge, is marched forward by two armed constables holding her by the arms.",
+          "[EP41_EL014 | 00:20.00->00:22.80] **CAMERA:** Extreme close-up of Juliana's scarred, dirtied wrists bound tight in heavy iron shackles."
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP02_MOM_01",
+        "EP25_MOM_01"
+      ],
+      "m1_id": "EP02_MOM_01",
+      "m1_ep": 2,
+      "m1_summary": "Juliana makes an unyielding public vow that Gerald's dishonor wil...",
+      "m2_id": "EP25_MOM_01",
+      "m2_ep": 25,
+      "m2_summary": "Rupert's assassins attack the cottage; Alexander demonstrates let...",
+      "similarity": 0.6906,
+      "moment_1": {
+        "moment_id": "EP02_MOM_01",
+        "episode": 2,
+        "moment_type": "setup_or_vow",
+        "start_element_id": "EP02_EL005",
+        "end_element_id": "EP02_EL015",
+        "duration_seconds": 16.0,
+        "duration_cs": 1600,
+        "summary": "Juliana makes an unyielding public vow that Gerald's dishonor will be exposed.",
+        "lookup_keywords": [
+          "oath",
+          "vow",
+          "Juliana",
+          "Gerald",
+          "honor",
+          "cathedral",
+          "confrontation"
+        ],
+        "source_elements_verbatim": [
+          "[EP02_EL005 | 00:04.60->00:06.60] **CAMERA:** Medium shot returning to Gerald, sneering down at Juliana.",
+          "[EP02_EL006 | 00:04.70->00:06.50] **THE FORMER GROOM (Cruel, Derisive):** \"You are far too plain...\"",
+          "[EP02_EL007 | 00:06.60->00:09.50] **CAMERA:** Close-up on Juliana's tear-streaked face, crushed under his biting words.",
+          "[EP02_EL008 | 00:06.80->00:09.50] **THE FORMER GROOM (Off-screen) (Dismissive):** \"...far too silent...\"",
+          "[EP02_EL009 | 00:09.50->00:12.00] **CAMERA:** Medium shot on Gerald turning slightly toward Clarissa as she smiles admiringly at him.",
+          "[EP02_EL010 | 00:09.60->00:12.00] **THE FORMER GROOM (Arrogant, Conceited):** \"...and completely beneath the future I deserve.\"",
+          "[EP02_EL011 | 00:12.00->00:15.80] **CAMERA:** Wide shot down the aisle as Juliana takes an agonizing step forward toward the altar, extending a trembling hand.",
+          "[EP02_EL012 | 00:12.40->00:15.50] **LADY JULIANA (Desperate, Pleading):** \"Gerald... Look at me.\"",
+          "[EP02_EL013 | 00:15.80->00:18.00] **CAMERA:** Close-up on Gerald's cold, merciless face staring ahead unblinkingly.",
+          "[EP02_EL014 | 00:18.00->00:20.70] **CAMERA:** Tight insert on Juliana's hand clutching the heirloom amethyst pendant resting against her gown.",
+          "[EP02_EL015 | 00:18.20->00:20.60] **LADY JULIANA (Trembling, Betrayed):** \"You gave me your word before both our families.\""
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP25_MOM_01",
+        "episode": 25,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP25_EL010",
+        "end_element_id": "EP25_EL020",
+        "duration_seconds": 19.6,
+        "duration_cs": 1960,
+        "summary": "Rupert's assassins attack the cottage; Alexander demonstrates lethal ducal swordsmanship.",
+        "lookup_keywords": [
+          "Rupert",
+          "assassins",
+          "swordsmanship",
+          "Alexander",
+          "cottage",
+          "attack"
+        ],
+        "source_elements_verbatim": [
+          "[EP25_EL010 | 00:13.20->00:16.20] **CAMERA:** Two-shot profile of Alexander grabbing Juliana's shoulder as she recoils.",
+          "[EP25_EL011 | 00:14.90->00:16.10] **ALEXANDER (Sharp, Alarmed):** \"You're hurt.\"",
+          "[EP25_EL012 | 00:16.20->00:18.80] **CAMERA:** Close-up of Juliana gritting her teeth against the pain, shaking her head.",
+          "[EP25_EL013 | 00:16.80->00:18.50] **JULIANA (Strained, Minimizing):** \"It is nothing.\"",
+          "[EP25_EL014 | 00:18.80->00:22.50] **ACTION:** Alexander's gloved fingers pull back the torn fabric of her cloak and sleeve, revealing a raw, bloody welt slashing across her bare shoulder.",
+          "[EP25_EL015 | 00:18.80->00:22.80] **CAMERA:** Tight close-up of the fresh riding-crop laceration cut across Juliana's shoulder.",
+          "[EP25_EL016 | 00:22.80->00:25.80] **CAMERA:** Close-up of Alexander's scarred face darkening with volatile fury, his jaw tightening.",
+          "[EP25_EL017 | 00:24.00->00:25.50] **ALEXANDER (Seething, Dangerous):** \"Who did this?\"",
+          "[EP25_EL018 | 00:25.80->00:29.80] **CAMERA:** Medium close-up of Juliana averting her eyes, her head bowed in quiet resignation.",
+          "[EP25_EL019 | 00:27.50->00:29.30] **JULIANA (Subdued, Weary):** \"It does not matter.\"",
+          "[EP25_EL020 | 00:29.80->00:32.80] **CAMERA:** Tight shot of Alexander, his eyes burning with intense anger."
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP02_MOM_01",
+        "EP05_MOM_01"
+      ],
+      "m1_id": "EP02_MOM_01",
+      "m1_ep": 2,
+      "m1_summary": "Juliana makes an unyielding public vow that Gerald's dishonor wil...",
+      "m2_id": "EP05_MOM_01",
+      "m2_ep": 5,
+      "m2_summary": "Juliana's mother's brass-bound ledger is salvaged from the mud, c...",
+      "similarity": 0.6901,
+      "moment_1": {
+        "moment_id": "EP02_MOM_01",
+        "episode": 2,
+        "moment_type": "setup_or_vow",
+        "start_element_id": "EP02_EL005",
+        "end_element_id": "EP02_EL015",
+        "duration_seconds": 16.0,
+        "duration_cs": 1600,
+        "summary": "Juliana makes an unyielding public vow that Gerald's dishonor will be exposed.",
+        "lookup_keywords": [
+          "oath",
+          "vow",
+          "Juliana",
+          "Gerald",
+          "honor",
+          "cathedral",
+          "confrontation"
+        ],
+        "source_elements_verbatim": [
+          "[EP02_EL005 | 00:04.60->00:06.60] **CAMERA:** Medium shot returning to Gerald, sneering down at Juliana.",
+          "[EP02_EL006 | 00:04.70->00:06.50] **THE FORMER GROOM (Cruel, Derisive):** \"You are far too plain...\"",
+          "[EP02_EL007 | 00:06.60->00:09.50] **CAMERA:** Close-up on Juliana's tear-streaked face, crushed under his biting words.",
+          "[EP02_EL008 | 00:06.80->00:09.50] **THE FORMER GROOM (Off-screen) (Dismissive):** \"...far too silent...\"",
+          "[EP02_EL009 | 00:09.50->00:12.00] **CAMERA:** Medium shot on Gerald turning slightly toward Clarissa as she smiles admiringly at him.",
+          "[EP02_EL010 | 00:09.60->00:12.00] **THE FORMER GROOM (Arrogant, Conceited):** \"...and completely beneath the future I deserve.\"",
+          "[EP02_EL011 | 00:12.00->00:15.80] **CAMERA:** Wide shot down the aisle as Juliana takes an agonizing step forward toward the altar, extending a trembling hand.",
+          "[EP02_EL012 | 00:12.40->00:15.50] **LADY JULIANA (Desperate, Pleading):** \"Gerald... Look at me.\"",
+          "[EP02_EL013 | 00:15.80->00:18.00] **CAMERA:** Close-up on Gerald's cold, merciless face staring ahead unblinkingly.",
+          "[EP02_EL014 | 00:18.00->00:20.70] **CAMERA:** Tight insert on Juliana's hand clutching the heirloom amethyst pendant resting against her gown.",
+          "[EP02_EL015 | 00:18.20->00:20.60] **LADY JULIANA (Trembling, Betrayed):** \"You gave me your word before both our families.\""
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP05_MOM_01",
+        "episode": 5,
+        "moment_type": "clue_or_prop",
+        "start_element_id": "EP05_EL001",
+        "end_element_id": "EP05_EL010",
+        "duration_seconds": 20.8,
+        "duration_cs": 2080,
+        "summary": "Juliana's mother's brass-bound ledger is salvaged from the mud, containing true estate records.",
+        "lookup_keywords": [
+          "ledger",
+          "mother",
+          "brass-bound",
+          "inheritance",
+          "mud",
+          "records"
+        ],
+        "source_elements_verbatim": [
+          "[EP05_EL001 | 00:00.00->00:02.50] **CAMERA:** Close-up on Lady Juliana's hands clutching an ancient, brass-bound leather ledger against the skirt of her white wedding gown as she walks.",
+          "[EP05_EL002 | 00:00.00->00:02.50] **ACTION:** Juliana grips the heirloom ledger tightly against her waist, her posture resolute despite the tension.",
+          "[EP05_EL003 | 00:02.50->00:06.00] **CAMERA:** Wide shot tracking Juliana and the Mysterious Bearded Man descending the grand stone steps of the cathedral courtyard. Behind them, Lord Ashcroft emerges from the vaulted doorway leaning on his cane.",
+          "[EP05_EL004 | 00:04.20->00:05.80] **LORD ASHCROFT (Stern, Commanding):** \"Miss Ashcroft.\"",
+          "[EP05_EL005 | 00:05.50->00:06.60] **ACTION:** Juliana and the Mysterious Bearded Man pause on the stone steps, turning slightly back toward Lord Ashcroft.",
+          "[EP05_EL006 | 00:06.60->00:10.50] **CAMERA:** Close-up of Lord Ashcroft, his weathered face rigid with aristocratic pride and disgust.",
+          "[EP05_EL007 | 00:06.80->00:10.40] **LORD ASHCROFT (Cold, Condemnatory):** \"You will not leave this church carrying the Ashcroft name.\"",
+          "[EP05_EL008 | 00:10.50->00:15.80] **CAMERA:** Medium close-up of Juliana looking up at her father. Her hand rises to touch the amethyst heirloom pendant resting at her throat.",
+          "[EP05_EL009 | 00:11.70->00:15.50] **JULIANA (Defiant, Steadfast):** \"The vows are spoken, Father. I am his wife now.\"",
+          "[EP05_EL010 | 00:15.80->00:20.80] **CAMERA:** Medium shot of Lord Ashcroft standing rigid outside the chapel archway, unforgiving and unyielding."
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP03_MOM_01",
+        "EP07_MOM_01"
+      ],
+      "m1_id": "EP03_MOM_01",
+      "m1_ep": 3,
+      "m1_summary": "The scarred broken soldier intervenes against armed guards and pr...",
+      "m2_id": "EP07_MOM_01",
+      "m2_ep": 7,
+      "m2_summary": "Gerald confronts Juliana at the cottage; the scarred soldier retu...",
+      "similarity": 0.7797,
+      "moment_1": {
+        "moment_id": "EP03_MOM_01",
+        "episode": 3,
+        "moment_type": "identity_reveal",
+        "start_element_id": "EP03_EL055",
+        "end_element_id": "EP03_EL065",
+        "duration_seconds": 14.4,
+        "duration_cs": 1440,
+        "summary": "The scarred broken soldier intervenes against armed guards and proposes to Juliana.",
+        "lookup_keywords": [
+          "scarred",
+          "soldier",
+          "proposal",
+          "guards",
+          "stranger",
+          "rescue",
+          "chapel"
+        ],
+        "source_elements_verbatim": [
+          "[EP03_EL055 | 01:04.50->01:06.00] **CAMERA:** High wide shot down the vaulted cathedral aisle showing the entire congregation watching in stunned silence as the guards drag Juliana.",
+          "[EP03_EL056 | 01:06.00->01:08.10] **CAMERA:** Wide eye-level shot looking down the petal-strewn marble aisle. A tall, rugged man in a worn dark trench coat\u2014The Bearded Stranger\u2014emerges into the center of the nave.",
+          "[EP03_EL057 | 01:06.00->01:08.10] **ACTION:** The Bearded Stranger steps deliberately into the aisle, his heavy boots echoing.",
+          "[EP03_EL058 | 01:08.10->01:10.50] **CAMERA:** Close-up on the Noble Matriarch freezing in utter shock and outrage.",
+          "[EP03_EL059 | 01:09.90->01:12.10] **THE BEARDED STRANGER (Low, Thunderous, Imposing):** \"Take your hands off her.\"",
+          "[EP03_EL060 | 01:10.50->01:12.80] **CAMERA:** Medium tracking shot front-on as The Bearded Stranger marches down the flower-strewn aisle with resolute purpose.",
+          "[EP03_EL061 | 01:12.80->01:15.10] **CAMERA:** Medium shot on the Noble Matriarch stepping forward on the altar steps, furiously pointing a finger at him.",
+          "[EP03_EL062 | 01:13.00->01:16.80] **NOBLE MATRIARCH (Indignant, Screeching):** \"And who are you to give orders in my family's chapel?!\"",
+          "[EP03_EL063 | 01:15.10->01:17.00] **CAMERA:** High wide shot of the magnificent vaulted hall as The Bearded Stranger walks steadily forward, dwarfing the aisle.",
+          "[EP03_EL064 | 01:17.00->01:19.00] **CAMERA:** Medium shot on the lead royal guard squaring his shoulders, barring the stranger's advance while Juliana stands behind him.",
+          "[EP03_EL065 | 01:17.20->01:18.90] **ROYAL GUARD (Aggressive, Threatening):** \"Stand aside, stranger!\""
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP07_MOM_01",
+        "episode": 7,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP07_EL034",
+        "end_element_id": "EP07_EL045",
+        "duration_seconds": 20.5,
+        "duration_cs": 2050,
+        "summary": "Gerald confronts Juliana at the cottage; the scarred soldier returns and terrifies Gerald into retreat.",
+        "lookup_keywords": [
+          "Gerald",
+          "cottage",
+          "woodland",
+          "soldier",
+          "intimidation",
+          "confrontation",
+          "husband"
+        ],
+        "source_elements_verbatim": [
+          "[EP07_EL034 | 01:09.50->01:14.00] **CAMERA:** Wide shot down a dark, fog-drenched forest path. A towering, shadowed figure walks steadily forward through the mist.",
+          "[EP07_EL035 | 01:09.50->01:11.20] **GERALD (V.O.) (Snarl):** \"Where is that beggar husband?\"",
+          "[EP07_EL036 | 01:10.00->01:15.50] **ACTION:** The Scarred Bearded Man marches purposefully toward the cottage, carrying a heavy bundle of chopped firewood bound tightly with hemp cord.",
+          "[EP07_EL037 | 01:14.00->01:15.50] **CAMERA:** Medium tracking shot pushing in on the Scarred Bearded Man's stern, rugged face as he approaches the gate.",
+          "[EP07_EL038 | 01:15.50->01:18.50] **CAMERA:** Low shot of the Scarred Bearded Man bending down and dropping the bundle of logs by the stone wall.",
+          "[EP07_EL039 | 01:16.20->01:17.50] **SOUND FX:** A dull, heavy thud of timber striking the mud.",
+          "[EP07_EL040 | 01:18.50->01:21.00] **CAMERA:** Medium full shot as the Scarred Bearded Man straightens to his full imposing height and steps directly toward Gerald.",
+          "[EP07_EL041 | 01:21.00->01:23.50] **CAMERA:** Two-shot framing the Scarred Bearded Man towering menacingly over Gerald, staring down at him with unyielding intensity.",
+          "[EP07_EL042 | 01:21.50->01:24.00] **ACTION:** Gerald freezes, his arrogant bravado instantly vanishing as cold dread overtakes his face.",
+          "[EP07_EL043 | 01:23.50->01:28.00] **CAMERA:** Low-angle close-up of Gerald looking up in sheer terror, his adam's apple bobbing nervously.",
+          "[EP07_EL044 | 01:26.50->01:28.50] **ARISTOCRATIC WOMAN (O.S.) (Urgent, Annoyed):** \"Gerald, don't let him frighten you.\"",
+          "[EP07_EL045 | 01:28.60->01:30.00] **GERALD (Trembling, Trying to Save Face):** \"What are you staring at?\""
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP03_MOM_01",
+        "EP41_MOM_01"
+      ],
+      "m1_id": "EP03_MOM_01",
+      "m1_ep": 3,
+      "m1_summary": "The scarred broken soldier intervenes against armed guards and pr...",
+      "m2_id": "EP41_MOM_01",
+      "m2_ep": 41,
+      "m2_summary": "Juliana is paraded in chains at Rupert's cathedral wedding until ...",
+      "similarity": 0.7725,
+      "moment_1": {
+        "moment_id": "EP03_MOM_01",
+        "episode": 3,
+        "moment_type": "identity_reveal",
+        "start_element_id": "EP03_EL055",
+        "end_element_id": "EP03_EL065",
+        "duration_seconds": 14.4,
+        "duration_cs": 1440,
+        "summary": "The scarred broken soldier intervenes against armed guards and proposes to Juliana.",
+        "lookup_keywords": [
+          "scarred",
+          "soldier",
+          "proposal",
+          "guards",
+          "stranger",
+          "rescue",
+          "chapel"
+        ],
+        "source_elements_verbatim": [
+          "[EP03_EL055 | 01:04.50->01:06.00] **CAMERA:** High wide shot down the vaulted cathedral aisle showing the entire congregation watching in stunned silence as the guards drag Juliana.",
+          "[EP03_EL056 | 01:06.00->01:08.10] **CAMERA:** Wide eye-level shot looking down the petal-strewn marble aisle. A tall, rugged man in a worn dark trench coat\u2014The Bearded Stranger\u2014emerges into the center of the nave.",
+          "[EP03_EL057 | 01:06.00->01:08.10] **ACTION:** The Bearded Stranger steps deliberately into the aisle, his heavy boots echoing.",
+          "[EP03_EL058 | 01:08.10->01:10.50] **CAMERA:** Close-up on the Noble Matriarch freezing in utter shock and outrage.",
+          "[EP03_EL059 | 01:09.90->01:12.10] **THE BEARDED STRANGER (Low, Thunderous, Imposing):** \"Take your hands off her.\"",
+          "[EP03_EL060 | 01:10.50->01:12.80] **CAMERA:** Medium tracking shot front-on as The Bearded Stranger marches down the flower-strewn aisle with resolute purpose.",
+          "[EP03_EL061 | 01:12.80->01:15.10] **CAMERA:** Medium shot on the Noble Matriarch stepping forward on the altar steps, furiously pointing a finger at him.",
+          "[EP03_EL062 | 01:13.00->01:16.80] **NOBLE MATRIARCH (Indignant, Screeching):** \"And who are you to give orders in my family's chapel?!\"",
+          "[EP03_EL063 | 01:15.10->01:17.00] **CAMERA:** High wide shot of the magnificent vaulted hall as The Bearded Stranger walks steadily forward, dwarfing the aisle.",
+          "[EP03_EL064 | 01:17.00->01:19.00] **CAMERA:** Medium shot on the lead royal guard squaring his shoulders, barring the stranger's advance while Juliana stands behind him.",
+          "[EP03_EL065 | 01:17.20->01:18.90] **ROYAL GUARD (Aggressive, Threatening):** \"Stand aside, stranger!\""
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP41_MOM_01",
+        "episode": 41,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP41_EL001",
+        "end_element_id": "EP41_EL014",
+        "duration_seconds": 22.8,
+        "duration_cs": 2280,
+        "summary": "Juliana is paraded in chains at Rupert's cathedral wedding until an explosion shatters the gates.",
+        "lookup_keywords": [
+          "chains",
+          "cathedral",
+          "Rupert",
+          "explosion",
+          "wedding",
+          "assault"
+        ],
+        "source_elements_verbatim": [
+          "[EP41_EL001 | 00:00.00->00:01.80] **CAMERA:** Wide symmetrical shot looking down the candlelit, flower-strewn aisle toward the altar where Rupert, Catherine, and the Priest stand.",
+          "[EP41_EL002 | 00:01.80->00:04.50] **ACTION:** Catherine abruptly pulls away from Rupert and raises her white-gloved hand high, commanding silence from the congregation.",
+          "[EP41_EL003 | 00:01.80->00:02.80] **CATHERINE (Imperious, Commanding):** \"Wait.\"",
+          "[EP41_EL004 | 00:04.50->00:08.50] **CAMERA:** Medium shot tracking Catherine as she pivots toward the seated aristocracy, her veil floating gracefully behind her.",
+          "[EP41_EL005 | 00:04.90->00:08.20] **CATHERINE (Haughty, Loud):** \"Before I become Duchess of Ashburgh...\"",
+          "[EP41_EL006 | 00:08.50->00:13.00] **CAMERA:** Close-up of Catherine's face, her lips curling into a sadistic, triumphant sneer.",
+          "[EP41_EL007 | 00:08.50->00:12.70] **CATHERINE (Cruel, Resonant):** \"...I want everyone to see what happens to a woman who dares defy this family.\"",
+          "[EP41_EL008 | 00:13.00->00:15.50] **CAMERA:** Two-shot profile of Rupert and Catherine. Rupert turns to her with mild caution.",
+          "[EP41_EL009 | 00:13.20->00:14.00] **BLOND NOBLEMAN (Subdued, Inquiring):** \"Catherine...\"",
+          "[EP41_EL010 | 00:14.00->00:15.30] **CATHERINE (Callous, Projecting):** \"Bring her in.\"",
+          "[EP41_EL011 | 00:15.50->00:17.50] **SOUND FX:** Heavy wooden creak of the cathedral double doors swinging open.",
+          "[EP41_EL012 | 00:15.50->00:20.00] **CAMERA:** Wide shot from behind the altar down the aisle as the great church doors slowly open, revealing the silhouette of three figures against the daylight.",
+          "[EP41_EL013 | 00:17.50->00:20.00] **ACTION:** Juliana, dressed in a coarse drab prison dress with a numbered identification badge, is marched forward by two armed constables holding her by the arms.",
+          "[EP41_EL014 | 00:20.00->00:22.80] **CAMERA:** Extreme close-up of Juliana's scarred, dirtied wrists bound tight in heavy iron shackles."
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP04_MOM_01",
+        "EP07_MOM_01"
+      ],
+      "m1_id": "EP04_MOM_01",
+      "m1_ep": 4,
+      "m1_summary": "The soldier presents the ancient silver signet ring with the Ashb...",
+      "m2_id": "EP07_MOM_01",
+      "m2_ep": 7,
+      "m2_summary": "Gerald confronts Juliana at the cottage; the scarred soldier retu...",
+      "similarity": 0.7382,
+      "moment_1": {
+        "moment_id": "EP04_MOM_01",
+        "episode": 4,
+        "moment_type": "clue_or_prop",
+        "start_element_id": "EP04_EL001",
+        "end_element_id": "EP04_EL008",
+        "duration_seconds": 10.5,
+        "duration_cs": 1050,
+        "summary": "The soldier presents the ancient silver signet ring with the Ashburn crest to wed Juliana.",
+        "lookup_keywords": [
+          "signet ring",
+          "silver ring",
+          "Ashburn",
+          "crest",
+          "wedding",
+          "proposal",
+          "seal"
+        ],
+        "source_elements_verbatim": [
+          "[EP04_EL001 | 00:00.00->00:01.50] **CAMERA:** Close-up of the Mysterious Bearded Man's scarred hand holding out the silver band ring.",
+          "[EP04_EL002 | 00:01.50->00:03.20] **CAMERA:** Medium close-up of Juliana, staring down in disbelief at the offered ring.",
+          "[EP04_EL003 | 00:01.50->00:03.20] **ACTION:** Juliana's eyes widen, stunned breath catching in her throat.",
+          "[EP04_EL004 | 00:03.20->00:05.00] **CAMERA:** Medium shot of Gerald stepping forward from his pew with a smug, sneering grin.",
+          "[EP04_EL005 | 00:03.40->00:04.90] **GERALD (Mocking, Arrogant):** \"Look at him.\"",
+          "[EP04_EL006 | 00:05.00->00:07.50] **CAMERA:** Tight close-up of Gerald's venomous, self-satisfied face.",
+          "[EP04_EL007 | 00:05.00->00:07.50] **GERALD (Scornful):** \"A penniless nobody for a discarded bride.\"",
+          "[EP04_EL008 | 00:07.60->00:10.50] **CAMERA:** Medium shot of Clarissa covering her mouth with her gloved hand, bursting into cruel laughter."
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP07_MOM_01",
+        "episode": 7,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP07_EL034",
+        "end_element_id": "EP07_EL045",
+        "duration_seconds": 20.5,
+        "duration_cs": 2050,
+        "summary": "Gerald confronts Juliana at the cottage; the scarred soldier returns and terrifies Gerald into retreat.",
+        "lookup_keywords": [
+          "Gerald",
+          "cottage",
+          "woodland",
+          "soldier",
+          "intimidation",
+          "confrontation",
+          "husband"
+        ],
+        "source_elements_verbatim": [
+          "[EP07_EL034 | 01:09.50->01:14.00] **CAMERA:** Wide shot down a dark, fog-drenched forest path. A towering, shadowed figure walks steadily forward through the mist.",
+          "[EP07_EL035 | 01:09.50->01:11.20] **GERALD (V.O.) (Snarl):** \"Where is that beggar husband?\"",
+          "[EP07_EL036 | 01:10.00->01:15.50] **ACTION:** The Scarred Bearded Man marches purposefully toward the cottage, carrying a heavy bundle of chopped firewood bound tightly with hemp cord.",
+          "[EP07_EL037 | 01:14.00->01:15.50] **CAMERA:** Medium tracking shot pushing in on the Scarred Bearded Man's stern, rugged face as he approaches the gate.",
+          "[EP07_EL038 | 01:15.50->01:18.50] **CAMERA:** Low shot of the Scarred Bearded Man bending down and dropping the bundle of logs by the stone wall.",
+          "[EP07_EL039 | 01:16.20->01:17.50] **SOUND FX:** A dull, heavy thud of timber striking the mud.",
+          "[EP07_EL040 | 01:18.50->01:21.00] **CAMERA:** Medium full shot as the Scarred Bearded Man straightens to his full imposing height and steps directly toward Gerald.",
+          "[EP07_EL041 | 01:21.00->01:23.50] **CAMERA:** Two-shot framing the Scarred Bearded Man towering menacingly over Gerald, staring down at him with unyielding intensity.",
+          "[EP07_EL042 | 01:21.50->01:24.00] **ACTION:** Gerald freezes, his arrogant bravado instantly vanishing as cold dread overtakes his face.",
+          "[EP07_EL043 | 01:23.50->01:28.00] **CAMERA:** Low-angle close-up of Gerald looking up in sheer terror, his adam's apple bobbing nervously.",
+          "[EP07_EL044 | 01:26.50->01:28.50] **ARISTOCRATIC WOMAN (O.S.) (Urgent, Annoyed):** \"Gerald, don't let him frighten you.\"",
+          "[EP07_EL045 | 01:28.60->01:30.00] **GERALD (Trembling, Trying to Save Face):** \"What are you staring at?\""
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP05_MOM_01",
+        "EP41_MOM_01"
+      ],
+      "m1_id": "EP05_MOM_01",
+      "m1_ep": 5,
+      "m1_summary": "Juliana's mother's brass-bound ledger is salvaged from the mud, c...",
+      "m2_id": "EP41_MOM_01",
+      "m2_ep": 41,
+      "m2_summary": "Juliana is paraded in chains at Rupert's cathedral wedding until ...",
+      "similarity": 0.7257,
+      "moment_1": {
+        "moment_id": "EP05_MOM_01",
+        "episode": 5,
+        "moment_type": "clue_or_prop",
+        "start_element_id": "EP05_EL001",
+        "end_element_id": "EP05_EL010",
+        "duration_seconds": 20.8,
+        "duration_cs": 2080,
+        "summary": "Juliana's mother's brass-bound ledger is salvaged from the mud, containing true estate records.",
+        "lookup_keywords": [
+          "ledger",
+          "mother",
+          "brass-bound",
+          "inheritance",
+          "mud",
+          "records"
+        ],
+        "source_elements_verbatim": [
+          "[EP05_EL001 | 00:00.00->00:02.50] **CAMERA:** Close-up on Lady Juliana's hands clutching an ancient, brass-bound leather ledger against the skirt of her white wedding gown as she walks.",
+          "[EP05_EL002 | 00:00.00->00:02.50] **ACTION:** Juliana grips the heirloom ledger tightly against her waist, her posture resolute despite the tension.",
+          "[EP05_EL003 | 00:02.50->00:06.00] **CAMERA:** Wide shot tracking Juliana and the Mysterious Bearded Man descending the grand stone steps of the cathedral courtyard. Behind them, Lord Ashcroft emerges from the vaulted doorway leaning on his cane.",
+          "[EP05_EL004 | 00:04.20->00:05.80] **LORD ASHCROFT (Stern, Commanding):** \"Miss Ashcroft.\"",
+          "[EP05_EL005 | 00:05.50->00:06.60] **ACTION:** Juliana and the Mysterious Bearded Man pause on the stone steps, turning slightly back toward Lord Ashcroft.",
+          "[EP05_EL006 | 00:06.60->00:10.50] **CAMERA:** Close-up of Lord Ashcroft, his weathered face rigid with aristocratic pride and disgust.",
+          "[EP05_EL007 | 00:06.80->00:10.40] **LORD ASHCROFT (Cold, Condemnatory):** \"You will not leave this church carrying the Ashcroft name.\"",
+          "[EP05_EL008 | 00:10.50->00:15.80] **CAMERA:** Medium close-up of Juliana looking up at her father. Her hand rises to touch the amethyst heirloom pendant resting at her throat.",
+          "[EP05_EL009 | 00:11.70->00:15.50] **JULIANA (Defiant, Steadfast):** \"The vows are spoken, Father. I am his wife now.\"",
+          "[EP05_EL010 | 00:15.80->00:20.80] **CAMERA:** Medium shot of Lord Ashcroft standing rigid outside the chapel archway, unforgiving and unyielding."
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP41_MOM_01",
+        "episode": 41,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP41_EL001",
+        "end_element_id": "EP41_EL014",
+        "duration_seconds": 22.8,
+        "duration_cs": 2280,
+        "summary": "Juliana is paraded in chains at Rupert's cathedral wedding until an explosion shatters the gates.",
+        "lookup_keywords": [
+          "chains",
+          "cathedral",
+          "Rupert",
+          "explosion",
+          "wedding",
+          "assault"
+        ],
+        "source_elements_verbatim": [
+          "[EP41_EL001 | 00:00.00->00:01.80] **CAMERA:** Wide symmetrical shot looking down the candlelit, flower-strewn aisle toward the altar where Rupert, Catherine, and the Priest stand.",
+          "[EP41_EL002 | 00:01.80->00:04.50] **ACTION:** Catherine abruptly pulls away from Rupert and raises her white-gloved hand high, commanding silence from the congregation.",
+          "[EP41_EL003 | 00:01.80->00:02.80] **CATHERINE (Imperious, Commanding):** \"Wait.\"",
+          "[EP41_EL004 | 00:04.50->00:08.50] **CAMERA:** Medium shot tracking Catherine as she pivots toward the seated aristocracy, her veil floating gracefully behind her.",
+          "[EP41_EL005 | 00:04.90->00:08.20] **CATHERINE (Haughty, Loud):** \"Before I become Duchess of Ashburgh...\"",
+          "[EP41_EL006 | 00:08.50->00:13.00] **CAMERA:** Close-up of Catherine's face, her lips curling into a sadistic, triumphant sneer.",
+          "[EP41_EL007 | 00:08.50->00:12.70] **CATHERINE (Cruel, Resonant):** \"...I want everyone to see what happens to a woman who dares defy this family.\"",
+          "[EP41_EL008 | 00:13.00->00:15.50] **CAMERA:** Two-shot profile of Rupert and Catherine. Rupert turns to her with mild caution.",
+          "[EP41_EL009 | 00:13.20->00:14.00] **BLOND NOBLEMAN (Subdued, Inquiring):** \"Catherine...\"",
+          "[EP41_EL010 | 00:14.00->00:15.30] **CATHERINE (Callous, Projecting):** \"Bring her in.\"",
+          "[EP41_EL011 | 00:15.50->00:17.50] **SOUND FX:** Heavy wooden creak of the cathedral double doors swinging open.",
+          "[EP41_EL012 | 00:15.50->00:20.00] **CAMERA:** Wide shot from behind the altar down the aisle as the great church doors slowly open, revealing the silhouette of three figures against the daylight.",
+          "[EP41_EL013 | 00:17.50->00:20.00] **ACTION:** Juliana, dressed in a coarse drab prison dress with a numbered identification badge, is marched forward by two armed constables holding her by the arms.",
+          "[EP41_EL014 | 00:20.00->00:22.80] **CAMERA:** Extreme close-up of Juliana's scarred, dirtied wrists bound tight in heavy iron shackles."
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP05_MOM_01",
+        "EP25_MOM_01"
+      ],
+      "m1_id": "EP05_MOM_01",
+      "m1_ep": 5,
+      "m1_summary": "Juliana's mother's brass-bound ledger is salvaged from the mud, c...",
+      "m2_id": "EP25_MOM_01",
+      "m2_ep": 25,
+      "m2_summary": "Rupert's assassins attack the cottage; Alexander demonstrates let...",
+      "similarity": 0.7191,
+      "moment_1": {
+        "moment_id": "EP05_MOM_01",
+        "episode": 5,
+        "moment_type": "clue_or_prop",
+        "start_element_id": "EP05_EL001",
+        "end_element_id": "EP05_EL010",
+        "duration_seconds": 20.8,
+        "duration_cs": 2080,
+        "summary": "Juliana's mother's brass-bound ledger is salvaged from the mud, containing true estate records.",
+        "lookup_keywords": [
+          "ledger",
+          "mother",
+          "brass-bound",
+          "inheritance",
+          "mud",
+          "records"
+        ],
+        "source_elements_verbatim": [
+          "[EP05_EL001 | 00:00.00->00:02.50] **CAMERA:** Close-up on Lady Juliana's hands clutching an ancient, brass-bound leather ledger against the skirt of her white wedding gown as she walks.",
+          "[EP05_EL002 | 00:00.00->00:02.50] **ACTION:** Juliana grips the heirloom ledger tightly against her waist, her posture resolute despite the tension.",
+          "[EP05_EL003 | 00:02.50->00:06.00] **CAMERA:** Wide shot tracking Juliana and the Mysterious Bearded Man descending the grand stone steps of the cathedral courtyard. Behind them, Lord Ashcroft emerges from the vaulted doorway leaning on his cane.",
+          "[EP05_EL004 | 00:04.20->00:05.80] **LORD ASHCROFT (Stern, Commanding):** \"Miss Ashcroft.\"",
+          "[EP05_EL005 | 00:05.50->00:06.60] **ACTION:** Juliana and the Mysterious Bearded Man pause on the stone steps, turning slightly back toward Lord Ashcroft.",
+          "[EP05_EL006 | 00:06.60->00:10.50] **CAMERA:** Close-up of Lord Ashcroft, his weathered face rigid with aristocratic pride and disgust.",
+          "[EP05_EL007 | 00:06.80->00:10.40] **LORD ASHCROFT (Cold, Condemnatory):** \"You will not leave this church carrying the Ashcroft name.\"",
+          "[EP05_EL008 | 00:10.50->00:15.80] **CAMERA:** Medium close-up of Juliana looking up at her father. Her hand rises to touch the amethyst heirloom pendant resting at her throat.",
+          "[EP05_EL009 | 00:11.70->00:15.50] **JULIANA (Defiant, Steadfast):** \"The vows are spoken, Father. I am his wife now.\"",
+          "[EP05_EL010 | 00:15.80->00:20.80] **CAMERA:** Medium shot of Lord Ashcroft standing rigid outside the chapel archway, unforgiving and unyielding."
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP25_MOM_01",
+        "episode": 25,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP25_EL010",
+        "end_element_id": "EP25_EL020",
+        "duration_seconds": 19.6,
+        "duration_cs": 1960,
+        "summary": "Rupert's assassins attack the cottage; Alexander demonstrates lethal ducal swordsmanship.",
+        "lookup_keywords": [
+          "Rupert",
+          "assassins",
+          "swordsmanship",
+          "Alexander",
+          "cottage",
+          "attack"
+        ],
+        "source_elements_verbatim": [
+          "[EP25_EL010 | 00:13.20->00:16.20] **CAMERA:** Two-shot profile of Alexander grabbing Juliana's shoulder as she recoils.",
+          "[EP25_EL011 | 00:14.90->00:16.10] **ALEXANDER (Sharp, Alarmed):** \"You're hurt.\"",
+          "[EP25_EL012 | 00:16.20->00:18.80] **CAMERA:** Close-up of Juliana gritting her teeth against the pain, shaking her head.",
+          "[EP25_EL013 | 00:16.80->00:18.50] **JULIANA (Strained, Minimizing):** \"It is nothing.\"",
+          "[EP25_EL014 | 00:18.80->00:22.50] **ACTION:** Alexander's gloved fingers pull back the torn fabric of her cloak and sleeve, revealing a raw, bloody welt slashing across her bare shoulder.",
+          "[EP25_EL015 | 00:18.80->00:22.80] **CAMERA:** Tight close-up of the fresh riding-crop laceration cut across Juliana's shoulder.",
+          "[EP25_EL016 | 00:22.80->00:25.80] **CAMERA:** Close-up of Alexander's scarred face darkening with volatile fury, his jaw tightening.",
+          "[EP25_EL017 | 00:24.00->00:25.50] **ALEXANDER (Seething, Dangerous):** \"Who did this?\"",
+          "[EP25_EL018 | 00:25.80->00:29.80] **CAMERA:** Medium close-up of Juliana averting her eyes, her head bowed in quiet resignation.",
+          "[EP25_EL019 | 00:27.50->00:29.30] **JULIANA (Subdued, Weary):** \"It does not matter.\"",
+          "[EP25_EL020 | 00:29.80->00:32.80] **CAMERA:** Tight shot of Alexander, his eyes burning with intense anger."
+        ]
+      }
+    },
+    {
+      "pair_key": [
+        "EP01_MOM_01",
+        "EP07_MOM_01"
+      ],
+      "m1_id": "EP07_MOM_01",
+      "m1_ep": 7,
+      "m1_summary": "Gerald confronts Juliana at the cottage; the scarred soldier retu...",
+      "m2_id": "EP01_MOM_01",
+      "m2_ep": 1,
+      "m2_summary": "Gerald publicly humiliates and abandons Lady Juliana at the cathe...",
+      "similarity": 0.7536,
+      "moment_1": {
+        "moment_id": "EP07_MOM_01",
+        "episode": 7,
+        "moment_type": "high_stakes_confrontation",
+        "start_element_id": "EP07_EL034",
+        "end_element_id": "EP07_EL045",
+        "duration_seconds": 20.5,
+        "duration_cs": 2050,
+        "summary": "Gerald confronts Juliana at the cottage; the scarred soldier returns and terrifies Gerald into retreat.",
+        "lookup_keywords": [
+          "Gerald",
+          "cottage",
+          "woodland",
+          "soldier",
+          "intimidation",
+          "confrontation",
+          "husband"
+        ],
+        "source_elements_verbatim": [
+          "[EP07_EL034 | 01:09.50->01:14.00] **CAMERA:** Wide shot down a dark, fog-drenched forest path. A towering, shadowed figure walks steadily forward through the mist.",
+          "[EP07_EL035 | 01:09.50->01:11.20] **GERALD (V.O.) (Snarl):** \"Where is that beggar husband?\"",
+          "[EP07_EL036 | 01:10.00->01:15.50] **ACTION:** The Scarred Bearded Man marches purposefully toward the cottage, carrying a heavy bundle of chopped firewood bound tightly with hemp cord.",
+          "[EP07_EL037 | 01:14.00->01:15.50] **CAMERA:** Medium tracking shot pushing in on the Scarred Bearded Man's stern, rugged face as he approaches the gate.",
+          "[EP07_EL038 | 01:15.50->01:18.50] **CAMERA:** Low shot of the Scarred Bearded Man bending down and dropping the bundle of logs by the stone wall.",
+          "[EP07_EL039 | 01:16.20->01:17.50] **SOUND FX:** A dull, heavy thud of timber striking the mud.",
+          "[EP07_EL040 | 01:18.50->01:21.00] **CAMERA:** Medium full shot as the Scarred Bearded Man straightens to his full imposing height and steps directly toward Gerald.",
+          "[EP07_EL041 | 01:21.00->01:23.50] **CAMERA:** Two-shot framing the Scarred Bearded Man towering menacingly over Gerald, staring down at him with unyielding intensity.",
+          "[EP07_EL042 | 01:21.50->01:24.00] **ACTION:** Gerald freezes, his arrogant bravado instantly vanishing as cold dread overtakes his face.",
+          "[EP07_EL043 | 01:23.50->01:28.00] **CAMERA:** Low-angle close-up of Gerald looking up in sheer terror, his adam's apple bobbing nervously.",
+          "[EP07_EL044 | 01:26.50->01:28.50] **ARISTOCRATIC WOMAN (O.S.) (Urgent, Annoyed):** \"Gerald, don't let him frighten you.\"",
+          "[EP07_EL045 | 01:28.60->01:30.00] **GERALD (Trembling, Trying to Save Face):** \"What are you staring at?\""
+        ]
+      },
+      "moment_2": {
+        "moment_id": "EP01_MOM_01",
+        "episode": 1,
+        "moment_type": "contrast_baseline",
+        "start_element_id": "EP01_EL010",
+        "end_element_id": "EP01_EL019",
+        "duration_seconds": 15.5,
+        "duration_cs": 1550,
+        "summary": "Gerald publicly humiliates and abandons Lady Juliana at the cathedral altar for Clarissa.",
+        "lookup_keywords": [
+          "altar",
+          "Gerald",
+          "abandoned",
+          "wedding",
+          "Clarissa",
+          "humiliation",
+          "bride"
+        ],
+        "source_elements_verbatim": [
+          "[EP01_EL010 | 00:14.30->00:17.80] **CAMERA:** Over-the-shoulder medium close-up past the Matriarch to Juliana, looking past her toward the altar.",
+          "[EP01_EL011 | 00:15.50->00:17.50] **LADY JULIANA (Desperate, Unbelieving):** \"Gerald is waiting for me.\"",
+          "[EP01_EL012 | 00:17.80->00:20.50] **CAMERA:** Close-up on the Matriarch wearing an ornate tiara and sapphire jewelry, gazing down with merciless disdain.",
+          "[EP01_EL013 | 00:18.00->00:19.40] **MATRIARCH (Blunt, Unforgiving):** \"Not anymore.\"",
+          "[EP01_EL014 | 00:20.50->00:23.60] **CAMERA:** Close-up on Juliana's stricken face as the weight of the words sinks in.",
+          "[EP01_EL015 | 00:21.80->00:23.50] **LADY JULIANA (Trembling, Pleading):** \"What do you mean?\"",
+          "[EP01_EL016 | 00:23.60->00:25.80] **CAMERA:** Medium shot of the Matriarch gesturing dismissively toward the altar.",
+          "[EP01_EL017 | 00:23.80->00:25.50] **MATRIARCH (Dismissive):** \"Look for yourself.\"",
+          "[EP01_EL018 | 00:25.60->00:29.80] **ACTION:** Juliana walks forward past the Matriarch, her breath hitching as she approaches the altar steps, looking up in shock.",
+          "[EP01_EL019 | 00:25.80->00:29.80] **CAMERA:** Medium front tracking shot moving backward ahead of Juliana as she advances down the center aisle."
+        ]
+      }
+    }
+  ],
+  "mechanical_audit": [
+    {
+      "Candidate ID": "SYNTH_MULTI_01",
+      "Archetype": "emotional_reversal_turning_point",
+      "Relationship": "thematic",
+      "Episodes": "[1, 42]",
+      "Total Dur (s)": 40.7,
+      "Total Dur (cs)": 4070,
+      "Hook Offset": "1.20s",
+      "Valid": "PASSED",
+      "Errors": "None"
+    },
+    {
+      "Candidate ID": "SYNTH_MULTI_02",
+      "Archetype": "visual_anomaly_mystery_escalation",
+      "Relationship": "implied",
+      "Episodes": "[4, 42]",
+      "Total Dur (s)": 31.7,
+      "Total Dur (cs)": 3170,
+      "Hook Offset": "0.50s",
+      "Valid": "PASSED",
+      "Errors": "None"
+    },
+    {
+      "Candidate ID": "SYNTH_MULTI_03",
+      "Archetype": "immediate_shock_opener",
+      "Relationship": "explicit",
+      "Episodes": "[7, 41]",
+      "Total Dur (s)": 25.5,
+      "Total Dur (cs)": 2550,
+      "Hook Offset": "1.00s",
+      "Valid": "PASSED",
+      "Errors": "None"
+    }
+  ]
+}
