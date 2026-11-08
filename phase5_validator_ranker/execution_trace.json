@@ -1,5 +1,5 @@
 {
-  "timestamp": 1794160689.0408125,
+  "timestamp": 1794168618.5513737,
   "pipeline_stages": {
     "step1_mechanical_gate": {
       "initial_pool_count": 45,
@@ -286,6 +286,20 @@
         },
         {
           "rank": 18,
+          "candidate_id": "SYNTH_MULTI_03",
+          "mode": "multi_episode",
+          "score": 20,
+          "sort_key": [
+            true,
+            5,
+            5,
+            5,
+            5,
+            20
+          ]
+        },
+        {
+          "rank": 19,
           "candidate_id": "EP26_EL037_EP26_EL051",
           "mode": "single_episode",
           "score": 19,
@@ -299,7 +313,7 @@
           ]
         },
         {
-          "rank": 19,
+          "rank": 20,
           "candidate_id": "SYNTH_MULTI_02",
           "mode": "multi_episode",
           "score": 19,
@@ -313,7 +327,7 @@
           ]
         },
         {
-          "rank": 20,
+          "rank": 21,
           "candidate_id": "EP01_EL063_EP01_EL092",
           "mode": "single_episode",
           "score": 19,
@@ -327,7 +341,7 @@
           ]
         },
         {
-          "rank": 21,
+          "rank": 22,
           "candidate_id": "EP15_EL030_EP15_EL055",
           "mode": "single_episode",
           "score": 19,
@@ -341,7 +355,7 @@
           ]
         },
         {
-          "rank": 22,
+          "rank": 23,
           "candidate_id": "EP18_EL031_EP18_EL052",
           "mode": "single_episode",
           "score": 19,
@@ -355,7 +369,7 @@
           ]
         },
         {
-          "rank": 23,
+          "rank": 24,
           "candidate_id": "EP21_EL003_EP21_EL025",
           "mode": "single_episode",
           "score": 19,
@@ -369,7 +383,7 @@
           ]
         },
         {
-          "rank": 24,
+          "rank": 25,
           "candidate_id": "EP25_EL009_EP25_EL039",
           "mode": "single_episode",
           "score": 19,
@@ -383,7 +397,7 @@
           ]
         },
         {
-          "rank": 25,
+          "rank": 26,
           "candidate_id": "EP46_EL031_EP46_EL048",
           "mode": "single_episode",
           "score": 19,
@@ -397,7 +411,7 @@
           ]
         },
         {
-          "rank": 26,
+          "rank": 27,
           "candidate_id": "EP07_EL031_EP07_EL052",
           "mode": "single_episode",
           "score": 18,
@@ -411,7 +425,7 @@
           ]
         },
         {
-          "rank": 27,
+          "rank": 28,
           "candidate_id": "EP16_EL034_EP16_EL064",
           "mode": "single_episode",
           "score": 18,
@@ -425,7 +439,7 @@
           ]
         },
         {
-          "rank": 28,
+          "rank": 29,
           "candidate_id": "EP12_EL024_EP12_EL055",
           "mode": "single_episode",
           "score": 19,
@@ -439,7 +453,7 @@
           ]
         },
         {
-          "rank": 29,
+          "rank": 30,
           "candidate_id": "EP28_EL065_EP28_EL096",
           "mode": "single_episode",
           "score": 19,
@@ -453,7 +467,7 @@
           ]
         },
         {
-          "rank": 30,
+          "rank": 31,
           "candidate_id": "EP34_EL090_EP34_EL116",
           "mode": "single_episode",
           "score": 19,
@@ -467,7 +481,7 @@
           ]
         },
         {
-          "rank": 31,
+          "rank": 32,
           "candidate_id": "EP44_EL017_EP44_EL054",
           "mode": "single_episode",
           "score": 19,
@@ -481,7 +495,7 @@
           ]
         },
         {
-          "rank": 32,
+          "rank": 33,
           "candidate_id": "EP47_EL042_EP47_EL070",
           "mode": "single_episode",
           "score": 19,
@@ -495,7 +509,7 @@
           ]
         },
         {
-          "rank": 33,
+          "rank": 34,
           "candidate_id": "EP04_EL086_EP04_EL109",
           "mode": "single_episode",
           "score": 18,
@@ -509,7 +523,7 @@
           ]
         },
         {
-          "rank": 34,
+          "rank": 35,
           "candidate_id": "EP20_EL036_EP20_EL053",
           "mode": "single_episode",
           "score": 18,
@@ -520,20 +534,6 @@
             4,
             5,
             18
-          ]
-        },
-        {
-          "rank": 35,
-          "candidate_id": "SYNTH_MULTI_03",
-          "mode": "multi_episode",
-          "score": 19,
-          "sort_key": [
-            true,
-            4,
-            5,
-            5,
-            5,
-            19
           ]
         },
         {
@@ -781,6 +781,16 @@
           "continuity_preserved": true,
           "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
         },
+        "SYNTH_MULTI_03": {
+          "candidate_id": "SYNTH_MULTI_03",
+          "critic_status": "APPROVE",
+          "makes_sense_standalone": true,
+          "compelling_within_3s": true,
+          "leaves_unresolved_cliffhanger": true,
+          "spoiler_free": true,
+          "continuity_preserved": true,
+          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
+        },
         "EP26_EL037_EP26_EL051": {
           "candidate_id": "EP26_EL037_EP26_EL051",
           "critic_status": "APPROVE",
@@ -793,16 +803,6 @@
         },
         "SYNTH_MULTI_02": {
           "candidate_id": "SYNTH_MULTI_02",
-          "critic_status": "APPROVE",
-          "makes_sense_standalone": true,
-          "compelling_within_3s": true,
-          "leaves_unresolved_cliffhanger": true,
-          "spoiler_free": true,
-          "continuity_preserved": true,
-          "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
-        },
-        "EP01_EL063_EP01_EL092": {
-          "candidate_id": "EP01_EL063_EP01_EL092",
           "critic_status": "APPROVE",
           "makes_sense_standalone": true,
           "compelling_within_3s": true,
