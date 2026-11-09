@@ -4,7 +4,7 @@ input_scripts/
 
 # Raw LLM Outputs and Intermediate Checkpoints
 raw_llm_outputs/
-
+plans/
 # Environment Variables and Secrets
 .env
 *.env
