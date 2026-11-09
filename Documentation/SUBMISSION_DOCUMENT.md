@@ -65,7 +65,7 @@ The system enforces a strict sequential filtration and ranking architecture:
 | System Component | Conventional Deterministic Code | Generative AI / Large Language Models |
 | :--- | :--- | :--- |
 | **Screenplay Parsing** | Regex tokenization, tag decomposition, and integer centisecond conversion ($1\text{s} = 100\text{cs}$) to prevent float drift. | *None.* (LLMs are barred from parsing to guarantee 100% mechanical consistency). |
-| **Candidate Discovery** | Pre-computes and prints element durations directly in prompt transcripts. | `gemini-2.5-flash` identifies dramatic turning points aligned with the 3 standardized archetypes. |
+| **Candidate Discovery** | Pre-computes and prints element durations directly in prompt transcripts. | `gemini-3.8-flash` identifies dramatic turning points aligned with the 3 standardized archetypes. |
 | **Cross-Episode Linking**| Computes pairwise vector cosine similarity: $\operatorname{sim}(A, B) = \frac{A \cdot B}{\|A\| \|B\|}$ over cached embeddings. | Stitches disparate moments (e.g., Ep 1 Humiliation $\to$ Ep 42 Ducal Triumph) with audio/video transition directives. |
 | **Duration & Hook Bounds**| Strictly enforces $20.00\text{s} \le \text{dur} \le 60.00\text{s}$ and $\text{hook\_offset} \le 3.00\text{s}$. Rejects violations. | Returns `hook_timestamp_offset_seconds` and identifies verbatim opening/cliffhanger lines. |
 | **Deduplication & Sorting**| Calculates mathematical containment ($\ge 85\%$) and executes multi-key lexicographic sorting. | *None.* (LLM sorting is subjective; Python code ensures deterministic, reproducible rankings). |

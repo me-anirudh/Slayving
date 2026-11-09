@@ -1,6 +1,6 @@
 # 🎬 Quality Validation & Ranking Engine (`validator_ranker`)
 
-This directory contains the production implementation of **Phase 5: Ranking & Quality Validation** for the 50-episode microdrama series *"I Married a Broken Soldier. He was a Duke"*.
+This directory contains the production implementation of the **Quality Validation & Editorial Ranking Engine** for the 50-episode microdrama series *"I Married a Broken Soldier. He was a Duke"*.
 
 It enforces the strict **5-Step Sequential Pipeline** designed to eliminate ranking ambiguity, curse of knowledge bias, and duplicate clutter while guaranteeing high-converting, editor-ready promotional candidates.
 

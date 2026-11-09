@@ -48,7 +48,7 @@ The **Kuku Promo Finder** is a production-grade, hybrid AI-algorithmic system bu
 ### 1.2 Implemented Architecture & High-Priority Enhancements
 The codebase implements a strict 5-stage sequential processing engine that pairs deterministic parsing and mathematical validation with Google Gemini LLMs:
 - **Phase 1 & 2 (AST Parser Engine):** Converts 50 raw unstructured screenplays (`input_scripts/ep01.txt` to `ep50.txt`) into an Abstract Syntax Tree (`01_structured_episodes.json`) with integer centisecond timestamps ($1\text{s} = 100\text{cs}$) across 3,727 canonical elements, completely eliminating floating-point rounding errors.
-- **Phase 3 (Batch Extraction Engine):** Employs `gemini-2.5-flash` with structured Pydantic schemas across 10-episode batches to extract 24 single-episode candidate clips, 11 AST-enriched cross-episode narrative moments, and a flat narrative context store (character aliases, props, and relationships).
+- **Phase 3 (Batch Extraction Engine):** Employs `gemini-3.8-flash` with structured Pydantic schemas across 10-episode batches to extract 24 single-episode candidate clips, 11 AST-enriched cross-episode narrative moments, and a flat narrative context store (character aliases, props, and relationships).
 - **Phase 4 (Cross-Episode Synthesis Engine):** Bridges disparate narrative moments across episodes using semantic dense embeddings (`text-embedding-004`) and pairwise cosine similarity, generating 3 synthesized multi-episode promotional arcs.
 - **Phase 5 (5-Step Validator & Ranker Engine):** Pools all 27 candidates and subjects them to an uncompromising mechanical pipeline:
   1. *Step 1 — Mechanical Gate:* Rejects 2 duration-violating candidates ($<20.00\text{s}$), passing 25.
@@ -152,7 +152,7 @@ flowchart LR
 | :--- | :--- | :--- | :--- |
 | **FR-01** | Ingest and parse 50 raw text screenplay files | **Implemented** | [`UniversalScreenplayParser`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/ast_builder/build_ast.ipynb#L40) in `ast_builder/build_ast.ipynb` |
 | **FR-02** | Generate atomic AST with integer centiseconds | **Implemented** | `ScreenplayElement` with `start_cs`, `end_cs`, `duration_cs` |
-| **FR-03** | Batch-extract single-episode candidates via LLM | **Implemented** | [`BatchExtractorEngine`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/candidate_extractor/candidate_extractor.ipynb#L80) using `gemini-2.5-flash` |
+| **FR-03** | Batch-extract single-episode candidates via LLM | **Implemented** | [`BatchExtractorEngine`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/candidate_extractor/candidate_extractor.ipynb#L80) using `gemini-3.8-flash` |
 | **FR-04** | Extract cross-episode building blocks & context store | **Implemented** | `RawNarrativeMoment` & `FlatNarrativeContext` in Phase 3 |
 | **FR-05** | Semantic retrieval of cross-episode moments | **Implemented** | [`SemanticMomentRetriever`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/cross_episode_synthesis/synthesizer.py#L151) via embeddings & cosine similarity |
 | **FR-06** | Synthesize multi-episode promo arcs (2–3 segments) | **Implemented** | [`CrossEpisodeSynthesizerEngine`](file:///c:/Users/Anirudh%20Singh/OneDrive/Documents/Kuku%20FM/cross_episode_synthesis/synthesizer.py#L358) |
@@ -333,9 +333,9 @@ The journey of screenplay data through the pipeline comprises six distinct trans
 ## 9. AI Pipeline and Prompt Engineering
 
 ### 9.1 LLM Model Selection & Temperature Strategy
-- **Extraction Model:** `gemini-2.5-flash` ($\text{temperature} = 0.2$). Low temperature minimizes hallucinated element IDs and enforces adherence to pre-computed element durations.
-- **Synthesis Model:** `gemini-2.5-flash` ($\text{temperature} = 0.2$). Enforces structural integrity across stitched segments while maintaining creative transition instructions.
-- **Quality Critic Model:** `gemini-2.5-flash` ($\text{temperature} = 0.1$). Near-zero temperature ensures strict, repeatable editorial judgment without random leniency.
+- **Extraction Model:** `gemini-3.8-flash` ($\text{temperature} = 0.2$). Low temperature minimizes hallucinated element IDs and enforces adherence to pre-computed element durations.
+- **Synthesis Model:** `gemini-3.8-flash` ($\text{temperature} = 0.2$). Enforces structural integrity across stitched segments while maintaining creative transition instructions.
+- **Quality Critic Model:** `gemini-3.8-flash` ($\text{temperature} = 0.1$). Near-zero temperature ensures strict, repeatable editorial judgment without random leniency.
 - **Embedding Model:** `text-embedding-004` (768-dimensional dense vectors) with disk-based JSON caching.
 
 ### 9.2 The Three Standardized Promo Archetypes

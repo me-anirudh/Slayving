@@ -130,7 +130,7 @@ class ValidatorRankerEngine:
         final_promos_path: Optional[Path] = None,
         editorial_report_path: Optional[Path] = None,
         execution_trace_path: Optional[Path] = None,
-        model_name: str = "gemini-2.5-flash",
+        model_name: str = "gemini-3.8-flash",
         api_key: Optional[str] = None
     ):
         # Defensive path resolution
@@ -1062,7 +1062,7 @@ def main():
     parser.add_argument("--out-json", default="validator_ranker/final_promos.json", help="Output path for final_promos.json")
     parser.add_argument("--out-report", default="validator_ranker/editorial_report.md", help="Output path for editorial_report.md")
     parser.add_argument("--out-trace", default="validator_ranker/execution_trace.json", help="Output path for execution_trace.json")
-    parser.add_argument("--model", default="gemini-2.5-flash", help="Model name for Critic")
+    parser.add_argument("--model", default="gemini-3.8-flash", help="Model name for Critic")
     parser.add_argument("--buffer", type=int, default=20, help="Critic buffer size (default 20)")
     parser.add_argument("--no-llm", action="store_true", help="Force deterministic critic without calling Gemini")
 

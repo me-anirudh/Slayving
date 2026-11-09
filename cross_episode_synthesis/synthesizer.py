@@ -407,7 +407,7 @@ class CrossEpisodeSynthesizerEngine:
         extractions_path: Optional[Path] = None,
         output_path: Optional[Path] = None,
         embeddings_cache_path: Optional[Path] = None,
-        model_name: str = "gemini-2.5-flash",
+        model_name: str = "gemini-3.8-flash",
         api_key: Optional[str] = None
     ):
         # Defensive path resolution
@@ -1565,7 +1565,7 @@ def main():
     parser.add_argument("--extractions", default=None, help="Path to batch extractions JSON")
     parser.add_argument("--output", default="cross_episode_synthesis/03_synthesized_candidates.json", help="Path to output JSON")
     parser.add_argument("--cache", default="cross_episode_synthesis/embeddings_cache.json", help="Path to embeddings cache JSON")
-    parser.add_argument("--model", default="gemini-2.5-flash", help="Gemini model name")
+    parser.add_argument("--model", default="gemini-3.8-flash", help="Gemini model name")
     parser.add_argument("--top-pairs", type=int, default=5, help="Number of eligible combinations to synthesize")
     parser.add_argument("--sim-threshold", type=float, default=0.75, help="Cosine similarity threshold for Step 1")
     parser.add_argument("--no-llm", action="store_true", help="Force deterministic synthesis without external LLM")

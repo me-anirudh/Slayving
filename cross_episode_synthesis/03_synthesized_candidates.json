@@ -1,45 +1,45 @@
 {
   "series_title": "I Married a Broken Soldier. He was a Duke",
-  "total_synthesized_candidates": 3,
-  "synthesis_notes": "Synthesized 3 distinct multi-episode candidates connecting baseline humiliation, visual prop identity, and violent confrontation across 50 episodes with rigorous dialogue continuity.",
+  "total_synthesized_candidates": 4,
+  "synthesis_notes": "Across all candidates, narrative continuity and emotional causality were prioritized by pairing intense setup beats with direct thematic or explicit payoffs. Candidate SYNTH_MULTI_01 connects Catherine's unpunished physical brutality against Juliana in Episode 25 to her complete humiliation in Episode 44, where the Duke turns his back on her in front of high society. Candidate SYNTH_MULTI_02 uses dialogue rhyming, bookending Juliana's whispered reliance on 'Alexander' when beaten by thugs in Episode 15 with her steadfast faith as she faces death in Episode 38. Candidate SYNTH_MULTI_03 contrasts military breach action with ecclesiastical nullification. Candidate SYNTH_MULTI_04 uses a visual match cut on the scorched botanical grimoire between dungeon torture and courtroom trial. All duration centiseconds strictly adhere to element boundary calculations.",
   "synthesized_candidates": [
     {
       "candidate_id": "SYNTH_MULTI_01",
       "composition_mode": "multi_episode",
       "archetype": "emotional_reversal_turning_point",
-      "relationship_type": "thematic",
+      "relationship_type": "explicit",
       "segments": [
         {
           "segment_index": 1,
-          "episode_num": 1,
-          "start_element_id": "EP01_EL010",
-          "end_element_id": "EP01_EL019",
-          "start_raw": "00:14.30",
-          "end_raw": "00:29.80",
-          "duration_seconds": 15.5,
-          "duration_cs": 1550,
-          "purpose_in_promo": "Hook / Initial Humiliation at Altar",
+          "episode_num": 25,
+          "start_element_id": "EP25_EL014",
+          "end_element_id": "EP25_EL024",
+          "start_raw": "00:18.80",
+          "end_raw": "00:37.80",
+          "duration_seconds": 19.0,
+          "duration_cs": 1900,
+          "purpose_in_promo": "Hook / Initial Humiliation",
           "trim_recommendation": {
-            "exact_opening_dialogue": "I cannot wed a woman whose family name is ruined.",
-            "exact_ending_dialogue": "Gerald drops Juliana's hand at the altar steps as the congregation gasps.",
-            "verbatim_trim_quote": "I cannot wed a woman whose family name is ruined.",
+            "exact_opening_dialogue": "Alexander's gloved fingers pull back the torn fabric of her cloak and sleeve, revealing a raw, bloody welt slashing across her bare shoulder.",
+            "exact_ending_dialogue": "Lady Catherine.",
+            "verbatim_trim_quote": null,
             "boundary_type": "element_boundary",
             "requires_manual_editor_verification": false
           }
         },
         {
           "segment_index": 2,
-          "episode_num": 42,
-          "start_element_id": "EP42_EL001",
-          "end_element_id": "EP42_EL014",
-          "start_raw": "00:00.00",
-          "end_raw": "00:25.20",
-          "duration_seconds": 25.2,
-          "duration_cs": 2520,
-          "purpose_in_promo": "Climax / Payoff & Full Ducal Vindication",
+          "episode_num": 44,
+          "start_element_id": "EP44_EL035",
+          "end_element_id": "EP44_EL054",
+          "start_raw": "00:46.40",
+          "end_raw": "01:10.50",
+          "duration_seconds": 24.1,
+          "duration_cs": 2410,
+          "purpose_in_promo": "Climax / Payoff",
           "trim_recommendation": {
-            "exact_opening_dialogue": "Alexander strides deliberately through the pulverized cathedral doors in full ducal armor.",
-            "exact_ending_dialogue": "I am Alexander, Duke of Ashburn, and you are sitting in my chair.",
+            "exact_opening_dialogue": "I was supposed to be your Duchess!",
+            "exact_ending_dialogue": "Her?!",
             "verbatim_trim_quote": null,
             "boundary_type": "element_boundary",
             "requires_manual_editor_verification": false
@@ -47,14 +47,12 @@
         }
       ],
       "transition_instructions": [
-        "Cut directly on Gerald dropping Juliana's hand at 00:31.00.",
-        "Layer an ominous bass drop SFX transitioning into explosive artillery thunder.",
-        "Hard cut to smoke clearing in Ep 42 as Alexander steps through the shattered cathedral doors."
+        "Cut sharply from Juliana naming 'Lady Catherine' in Episode 25 to Catherine screaming 'I was supposed to be your Duchess!' in Episode 44, using a dramatic audio bass drop on the cut to establish immediate thematic cause-and-effect retribution."
       ],
-      "hook_timestamp_offset_seconds": 1.2,
-      "hook_description": "Gerald's cruel rejection at the altar shocks the scrolling viewer within 1.2s.",
-      "cliffhanger_description": "Alexander declares his ducal title before the terrified usurpers as guards draw steel.",
-      "standalone_coherence_explanation": "Direct contrast between the abandoned bride in Ep 1 and the triumphant return of her husband in Ep 42.",
+      "hook_timestamp_offset_seconds": 0.0,
+      "hook_description": "Visceral physical shock in the first 3 seconds as Alexander reveals a bloody riding-crop welt slashed across Juliana's shoulder and seethes with dangerous fury.",
+      "cliffhanger_description": "Alexander walks past the weeping noblewoman toward Juliana shackled in iron chains, cutting on Catherine's horrified, disbelieving gasp: 'Her?!'",
+      "standalone_coherence_explanation": "A cold viewer instantly understands the arc: Lady Catherine brutally whipped an innocent woman, and later faces total public humiliation when the returning war hero rejects Catherine to choose her battered victim.",
       "rubric_scores": {
         "standalone_coherence": 5,
         "hook_strength": 5,
@@ -62,112 +60,48 @@
         "emotional_impact": 5
       },
       "overall_score": 20,
-      "total_duration_seconds": 40.7,
-      "total_duration_cs": 4070,
+      "total_duration_seconds": 43.1,
+      "total_duration_cs": 4310,
       "retrieval_method": "semantic_embedding",
-      "semantic_similarity_score": 0.8842
+      "semantic_similarity_score": 0.8555
     },
     {
       "candidate_id": "SYNTH_MULTI_02",
-      "composition_mode": "multi_episode",
-      "archetype": "visual_anomaly_mystery_escalation",
-      "relationship_type": "implied",
-      "segments": [
-        {
-          "segment_index": 1,
-          "episode_num": 4,
-          "start_element_id": "EP04_EL001",
-          "end_element_id": "EP04_EL008",
-          "start_raw": "00:00.00",
-          "end_raw": "00:10.50",
-          "duration_seconds": 10.5,
-          "duration_cs": 1050,
-          "purpose_in_promo": "Mystery Hook / The Scarred Hand Presents the Silver Ring",
-          "trim_recommendation": {
-            "exact_opening_dialogue": "Close-up of the Mysterious Bearded Man's scarred hand holding out the silver band.",
-            "exact_ending_dialogue": "Take my name, and you will never kneel to anyone again.",
-            "verbatim_trim_quote": null,
-            "boundary_type": "element_boundary",
-            "requires_manual_editor_verification": false
-          }
-        },
-        {
-          "segment_index": 2,
-          "episode_num": 42,
-          "start_element_id": "EP42_EL001",
-          "end_element_id": "EP42_EL010",
-          "start_raw": "00:00.00",
-          "end_raw": "00:21.20",
-          "duration_seconds": 21.2,
-          "duration_cs": 2120,
-          "purpose_in_promo": "Mystery Payoff / Seal Revealed on Ducal Sword",
-          "trim_recommendation": {
-            "exact_opening_dialogue": "Low-angle shot through drifting smoke and rubble across the cathedral aisle.",
-            "exact_ending_dialogue": "He holds up the matching ancestral signet ring before the trembling court.",
-            "verbatim_trim_quote": null,
-            "boundary_type": "element_boundary",
-            "requires_manual_editor_verification": false
-          }
-        }
-      ],
-      "transition_instructions": [
-        "Match cut: Extreme close-up of the silver ring in the scarred soldier's hand in Ep 4.",
-        "Visual whip-pan with a sharp metallic unsheathing sound effect.",
-        "Match cut to the same silver ring glistening on the hilt of the ducal sword in Ep 42."
-      ],
-      "hook_timestamp_offset_seconds": 0.5,
-      "hook_description": "Close-up on the scarred hand offering the royal signet ring establishes intrigue in 0.5s.",
-      "cliffhanger_description": "The royal court gasps as the soldier's true identity is locked in place by the ring.",
-      "standalone_coherence_explanation": "Visual match between the mysterious proposal and the royal revelation makes the mystery self-explanatory.",
-      "rubric_scores": {
-        "standalone_coherence": 5,
-        "hook_strength": 5,
-        "cliffhanger_strength": 5,
-        "emotional_impact": 4
-      },
-      "overall_score": 19,
-      "total_duration_seconds": 31.7,
-      "total_duration_cs": 3170,
-      "retrieval_method": "semantic_embedding",
-      "semantic_similarity_score": 0.9125
-    },
-    {
-      "candidate_id": "SYNTH_MULTI_03",
       "composition_mode": "multi_episode",
       "archetype": "immediate_shock_opener",
       "relationship_type": "explicit",
       "segments": [
         {
           "segment_index": 1,
-          "episode_num": 7,
-          "start_element_id": "EP07_EL034",
-          "end_element_id": "EP07_EL040",
-          "start_raw": "01:09.50",
-          "end_raw": "01:21.00",
-          "duration_seconds": 11.5,
-          "duration_cs": 1150,
-          "purpose_in_promo": "Visceral Threat / Husband Intimidates Bully",
+          "episode_num": 15,
+          "start_element_id": "EP15_EL034",
+          "end_element_id": "EP15_EL048",
+          "start_raw": "00:47.40",
+          "end_raw": "01:12.60",
+          "duration_seconds": 25.2,
+          "duration_cs": 2520,
+          "purpose_in_promo": "Hook / Initial Humiliation",
           "trim_recommendation": {
-            "exact_opening_dialogue": "Where is that beggar husband?",
-            "exact_ending_dialogue": "The scarred soldier straightens to his towering height, glaring silently at Gerald.",
-            "verbatim_trim_quote": "Where is that beggar husband?",
-            "boundary_type": "internal_cut",
-            "requires_manual_editor_verification": true
+            "exact_opening_dialogue": "The Thug with Cap violently shoves Juliana back with both hands; she cries out as she loses her balance and crashes hard onto the wet stone path.",
+            "exact_ending_dialogue": "Alexander...",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
           }
         },
         {
           "segment_index": 2,
-          "episode_num": 41,
-          "start_element_id": "EP41_EL001",
-          "end_element_id": "EP41_EL009",
-          "start_raw": "00:00.00",
-          "end_raw": "00:14.00",
-          "duration_seconds": 14.0,
-          "duration_cs": 1400,
-          "purpose_in_promo": "Peak Jeopardy / Cathedral Blast Assault",
+          "episode_num": 38,
+          "start_element_id": "EP38_EL039",
+          "end_element_id": "EP38_EL055",
+          "start_raw": "01:00.50",
+          "end_raw": "01:24.00",
+          "duration_seconds": 23.5,
+          "duration_cs": 2350,
+          "purpose_in_promo": "Climax / Payoff",
           "trim_recommendation": {
-            "exact_opening_dialogue": "Catherine abruptly pulls away from Rupert and raises her white-gloved hand.",
-            "exact_ending_dialogue": "A deafening explosion shatters the cathedral entrance, sending burning wood across the aisle.",
+            "exact_opening_dialogue": "I will not give them my husband.",
+            "exact_ending_dialogue": "Alexander...",
             "verbatim_trim_quote": null,
             "boundary_type": "element_boundary",
             "requires_manual_editor_verification": false
@@ -175,14 +109,13 @@
         }
       ],
       "transition_instructions": [
-        "Cut on the soldier's silent lethal glare in Ep 7.",
-        "Sound bridge: Rapid heartbeat pounding into sudden church organ music.",
-        "Cut directly to Juliana in chains at Rupert's altar as the massive explosion detonates."
+        "Match-cut on Juliana's whispered line 'Alexander...' in Episode 15 into her cell in Episode 38 as she again whispers 'Alexander...' while church bells toll for her execution.",
+        "Use a seamless audio crossfade between the night wind outside the cottage and the deep reverberant dungeon church bells."
       ],
-      "hook_timestamp_offset_seconds": 1.0,
-      "hook_description": "Gerald's aggressive shout cut short by the towering scarred husband grabs attention in 1.0s.",
-      "cliffhanger_description": "The cathedral gates blow apart in flames just as Juliana is forced to her knees.",
-      "standalone_coherence_explanation": "Clear conflict: arrogant bully tries to crush the couple, leading into an epic rescue assault.",
+      "hook_timestamp_offset_seconds": 0.0,
+      "hook_description": "Violent shove sends Juliana crashing into the mud bleeding over her mother's trampled plants within the opening 2 seconds.",
+      "cliffhanger_description": "Juliana clings to the dungeon bars smiling with defiant devotion as cathedral execution bells toll, ending on her soft prayer to Alexander.",
+      "standalone_coherence_explanation": "Establishes Juliana's complete loyalty to her protector husband across physical assault and impending execution, anchored by the vocal motif of his name.",
       "rubric_scores": {
         "standalone_coherence": 4,
         "hook_strength": 5,
@@ -190,10 +123,135 @@
         "emotional_impact": 5
       },
       "overall_score": 19,
-      "total_duration_seconds": 25.5,
-      "total_duration_cs": 2550,
+      "total_duration_seconds": 48.7,
+      "total_duration_cs": 4870,
       "retrieval_method": "semantic_embedding",
-      "semantic_similarity_score": 0.867
+      "semantic_similarity_score": 0.8542
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "thematic",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 41,
+          "start_element_id": "EP41_EL047",
+          "end_element_id": "EP41_EL053",
+          "start_raw": "01:21.00",
+          "end_raw": "01:36.09",
+          "duration_seconds": 15.09,
+          "duration_cs": 1509,
+          "purpose_in_promo": "Hook / Initial Humiliation",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Ear-splitting detonation, shattering stone, wood splintering violently into kindling, followed by terrified screams of the congregation.",
+            "exact_ending_dialogue": "Extreme close-up pushing in on Juliana's bruised face. Her expression shifts from grim resolve into awe, breathless realization, and blooming hope as the orchestral score swells into an abrupt cliffhanger.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 45,
+          "start_element_id": "EP45_EL060",
+          "end_element_id": "EP45_EL074",
+          "start_raw": "01:28.40",
+          "end_raw": "02:01.75",
+          "duration_seconds": 33.35,
+          "duration_cs": 3335,
+          "purpose_in_promo": "Climax / Payoff",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "No one will bow yet!",
+            "exact_ending_dialogue": "Catherine raises her chin, a vindictive smirk spreading across her lips as she realizes her rival's claim has just been torn to pieces.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Cut on the peak orchestral crescendo of the breach in Episode 41 directly into the booming decree 'No one will bow yet!' by the High Priest in Episode 45, slamming the audience from physical triumph straight into legal devastation."
+      ],
+      "hook_timestamp_offset_seconds": 0.0,
+      "hook_description": "Immediate visceral shock as an explosive fireball breaches the cathedral doors, sending debris flying and wedding guests screaming.",
+      "cliffhanger_description": "The High Priest strips Juliana of her title as unlawful wife before the Crown, cutting on Catherine's venomous, triumphant smile.",
+      "standalone_coherence_explanation": "Presents a high-octane rescue operation that seems victorious, only to be instantly shattered by the supreme religious authority voiding the royal marriage.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 48.44,
+      "total_duration_cs": 4844,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.8436
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_04",
+      "composition_mode": "multi_episode",
+      "archetype": "visual_anomaly_mystery_escalation",
+      "relationship_type": "thematic",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 31,
+          "start_element_id": "EP31_EL074",
+          "end_element_id": "EP31_EL087",
+          "start_raw": "02:14.50",
+          "end_raw": "02:40.00",
+          "duration_seconds": 25.5,
+          "duration_cs": 2550,
+          "purpose_in_promo": "Mystery Escalation",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "This pathetic book is the only thing you still have from your mother.",
+            "exact_ending_dialogue": "Extreme macro close-up of Juliana's wide, trembling eye. The brilliant orange ember of the hot poker reflects clearly in the center of her pupil, holding on the terrifying cliffhanger before an abrupt cut.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 34,
+          "start_element_id": "EP34_EL004",
+          "end_element_id": "EP34_EL017",
+          "start_raw": "00:07.80",
+          "end_raw": "00:35.30",
+          "duration_seconds": 27.5,
+          "duration_cs": 2750,
+          "purpose_in_promo": "Climax / Payoff",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Close-up of the charred, ancient botanical grimoire resting on the bench, its scorched pages open to an illustration of a wild rose, as a finger firmly taps the text.",
+            "exact_ending_dialogue": "I admit to healing the sick.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Visual match cut from the glowing orange branding poker scorching the botanical grimoire in Episode 31 to the charred, scorched grimoire lying on the judge's mahogany bench in Episode 34.",
+        "Pair the visual match cut with a sharp audio transition from the sizzling iron to the judge's harsh, echoing interrogation."
+      ],
+      "hook_timestamp_offset_seconds": 0.0,
+      "hook_description": "A sadist drives a glowing branding iron into a deceased mother's botanical book and threatens to blind Juliana within the first 3 seconds.",
+      "cliffhanger_description": "Juliana is cornered in the courtroom accused of forbidden dark arts, ending on her fearless proclamation: 'I admit to healing the sick.'",
+      "standalone_coherence_explanation": "Tracks the tangible prop clue (the scorched herbal grimoire) from an illicit torture cellar into a public kangaroo court for witchcraft.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 4,
+        "emotional_impact": 5
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 53.0,
+      "total_duration_cs": 5300,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.8342
     }
   ],
   "diversity_ranked_top15": [
@@ -288,39 +346,39 @@
       "candidate_id": "SYNTH_MULTI_01",
       "composition_mode": "multi_episode",
       "archetype": "emotional_reversal_turning_point",
-      "relationship_type": "thematic",
+      "relationship_type": "explicit",
       "segments": [
         {
           "segment_index": 1,
-          "episode_num": 1,
-          "start_element_id": "EP01_EL010",
-          "end_element_id": "EP01_EL019",
-          "start_raw": "00:14.30",
-          "end_raw": "00:29.80",
-          "duration_seconds": 15.5,
-          "duration_cs": 1550,
-          "purpose_in_promo": "Hook / Initial Humiliation at Altar",
+          "episode_num": 25,
+          "start_element_id": "EP25_EL014",
+          "end_element_id": "EP25_EL024",
+          "start_raw": "00:18.80",
+          "end_raw": "00:37.80",
+          "duration_seconds": 19.0,
+          "duration_cs": 1900,
+          "purpose_in_promo": "Hook / Initial Humiliation",
           "trim_recommendation": {
-            "exact_opening_dialogue": "I cannot wed a woman whose family name is ruined.",
-            "exact_ending_dialogue": "Gerald drops Juliana's hand at the altar steps as the congregation gasps.",
-            "verbatim_trim_quote": "I cannot wed a woman whose family name is ruined.",
+            "exact_opening_dialogue": "Alexander's gloved fingers pull back the torn fabric of her cloak and sleeve, revealing a raw, bloody welt slashing across her bare shoulder.",
+            "exact_ending_dialogue": "Lady Catherine.",
+            "verbatim_trim_quote": null,
             "boundary_type": "element_boundary",
             "requires_manual_editor_verification": false
           }
         },
         {
           "segment_index": 2,
-          "episode_num": 42,
-          "start_element_id": "EP42_EL001",
-          "end_element_id": "EP42_EL014",
-          "start_raw": "00:00.00",
-          "end_raw": "00:25.20",
-          "duration_seconds": 25.2,
-          "duration_cs": 2520,
-          "purpose_in_promo": "Climax / Payoff & Full Ducal Vindication",
+          "episode_num": 44,
+          "start_element_id": "EP44_EL035",
+          "end_element_id": "EP44_EL054",
+          "start_raw": "00:46.40",
+          "end_raw": "01:10.50",
+          "duration_seconds": 24.1,
+          "duration_cs": 2410,
+          "purpose_in_promo": "Climax / Payoff",
           "trim_recommendation": {
-            "exact_opening_dialogue": "Alexander strides deliberately through the pulverized cathedral doors in full ducal armor.",
-            "exact_ending_dialogue": "I am Alexander, Duke of Ashburn, and you are sitting in my chair.",
+            "exact_opening_dialogue": "I was supposed to be your Duchess!",
+            "exact_ending_dialogue": "Her?!",
             "verbatim_trim_quote": null,
             "boundary_type": "element_boundary",
             "requires_manual_editor_verification": false
@@ -328,14 +386,12 @@
         }
       ],
       "transition_instructions": [
-        "Cut directly on Gerald dropping Juliana's hand at 00:31.00.",
-        "Layer an ominous bass drop SFX transitioning into explosive artillery thunder.",
-        "Hard cut to smoke clearing in Ep 42 as Alexander steps through the shattered cathedral doors."
+        "Cut sharply from Juliana naming 'Lady Catherine' in Episode 25 to Catherine screaming 'I was supposed to be your Duchess!' in Episode 44, using a dramatic audio bass drop on the cut to establish immediate thematic cause-and-effect retribution."
       ],
-      "hook_timestamp_offset_seconds": 1.2,
-      "hook_description": "Gerald's cruel rejection at the altar shocks the scrolling viewer within 1.2s.",
-      "cliffhanger_description": "Alexander declares his ducal title before the terrified usurpers as guards draw steel.",
-      "standalone_coherence_explanation": "Direct contrast between the abandoned bride in Ep 1 and the triumphant return of her husband in Ep 42.",
+      "hook_timestamp_offset_seconds": 0.0,
+      "hook_description": "Visceral physical shock in the first 3 seconds as Alexander reveals a bloody riding-crop welt slashed across Juliana's shoulder and seethes with dangerous fury.",
+      "cliffhanger_description": "Alexander walks past the weeping noblewoman toward Juliana shackled in iron chains, cutting on Catherine's horrified, disbelieving gasp: 'Her?!'",
+      "standalone_coherence_explanation": "A cold viewer instantly understands the arc: Lady Catherine brutally whipped an innocent woman, and later faces total public humiliation when the returning war hero rejects Catherine to choose her battered victim.",
       "rubric_scores": {
         "standalone_coherence": 5,
         "hook_strength": 5,
@@ -343,13 +399,13 @@
         "emotional_impact": 5
       },
       "overall_score": 20,
-      "total_duration_seconds": 40.7,
-      "total_duration_cs": 4070,
+      "total_duration_seconds": 43.1,
+      "total_duration_cs": 4310,
       "retrieval_method": "semantic_embedding",
-      "semantic_similarity_score": 0.8842,
+      "semantic_similarity_score": 0.8555,
       "episodes_involved": [
-        1,
-        42
+        25,
+        44
       ]
     },
     {
@@ -686,8 +742,8 @@
       "3": 1,
       "19": 1,
       "36": 1,
-      "1": 1,
-      "42": 1,
+      "25": 1,
+      "44": 1,
       "11": 1,
       "23": 2,
       "27": 2,
@@ -730,27 +786,27 @@
     {
       "candidate_id": "SYNTH_MULTI_01",
       "archetype": "emotional_reversal_turning_point",
-      "relationship_type": "thematic",
+      "relationship_type": "explicit",
       "episodes": [
-        1,
-        42
+        25,
+        44
       ],
-      "total_duration_s": 40.7,
-      "hook_offset_s": 1.2,
+      "total_duration_s": 43.1,
+      "hook_offset_s": 0.0,
       "overall_score": 20,
       "is_valid": true,
       "errors": "PASSED"
     },
     {
       "candidate_id": "SYNTH_MULTI_02",
-      "archetype": "visual_anomaly_mystery_escalation",
-      "relationship_type": "implied",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
       "episodes": [
-        4,
-        42
+        15,
+        38
       ],
-      "total_duration_s": 31.7,
-      "hook_offset_s": 0.5,
+      "total_duration_s": 48.7,
+      "hook_offset_s": 0.0,
       "overall_score": 19,
       "is_valid": true,
       "errors": "PASSED"
@@ -758,13 +814,27 @@
     {
       "candidate_id": "SYNTH_MULTI_03",
       "archetype": "immediate_shock_opener",
-      "relationship_type": "explicit",
+      "relationship_type": "thematic",
       "episodes": [
-        7,
-        41
+        41,
+        45
       ],
-      "total_duration_s": 25.5,
-      "hook_offset_s": 1.0,
+      "total_duration_s": 48.44,
+      "hook_offset_s": 0.0,
+      "overall_score": 19,
+      "is_valid": true,
+      "errors": "PASSED"
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_04",
+      "archetype": "visual_anomaly_mystery_escalation",
+      "relationship_type": "thematic",
+      "episodes": [
+        31,
+        34
+      ],
+      "total_duration_s": 53.0,
+      "hook_offset_s": 0.0,
       "overall_score": 19,
       "is_valid": true,
       "errors": "PASSED"

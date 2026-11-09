@@ -162,7 +162,7 @@ class BatchExtractorEngine:
         ast_path: Optional[Path] = None,
         raw_outputs_dir: Optional[Path] = None,
         output_path: Optional[Path] = None,
-        model_name: str = "gemini-2.5-flash",
+        model_name: str = "gemini-3.8-flash",
         api_key: Optional[str] = None
     ):
         # Defensive path resolution
@@ -438,7 +438,7 @@ def main():
     parser.add_argument("--ast", type=Path, default=None, help="Path to canonical 01_structured_episodes.json")
     parser.add_argument("--raw-dir", type=Path, default=None, help="Directory for raw LLM batch checkpoints")
     parser.add_argument("--output", type=Path, default=None, help="Path to save 02_batch_extractions.json")
-    parser.add_argument("--model", type=str, default="gemini-2.5-flash", help="Gemini model name")
+    parser.add_argument("--model", type=str, default="gemini-3.8-flash", help="Gemini model name")
     parser.add_argument("--batch-size", type=int, default=5, help="Episodes per extraction batch")
     parser.add_argument("--force-refresh", action="store_true", help="Force refresh and bypass existing checkpoints")
     parser.add_argument("--max-retries", type=int, default=3, help="Max API call retries with exponential backoff")
