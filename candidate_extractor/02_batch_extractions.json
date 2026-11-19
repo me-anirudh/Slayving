@@ -1,48 +1,22 @@
 {
-  "series_title": "The Dark Knight",
+  "series_title": "I Married a Broken Soldier. He was a Duke",
   "total_episodes": 7,
   "total_single_episode_candidates": 10,
-  "total_narrative_moments": 21,
+  "total_narrative_moments": 20,
   "candidates": [
     {
-      "start_element_id": "EP01_EL169",
-      "end_element_id": "EP01_EL172",
-      "scene_num": 38,
-      "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
-      "hook_timestamp_offset_seconds": 2.1,
+      "start_element_id": "EP01_EL044",
+      "end_element_id": "EP01_EL050",
+      "scene_num": 17,
+      "scene_heading": "INT. LOBBY, BANK -- DAY",
+      "hook_timestamp_offset_seconds": 1.0,
       "archetype": "immediate_shock_opener",
-      "hook_description": "A hostile courtroom witness suddenly draws a concealed pistol right in front of District Attorney Harvey Dent and pulls the trigger point-blank.",
-      "cliffhanger_description": "Dent disarms and decks the hitman, drops the failed weapon before mob boss Maroni with a biting quip, and boldly turns back to the judge declaring he is not done.",
-      "standalone_coherence_explanation": "The scene establishes Harvey Dent as a fearless prosecutor taking on organized crime, unphased even when an assassin pulls a gun on him in open court.",
+      "hook_description": "Bozo calmly answers 'No. I kill the bus driver' right before a full-sized yellow school bus crashes through the bank wall, obliterating his accomplice.",
+      "cliffhanger_description": "The unmasked Joker walks away, trapping the purple thread of a live grenade in the mouth of the bank manager, cutting right as tension peaks before detonation.",
+      "standalone_coherence_explanation": "A cold viewer instantly understands a high-stakes mob bank robbery where the mastermind is systematically executing his own crew members one by one.",
       "trim_recommendation": {
-        "exact_opening_dialogue": "Permission to treat the witness as hostile?",
-        "exact_ending_dialogue": "But, your honor, I'm not done...",
-        "verbatim_trim_quote": null,
-        "boundary_type": "element_boundary",
-        "requires_manual_editor_verification": false
-      },
-      "rubric_scores": {
-        "standalone_coherence": 5,
-        "hook_strength": 5,
-        "cliffhanger_strength": 4,
-        "emotional_impact": 5
-      },
-      "calculated_duration_seconds": 30.3,
-      "calculated_duration_cs": 3030
-    },
-    {
-      "start_element_id": "EP02_EL161",
-      "end_element_id": "EP02_EL164",
-      "scene_num": 21,
-      "scene_heading": "INT. POOL HALL -- NIGHT",
-      "hook_timestamp_offset_seconds": 0.0,
-      "archetype": "immediate_shock_opener",
-      "hook_description": "The Joker suddenly springs to life from a body bag, knifing bodyguards and hooking a razor-sharp switchblade straight into mob boss Gambol's mouth.",
-      "cliffhanger_description": "The Joker finishes his chilling 'Why so serious?' monologue and slits Gambol's throat with a flick of his wrist as horrified gangsters watch.",
-      "standalone_coherence_explanation": "A ruthless criminal kingpin is completely outplayed by an unpredictable psychopath who uses theatrical terror and lethal cunning to commandeer Gotham's underworld.",
-      "trim_recommendation": {
-        "exact_opening_dialogue": "How about alive?",
-        "exact_ending_dialogue": "Why so serious?",
+        "exact_opening_dialogue": "No. I kill the bus driver.",
+        "exact_ending_dialogue": "...simply makes you stranger.",
         "verbatim_trim_quote": null,
         "boundary_type": "element_boundary",
         "requires_manual_editor_verification": false
@@ -53,19 +27,45 @@
         "cliffhanger_strength": 5,
         "emotional_impact": 5
       },
-      "calculated_duration_seconds": 47.4,
-      "calculated_duration_cs": 4740
+      "calculated_duration_seconds": 69.3,
+      "calculated_duration_cs": 6930
+    },
+    {
+      "start_element_id": "EP02_EL086",
+      "end_element_id": "EP02_EL090",
+      "scene_num": 9,
+      "scene_heading": "INT. SOCIAL CLUB, DOWNTOWN -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.5,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Gambol threatens to have the Joker decapitated, and the Joker counters instantly with a deadly pencil magic trick.",
+      "cliffhanger_description": "After brutally killing Gambol's bodyguard with the pencil, the Joker demands respect as the mobsters tense up on the edge of a shootout.",
+      "standalone_coherence_explanation": "A colorful psychopathic criminal crashes a high-level mob summit and performs an execution in broad daylight to prove his dominance.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Give me one reason I shouldn't have my boy here pull your head off.",
+        "exact_ending_dialogue": "Sit. I wanna hear proposition.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 4,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 34.8,
+      "calculated_duration_cs": 3480
     },
     {
       "start_element_id": "EP03_EL161",
       "end_element_id": "EP03_EL166",
       "scene_num": 30,
       "scene_heading": "INT. LIVING ROOM, WAYNE'S PENTHOUSE -- NIGHT",
-      "hook_timestamp_offset_seconds": 2.4,
+      "hook_timestamp_offset_seconds": 2.0,
       "archetype": "immediate_shock_opener",
-      "hook_description": "As the Joker terrorizes Rachel Dawes, Batman arrives from behind with an explosive one-liner and delivers a crushing strike.",
-      "cliffhanger_description": "The Joker blows out the high-rise window and dangles Rachel over Gotham, dropping her into free fall as Batman leaps out into the abyss after her.",
-      "standalone_coherence_explanation": "A masked superhero confronts an armed psychopath invading an upscale penthouse, escalating immediately into a life-or-death rescue plunge.",
+      "hook_description": "Batman bursts into the penthouse confrontation with 'Then you're going to love me' and takes down the Joker's thugs with brutal CQC.",
+      "cliffhanger_description": "The Joker dangles Rachel Dawes out of a shattered skyscraper window and drops her into freefall, with Batman diving off the ledge after her.",
+      "standalone_coherence_explanation": "A superhero ambushes a terrorist holding party guests hostage, culminating in the villain dropping the hero's love interest out of a penthouse window.",
       "trim_recommendation": {
         "exact_opening_dialogue": "A little fight in you. I like that.",
         "exact_ending_dialogue": "Very poor choice of words...",
@@ -83,41 +83,15 @@
       "calculated_duration_cs": 5090
     },
     {
-      "start_element_id": "EP03_EL219",
-      "end_element_id": "EP03_EL223",
-      "scene_num": 41,
-      "scene_heading": "INT. FOX'S OFFICE, WAYNE ENTERPRISES -- DAY",
-      "hook_timestamp_offset_seconds": 0.0,
-      "archetype": "emotional_reversal_turning_point",
-      "hook_description": "An ambitious corporate lawyer produces stolen blueprints of the Tumbler, threatening to expose Bruce Wayne as Batman.",
-      "cliffhanger_description": "Lucius Fox completely dismantles the extortionist's leverage by calmly laying out the suicidal reality of trying to blackmail a billionaire vigilante.",
-      "standalone_coherence_explanation": "A corporate employee attempts to blackmail an executive over a secret vigilante identity, only to be effortlessly put in his place with quiet intellectual intimidation.",
-      "trim_recommendation": {
-        "exact_opening_dialogue": "Changes things when you know it's just a rich kid playing dress up.",
-        "exact_ending_dialogue": "Good luck.",
-        "verbatim_trim_quote": null,
-        "boundary_type": "element_boundary",
-        "requires_manual_editor_verification": false
-      },
-      "rubric_scores": {
-        "standalone_coherence": 5,
-        "hook_strength": 4,
-        "cliffhanger_strength": 4,
-        "emotional_impact": 4
-      },
-      "calculated_duration_seconds": 53.7,
-      "calculated_duration_cs": 5370
-    },
-    {
       "start_element_id": "EP04_EL126",
       "end_element_id": "EP04_EL131",
       "scene_num": 30,
       "scene_heading": "INT. PRESS ROOM, SUPERIOR COURT -- CONTINUOUS",
-      "hook_timestamp_offset_seconds": 0.0,
+      "hook_timestamp_offset_seconds": 1.0,
       "archetype": "emotional_reversal_turning_point",
-      "hook_description": "Harvey Dent rallies a terrified Gotham crowd with his iconic 'the night is darkest just before the dawn' address.",
-      "cliffhanger_description": "When the crowd turns hostile demanding Batman's head, Dent unexpectedly holds out his own hands in cuffs and claims he is Batman.",
-      "standalone_coherence_explanation": "Facing an angry citizenry terrified of terrorist attacks, Gotham's district attorney makes the ultimate sacrifice by claiming to be the masked vigilante everyone is hunting.",
+      "hook_description": "Harvey Dent addresses a panicked mob with 'The night is darkest just before the dawn' before making a stunning confession.",
+      "cliffhanger_description": "Dent unexpectedly holds out his own wrists and announces to the media 'I am the Batman,' leaving Bruce Wayne stunned in the back row.",
+      "standalone_coherence_explanation": "Under immense public pressure to unmask a vigilante, a crusading district attorney falsely claims he is the vigilante to take the heat.",
       "trim_recommendation": {
         "exact_opening_dialogue": "Yes. They are. But the night is darkest just before the dawn.",
         "exact_ending_dialogue": "I am the Batman.",
@@ -135,18 +109,18 @@
       "calculated_duration_cs": 3570
     },
     {
-      "start_element_id": "EP05_EL058",
-      "end_element_id": "EP05_EL067",
-      "scene_num": 19,
-      "scene_heading": "INT. INTERROGATION, MCU, GOTHAM CENTRAL -- NIGHT",
-      "hook_timestamp_offset_seconds": 1.2,
-      "archetype": "immediate_shock_opener",
-      "hook_description": "The interrogation lights flare up to reveal Batman standing behind the Joker, instantly smashing his face into the metal table.",
-      "cliffhanger_description": "Despite a brutal physical beating, the Joker bursts into unhinged laughter and confesses his sick codependence: 'You. Complete. Me.'",
-      "standalone_coherence_explanation": "A brutal clash of ideologies between a disciplined vigilante using force and a psychotic terrorist who cannot be intimidated or broken.",
+      "start_element_id": "EP05_EL087",
+      "end_element_id": "EP05_EL095",
+      "scene_num": 24,
+      "scene_heading": "INT. INTERROGATION ROOM, MCU, GOTHAM CENTRAL -- NIGHT",
+      "hook_timestamp_offset_seconds": 1.5,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "The Joker laughs through a bloody mouth while Batman ruthlessly interrogates him, slamming him into walls.",
+      "cliffhanger_description": "The Joker gives Batman two simultaneous locations for Rachel and Dent, forcing him into a sadistic Sophie's choice with only minutes left.",
+      "standalone_coherence_explanation": "An unhinged villain with nothing to lose reveals that two innocent hostages are trapped with timers running out and forces the vigilante to pick only one.",
       "trim_recommendation": {
-        "exact_opening_dialogue": "Not exactly.",
-        "exact_ending_dialogue": "You. Complete. Me.",
+        "exact_opening_dialogue": "Look at you go... does Harvey know about you and his-?",
+        "exact_ending_dialogue": "He's at 250 52nd Boulevard. And she's on avenue X at Cicero.",
         "verbatim_trim_quote": null,
         "boundary_type": "element_boundary",
         "requires_manual_editor_verification": false
@@ -157,21 +131,21 @@
         "cliffhanger_strength": 5,
         "emotional_impact": 5
       },
-      "calculated_duration_seconds": 57.5,
-      "calculated_duration_cs": 5750
+      "calculated_duration_seconds": 46.6,
+      "calculated_duration_cs": 4660
     },
     {
-      "start_element_id": "EP05_EL217",
+      "start_element_id": "EP05_EL215",
       "end_element_id": "EP05_EL225",
       "scene_num": 70,
       "scene_heading": "INT. HOSPITAL ROOM -- CONTINUOUS",
-      "hook_timestamp_offset_seconds": 0.0,
-      "archetype": "emotional_reversal_turning_point",
-      "hook_description": "A severely burned Harvey Dent furiously demands Commissioner Gordon speak the cruel nickname given to him at Internal Affairs.",
-      "cliffhanger_description": "Dent reveals his grotesquely burned, skinless half-face as Two-Face, coldly telling Gordon he has not begun to feel true sorrow yet.",
-      "standalone_coherence_explanation": "A fallen hero, driven mad by loss and excruciating pain, rejects pity and transforms into a bitter monster bent on retribution against those he trusted.",
+      "hook_timestamp_offset_seconds": 2.0,
+      "archetype": "visual_anomaly_mystery_escalation",
+      "hook_description": "Gordon enters a hospital room to apologize, only for Dent to aggressively demand Gordon recite his vicious IA nickname.",
+      "cliffhanger_description": "Dent turns his destroyed, half-burned face to Gordon, declaring himself 'Two-Face' and rejecting Gordon's apology with a chilling warning: 'Not yet.'",
+      "standalone_coherence_explanation": "A fallen public champion wakes up horribly disfigured and bitter after losing the love of his life, turning on his former police ally.",
       "trim_recommendation": {
-        "exact_opening_dialogue": "Remember the name you all had for me when I was at Internal Affairs? What was it, Gordon?",
+        "exact_opening_dialogue": "I'm sorry about Rachel. The Doctor says you're in agonizing pain but you won't accept medication.",
         "exact_ending_dialogue": "No. No you're not. Not yet.",
         "verbatim_trim_quote": null,
         "boundary_type": "element_boundary",
@@ -183,22 +157,22 @@
         "cliffhanger_strength": 5,
         "emotional_impact": 5
       },
-      "calculated_duration_seconds": 44.3,
-      "calculated_duration_cs": 4430
+      "calculated_duration_seconds": 53.6,
+      "calculated_duration_cs": 5360
     },
     {
-      "start_element_id": "EP06_EL009",
-      "end_element_id": "EP06_EL017",
+      "start_element_id": "EP06_EL005",
+      "end_element_id": "EP06_EL012",
       "scene_num": 2,
       "scene_heading": "INT. RUSTED HULK -- CONTINUOUS",
       "hook_timestamp_offset_seconds": 0.0,
       "archetype": "immediate_shock_opener",
-      "hook_description": "The Joker brazenly plucks a lit cigar from mob boss Chechen's mouth and hurls it onto a thirty-foot mountain of mob cash, igniting a billion dollars in flames.",
-      "cliffhanger_description": "Lau screams atop the flaming cash pyramid while the Joker ruthlessly sentences the Chechen to be fed to his own attack dogs, proclaiming that everything burns.",
-      "standalone_coherence_explanation": "A complete, self-contained demonstration of villainous philosophy: the Joker proves he isn't motivated by greed, usurping the entire underworld in a single stroke.",
+      "hook_description": "The Joker suddenly splashes gasoline across a thirty-foot pyramid containing a billion dollars in mob cash and sticks a gun in the Chechen's face.",
+      "cliffhanger_description": "The Joker proclaims he is only burning his half and tosses a lit cigar directly onto the gasoline-soaked billion-dollar cash pile, leaving the mob's empire going up in flames.",
+      "standalone_coherence_explanation": "A criminal boss confronts an eccentric clown over their shared money, only for the clown to douse the billion-dollar fortune in gasoline and ignite it on principle.",
       "trim_recommendation": {
-        "exact_opening_dialogue": "You said you were a man of your word.",
-        "exact_ending_dialogue": "Everything. Burns. The Joker pulls out a phone...",
+        "exact_opening_dialogue": "More for us.  What you do with all your money, Mr.Joker?",
+        "exact_ending_dialogue": "The Chechen watches the money catch fire.",
         "verbatim_trim_quote": null,
         "boundary_type": "element_boundary",
         "requires_manual_editor_verification": false
@@ -209,21 +183,21 @@
         "cliffhanger_strength": 5,
         "emotional_impact": 5
       },
-      "calculated_duration_seconds": 45.6,
-      "calculated_duration_cs": 4560
+      "calculated_duration_seconds": 34.2,
+      "calculated_duration_cs": 3420
     },
     {
       "start_element_id": "EP06_EL129",
       "end_element_id": "EP06_EL137",
       "scene_num": 38,
       "scene_heading": "INT. BAR, GOTHAM HEIGHTS -- DAY",
-      "hook_timestamp_offset_seconds": 1.5,
-      "archetype": "emotional_reversal_turning_point",
-      "hook_description": "Corrupt cop Wuertz is ambushed in a dive bar by Harvey Dent, who leans out of the shadows to reveal his hideously burned half-face.",
-      "cliffhanger_description": "Dent leaves Wuertz's life to a 50/50 coin toss; the scarred face lands up and a gunshot echoes before the outcome is shown.",
-      "standalone_coherence_explanation": "A betrayed, disfigured avenger corners the crooked officer who handed over his lover, executing cold vigilante justice based solely on a coin flip.",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Detective Wuertz gets a gun shoved directly into his face in an empty dive bar by Harvey Dent, who leans out of the shadows to expose his hideous half-destroyed face.",
+      "cliffhanger_description": "Dent flips his scarred silver dollar to decide Wuertz's life; it lands scarred side up and a deafening gunshot rings out in the bar.",
+      "standalone_coherence_explanation": "A vengeful disfigured former prosecutor interrogates a corrupt cop who betrayed him, leaving the cop's execution entirely to a 50/50 coin flip.",
       "trim_recommendation": {
-        "exact_opening_dialogue": "What? You need me to shake it for-",
+        "exact_opening_dialogue": "What?  You need me to shake it for-",
         "exact_ending_dialogue": "The drunk at the bar STIRS at the GUNSHOT.",
         "verbatim_trim_quote": null,
         "boundary_type": "element_boundary",
@@ -239,18 +213,18 @@
       "calculated_duration_cs": 5020
     },
     {
-      "start_element_id": "EP07_EL163",
-      "end_element_id": "EP07_EL169",
-      "scene_num": 49,
-      "scene_heading": "INT. SECOND FLOOR, BURNT WAREHOUSE -- CONTINUOUS",
-      "hook_timestamp_offset_seconds": 1.2,
+      "start_element_id": "EP07_EL110",
+      "end_element_id": "EP07_EL114",
+      "scene_num": 44,
+      "scene_heading": "INT. PREWITT BUILDING -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
       "archetype": "immediate_shock_opener",
-      "hook_description": "Dent abruptly turns his revolver onto Batman, flips his scarred coin to tails, and shoots Batman point-blank in the gut.",
-      "cliffhanger_description": "As Dent flips the coin to execute Gordon's young son, Batman tackles Dent over the precipice; Dent falls to his death while the boy's fate hangs in the balance.",
-      "standalone_coherence_explanation": "A grieving, vengeful anti-hero forces the police commissioner to watch his son face russian roulette by coin toss to pay for past moral compromises.",
+      "hook_description": "The Joker crouches over a pinned Batman with a bomb remote in hand, mocking him and preparing to blow up hundreds of citizens himself.",
+      "cliffhanger_description": "Batman fires his gauntlet scallop blades into the Joker and kicks him off the high-rise ledge, catching him upside-down midair with his grapple line.",
+      "standalone_coherence_explanation": "A costumed superhero pinned under a structural beam fights back against a cackling terrorist with a detonator and flings him off a skyscraper.",
       "trim_recommendation": {
-        "exact_opening_dialogue": "Fair enough.",
-        "exact_ending_dialogue": "The coin stops spinning, GOOD SIDE UP.",
+        "exact_opening_dialogue": "You're alone.",
+        "exact_ending_dialogue": "The Joker HOLLERS in pain as Batman HAULS him up.",
         "verbatim_trim_quote": null,
         "boundary_type": "element_boundary",
         "requires_manual_editor_verification": false
@@ -261,8 +235,34 @@
         "cliffhanger_strength": 5,
         "emotional_impact": 5
       },
-      "calculated_duration_seconds": 54.7,
-      "calculated_duration_cs": 5470
+      "calculated_duration_seconds": 37.5,
+      "calculated_duration_cs": 3750
+    },
+    {
+      "start_element_id": "EP07_EL164",
+      "end_element_id": "EP07_EL168",
+      "scene_num": 49,
+      "scene_heading": "INT. SECOND FLOOR, BURNT WAREHOUSE -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Two-Face points a revolver at Batman, flips his scarred coin to tails, and instantly shoots Batman in the stomach.",
+      "cliffhanger_description": "After sparing himself on a coin flip, Dent levels the gun at Gordon's terrified young son and orders Gordon to lie to his boy before the final toss.",
+      "standalone_coherence_explanation": "A corrupted vigilante executes summary coin-toss justice, shooting Batman and turning the barrel toward an innocent child while the helpless father pleads for mercy.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "You first. He points the gun at Batman.  FLIPS the coin.  TAILS.  He SHOOTS.",
+        "exact_ending_dialogue": "Tell your son it's going to be all right, Gordon.  Lie. Like I lied.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 27.1,
+      "calculated_duration_cs": 2710
     }
   ],
   "narrative_moments": [
@@ -274,13 +274,12 @@
       "moment_type": "identity_reveal",
       "start_element_id": "EP01_EL048",
       "end_element_id": "EP01_EL050",
-      "summary": "Bozo unmasks in the bank lobby to reveal he is the Joker, wedging a pin-rigged grenade into the bank manager's jaws.",
+      "summary": "Bozo pulls off his mask to reveal himself as the Joker, articulating his philosophy that whatever doesn't kill you makes you stranger.",
       "lookup_keywords": [
-        "Joker",
-        "Bank Manager",
-        "Grenade",
-        "Mask",
-        "Unmasking"
+        "The Joker",
+        "mask reveal",
+        "bank robbery",
+        "grenade"
       ],
       "duration_seconds": 34.8,
       "duration_cs": 3480,
@@ -293,25 +292,27 @@
     {
       "moment_id": "EP01_MOM_02",
       "episode": 1,
-      "scene_num": 38,
+      "scene_num": 37,
       "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
-      "moment_type": "high_stakes_confrontation",
-      "start_element_id": "EP01_EL170",
-      "end_element_id": "EP01_EL172",
-      "summary": "Harvey Dent dodges a point-blank assassination attempt in court and decks the gunman without flinching.",
+      "moment_type": "clue_or_prop",
+      "start_element_id": "EP01_EL156",
+      "end_element_id": "EP01_EL161",
+      "summary": "Harvey Dent displays his two-headed lucky silver dollar to Rachel, declaring that he makes his own luck.",
       "lookup_keywords": [
         "Harvey Dent",
-        "Maroni",
-        "Rossi",
-        "Courtroom",
-        "Assassination"
+        "lucky coin",
+        "silver dollar",
+        "chance"
       ],
-      "duration_seconds": 28.2,
-      "duration_cs": 2820,
+      "duration_seconds": 24.9,
+      "duration_cs": 2490,
       "source_elements_verbatim": [
-        "[EP01_EL170 | 16:55.50-17:10.80] **ROSSI:** Hostile?  I'll show you hostile. Rossi JUMPS UP, points a GUN at Dent's face.  SCREAMS from the gallery.  Rossi PULLS the TRIGGER- the gun MISFIRES with a POP.  Dent steps forward, grabs the GUN- DECKS Rossi with a RIGHT CROSS- unloads the GUN and sets it down in front of Maroni.",
-        "[EP01_EL171 | 17:10.80-17:21.90] **DENT:** Ceramic 28 caliber.  Made in China. If you want to kill a public servant, Mr. Maroni, I recommend you buy American. Everyone STARES, open-mouthed, as Dent adjusts his tie.  The Bailiffs are wrestling Rossi from the box-",
-        "[EP01_EL172 | 17:21.90-17:23.70] **DENT (CONT'D):** But, your honor, I'm not done..."
+        "[EP01_EL156 | 15:46.80-15:51.60] **RACHEL:** I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.",
+        "[EP01_EL157 | 15:51.60-15:57.30] **DENT:** Well, then, fair's fair: heads, I'll take it.  Tails, he's all yours. Dent FLIPS.  Shows it to Rachel- heads.",
+        "[EP01_EL158 | 15:57.30-15:59.40] **RACHEL:** You're flipping coins to see who leads?",
+        "[EP01_EL159 | 15:59.40-16:03.90] **DENT:** My father's lucky coin.  As I recall, it got me my first date with you.",
+        "[EP01_EL160 | 16:03.90-16:07.20] **RACHEL:** I'm serious, Harvey, you don't leave things like this to chance.",
+        "[EP01_EL161 | 16:07.20-16:11.70] **DENT:** I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI."
       ]
     },
     {
@@ -321,23 +322,37 @@
       "scene_heading": "INT. SOCIAL CLUB, DOWNTOWN -- CONTINUOUS",
       "moment_type": "high_stakes_confrontation",
       "start_element_id": "EP02_EL086",
-      "end_element_id": "EP02_EL090",
-      "summary": "The Joker performs his lethal pencil magic trick during an underground mob summit and proposes killing Batman for half their fortune.",
+      "end_element_id": "EP02_EL104",
+      "summary": "The Joker crashes the mob syndicate meeting, kills Gambol's thug with a pencil trick, and offers to assassinate Batman for half their fortune.",
       "lookup_keywords": [
-        "Joker",
+        "The Joker",
+        "pencil trick",
         "Gambol",
-        "Magic Trick",
-        "Mob Summit",
-        "Pencil"
+        "mob summit",
+        "kill Batman"
       ],
-      "duration_seconds": 34.8,
-      "duration_cs": 3480,
+      "duration_seconds": 112.6,
+      "duration_cs": 11260,
       "source_elements_verbatim": [
         "[EP02_EL086 | 05:19.40-05:26.00] **GAMBOL:** Give me one reason I shouldn't have my boy here pull your head off. The Joker pulls out a freshly sharpened pencil.",
         "[EP02_EL087 | 05:26.00-05:30.80] **THE JOKER:** How about a magic trick? The Joker SLAMS the pencil into the table, leaving it UPRIGHT.",
         "[EP02_EL088 | 05:30.80-05:44.60] **THE JOKER (CONT'D):** I'll make this pencil disappear. Gambol nods.  His BODYGUARD MOVES at the Joker- who SIDESTEPS- GRIPS his head- SLAMS it, FACE DOWN, onto the table... The Bodyguard goes LIMP and slides off of the table.  The PENCIL is gone.  MAGIC.  The Joker BOWS.  Grins at Gambol.",
         "[EP02_EL089 | 05:44.60-05:50.90] **THE JOKER (CONT'D):** And by the way, the suit wasn't cheap.  You should know.  You bought it. Gambol STANDS, furious.  The Chechen stops him.",
-        "[EP02_EL090 | 05:50.90-05:54.20] **CHECHEN:** Sit.  I wanna hear proposition. The Joker nods his thanks.  Rises."
+        "[EP02_EL090 | 05:50.90-05:54.20] **CHECHEN:** Sit.  I wanna hear proposition. The Joker nods his thanks.  Rises.",
+        "[EP02_EL091 | 05:54.20-06:01.70] **THE JOKER:** A year ago these cops and lawyers wouldn't dare cross any of you.  What happened?  Did your balls drop off? See, a guy like me-",
+        "[EP02_EL092 | 06:01.70-06:04.40] **GAMBOL:** A freak. Laughs.  Which the Joker tries to ignore.",
+        "[EP02_EL093 | 06:04.40-06:23.30] **THE JOKER:** A guy like me... I know why you're holding your little group therapy session in broad daylight.  I know why you're afraid to go out at night. Batman.  He's shown Gotham your true colors.  And Dent's just the beginning. And as for his so-called plan- Batman has no jurisdiction.  He'll find him and make him squeal. I can tell the squealers every time.",
+        "[EP02_EL094 | 06:23.30-06:24.30] **CHECHEN:** What you propose?",
+        "[EP02_EL095 | 06:24.30-06:26.40] **THE JOKER:** It's simple.  Kill the Batman. Jeers.  Laughter.",
+        "[EP02_EL096 | 06:26.40-06:29.40] **MARONI:** If it's so easy why haven't you done it already?",
+        "[EP02_EL097 | 06:29.40-06:34.50] **THE JOKER:** Like my mother used to tell me- if you're good at something, never do it for free.",
+        "[EP02_EL098 | 06:34.50-06:35.70] **CHECHEN:** How much you want?",
+        "[EP02_EL099 | 06:35.70-06:37.50] **THE JOKER:** Half. Laughter.  The Joker shrugs.  Rises.",
+        "[EP02_EL100 | 06:37.50-06:43.20] **THE JOKER (CONT'D):** You don't deal with this now, soon Gambol won't even be able to get a nickel for his grandma-",
+        "[EP02_EL101 | 06:43.20-06:50.40] **GAMBOL:** Enough from the clown. Gambol gets up, MOVING at the Joker, who casually opens his coat, revealing EXPLOSIVES wired to his chest.  Gambol stops.",
+        "[EP02_EL102 | 06:50.40-06:54.60] **THE JOKER:** Let's not blow this out of all proportion. Gambol stares at the Joker.  Hard.",
+        "[EP02_EL103 | 06:54.60-07:07.20] **GAMBOL:** You think you can steal from us and just walk away?  I'm putting the word out- 5 hundred grand for this clown dead.  A million alive, so I get to teach him some manners, first. The Joker shrugs.  Turns to the assembled.",
+        "[EP02_EL104 | 07:07.20-07:12.00] **THE JOKER:** Let me know when you change your minds. The Joker strolls out.  Maroni turns to Lau."
       ]
     },
     {
@@ -345,16 +360,15 @@
       "episode": 2,
       "scene_num": 21,
       "scene_heading": "INT. POOL HALL -- NIGHT",
-      "moment_type": "high_stakes_confrontation",
+      "moment_type": "setup_or_vow",
       "start_element_id": "EP02_EL160",
       "end_element_id": "EP02_EL164",
-      "summary": "The Joker fakes his death to ambush Gambol, recounting the gruesome origin of his facial scars before executing him.",
+      "summary": "The Joker feigns death to infiltrate Gambol's pool hall, cuts Gambol's mouth, and delivers his iconic 'Why so serious?' monologue before murdering him.",
       "lookup_keywords": [
-        "Joker",
+        "The Joker",
         "Gambol",
         "Why so serious",
-        "Scars",
-        "Pool Hall"
+        "scars story"
       ],
       "duration_seconds": 56.4,
       "duration_cs": 5640,
@@ -369,68 +383,17 @@
     {
       "moment_id": "EP03_MOM_01",
       "episode": 3,
-      "scene_num": 12,
-      "scene_heading": "INT. WAYNE PENTHOUSE -- DAY",
-      "moment_type": "setup_or_vow",
-      "start_element_id": "EP03_EL071",
-      "end_element_id": "EP03_EL073",
-      "summary": "The Joker broadcasts a snuff tape of a copycat Batman, issuing an ultimatum that citizens will die every day until Batman turns himself in.",
-      "lookup_keywords": [
-        "Joker",
-        "Brian Douglas",
-        "Ultimatum",
-        "Batman",
-        "Broadcast"
-      ],
-      "duration_seconds": 24.0,
-      "duration_cs": 2400,
-      "source_elements_verbatim": [
-        "[EP03_EL071 | 04:54.60-05:03.00] **VOICE:** Look at me. LOOK AT ME! Brian looks up- the camera swings into the face of the Joker, in CHALK-WHITE makeup, RED SMEAR of lipstick on his SCARS.",
-        "[EP03_EL072 | 05:03.00-05:11.10] **THE JOKER:** This is how crazy Batman's made Gotham. You want order in Gotham? Batman has to go.  So... Batman must take off his mask, and turn himself in.",
-        "[EP03_EL073 | 05:11.10-05:18.60] **:** Every day he doesn't... people will die.  Starting tonight.  I'm a man of my word. The tape cuts to STATIC. Wayne turns to Alfred.  Silent."
-      ]
-    },
-    {
-      "moment_id": "EP03_MOM_02",
-      "episode": 3,
-      "scene_num": 30,
-      "scene_heading": "INT. LIVING ROOM, WAYNE'S PENTHOUSE -- NIGHT",
-      "moment_type": "high_stakes_confrontation",
-      "start_element_id": "EP03_EL162",
-      "end_element_id": "EP03_EL166",
-      "summary": "Batman battles the Joker at Wayne's penthouse, resulting in the Joker hurling Rachel Dawes out of the window into free fall.",
-      "lookup_keywords": [
-        "Batman",
-        "Joker",
-        "Rachel Dawes",
-        "Penthouse",
-        "Window Drop"
-      ],
-      "duration_seconds": 48.5,
-      "duration_cs": 4850,
-      "source_elements_verbatim": [
-        "[EP03_EL162 | 12:49.00-13:15.10] **BATMAN:** Then you're going to love me. The Joker turns.  Batman catches him with a BLOW, spins him down and DISARMS him- the Joker's men jump him- Batman takes them out two at a time-  DISARMING thugs- BREAKING forearms- the Joker CLICKS a BLADE from the toe of his shoe and KICKS- JABBING BETWEEN THE PLATES OF ARMOR covering Batman's ribcage- Batman HURLS the Joker across the room.  One of the Joker's men LUNGES- Batman lays him out cold. The Joker has another knife pressed to Rachel's neck.",
-        "[EP03_EL163 | 13:15.10-13:16.10] **BATMAN:** Drop the knife.",
-        "[EP03_EL164 | 13:16.10-13:29.30] **THE JOKER:** Sure.  Just take off your mask and show us all who you are... Rachel shakes her head at Batman.  The Joker raises his shotgun to the side and BLOWS OUT the pane of glass next to him.  The Joker dangles Rachel out the window.",
-        "[EP03_EL165 | 13:29.30-13:30.30] **BATMAN:** Let her go.",
-        "[EP03_EL166 | 13:30.30-13:37.50] **THE JOKER:** Very poor choice of words... He lets her DROP-  Rachel falls onto a SLOPING GLASS ROOF- sliding towards the edge Batman DIVES after her-"
-      ]
-    },
-    {
-      "moment_id": "EP03_MOM_03",
-      "episode": 3,
       "scene_num": 37,
       "scene_heading": "INT. BAT-BUNKER -- DAY",
-      "moment_type": "setup_or_vow",
+      "moment_type": "contrast_baseline",
       "start_element_id": "EP03_EL193",
       "end_element_id": "EP03_EL198",
-      "summary": "Alfred warns Bruce Wayne about nihilistic adversaries by sharing his Burma story of men who just want to watch the world burn.",
+      "summary": "Alfred recounts the tale of the Burmese bandit who tossed away rubies, warning Wayne that some men just want to watch the world burn.",
       "lookup_keywords": [
-        "Alfred",
-        "Bruce Wayne",
-        "Burma",
-        "Watch the world burn",
-        "Philosophy"
+        "Alfred Pennyworth",
+        "Burma story",
+        "watch the world burn",
+        "Joker psychology"
       ],
       "duration_seconds": 49.8,
       "duration_cs": 4980,
@@ -446,42 +409,17 @@
     {
       "moment_id": "EP04_MOM_01",
       "episode": 4,
-      "scene_num": 12,
-      "scene_heading": "EXT. STATE STREET -- CONTINUOUS",
-      "moment_type": "high_stakes_confrontation",
-      "start_element_id": "EP04_EL031",
-      "end_element_id": "EP04_EL034",
-      "summary": "The Joker disguises himself in the police honor guard and opens fire on the Mayor, with Gordon taking multiple bullets to protect him.",
-      "lookup_keywords": [
-        "Joker",
-        "Gordon",
-        "Mayor Garcia",
-        "Parade",
-        "Assassination"
-      ],
-      "duration_seconds": 25.2,
-      "duration_cs": 2520,
-      "source_elements_verbatim": [
-        "[EP04_EL031 | 02:48.90-03:00.00] **:** THE HONOR GUARD TURN THEIR WEAPONS ON THE MAYOR.  One SMILES, flesh-colored makeup over his scars.  THE JOKER. Gordon LEAPS FORWARD- they FIRE- GORDON TAKES SHOTS TO THE BACK as he SLAMS the Mayor to the ground-",
-        "[EP04_EL032 | 03:00.00-03:02.70] **:** The Police Sniper SPOTS Wayne at the window- SHOOTS-",
-        "[EP04_EL033 | 03:02.70-03:05.10] **:** Wayne DUCKS as SHOTS erupt around the window-",
-        "[EP04_EL034 | 03:05.10-03:14.10] **:** PANDEMONIUM erupts-One of the honor guard is TAGGED IN THE LEG- GOES DOWN.  The others MELT into the CHAOS. On the podium, Stephens rolls Gordon over... he is not moving."
-      ]
-    },
-    {
-      "moment_id": "EP04_MOM_02",
-      "episode": 4,
       "scene_num": 30,
       "scene_heading": "INT. PRESS ROOM, SUPERIOR COURT -- CONTINUOUS",
-      "moment_type": "identity_reveal",
+      "moment_type": "high_stakes_confrontation",
       "start_element_id": "EP04_EL126",
       "end_element_id": "EP04_EL131",
-      "summary": "Harvey Dent intercepts Batman's surrender and publicly confesses to being the Batman to protect the vigilante and lure out the Joker.",
+      "summary": "Harvey Dent publicly lies and surrenders himself as Batman to prevent more civilian casualties and draw the Joker out into the open.",
       "lookup_keywords": [
         "Harvey Dent",
-        "Confession",
         "I am the Batman",
-        "Press Conference"
+        "press conference",
+        "arrest"
       ],
       "duration_seconds": 35.7,
       "duration_cs": 3570,
@@ -495,46 +433,47 @@
       ]
     },
     {
-      "moment_id": "EP05_MOM_01",
-      "episode": 5,
-      "scene_num": 11,
-      "scene_heading": "EXT. PARKSIDE -- NIGHT",
-      "moment_type": "identity_reveal",
-      "start_element_id": "EP05_EL018",
-      "end_element_id": "EP05_EL019",
-      "summary": "The disguised armored car driver reveals himself as Jim Gordon, alive and arresting the Joker on the street.",
+      "moment_id": "EP04_MOM_02",
+      "episode": 4,
+      "scene_num": 71,
+      "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
+      "moment_type": "clue_or_prop",
+      "start_element_id": "EP04_EL205",
+      "end_element_id": "EP04_EL207",
+      "summary": "After the Batmobile is crippled by an RPG, Batman triggers self-destruct and emerges piloting the newly deployed Bat-Pod motorcycle.",
       "lookup_keywords": [
-        "Jim Gordon",
-        "Joker",
-        "Arrest",
-        "Fake Death",
-        "Parkside"
+        "Batmobile",
+        "Bat-pod",
+        "eject",
+        "motorcycle",
+        "chase"
       ],
-      "duration_seconds": 15.3,
-      "duration_cs": 1530,
+      "duration_seconds": 32.2,
+      "duration_cs": 3220,
       "source_elements_verbatim": [
-        "[EP05_EL018 | 01:48.80-02:01.70] **THE JOKER:** Just give me a second. The gun is COCKED.  The Joker drops the knife.  Sits.  Looks back.  Behind them is the armored car.  The man standing over him is the Driver.  He pulls off his helmet. It's JIM GORDON.  Back from the dead.",
-        "[EP05_EL019 | 02:01.70-02:04.10] **GORDON:** We got you, you son of a bitch."
+        "[EP04_EL205 | 16:46.40-16:52.10] **BATMOBILE VOICE:** Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...",
+        "[EP04_EL206 | 16:52.10-16:53.10] **BATMOBILE VOICE:** Goodbye.",
+        "[EP04_EL207 | 16:53.10-17:18.60] **:** The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod..."
       ]
     },
     {
-      "moment_id": "EP05_MOM_02",
+      "moment_id": "EP05_MOM_01",
       "episode": 5,
       "scene_num": 19,
       "scene_heading": "INT. INTERROGATION, MCU, GOTHAM CENTRAL -- NIGHT",
       "moment_type": "high_stakes_confrontation",
       "start_element_id": "EP05_EL058",
-      "end_element_id": "EP05_EL094",
-      "summary": "Batman violently interrogates the Joker, who forces him into a sadistic dilemma by revealing Rachel and Dent are trapped at separate bomb sites.",
+      "end_element_id": "EP05_EL071",
+      "summary": "Batman brutally beats the Joker in interrogation, only for the Joker to declare that Batman completes him and that civilized morality is a sham.",
       "lookup_keywords": [
         "Batman",
-        "Joker",
-        "Interrogation",
-        "Sadistic Choice",
-        "MCU"
+        "The Joker",
+        "interrogation",
+        "you complete me",
+        "rules"
       ],
-      "duration_seconds": 187.6,
-      "duration_cs": 18760,
+      "duration_seconds": 94.1,
+      "duration_cs": 9410,
       "source_elements_verbatim": [
         "[EP05_EL058 | 05:11.60-05:26.30] **GORDON:** Not exactly. Gordon steps out.  The overhead lights COME ON.  BATMAN IS BEHIND HIM.  The Joker BLINKS in the HARSH WHITE LIGHT. WHAM! The Joker's face HITS the table- comes up for air- CRACK!  CRACK!  To the head.  Batman is in front of him.  The Joker stares, fascinated.  Bleeding.",
         "[EP05_EL059 | 05:26.30-05:32.60] **THE JOKER:** Never start with the head... victim gets fuzzy.  Can't feel the next- CRACK!  Batman's fist SMACKS down on the Joker's fingers.",
@@ -549,51 +488,33 @@
         "[EP05_EL068 | 06:09.10-06:10.90] **BATMAN:** You're garbage who kills for money.",
         "[EP05_EL069 | 06:10.90-06:21.10] **THE JOKER:** Don't talk like one of them- you're not, even if you'd like to be.  To them you're a freak like me... they just need you right now. He regards Batman with something approaching pity.",
         "[EP05_EL070 | 06:21.10-06:27.10] **THE JOKER:** But as soon as they don't, they'll cast you out like a leper. The Joker looks into Batman's eyes.  Searching.",
-        "[EP05_EL071 | 06:27.10-06:45.70] **THE JOKER:** Their morals, their code... it's a bad joke.  Dropped at the first sign of trouble.  They're only as good as the world allows them to be.  You'll see- I'll show you... when the chips are down, these civilized people... they'll eat each other. See, I'm not a monster... I'm just ahead of the curve. Batman GRABS the Joker and pulls him upright.",
-        "[EP05_EL072 | 06:45.70-06:49.00] **:** One of the Detectives moves for the door.  Gordon stops him.",
-        "[EP05_EL073 | 06:49.00-06:50.00] **GORDON:** He's in control.",
-        "[EP05_EL074 | 06:50.00-06:52.40] **:** Batman HOISTS the Joker up by the neck.",
-        "[EP05_EL075 | 06:52.40-06:53.40] **BATMAN:** Where's Dent?",
-        "[EP05_EL076 | 06:53.40-06:56.40] **THE JOKER:** You have these rules.  And you think they'll save you.",
-        "[EP05_EL077 | 06:56.40-06:57.60] **BATMAN:** I have one rule.",
-        "[EP05_EL078 | 06:57.60-07:01.20] **THE JOKER:** Then that's the one you'll have to break.  To know the truth.",
-        "[EP05_EL079 | 07:01.20-07:02.20] **BATMAN:** Which is?",
-        "[EP05_EL080 | 07:02.20-07:10.00] **THE JOKER:** The only sensible way to live in this world is without rules.  Tonight you're going to break your one rule... Batman leans in to the Joker.",
-        "[EP05_EL081 | 07:10.00-07:11.00] **BATMAN:** I'm considering it.",
-        "[EP05_EL082 | 07:11.00-07:17.30] **THE JOKER:** There are just minutes left- so, you'll have to play my little game if you want to save... ...one of them.",
-        "[EP05_EL083 | 07:17.30-07:18.30] **BATMAN:** Them?",
-        "[EP05_EL084 | 07:18.30-07:25.80] **THE JOKER:** For a while I thought you really were Dent, the way you threw yourself after her- Batman DROPS the Joker- RIPS up a bolted-down chair-",
-        "[EP05_EL085 | 07:25.80-07:27.30] **:** Gordon MOVES for the door-",
-        "[EP05_EL086 | 07:27.30-07:33.60] **:** Batman JAMS the chair under the doorknob- PICKS up the Joker and HURLS him into the two-way glass.  The glass SPIDERS.",
-        "[EP05_EL087 | 07:33.60-07:36.60] **:** The Joker, bleeding from nose and mouth, LAUGHS at Batman.",
-        "[EP05_EL088 | 07:36.60-07:45.00] **THE JOKER:** Look at you go... does Harvey know about you and his-? The Joker SMASHES into the wall- SLIDES to the floor.  Batman stands over him, a man possessed-",
-        "[EP05_EL089 | 07:45.00-07:48.00] **BATMAN:** WHERE ARE THEY?! He GRABS the Joker, holding him close-",
-        "[EP05_EL090 | 07:48.00-07:51.90] **THE JOKER:** Killing is making a choice... Batman PUNCHES the Joker across the face.  HARD.",
-        "[EP05_EL091 | 07:51.90-07:55.20] **BATMAN:** WHERE ARE THEY?! The Joker FEEDS off Batman's anger.  Loving it.",
-        "[EP05_EL092 | 07:55.20-08:02.70] **THE JOKER:** ...you choose one life over the other.  Your friend, the district attorney.  Or his blushing bride-to- be. Batman PUNCHES the Joker again.  The Joker LAUGHS.",
-        "[EP05_EL093 | 08:02.70-08:15.60] **THE JOKER:** You have nothing.  Nothing to threaten me with.  Nothing to do with all your strength... But don't worry, I'm going to tell you where they are.  Both of them, and that's the point- you'll have to choose. The Batman stares at the Joker...",
-        "[EP05_EL094 | 08:15.60-08:19.20] **THE JOKER:** He's at 250 52nd Boulevard.  And she's on avenue X at Cicero."
+        "[EP05_EL071 | 06:27.10-06:45.70] **THE JOKER:** Their morals, their code... it's a bad joke.  Dropped at the first sign of trouble.  They're only as good as the world allows them to be.  You'll see- I'll show you... when the chips are down, these civilized people... they'll eat each other. See, I'm not a monster... I'm just ahead of the curve. Batman GRABS the Joker and pulls him upright."
       ]
     },
     {
-      "moment_id": "EP05_MOM_03",
+      "moment_id": "EP05_MOM_02",
       "episode": 5,
-      "scene_num": 48,
-      "scene_heading": "INT. WAREHOUSE -- NIGHT",
-      "moment_type": "setup_or_vow",
-      "start_element_id": "EP05_EL157",
+      "scene_num": 46,
+      "scene_heading": "INT. BASEMENT APARTMENT -- NIGHT",
+      "moment_type": "high_stakes_confrontation",
+      "start_element_id": "EP05_EL151",
       "end_element_id": "EP05_EL162",
-      "summary": "The Joker's warehouse bombs detonate, killing Rachel Dawes and horribly disfiguring half of Harvey Dent's face.",
+      "summary": "Batman races to save Rachel only to discover the Joker gave inverted addresses; he saves Dent while Rachel is incinerated and Dent's face catches fire.",
       "lookup_keywords": [
-        "Rachel Dawes",
-        "Harvey Dent",
-        "Explosion",
-        "Death",
-        "Disfigurement"
+        "Rachel Dawes death",
+        "Dent burned",
+        "inverted addresses",
+        "warehouse explosion"
       ],
-      "duration_seconds": 30.6,
-      "duration_cs": 3060,
+      "duration_seconds": 47.9,
+      "duration_cs": 4790,
       "source_elements_verbatim": [
+        "[EP05_EL151 | 12:05.70-12:08.70] **:** ...Batman BURSTS through the door- Dent looks up in horror-",
+        "[EP05_EL152 | 12:08.70-12:17.40] **DENT:** NO!  Not me... Why did you come for me?! Batman STARES at Dent.  The Joker lied.  The counter hits 5 seconds.  Batman DRAGS Dent out- Dent FIGHTS to stay-",
+        "[EP05_EL153 | 12:17.40-12:18.40] **DENT:** RACHEL!",
+        "[EP05_EL154 | 12:18.40-12:19.60] **RACHEL:** Harvey?  Harvey, it's okay...",
+        "[EP05_EL155 | 12:19.60-12:20.60] **DENT:** RACHEL!!!",
+        "[EP05_EL156 | 12:20.60-12:23.00] **:** Gordon, axe in hand, RUNS towards the entrance-",
         "[EP05_EL157 | 12:23.00-12:25.40] **:** Rachel can hear Dent.  The counter runs out.",
         "[EP05_EL158 | 12:25.40-12:26.60] **RACHEL:** Somewhere- AN EXPLOSION.  ALL-CONSUMING.",
         "[EP05_EL159 | 12:26.60-12:32.00] **:** The BLAST HURLS Gordon backward onto the hood of his car- THE ENTIRE WAREHOUSE IS AN ENORMOUS EXPLOSION-",
@@ -603,20 +524,20 @@
       ]
     },
     {
-      "moment_id": "EP05_MOM_04",
+      "moment_id": "EP05_MOM_03",
       "episode": 5,
       "scene_num": 70,
       "scene_heading": "INT. HOSPITAL ROOM -- CONTINUOUS",
       "moment_type": "identity_reveal",
       "start_element_id": "EP05_EL217",
       "end_element_id": "EP05_EL225",
-      "summary": "Harvey Dent embraces his vengeful alter ego Two-Face, rejecting pain medication and warning Gordon that true reckoning is coming.",
+      "summary": "In the hospital, Dent reveals his horrific burns to Gordon and adopts the identity of Two-Face, blaming Gordon's corrupt precinct for Rachel's death.",
       "lookup_keywords": [
-        "Two-Face",
         "Harvey Dent",
+        "Two-Face",
+        "hospital reveal",
         "Gordon",
-        "Hospital",
-        "Corruption"
+        "Rachel"
       ],
       "duration_seconds": 44.3,
       "duration_cs": 4430,
@@ -640,13 +561,13 @@
       "moment_type": "high_stakes_confrontation",
       "start_element_id": "EP06_EL005",
       "end_element_id": "EP06_EL017",
-      "summary": "The Joker burns his half of the mob's billion-dollar fortune and feeds the Chechen to his own dogs to prove crime is about anarchy, not money.",
+      "summary": "The Joker burns a mountain of mob money, murders the Chechen with his own dogs, and declares total war on the established criminal order.",
       "lookup_keywords": [
         "Joker",
         "Chechen",
+        "money",
         "gasoline",
-        "burning money",
-        "billion dollars"
+        "fire"
       ],
       "duration_seconds": 67.8,
       "duration_cs": 6780,
@@ -669,22 +590,69 @@
     {
       "moment_id": "EP06_MOM_02",
       "episode": 6,
-      "scene_num": 25,
-      "scene_heading": "INT. DENT'S HOSPITAL ROOM -- CONTINUOUS",
+      "scene_num": 3,
+      "scene_heading": "INT. TELEVISION STUDIO -- DAY",
       "moment_type": "setup_or_vow",
-      "start_element_id": "EP06_EL093",
-      "end_element_id": "EP06_EL098",
-      "summary": "The Joker radicalizes a hospitalized Harvey Dent by preaching the fairness of chaos and handing him a gun to flip for his life.",
+      "start_element_id": "EP06_EL026",
+      "end_element_id": "EP06_EL035",
+      "summary": "The Joker hijacks a live news broadcast to threaten the destruction of a city hospital unless Reese is killed within sixty minutes.",
       "lookup_keywords": [
-        "Harvey Dent",
-        "The Joker",
-        "chaos",
-        "agent of chaos",
-        "two-headed coin"
+        "Reese",
+        "hospital",
+        "bomb threat",
+        "broadcast",
+        "Joker"
       ],
-      "duration_seconds": 69.0,
-      "duration_cs": 6900,
+      "duration_seconds": 62.6,
+      "duration_cs": 6260,
       "source_elements_verbatim": [
+        "[EP06_EL026 | 02:05.70-02:08.40] **OLD LADY (O.S.):** Mr.Reese, what's more valuable: one life, or a hundred?",
+        "[EP06_EL027 | 02:08.40-02:10.80] **REESE:** I guess it would depend on the life.",
+        "[EP06_EL028 | 02:10.80-02:15.90] **OLD LADY (O.S.):** OK.  Let's say it's your life.  Is it worth more than the lives of several hundred others?",
+        "[EP06_EL029 | 02:15.90-02:16.90] **REESE:** Of course not.",
+        "[EP06_EL030 | 02:16.90-02:25.00] **OLD LADY (O.S.):** I'm glad you feel that way.  Because I've put a bomb in one of the city's hospitals.  It's going off in sixty minutes unless someone kills you.",
+        "[EP06_EL031 | 02:25.00-02:26.00] **ENGEL:** Who is this?",
+        "[EP06_EL032 | 02:26.00-02:28.10] **OLD  (O.S.):** Just a concerned citizen- -and regular guy...",
+        "[EP06_EL033 | 02:28.10-02:34.40] **:** Gordon and his men are gearing up to take down the Joker.  A Detective turns up the TV in the bullpen-",
+        "[EP06_EL034 | 02:34.40-02:53.90] **THE JOKER (O.S.):** I had a vision.  Of a world without Batman.  The mob ground out a little profit and the police tried to shut them down, one block at a time... and it was so... boring.  I've had a change of heart.  I don't want Mr.Reese spoiling everything, but why should I have all the fun?  Let's give someone else a chance... Reese looks around, twitching.  Sweating.",
+        "[EP06_EL035 | 02:53.90-03:08.30] **THE JOKER (O.S.):** If Coleman Reese isn't dead in sixty minutes, then I blow up a hospital. Of course, you could always kill yourself, Mr.Reese. But that would be the noble thing to do.  And you're a lawyer. The line rings off.  Engel is speechless. Gordon turns to the uniform COPS."
+      ]
+    },
+    {
+      "moment_id": "EP06_MOM_03",
+      "episode": 6,
+      "scene_num": 19,
+      "scene_heading": "INT. HOSPITAL ROOM -- DAY",
+      "moment_type": "high_stakes_confrontation",
+      "start_element_id": "EP06_EL078",
+      "end_element_id": "EP06_EL098",
+      "summary": "The Joker visits a disfigured Harvey Dent in Gotham General and corrupts him into embracing pure chaos and lethal chance.",
+      "lookup_keywords": [
+        "Dent",
+        "Joker",
+        "chaos",
+        "coin",
+        "schemers",
+        "hospital"
+      ],
+      "duration_seconds": 155.5,
+      "duration_cs": 15550,
+      "source_elements_verbatim": [
+        "[EP06_EL078 | 05:52.60-05:57.70] **THE JOKER:** I don't want there to be any hard feelings between us, Harvey. The Joker loosens Dent's restraints.",
+        "[EP06_EL079 | 05:57.70-06:03.10] **THE JOKER:** When you and Rachel were being abducted I was sitting in Gordon's cage.  I didn't rig those charges-",
+        "[EP06_EL080 | 06:03.10-06:04.30] **DENT:** Your men.  Your plan.",
+        "[EP06_EL081 | 06:04.30-06:13.00] **THE JOKER:** Do I really look like a guy with a plan, Harvey?  I don't have a plan...The mob has plans, the cops have plans.  You know what I am, Harvey?",
+        "[EP06_EL082 | 06:13.00-06:14.20] **:** Dent's hand is TREMBLING.",
+        "[EP06_EL083 | 06:14.20-06:41.80] **THE JOKER:** I'm a dog chasing cars... I wouldn't know what to do with one if I caught it.  I just do things.  I'm just the wrench in the gears.  I hate plans. Yours, theirs, everyone's.  Maroni has plans.  Gordon has plans. Schemers trying to control their worlds.  I'm not a schemer, I show the schemers how pathetic their attempts to control things really are.  So when I say that you and your girlfriend was nothing personal, you know I'm telling the truth... Hands him the pistol.  Dent holds it to the Joker's head.",
+        "[EP06_EL084 | 06:41.80-06:48.70] **:** Wayne ROARS past a line of traffic to settle in a few cars back from the police van, sitting at a red light.",
+        "[EP06_EL085 | 06:48.70-06:52.90] **:** Wayne studies the intersection- spots a PICKUP jostling for position on the cross street.",
+        "[EP06_EL086 | 06:52.90-07:00.70] **:** Gordon watches Berg, mentally tracing the trajectory of his shotgun barrel as Berg fiddles with his gun.  Gordon starts trying to subtly unholster his own weapon.",
+        "[EP06_EL087 | 07:00.70-07:03.70] **GORDON:** I'm gonna need your weapon, son. Berg looks at Gordon.",
+        "[EP06_EL088 | 07:03.70-07:04.70] **BERG:** What?",
+        "[EP06_EL089 | 07:04.70-07:09.50] **:** Wayne watches the driver of the pickup staring intently at the police van.  Lining it up.",
+        "[EP06_EL090 | 07:09.50-07:15.80] **:** Reese looks from Berg to Gordon.  Berg looks at Gordon, trembling, the barrel of his gun inching lower in the car.",
+        "[EP06_EL091 | 07:15.80-07:17.60] **BERG:** Why?  Because my wife's in hospital?",
+        "[EP06_EL092 | 07:17.60-07:19.10] **GORDON:** Yeah.  That would be why.",
         "[EP06_EL093 | 07:19.10-07:22.40] **:** The Joker leans in, pressing his head to the gun's barrel.",
         "[EP06_EL094 | 07:22.40-08:09.50] **THE JOKER:** It's the schemers who put you where you are.  You were a schemer.  You had plans.  Look where it got you.  I just did what I do best- I took your plan, and I turned it on itself. Look what I've done to this city with a few drums of gas and a couple of bullets.  Nobody panics when the expected people get killed.  Nobody panics when things go according to plan, even if the plan is horrifying. If I tell the press that tomorrow a gangbanger will get shot, or a truckload of soldiers will be blown up, nobody panics.  Because it's all part of the plan.  But when I say that one little old mayor will die, everybody loses their minds! Introduce a little anarchy, you upset the established order and everything becomes chaos.  I'm an agent of chaos.  And you know the thing about chaos, Harvey? Dent looks into the Joker's eyes.  Finding meaning.",
         "[EP06_EL095 | 08:09.50-08:16.70] **THE JOKER:** It's fair. Dent looks down at the coin in his hands.  Turns it over, feels it's comforting weight.  Shows the Joker the good side.",
@@ -694,57 +662,24 @@
       ]
     },
     {
-      "moment_id": "EP06_MOM_03",
-      "episode": 6,
-      "scene_num": 38,
-      "scene_heading": "INT. BAR, GOTHAM HEIGHTS -- DAY",
-      "moment_type": "high_stakes_confrontation",
-      "start_element_id": "EP06_EL129",
-      "end_element_id": "EP06_EL137",
-      "summary": "Two-Face corners crooked cop Wuertz in a dive bar and flips his scarred coin before shooting him dead.",
-      "lookup_keywords": [
-        "Harvey Dent",
-        "Two-Face",
-        "Wuertz",
-        "bar",
-        "coin flip"
-      ],
-      "duration_seconds": 50.2,
-      "duration_cs": 5020,
-      "source_elements_verbatim": [
-        "[EP06_EL129 | 10:37.90-10:45.70] **WUERTZ:** What?  You need me to shake it for- He TRAILS off as someone sticks a gun in his face: Harvey Dent.  Standing in shadow.  He sits.",
-        "[EP06_EL130 | 10:45.70-10:46.70] **DENT:** Hello.",
-        "[EP06_EL131 | 10:46.70-10:54.20] **WUERTZ:** Dent, I thought you was...dead... Dent leans into the light.  The left side of his face is HIDEOUSLY BURNED, cheek gone, blackened teeth and gums.",
-        "[EP06_EL132 | 10:54.20-10:59.60] **DENT:** Half. Dent picks up Wuertz's drink.  Takes a SIP.  Wuertz watches the bare muscles RETRACT as Dent SWALLOWS.",
-        "[EP06_EL133 | 10:59.60-11:01.10] **DENT:** Who picked up Rachel, Wuertz?",
-        "[EP06_EL134 | 11:01.10-11:05.60] **WUERTZ:** It must've been Maroni's men- Dent SLAMS the glass back on the table- Wuertz FLINCHES.",
-        "[EP06_EL135 | 11:05.60-11:09.50] **DENT:** You, of all people, are gonna protect the other traitor in Gordon's unit?",
-        "[EP06_EL136 | 11:09.50-11:15.80] **WUERTZ:** I don't know- he'd never tell me. I swear to God, I didn't know what they were gonna do to you-",
-        "[EP06_EL137 | 11:15.80-11:28.10] **DENT:** Funny, I don't know what's going to happen to you, either. Dent pulls his coin from his pocket.  FLIPS it.  Wuertz watches it SPIN.  It lands on the table.  Scarred side up. The drunk at the bar STIRS at the GUNSHOT."
-      ]
-    },
-    {
       "moment_id": "EP06_MOM_04",
       "episode": 6,
       "scene_num": 42,
       "scene_heading": "INT. LAB, RESEARCH AND DEVELOPMENT -- DAY",
       "moment_type": "clue_or_prop",
-      "start_element_id": "EP06_EL146",
-      "end_element_id": "EP06_EL157",
-      "summary": "Batman shows Lucius Fox the citywide sonar surveillance machine converted from every mobile phone in Gotham.",
+      "start_element_id": "EP06_EL149",
+      "end_element_id": "EP06_EL171",
+      "summary": "Lucius Fox discovers Batman has turned every mobile phone in Gotham into a high-frequency sonar surveillance device, prompting Fox's resignation.",
       "lookup_keywords": [
-        "Batman",
         "Lucius Fox",
-        "sonar network",
-        "cell phone surveillance",
-        "unethical"
+        "sonar",
+        "surveillance",
+        "Wayne Enterprises",
+        "resignation"
       ],
-      "duration_seconds": 61.0,
-      "duration_cs": 6100,
+      "duration_seconds": 114.9,
+      "duration_cs": 11490,
       "source_elements_verbatim": [
-        "[EP06_EL146 | 12:00.50-12:11.00] **:** Fox enters the dimly-lit room.  At one end is an extraordinary array of thousands of tiny monitors.  Fox approaches, fascinated, as they quietly display architectural patterns individually and in concert.  The images become a MAP.",
-        "[EP06_EL147 | 12:11.00-12:12.00] **BATMAN:** Beautiful.  Isn't it?",
-        "[EP06_EL148 | 12:12.00-12:14.70] **:** Fox nods, staring at the monitors as Batman approaches.",
         "[EP06_EL149 | 12:14.70-12:24.90] **FOX:** Beautiful.  Unethical.  Dangerous. You've turned every phone in the city into a microphone... Lucius presses a key.  The BABBLE of a MILLION CONVERSATIONS at once fills the room.  Every cell phone in the city.",
         "[EP06_EL150 | 12:24.90-12:26.10] **BATMAN:** And high frequency generator/receiver.",
         "[EP06_EL151 | 12:26.10-12:37.80] **FOX:** Like the phone I gave you in Hong Kong.  You took my sonar concept and applied it to everybody's phone in the City.  With half the city feeding you sonar you can image all of Gotham. This is wrong.",
@@ -753,54 +688,122 @@
         "[EP06_EL154 | 12:41.10-12:45.00] **BATMAN:** The database is null-key encrypted. It can only be accessed by one person.",
         "[EP06_EL155 | 12:45.00-12:47.40] **FOX:** No one should have that kind of power.",
         "[EP06_EL156 | 12:47.40-12:52.50] **WAYNE:** That's why I gave it to you.  Only you can use it. Lucius looks at Batman.  Hard.",
-        "[EP06_EL157 | 12:52.50-13:01.50] **FOX:** Spying on thirty million people wasn't in my job description. Batman points to a TV screen.  Fox turns.  ON SCREEN: the Joker shakes his head above a graphic \"LATEST THREAT\"..."
+        "[EP06_EL157 | 12:52.50-13:01.50] **FOX:** Spying on thirty million people wasn't in my job description. Batman points to a TV screen.  Fox turns.  ON SCREEN: the Joker shakes his head above a graphic \"LATEST THREAT\"...",
+        "[EP06_EL158 | 13:01.50-13:05.10] **THE JOKER:** What does it take to make you people want to join in..?",
+        "[EP06_EL159 | 13:05.10-13:06.60] **:** Gordon watches a screen.  Grave.",
+        "[EP06_EL160 | 13:06.60-13:13.20] **THE JOKER:** You failed to kill the lawyer... I've got to get you off the bench and into the game.  So, here it is...",
+        "[EP06_EL161 | 13:13.20-13:16.20] **:** The bar, packed with business people watches the TV.  SILENT.",
+        "[EP06_EL162 | 13:16.20-13:27.00] **THE JOKER:** Come nightfall, this city is mine, and anyone left here plays by my rules.  If you don't want to be in the game, get out now. Bar patrons start moving... The Joker reaches for the camera-",
+        "[EP06_EL163 | 13:27.00-13:32.40] **THE JOKER:** But the bridge-and-tunnel crowd are in for a surprise. CUT TO STATIC. The bar patrons look around, confused.",
+        "[EP06_EL164 | 13:32.40-13:35.10] **:** Fox turns from the TV to look at Batman.",
+        "[EP06_EL165 | 13:35.10-13:36.90] **BATMAN:** Trust me. Fox stares at Batman.",
+        "[EP06_EL166 | 13:36.90-13:44.40] **BATMAN:** This is the audio sample. He plugs a USB dongle into the console.  A sample of the Joker's voice from the call-in news program plays.",
+        "[EP06_EL167 | 13:44.40-13:55.20] **BATMAN:** If he talks within range of any phone in the city, you'll be able to triangulate his position. Lucius toggles a menu.  The city is an open book- People working, eating, sleeping.  Lucius shakes his head.",
+        "[EP06_EL168 | 13:55.20-13:58.20] **BATMAN:** When you've finished, type your name to switch it off.",
+        "[EP06_EL169 | 13:58.20-14:02.40] **FOX:** I'll help you this one time... Lucius sits at the console.  Batman moves off-",
+        "[EP06_EL170 | 14:02.40-14:06.00] **FOX:** But consider this my resignation. Batman turns.  Fox looks at him, serious.",
+        "[EP06_EL171 | 14:06.00-14:09.60] **FOX:** As long as this machine is at Wayne Industries, I won't be."
+      ]
+    },
+    {
+      "moment_id": "EP06_MOM_05",
+      "episode": 6,
+      "scene_num": 50,
+      "scene_heading": "INT. LIMO -- DUSK",
+      "moment_type": "high_stakes_confrontation",
+      "start_element_id": "EP06_EL185",
+      "end_element_id": "EP06_EL200",
+      "summary": "Two-Face ambushes mob boss Maroni inside his limousine, interrogates him regarding Rachel's death, and executes the driver based on a coin flip.",
+      "lookup_keywords": [
+        "Two-Face",
+        "Maroni",
+        "limousine",
+        "driver",
+        "coin flip"
+      ],
+      "duration_seconds": 57.4,
+      "duration_cs": 5740,
+      "source_elements_verbatim": [
+        "[EP06_EL185 | 15:14.50-15:21.10] **DENT:** Going to join your wife? Maroni STARTS.  Someone is in here with him.  Harvey Dent- Two Face- leans forward, clutching a pistol.",
+        "[EP06_EL186 | 15:21.10-15:22.10] **DENT:** You love her?",
+        "[EP06_EL187 | 15:22.10-15:23.10] **MARONI:** Yes.",
+        "[EP06_EL188 | 15:23.10-15:27.00] **DENT:** Can you imagine what it would be like to listen to her die?",
+        "[EP06_EL189 | 15:27.00-15:31.20] **MARONI:** Take it up with the Joker.  He killed your woman.  Made you... like this...",
+        "[EP06_EL190 | 15:31.20-15:36.90] **DENT:** The Joker's just a mad dog.  I want whoever let him off the leash. Maroni looks at Dent.  Worried.",
+        "[EP06_EL191 | 15:36.90-15:44.10] **DENT:** I took care of Wuertz, but who was your other man inside Gordon's unit? Who picked up Rachel?  It must've been someone she trusted.",
+        "[EP06_EL192 | 15:44.10-15:46.80] **MARONI:** If I tell you, will you let me go?",
+        "[EP06_EL193 | 15:46.80-15:48.30] **DENT:** It can't hurt your chances.",
+        "[EP06_EL194 | 15:48.30-15:51.60] **MARONI:** It was Ramirez. Pulls out his coin.  Dent cocks the pistol...",
+        "[EP06_EL195 | 15:51.60-15:52.60] **MARONI:** But you said-",
+        "[EP06_EL196 | 15:52.60-15:57.10] **DENT:** I said it couldn't hurt your chances. Dent FLIPS it.  Looks: good side.  He shrugs.",
+        "[EP06_EL197 | 15:57.10-16:02.50] **DENT:** Lucky guy. Maroni looks confused.  Dent FLIPS the coin again.  Looks down at the coin.  Shakes his head.",
+        "[EP06_EL198 | 16:02.50-16:03.50] **DENT:** But he's not.",
+        "[EP06_EL199 | 16:03.50-16:05.90] **MARONI:** Who? Dent smiles.  PUTS HIS SEAT BELT ON.",
+        "[EP06_EL200 | 16:05.90-16:11.90] **DENT:** Your driver. Dent presses the barrel of the revolver behind the shadow of the driver.  Maroni LUNGES, SCREAMING.  Dent FIRES."
       ]
     },
     {
       "moment_id": "EP07_MOM_01",
       "episode": 7,
-      "scene_num": 1,
-      "scene_heading": "EXT. MCU -- CONTINUOUS",
-      "moment_type": "high_stakes_confrontation",
-      "start_element_id": "EP07_EL002",
-      "end_element_id": "EP07_EL010",
-      "summary": "Two-Face forces Detective Ramirez at gunpoint to lure Gordon's family into a trap before sparing her on a coin flip and knocking her unconscious.",
+      "scene_num": 4,
+      "scene_heading": "INT. PASSENGER LOUNGE, PRISONER FERRY -- NIGHT",
+      "moment_type": "setup_or_vow",
+      "start_element_id": "EP07_EL015",
+      "end_element_id": "EP07_EL017",
+      "summary": "The Joker initiates a lethal social experiment by granting civilian and prisoner ferries detonators to destroy one another before midnight.",
       "lookup_keywords": [
-        "Dent",
-        "Ramirez",
-        "Gordon's family",
-        "52nd street",
-        "coin toss"
+        "ferry",
+        "detonator",
+        "midnight",
+        "experiment",
+        "Joker"
       ],
-      "duration_seconds": 35.2,
-      "duration_cs": 3520,
+      "duration_seconds": 35.7,
+      "duration_cs": 3570,
       "source_elements_verbatim": [
-        "[EP07_EL002 | 00:01.50-00:08.40] **RAMIREZ:** 250, 52nd street.  Leave as soon as the patrol car pulls out. Dent is holding a gun at Ramirez's head.  She hangs up.",
-        "[EP07_EL003 | 00:08.40-00:09.90] **DENT:** She believe you? Ramirez nods.",
-        "[EP07_EL004 | 00:09.90-00:12.00] **DENT:** She trusts you.  Just like Rachel did.",
-        "[EP07_EL005 | 00:12.00-00:13.00] **RAMIREZ:** I didn't know-",
-        "[EP07_EL006 | 00:13.00-00:20.20] **DENT:** 'What they were gonna do'?  You're the second cop to say that to me. What, exactly, did you think they were going to do?",
-        "[EP07_EL007 | 00:20.20-00:24.10] **RAMIREZ:** I'm sorry- they got me early on.  My mother's medical bills and my-",
-        "[EP07_EL008 | 00:24.10-00:25.60] **DENT:** Don't! Dent FLIPS his coin.",
-        "[EP07_EL009 | 00:25.60-00:32.20] **RAMIREZ:** I took a little from them- once they've got you, they keep you.  I'm sorry. Dent looks at his coin.  Good side.",
-        "[EP07_EL010 | 00:32.20-00:36.70] **DENT:** Live to fight another day, officer. Dent CRACKS her on the head with his gun."
+        "[EP07_EL015 | 00:53.50-00:57.10] **THE JOKER:** Each of you has a remote to blow up the other boat.",
+        "[EP07_EL016 | 00:57.10-00:59.20] **:** The Prisoners and Corrections Officers listen.  Appalled.",
+        "[EP07_EL017 | 00:59.20-01:29.20] **THE JOKER (O.S.):** At midnight, I blow you all up.  If, however, one of you presses the button, I'll let that boat live.  You choose.  So who's it going to be- Harvey Dent's most wanted scumbag collection... or the sweet innocent civilians? Oh, and you might want to decide quickly, because the people on the other boat may not be quite so noble. The Joker HANGS UP.  The Pilot [Prisoner Ferry] looks down at the remote in his hands.  Prisoners begin YELLING and PUSHING.  The WARDEN takes the remote from the Pilot- COCKS his shotgun.  His men level their weapons at the crowd."
       ]
     },
     {
       "moment_id": "EP07_MOM_02",
+      "episode": 7,
+      "scene_num": 22,
+      "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
+      "moment_type": "identity_reveal",
+      "start_element_id": "EP07_EL069",
+      "end_element_id": "EP07_EL070",
+      "summary": "Batman breaches the penthouse and reveals the Joker taped guns to duct-taped civilian hostages disguised in clown masks while armed thugs posed as doctors.",
+      "lookup_keywords": [
+        "clown masks",
+        "hostages",
+        "Engel",
+        "SWAT",
+        "Prewitt building"
+      ],
+      "duration_seconds": 27.0,
+      "duration_cs": 2700,
+      "source_elements_verbatim": [
+        "[EP07_EL069 | 04:56.30-05:21.80] **:** Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
+        "[EP07_EL070 | 05:21.80-05:23.30] **BATMAN:** Don't.  Move. Engel nods, terrified."
+      ]
+    },
+    {
+      "moment_id": "EP07_MOM_03",
       "episode": 7,
       "scene_num": 39,
       "scene_heading": "INT. PASSENGER LOUNGE, PRISONER FERRY -- NIGHT",
       "moment_type": "contrast_baseline",
       "start_element_id": "EP07_EL096",
       "end_element_id": "EP07_EL101",
-      "summary": "A convicted tattooed prisoner demands the detonator from the warden and hurls it out the window, refusing to blow up the civilian ferry.",
+      "summary": "A hulking convict demands the detonator from the warden and defiantly hurls it out into the river, disproving the Joker's cynical view of humanity.",
       "lookup_keywords": [
-        "Prisoner Ferry",
-        "Tattooed Prisoner",
+        "prisoner",
         "detonator",
-        "redemption",
-        "moral choice"
+        "warden",
+        "ferry",
+        "redemption"
       ],
       "duration_seconds": 54.0,
       "duration_cs": 5400,
@@ -814,28 +817,24 @@
       ]
     },
     {
-      "moment_id": "EP07_MOM_03",
+      "moment_id": "EP07_MOM_04",
       "episode": 7,
       "scene_num": 44,
       "scene_heading": "INT. PREWITT BUILDING -- CONTINUOUS",
       "moment_type": "high_stakes_confrontation",
-      "start_element_id": "EP07_EL110",
+      "start_element_id": "EP07_EL114",
       "end_element_id": "EP07_EL123",
-      "summary": "Batman subdues the Joker and leaves him hanging upside down, where the Joker reveals his ace in the hole: corrupting Harvey Dent into a killer.",
+      "summary": "Batman overpowers and strings up the Joker, who gloats that corrupting Harvey Dent has ensured the fall of Gotham's soul.",
       "lookup_keywords": [
         "Batman",
         "Joker",
-        "unstoppable force",
-        "ace in the hole",
-        "Harvey Dent"
+        "white knight",
+        "Harvey Dent",
+        "grapple"
       ],
-      "duration_seconds": 111.6,
-      "duration_cs": 11160,
+      "duration_seconds": 95.4,
+      "duration_cs": 9540,
       "source_elements_verbatim": [
-        "[EP07_EL110 | 10:03.00-10:07.80] **BATMAN:** You're alone. The Joker CROUCHES down, hovering above Batman's face and arms.  Shows him the remote.",
-        "[EP07_EL111 | 10:07.80-10:11.10] **THE JOKER:** Can't rely on anyone these days. The Joker ARMS the remote...",
-        "[EP07_EL112 | 10:11.10-10:15.00] **THE JOKER:** Have to do everything yourself.  I always have- and it's not always easy...",
-        "[EP07_EL113 | 10:15.00-10:19.20] **:** (smiles, remembering) You know how I got these scars? Batman looks up at him.",
         "[EP07_EL114 | 10:19.20-10:40.50] **BATMAN:** No.  But I know how you get these- Batman's SCALLOP BLADES FIRE OUT OF HIS GAUNTLET, nailing the Joker in the chest and arm- he STAGGERS back- Batman, freed, leaps forward- KICKS HIM OVER THE EDGE- GRABS the remote- The Joker GIGGLES as he FALLS, enjoying the ride.  Something SLAMS into his leg, and he JERKS to a stop- BATMAN'S GRAPPLE. The Joker HOLLERS in pain as Batman HAULS him up.",
         "[EP07_EL115 | 10:40.50-10:51.60] **THE JOKER:** Just couldn't let me go, could you? I guess this is what happens when an unstoppable force meets an immovable object.  You truly are incorruptible, aren't you? Batman secures the Joker UPSIDE DOWN.  The Joker is LAUGHING.",
         "[EP07_EL116 | 10:51.60-11:00.00] **THE JOKER:** You won't kill me out of some misplaced sense of self- righteousness... and I won't kill you because you're too much fun.  We're going to do this forever.",
@@ -849,20 +848,20 @@
       ]
     },
     {
-      "moment_id": "EP07_MOM_04",
+      "moment_id": "EP07_MOM_05",
       "episode": 7,
       "scene_num": 51,
       "scene_heading": "INT. BURNT WAREHOUSE, 52ND STREET -- CONTINUOUS",
-      "moment_type": "identity_reveal",
+      "moment_type": "setup_or_vow",
       "start_element_id": "EP07_EL178",
       "end_element_id": "EP07_EL196",
-      "summary": "Batman takes the blame for Harvey Dent's murders so Gotham can retain hope in its White Knight, choosing to be hunted as a villain.",
+      "summary": "Following Dent's death, Batman vows to shoulder the blame for Two-Face's murders to preserve Gotham's hope, becoming a hunted Dark Knight.",
       "lookup_keywords": [
-        "Batman",
+        "Dark Knight",
         "Gordon",
-        "Harvey Dent",
-        "die a hero",
-        "Dark Knight"
+        "hero",
+        "villain",
+        "sacrifice"
       ],
       "duration_seconds": 98.4,
       "duration_cs": 9840,
@@ -896,7 +895,7 @@
         "aliases": [
           "Batman",
           "The Caped Crusader",
-          "The Dark Knight"
+          "Dark Knight"
         ],
         "key_episodes": [
           1,
@@ -907,9 +906,11 @@
         ],
         "key_scenes": [
           25,
+          27,
           36,
           17,
-          28,
+          30,
+          2,
           19
         ]
       },
@@ -928,11 +929,11 @@
           5
         ],
         "key_scenes": [
-          4,
           17,
           9,
           21,
           28,
+          12,
           19
         ]
       },
@@ -941,7 +942,7 @@
         "aliases": [
           "Two-Face",
           "Gotham's White Knight",
-          "Sally's Prosecutor"
+          "D.A. Dent"
         ],
         "key_episodes": [
           1,
@@ -952,9 +953,9 @@
         ],
         "key_scenes": [
           37,
-          40,
           4,
           30,
+          46,
           70
         ]
       },
@@ -962,7 +963,8 @@
         "canonical_name": "James Gordon",
         "aliases": [
           "Lieutenant Gordon",
-          "Commissioner Gordon"
+          "Commissioner Gordon",
+          "Jim"
         ],
         "key_episodes": [
           1,
@@ -973,17 +975,17 @@
         ],
         "key_scenes": [
           24,
-          40,
+          32,
           14,
           12,
           11,
-          19
+          70
         ]
       },
       {
         "canonical_name": "Rachel Dawes",
         "aliases": [
-          "Assistant District Attorney Dawes"
+          "Assistant D.A. Dawes"
         ],
         "key_episodes": [
           1,
@@ -995,15 +997,16 @@
         "key_scenes": [
           37,
           3,
+          1,
           30,
-          26,
-          48
+          48,
+          57
         ]
       },
       {
         "canonical_name": "Lucius Fox",
         "aliases": [
-          "CEO of Wayne Enterprises"
+          "Mr. Fox"
         ],
         "key_episodes": [
           1,
@@ -1013,10 +1016,10 @@
         ],
         "key_scenes": [
           41,
+          2,
           17,
           24,
-          41,
-          2
+          41
         ]
       },
       {
@@ -1034,77 +1037,18 @@
         "key_scenes": [
           36,
           18,
-          37,
+          12,
           27,
+          57,
           66
         ]
       },
       {
-        "canonical_name": "Salvatore Maroni",
+        "canonical_name": "Bruce Wayne",
         "aliases": [
-          "Sal",
-          "Boss Maroni"
-        ],
-        "key_episodes": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "key_scenes": [
-          37,
-          7,
-          6,
-          23,
-          71
-        ]
-      },
-      {
-        "canonical_name": "Lau",
-        "aliases": [
-          "CEO of L.S.I. Holdings"
-        ],
-        "key_episodes": [
-          1,
-          2,
-          3,
-          5
-        ],
-        "key_scenes": [
-          41,
-          7,
-          24,
-          41,
-          1,
-          53
-        ]
-      },
-      {
-        "canonical_name": "THE JOKER",
-        "aliases": [
-          "The Clown",
-          "Freak",
-          "Agent of Chaos"
-        ],
-        "key_episodes": [
-          6,
-          7
-        ],
-        "key_scenes": [
-          2,
-          19,
-          25,
-          42,
-          44
-        ]
-      },
-      {
-        "canonical_name": "BATMAN / BRUCE WAYNE",
-        "aliases": [
+          "Batman",
           "The Dark Knight",
-          "The Caped Crusader",
-          "Bruce"
+          "The Caped Crusader"
         ],
         "key_episodes": [
           6,
@@ -1112,16 +1056,40 @@
         ],
         "key_scenes": [
           5,
-          14,
-          31,
           42,
+          45,
+          12,
+          28,
+          44,
           49,
           51,
           54
         ]
       },
       {
-        "canonical_name": "HARVEY DENT",
+        "canonical_name": "The Joker",
+        "aliases": [
+          "Agent of Chaos",
+          "Clown"
+        ],
+        "key_episodes": [
+          6,
+          7
+        ],
+        "key_scenes": [
+          2,
+          16,
+          19,
+          25,
+          33,
+          44,
+          4,
+          35,
+          44
+        ]
+      },
+      {
+        "canonical_name": "Harvey Dent",
         "aliases": [
           "Two-Face",
           "Gotham's White Knight"
@@ -1136,13 +1104,14 @@
           38,
           50,
           1,
+          21,
           47,
           49,
           51
         ]
       },
       {
-        "canonical_name": "JAMES GORDON",
+        "canonical_name": "James Gordon",
         "aliases": [
           "Commissioner Gordon",
           "Jim"
@@ -1155,15 +1124,19 @@
           4,
           8,
           12,
-          18,
           31,
+          39,
+          47,
+          10,
+          12,
+          21,
           47,
           49,
           51
         ]
       },
       {
-        "canonical_name": "LUCIUS FOX",
+        "canonical_name": "Lucius Fox",
         "aliases": [
           "Mr. Fox"
         ],
@@ -1178,142 +1151,147 @@
           14,
           51
         ]
+      },
+      {
+        "canonical_name": "Sal Maroni",
+        "aliases": [
+          "Maroni"
+        ],
+        "key_episodes": [
+          6
+        ],
+        "key_scenes": [
+          49,
+          50
+        ]
+      },
+      {
+        "canonical_name": "Anna Ramirez",
+        "aliases": [
+          "Officer Ramirez",
+          "Detective Ramirez"
+        ],
+        "key_episodes": [
+          6,
+          7
+        ],
+        "key_scenes": [
+          61,
+          1
+        ]
       }
     ],
     "objects_and_clues": [
       {
-        "item": "Harvey Dent's Two-Headed Silver Dollar",
+        "item": "Two-Headed Silver Dollar",
         "element_id": "EP01_EL157",
-        "significance": "A coin with two identical heads used by Dent to prove he makes his own luck; its scarred second face later mirrors his transformation into Two-Face."
-      },
-      {
-        "item": "Lightly Irradiated Marked Banknotes",
-        "element_id": "EP01_EL115",
-        "significance": "Batman's tagged currency fed into Gotham mob banks that allows the MCU and Dent to coordinate a sweeping RICO prosecution."
+        "significance": "Harvey Dent's decision-making coin which is revealed to have two identical heads until one side is charred in the explosion that kills Rachel."
       },
       {
         "item": "Joker Playing Cards",
         "element_id": "EP03_EL040",
-        "significance": "The Joker's signature calling card left at crime scenes, carrying victim DNA and terroristic threats."
+        "significance": "Calling cards left at murder scenes and hit warnings containing DNA traces of target victims."
       },
       {
-        "item": "The Bat-Pod",
-        "element_id": "EP04_EL207",
-        "significance": "An escape motorcycle formed directly from the Tumbler's front wheels and axle after self-destructing."
-      },
-      {
-        "item": "Surgically Implanted Cellphone Bomb",
+        "item": "Cellular Improvised Explosive",
         "element_id": "EP05_EL139",
-        "significance": "A detonator sewn into a henchman's abdomen used by the Joker to blast his way out of MCU holding and recapture Lau."
+        "significance": "Bomb surgically stitched into a henchman's abdomen, detonated by phone to blow MCU holding cells and free Lau."
       },
       {
-        "item": "Rachel's Unsealed Farewell Letter",
+        "item": "Rachel's Unsealed Letter",
         "element_id": "EP04_EL140",
-        "significance": "A confession letter from Rachel stating she will marry Dent because Bruce will never stop being Batman; concealed by Alfred to preserve Bruce's sanity."
+        "significance": "Letter handed to Alfred stating Rachel chose Harvey Dent over Bruce Wayne, later concealed by Alfred to spare Bruce's hope."
       },
       {
-        "item": "Harvey Dent's Two-Headed Coin",
+        "item": "Dent's Two-Headed Scarred Coin",
         "element_id": "EP06_EL096",
-        "significance": "Burned on one side, it serves as Dent's absolute moral arbiter to decide life or death for his targets."
+        "significance": "A silver dollar with one scarred side used by Harvey Dent to arbitrarily decide the survival of his targets based on pure chance."
       },
       {
-        "item": "Hospital Bomb Detonator",
-        "element_id": "EP06_EL115",
-        "significance": "Used by the Joker to demolish Gotham General Hospital after disguised infiltration."
-      },
-      {
-        "item": "Sonar Surveillance Machine",
+        "item": "Citywide Sonar Surveillance Console",
         "element_id": "EP06_EL149",
-        "significance": "Wayne Enterprises high-frequency generator that maps Gotham City via every personal mobile phone."
+        "significance": "A high-frequency receiver turning every Gotham cell phone into a 3D sonar imaging array to track the Joker, prompting Lucius Fox's resignation."
       },
       {
-        "item": "Ferry Bomb Remotes",
+        "item": "Ferry Remote Detonators",
         "element_id": "EP06_EL213",
-        "significance": "Cruel social experiment tools giving each ferry the power to detonate the other boat to save themselves."
+        "significance": "Triggers supplied to both civilian and prisoner ferries, designed by the Joker to force one vessel to blow up the other."
       },
       {
-        "item": "Rachel's Letter to Bruce",
+        "item": "Rachel's Farewell Letter",
         "element_id": "EP07_EL194",
-        "significance": "Letter revealing Rachel's choice of Harvey, burned by Alfred to preserve Bruce Wayne's faith."
+        "significance": "Rachel Dawes's unsent letter choosing Harvey over Bruce, burned by Alfred to spare Bruce Wayne further anguish."
       }
     ],
     "relationships": [
       {
         "pair": "Bruce Wayne & Harvey Dent",
-        "relation": "Allies fighting organized crime, with Bruce believing Dent can become the legitimate white knight Gotham needs so Batman can retire."
+        "relation": "Wayne views Dent as Gotham's legitimate savior and hope to retire Batman, while both vie for Rachel's heart."
       },
       {
         "pair": "Batman & The Joker",
-        "relation": "Inextricably linked philosophical adversaries representing absolute moral order versus unrelenting chaos and nihilism."
+        "relation": "Diametrically opposed ideological enemies; Batman refuses to kill while the Joker views Batman as the sole force that completes him."
       },
       {
         "pair": "Harvey Dent & Rachel Dawes",
-        "relation": "Romantic partners and legal crusaders; Rachel accepts Harvey's marriage proposal moments before her death."
+        "relation": "Romantic partners and legal crusade allies whose engagement is severed by the Joker's targeted bombings."
       },
       {
-        "pair": "Bruce Wayne & Rachel Dawes",
-        "relation": "Lifelong friends and former lovers; Bruce believes she will return to him once his Batman crusade concludes."
-      },
-      {
-        "pair": "Harvey Dent & Jim Gordon",
-        "relation": "Distrustful allies whose partnership collapses into vengeful hatred after corrupt officers in Gordon's squad allow Rachel's abduction."
-      },
-      {
-        "pair": "Bruce Wayne & Lucius Fox",
-        "relation": "Partners in Wayne Enterprises; Fox serves as Batman's master armorer and tactical conscience."
-      },
-      {
-        "pair": "Harvey Dent & James Gordon",
-        "relation": "Former allies turned bitter enemies as Two-Face blames Gordon's toleration of corrupt unit detectives for Rachel's death."
+        "pair": "James Gordon & Harvey Dent",
+        "relation": "Allied lawmen strained by Gordon's reliance on compromised internal affairs detectives, ending in tragic disillusionment."
       },
       {
         "pair": "Batman & The Joker",
-        "relation": "Philosophical mirror opposites: the incorruptible protector versus the agent of nihilistic moral collapse."
+        "relation": "Ideological mortal enemies representing incorruptible justice versus nihilistic chaos, trapped in an endless moral duel."
+      },
+      {
+        "pair": "Harvey Dent & James Gordon",
+        "relation": "Former prosecutorial allies severed by betrayal and tragedy; Dent blames Gordon's toleration of corrupt officers for Rachel's murder."
       },
       {
         "pair": "Batman & Lucius Fox",
-        "relation": "Trusted corporate and technical partners whose bond fractures over mass surveillance ethics."
+        "relation": "Trusted confidants strained by Batman's willingness to cross ethical privacy boundaries to eliminate the Joker."
       },
       {
-        "pair": "Batman & Harvey Dent",
-        "relation": "Batman believed Dent was Gotham's true legal savior, ultimately taking the fall for Dent's descent into madness."
+        "pair": "Harvey Dent & Bruce Wayne",
+        "relation": "Symbolic counterparts where Wayne sacrifices his own standing and accepts infamy to keep Dent's heroic public legacy untarnished."
       }
     ],
     "episode_summaries": [
       {
         "episode": 1,
         "scene_range": "Scenes 1-41",
-        "summary": "The Joker pulls off a coordinated mob bank heist, while Batman, Lieutenant Gordon, and new District Attorney Harvey Dent unite to seize the mafia's pooled money."
+        "summary": "The Joker orchestrates a ruthless bank heist on the mob's bank while Batman and Lieutenant Gordon join forces with aggressive new District Attorney Harvey Dent to strike at the syndicate's irradiated finances."
       },
       {
         "episode": 2,
-        "scene_range": "Scenes 1-43",
-        "summary": "The Joker gatecrashes a mob meeting offering to kill Batman, while Batman executes a daring skyhook extraction in Hong Kong to bring money launderer Lau to justice."
+        "scene_range": "Scenes 42-84",
+        "summary": "As mob accountant Lau flees to Hong Kong with the crime families' fortune, Batman conducts a daring sky-hook extraction, prompting the mob to take the Joker's offer to kill Batman."
       },
       {
         "episode": 3,
-        "scene_range": "Scenes 1-41",
-        "summary": "Dent uses Lau to arrest over 500 mobsters, provoking the Joker to launch an assassination spree against Gotham city officials and attack Bruce Wayne's penthouse."
+        "scene_range": "Scenes 85-125",
+        "summary": "Dent levies sweeping RICO indictments against hundreds of gangsters, provoking the Joker to assassinate high-ranking officials and crash Bruce Wayne's penthouse fundraiser in hunt of Dent."
       },
       {
         "episode": 4,
-        "scene_range": "Scenes 1-78",
-        "summary": "After Gordon is seemingly killed during a parade attack on the Mayor, Dent publicly claims to be Batman to lure out the Joker, triggering an explosive street convoy pursuit."
+        "scene_range": "Scenes 126-203",
+        "summary": "The Joker attempts to assassinate the Mayor, prompting Dent to falsely confess to being Batman, triggering an explosive subterranean armored convoy pursuit."
       },
       {
         "episode": 5,
-        "scene_range": "Scenes 1-71",
-        "summary": "Gordon returns from the dead to capture the Joker, but the clown manipulates his interrogation into a trap that murders Rachel and transforms Dent into Two-Face."
+        "scene_range": "Scenes 204-274",
+        "summary": "Gordon captures the Joker in an ambush, but the Joker orchestrates an escape from MCU holding while trapping Dent and Rachel in simultaneous firebombs, killing Rachel and giving birth to Two-Face."
       },
       {
         "episode": 6,
         "scene_range": "Scenes 1-61",
-        "summary": "The Joker burns the mob's billions, threatens hospitals to trigger a citywide manhunt for Reese, and sways a disfigured Harvey Dent toward chaos while rigging two evacuation ferries with explosives."
+        "summary": "The Joker burns the mob's billions, holds Gotham hostage by threatening city hospitals, and turns a scarred Harvey Dent into a lethal agent of vengeance."
       },
       {
         "episode": 7,
         "scene_range": "Scenes 1-54",
-        "summary": "Both ferries refuse to detonate each other, Batman captures the Joker, and then Batman sacrifices his own reputation to cover up Two-Face's murderous rampage, fleeing into the night as the Dark Knight."
+        "summary": "Batman foils the Joker's ferry death traps and rescues hostages, but must take the blame for Two-Face's killing spree to safeguard Gotham's future."
       }
     ]
   }

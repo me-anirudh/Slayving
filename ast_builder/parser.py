@@ -269,6 +269,11 @@ class UniversalScreenplayParser:
 
         self.character_registry: set[str] = set()
         self.base_action_indent: int = 0
+        self.has_indent_layout: bool = False
+        self.action_max_indent: int = 0
+        self.dialogue_min_indent: int = 0
+        self.char_cue_min_indent: int = 0
+        self.transition_min_indent: int = 45
 
     def time_to_centiseconds(self, ts_str: str) -> int:
         return parse_timestamp_to_cs(ts_str)
@@ -686,7 +691,55 @@ class UniversalScreenplayParser:
                     return True
         return False
 
+    def _profile_screenplay_layout(self, norm_lines: List[Tuple[str, int, int]]) -> None:
+        """
+        Profiles the physical typography and horizontal indentation bands of the screenplay.
+        Establishes indentation as the primary classifier across standard screenplay formats:
+          - Action / Scene Heading band: indent <= action_max_indent
+          - Dialogue text / parenthetical band: dialogue_min_indent <= indent < char_cue_min_indent
+          - Character speaker cue band: char_cue_min_indent <= indent < transition_min_indent
+          - Transition band: indent >= transition_min_indent
+        """
+        non_empty = [len(l[0]) - len(l[0].lstrip()) for l in norm_lines if l[0].strip()]
+        if not non_empty:
+            self.has_indent_layout = False
+            self.base_action_indent = 0
+            self.action_max_indent = 0
+            self.dialogue_min_indent = 0
+            self.char_cue_min_indent = 0
+            self.transition_min_indent = 45
+            return
+
+        counts = Counter(non_empty)
+        min_ind = min(non_empty)
+        max_ind = max(non_empty)
+
+        # Standard screenplay formats exhibit significant horizontal whitespace separation (>= 8 columns)
+        if max_ind - min_ind >= 8:
+            self.has_indent_layout = True
+            low_indents = [ind for ind, _ in counts.most_common() if ind <= 15]
+            self.base_action_indent = low_indents[0] if low_indents else min_ind
+            self.action_max_indent = self.base_action_indent + 4
+            self.dialogue_min_indent = self.base_action_indent + 6
+            high_indents = [ind for ind in sorted(counts.keys()) if ind >= self.base_action_indent + 12]
+            self.char_cue_min_indent = high_indents[0] if high_indents else (self.base_action_indent + 16)
+            self.transition_min_indent = max(45, self.char_cue_min_indent + 15)
+        else:
+            self.has_indent_layout = False
+            self.base_action_indent = 0
+            self.action_max_indent = 0
+            self.dialogue_min_indent = 0
+            self.char_cue_min_indent = 0
+            self.transition_min_indent = 45
+
     def _check_screenplay_cue(self, line: str, indent: int) -> Optional[Tuple[str, Optional[str]]]:
+        # 1. Primary Indentation Classifier: Character cues MUST be centered in the character cue band
+        if self.has_indent_layout:
+            if indent < self.char_cue_min_indent:
+                return None
+        elif self.base_action_indent > 0 and indent < self.base_action_indent + 8:
+            return None
+
         extensions = []
         for m in self.EXTENSION_RE.finditer(line):
             extensions.append(m.group(0))
@@ -711,9 +764,6 @@ class UniversalScreenplayParser:
         if len(tokens) > 1 and all(len(t) == 1 for t in tokens):
             return None
 
-        if self.base_action_indent > 0 and indent < self.base_action_indent + 8:
-            return None
-
         clean_name = re.sub(r"\s+", " ", name_part)
         modifier = " ".join(extensions) if extensions else None
         return clean_name, modifier
@@ -725,14 +775,8 @@ class UniversalScreenplayParser:
             header = EpisodeHeader(episode_num=episode_idx, raw_episode_title=file_name or f"Episode {episode_idx}", logline="", continuity_notes="")
             return Episode(header=header, scenes=(), elements=(), total_elements=0, total_duration_cs=0)
 
-        # Baseline indentation calculation
-        indents = [len(l[0]) - len(l[0].lstrip()) for l in norm_lines if l[0].strip()]
-        if indents:
-            counts = Counter(indents)
-            common_under_16 = [ind for ind, c in counts.most_common() if ind <= 15]
-            self.base_action_indent = common_under_16[0] if (common_under_16 and common_under_16[0] >= 4) else 0
-        else:
-            self.base_action_indent = 0
+        # Baseline indentation calculation & typography layout profiling
+        self._profile_screenplay_layout(norm_lines)
 
         # Extract title page metadata
         header, meta_end_idx = self._extract_screenplay_metadata(norm_lines)
@@ -829,7 +873,12 @@ class UniversalScreenplayParser:
                 continue
 
             # 1. Transitions
-            if self.TRANSITION_RE.match(stripped) or (stripped.endswith("TO:") and stripped.isupper()):
+            is_transition = (
+                self.TRANSITION_RE.match(stripped)
+                or (stripped.endswith("TO:") and stripped.isupper())
+                or (self.has_indent_layout and indent >= self.transition_min_indent and stripped.isupper())
+            )
+            if is_transition:
                 flush_action()
                 add_element(ElementType.ACTION, stripped, raw_tag="TRANSITION")
                 idx += 1
@@ -872,6 +921,9 @@ class UniversalScreenplayParser:
                     elif self.SLUG_PREFIX_RE.match(next_strip) or self._is_implicit_slugline(next_strip) or self.TRANSITION_RE.match(next_strip):
                         break
                     elif self._check_screenplay_cue(next_strip, next_ind):
+                        break
+                    elif self.has_indent_layout and next_ind <= self.action_max_indent:
+                        # Dropping back to the base action margin terminates dialogue block immediately
                         break
                     else:
                         dialogue_lines.append(next_strip)
