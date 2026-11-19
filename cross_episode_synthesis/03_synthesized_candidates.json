@@ -1,5 +1,6 @@
 {
   "synthesis_engine_version": "v3.2-3-check-narrative-compatibility",
+  "series_title": "I Married a Broken Soldier. He was a Duke",
   "total_candidates": 3,
   "candidates": [
     {
@@ -12,6 +13,8 @@
         {
           "segment_index": 1,
           "episode_num": 1,
+          "scene_num": 37,
+          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
           "start_element_id": "EP01_EL156",
           "end_element_id": "EP01_EL161",
           "start_raw": "15:46.80",
@@ -19,8 +22,6 @@
           "duration_seconds": 24.9,
           "duration_cs": 2490,
           "purpose_in_promo": "Hook / Context from Episode/Part 1",
-          "scene_num": 37,
-          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
           "trim_recommendation": {
             "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
             "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
@@ -32,6 +33,8 @@
         {
           "segment_index": 2,
           "episode_num": 7,
+          "scene_num": 22,
+          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
           "start_element_id": "EP07_EL069",
           "end_element_id": "EP07_EL070",
           "start_raw": "04:56.30",
@@ -39,8 +42,6 @@
           "duration_seconds": 27.0,
           "duration_cs": 2700,
           "purpose_in_promo": "Climax / Escalation from Episode/Part 7",
-          "scene_num": 22,
-          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
           "trim_recommendation": {
             "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
             "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
@@ -50,7 +51,6 @@
           }
         }
       ],
-      "scene_range": null,
       "transition_instructions": [
         "Hard cut from Episode 1 element EP01_EL161 to Episode 7 element EP07_EL069.",
         "Layer rising bass swell into sharp transition hit.",
@@ -70,9 +70,10 @@
       "total_duration_seconds": 51.9,
       "total_duration_cs": 5190,
       "retrieval_method": "3_check_compatibility",
-      "semantic_similarity_score": 1.65,
+      "semantic_similarity_score": 1.0,
       "shared_characters": [],
-      "shared_props_or_clues": []
+      "shared_props_or_clues": [],
+      "scene_range": null
     },
     {
       "candidate_id": "SYNTH_MULTI_02",
@@ -84,6 +85,8 @@
         {
           "segment_index": 1,
           "episode_num": 4,
+          "scene_num": 71,
+          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
           "start_element_id": "EP04_EL205",
           "end_element_id": "EP04_EL207",
           "start_raw": "16:46.40",
@@ -91,8 +94,6 @@
           "duration_seconds": 32.2,
           "duration_cs": 3220,
           "purpose_in_promo": "Hook / Context from Episode/Part 4",
-          "scene_num": 71,
-          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
           "trim_recommendation": {
             "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
             "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
@@ -104,6 +105,8 @@
         {
           "segment_index": 2,
           "episode_num": 7,
+          "scene_num": 22,
+          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
           "start_element_id": "EP07_EL069",
           "end_element_id": "EP07_EL070",
           "start_raw": "04:56.30",
@@ -111,8 +114,6 @@
           "duration_seconds": 27.0,
           "duration_cs": 2700,
           "purpose_in_promo": "Climax / Escalation from Episode/Part 7",
-          "scene_num": 22,
-          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
           "trim_recommendation": {
             "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
             "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
@@ -122,7 +123,6 @@
           }
         }
       ],
-      "scene_range": null,
       "transition_instructions": [
         "Hard cut from Episode 4 element EP04_EL207 to Episode 7 element EP07_EL069.",
         "Layer rising bass swell into sharp transition hit.",
@@ -142,11 +142,10 @@
       "total_duration_seconds": 59.2,
       "total_duration_cs": 5920,
       "retrieval_method": "3_check_compatibility",
-      "semantic_similarity_score": 1.65,
-      "shared_characters": [
-        "Bruce Wayne"
-      ],
-      "shared_props_or_clues": []
+      "semantic_similarity_score": 1.0,
+      "shared_characters": [],
+      "shared_props_or_clues": [],
+      "scene_range": null
     },
     {
       "candidate_id": "SYNTH_MULTI_03",
@@ -158,6 +157,8 @@
         {
           "segment_index": 1,
           "episode_num": 1,
+          "scene_num": 37,
+          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
           "start_element_id": "EP01_EL156",
           "end_element_id": "EP01_EL161",
           "start_raw": "15:46.80",
@@ -165,8 +166,6 @@
           "duration_seconds": 24.9,
           "duration_cs": 2490,
           "purpose_in_promo": "Hook / Context from Episode/Part 1",
-          "scene_num": 37,
-          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
           "trim_recommendation": {
             "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
             "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
@@ -178,6 +177,8 @@
         {
           "segment_index": 2,
           "episode_num": 4,
+          "scene_num": 71,
+          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
           "start_element_id": "EP04_EL205",
           "end_element_id": "EP04_EL207",
           "start_raw": "16:46.40",
@@ -185,8 +186,6 @@
           "duration_seconds": 32.2,
           "duration_cs": 3220,
           "purpose_in_promo": "Climax / Escalation from Episode/Part 4",
-          "scene_num": 71,
-          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
           "trim_recommendation": {
             "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
             "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
@@ -196,7 +195,6 @@
           }
         }
       ],
-      "scene_range": null,
       "transition_instructions": [
         "Hard cut from Episode 1 element EP01_EL161 to Episode 4 element EP04_EL205.",
         "Layer rising bass swell into sharp transition hit.",
@@ -216,198 +214,758 @@
       "total_duration_seconds": 57.1,
       "total_duration_cs": 5710,
       "retrieval_method": "3_check_compatibility",
-      "semantic_similarity_score": 0.65,
+      "semantic_similarity_score": 0.0,
       "shared_characters": [],
-      "shared_props_or_clues": []
+      "shared_props_or_clues": [],
+      "scene_range": null
+    }
+  ],
+  "synthesized_candidates": [
+    {
+      "candidate_id": "SYNTH_MULTI_01",
+      "composition_mode": "multi_episode",
+      "archetype": "visual_anomaly_mystery_escalation",
+      "relationship_type": "implied",
+      "progression_type": "revelation_or_twist",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 37,
+          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
+          "start_element_id": "EP01_EL156",
+          "end_element_id": "EP01_EL161",
+          "start_raw": "15:46.80",
+          "end_raw": "16:11.70",
+          "duration_seconds": 24.9,
+          "duration_cs": 2490,
+          "purpose_in_promo": "Hook / Context from Episode/Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
+            "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 7,
+          "scene_num": 22,
+          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
+          "start_element_id": "EP07_EL069",
+          "end_element_id": "EP07_EL070",
+          "start_raw": "04:56.30",
+          "end_raw": "05:23.30",
+          "duration_seconds": 27.0,
+          "duration_cs": 2700,
+          "purpose_in_promo": "Climax / Escalation from Episode/Part 7",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
+            "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut from Episode 1 element EP01_EL161 to Episode 7 element EP07_EL069.",
+        "Layer rising bass swell into sharp transition hit.",
+        "Resume playback at full dialogue volume on Episode 7."
+      ],
+      "hook_timestamp_offset_seconds": 0.3,
+      "hook_description": "Immediate visceral hook initiates within 0.3s in EP01_EL156: Harvey Dent displays his two-headed lucky silver dollar to R.",
+      "cliffhanger_description": "Cuts at peak dramatic tension right before reaction at EP07_EL070.",
+      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 1 setup to Episode 7 payoff.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 51.9,
+      "total_duration_cs": 5190,
+      "retrieval_method": "3_check_compatibility",
+      "semantic_similarity_score": 1.0,
+      "shared_characters": [],
+      "shared_props_or_clues": [],
+      "scene_range": null
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_02",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "progression_type": "revelation_or_twist",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 4,
+          "scene_num": 71,
+          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
+          "start_element_id": "EP04_EL205",
+          "end_element_id": "EP04_EL207",
+          "start_raw": "16:46.40",
+          "end_raw": "17:18.60",
+          "duration_seconds": 32.2,
+          "duration_cs": 3220,
+          "purpose_in_promo": "Hook / Context from Episode/Part 4",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
+            "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 7,
+          "scene_num": 22,
+          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
+          "start_element_id": "EP07_EL069",
+          "end_element_id": "EP07_EL070",
+          "start_raw": "04:56.30",
+          "end_raw": "05:23.30",
+          "duration_seconds": 27.0,
+          "duration_cs": 2700,
+          "purpose_in_promo": "Climax / Escalation from Episode/Part 7",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
+            "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut from Episode 4 element EP04_EL207 to Episode 7 element EP07_EL069.",
+        "Layer rising bass swell into sharp transition hit.",
+        "Resume playback at full dialogue volume on Episode 7."
+      ],
+      "hook_timestamp_offset_seconds": 0.3,
+      "hook_description": "Immediate visceral hook initiates within 0.3s in EP04_EL205: After the Batmobile is crippled by an RPG, Batman triggers s.",
+      "cliffhanger_description": "Cuts at peak dramatic tension right before reaction at EP07_EL070.",
+      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 4 setup to Episode 7 payoff.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 59.2,
+      "total_duration_cs": 5920,
+      "retrieval_method": "3_check_compatibility",
+      "semantic_similarity_score": 1.0,
+      "shared_characters": [],
+      "shared_props_or_clues": [],
+      "scene_range": null
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "composition_mode": "multi_episode",
+      "archetype": "emotional_reversal_turning_point",
+      "relationship_type": "thematic",
+      "progression_type": "power_inversion",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 37,
+          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
+          "start_element_id": "EP01_EL156",
+          "end_element_id": "EP01_EL161",
+          "start_raw": "15:46.80",
+          "end_raw": "16:11.70",
+          "duration_seconds": 24.9,
+          "duration_cs": 2490,
+          "purpose_in_promo": "Hook / Context from Episode/Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
+            "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 4,
+          "scene_num": 71,
+          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
+          "start_element_id": "EP04_EL205",
+          "end_element_id": "EP04_EL207",
+          "start_raw": "16:46.40",
+          "end_raw": "17:18.60",
+          "duration_seconds": 32.2,
+          "duration_cs": 3220,
+          "purpose_in_promo": "Climax / Escalation from Episode/Part 4",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
+            "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut from Episode 1 element EP01_EL161 to Episode 4 element EP04_EL205.",
+        "Layer rising bass swell into sharp transition hit.",
+        "Resume playback at full dialogue volume on Episode 4."
+      ],
+      "hook_timestamp_offset_seconds": 0.3,
+      "hook_description": "Immediate visceral hook initiates within 0.3s in EP01_EL156: Harvey Dent displays his two-headed lucky silver dollar to R.",
+      "cliffhanger_description": "Cuts at peak dramatic tension right before reaction at EP04_EL207.",
+      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 1 setup to Episode 4 payoff.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 57.1,
+      "total_duration_cs": 5710,
+      "retrieval_method": "3_check_compatibility",
+      "semantic_similarity_score": 0.0,
+      "shared_characters": [],
+      "shared_props_or_clues": [],
+      "scene_range": null
     }
   ],
   "three_check_audit": {
     "total_moments_evaluated": 20,
-    "step1_semantic_pairs_retrieved": 22,
-    "step2_entity_compatible_pairs": 22,
-    "step2_entity_rejections_sample": [],
-    "step3_narrative_progressions_approved": 5,
-    "step3_progression_rejections_sample": [
-      {
-        "pair": "EP07_MOM_01 (Ep 7) <-> EP07_MOM_03 (Ep 7)",
-        "similarity": 0.7827,
-        "reason": "Insufficient narrative contrast or causal connection between the two episode beats."
-      },
-      {
-        "pair": "EP07_MOM_03 (Ep 7) <-> EP07_MOM_01 (Ep 7)",
-        "similarity": 0.7827,
-        "reason": "Insufficient narrative contrast or causal connection between the two episode beats."
-      },
-      {
-        "pair": "EP05_MOM_01 (Ep 5) <-> EP07_MOM_04 (Ep 7)",
-        "similarity": 0.7709,
-        "reason": "Insufficient narrative contrast or causal connection between the two episode beats."
-      },
-      {
-        "pair": "EP02_MOM_01 (Ep 2) <-> EP02_MOM_02 (Ep 2)",
-        "similarity": 0.7649,
-        "reason": "Insufficient narrative contrast or causal connection between the two episode beats."
-      },
-      {
-        "pair": "EP02_MOM_02 (Ep 2) <-> EP02_MOM_01 (Ep 2)",
-        "similarity": 0.7649,
-        "reason": "Insufficient narrative contrast or causal connection between the two episode beats."
-      }
-    ],
-    "eligible_combinations": [
-      {
-        "pair_id": "COMB_EP02_MOM_01_EP07_MOM_04",
-        "moment_1_id": "EP02_MOM_01",
-        "moment_2_id": "EP07_MOM_04",
-        "episode_1": 2,
-        "episode_2": 7,
-        "semantic_similarity": 0.7458,
-        "entity_compatibility": {
-          "is_compatible": true,
-          "shared_characters": [
-            "Bruce Wayne",
-            "The Joker"
-          ],
-          "shared_props_or_clues": [],
-          "relationship_context": "Bruce Wayne & Harvey Dent: Wayne views Dent as Gotham's legitimate savior and hope to retire Batm",
-          "compatibility_score": 0.7,
-          "rejection_reason": null
-        },
-        "narrative_progression": {
-          "has_progression": true,
-          "progression_type": "escalation_of_stakes",
-          "causal_link": "implied",
-          "explanation": "Ongoing storyline involving Bruce Wayne, The Joker escalates from Ep 2 to Ep 7."
-        }
-      },
-      {
-        "pair_id": "COMB_EP01_MOM_01_EP07_MOM_04",
-        "moment_1_id": "EP01_MOM_01",
-        "moment_2_id": "EP07_MOM_04",
-        "episode_1": 1,
-        "episode_2": 7,
-        "semantic_similarity": 0.7232,
-        "entity_compatibility": {
-          "is_compatible": true,
-          "shared_characters": [
-            "The Joker"
-          ],
-          "shared_props_or_clues": [],
-          "relationship_context": "Batman & The Joker: Diametrically opposed ideological enemies; Batman refuses to kill whil",
-          "compatibility_score": 0.65,
-          "rejection_reason": null
-        },
-        "narrative_progression": {
-          "has_progression": true,
-          "progression_type": "escalation_of_stakes",
-          "causal_link": "implied",
-          "explanation": "Ongoing storyline involving The Joker escalates from Ep 1 to Ep 7."
-        }
-      },
-      {
-        "pair_id": "COMB_EP02_MOM_02_EP07_MOM_04",
-        "moment_1_id": "EP02_MOM_02",
-        "moment_2_id": "EP07_MOM_04",
-        "episode_1": 2,
-        "episode_2": 7,
-        "semantic_similarity": 0.7225,
-        "entity_compatibility": {
-          "is_compatible": true,
-          "shared_characters": [
-            "The Joker"
-          ],
-          "shared_props_or_clues": [],
-          "relationship_context": "Batman & The Joker: Diametrically opposed ideological enemies; Batman refuses to kill whil",
-          "compatibility_score": 0.65,
-          "rejection_reason": null
-        },
-        "narrative_progression": {
-          "has_progression": true,
-          "progression_type": "escalation_of_stakes",
-          "causal_link": "implied",
-          "explanation": "Ongoing storyline involving The Joker escalates from Ep 2 to Ep 7."
-        }
-      },
-      {
-        "pair_id": "COMB_EP04_MOM_02_EP07_MOM_04",
-        "moment_1_id": "EP04_MOM_02",
-        "moment_2_id": "EP07_MOM_04",
-        "episode_1": 4,
-        "episode_2": 7,
-        "semantic_similarity": 0.7223,
-        "entity_compatibility": {
-          "is_compatible": true,
-          "shared_characters": [
-            "Bruce Wayne"
-          ],
-          "shared_props_or_clues": [],
-          "relationship_context": "Bruce Wayne & Harvey Dent: Wayne views Dent as Gotham's legitimate savior and hope to retire Batm",
-          "compatibility_score": 0.65,
-          "rejection_reason": null
-        },
-        "narrative_progression": {
-          "has_progression": true,
-          "progression_type": "revelation_or_twist",
-          "causal_link": "implied",
-          "explanation": "Shared prop/motif (tangible narrative clue) set up in Ep 4 serves as critical evidence or weapon in Ep 7 climax."
-        }
-      },
-      {
-        "pair_id": "COMB_EP01_MOM_01_EP07_MOM_01",
-        "moment_1_id": "EP01_MOM_01",
-        "moment_2_id": "EP07_MOM_01",
-        "episode_1": 1,
-        "episode_2": 7,
-        "semantic_similarity": 0.704,
-        "entity_compatibility": {
-          "is_compatible": true,
-          "shared_characters": [
-            "The Joker"
-          ],
-          "shared_props_or_clues": [],
-          "relationship_context": "Batman & The Joker: Diametrically opposed ideological enemies; Batman refuses to kill whil",
-          "compatibility_score": 0.65,
-          "rejection_reason": null
-        },
-        "narrative_progression": {
-          "has_progression": true,
-          "progression_type": "escalation_of_stakes",
-          "causal_link": "implied",
-          "explanation": "Ongoing storyline involving The Joker escalates from Ep 1 to Ep 7."
-        }
-      }
-    ]
+    "step1_semantic_pairs_retrieved": 21,
+    "step2_entity_compatible_pairs": 0,
+    "step3_narrative_progressions_approved": 0,
+    "eligible_combinations": []
   },
   "mechanical_audit": [
     {
       "candidate_id": "SYNTH_MULTI_01",
       "archetype": "visual_anomaly_mystery_escalation",
-      "relationship_type": "implied",
       "progression_type": "revelation_or_twist",
+      "relationship_type": "implied",
       "duration_seconds": 51.9,
-      "hook_offset": 0.3,
+      "hook_offset_seconds": 0.3,
       "is_valid": true,
-      "errors": []
+      "error_count": 0,
+      "errors": "None (100% Invariant Compliance)"
     },
     {
       "candidate_id": "SYNTH_MULTI_02",
       "archetype": "immediate_shock_opener",
-      "relationship_type": "explicit",
       "progression_type": "revelation_or_twist",
+      "relationship_type": "explicit",
       "duration_seconds": 59.2,
-      "hook_offset": 0.3,
+      "hook_offset_seconds": 0.3,
       "is_valid": true,
-      "errors": []
+      "error_count": 0,
+      "errors": "None (100% Invariant Compliance)"
     },
     {
       "candidate_id": "SYNTH_MULTI_03",
       "archetype": "emotional_reversal_turning_point",
+      "progression_type": "power_inversion",
+      "relationship_type": "thematic",
+      "duration_seconds": 57.1,
+      "hook_offset_seconds": 0.3,
+      "is_valid": true,
+      "error_count": 0,
+      "errors": "None (100% Invariant Compliance)"
+    }
+  ],
+  "top_selected_recommendations": [
+    {
+      "start_element_id": "EP01_EL044",
+      "end_element_id": "EP01_EL050",
+      "scene_num": 17,
+      "scene_heading": "INT. LOBBY, BANK -- DAY",
+      "hook_timestamp_offset_seconds": 1.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Bozo calmly answers 'No. I kill the bus driver' right before a full-sized yellow school bus crashes through the bank wall, obliterating his accomplice.",
+      "cliffhanger_description": "The unmasked Joker walks away, trapping the purple thread of a live grenade in the mouth of the bank manager, cutting right as tension peaks before detonation.",
+      "standalone_coherence_explanation": "A cold viewer instantly understands a high-stakes mob bank robbery where the mastermind is systematically executing his own crew members one by one.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "No. I kill the bus driver.",
+        "exact_ending_dialogue": "...simply makes you stranger.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 69.3,
+      "calculated_duration_cs": 6930,
+      "overall_score": 20
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_01",
+      "composition_mode": "multi_episode",
+      "archetype": "visual_anomaly_mystery_escalation",
+      "relationship_type": "implied",
+      "progression_type": "revelation_or_twist",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 37,
+          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
+          "start_element_id": "EP01_EL156",
+          "end_element_id": "EP01_EL161",
+          "start_raw": "15:46.80",
+          "end_raw": "16:11.70",
+          "duration_seconds": 24.9,
+          "duration_cs": 2490,
+          "purpose_in_promo": "Hook / Context from Episode/Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
+            "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 7,
+          "scene_num": 22,
+          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
+          "start_element_id": "EP07_EL069",
+          "end_element_id": "EP07_EL070",
+          "start_raw": "04:56.30",
+          "end_raw": "05:23.30",
+          "duration_seconds": 27.0,
+          "duration_cs": 2700,
+          "purpose_in_promo": "Climax / Escalation from Episode/Part 7",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
+            "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut from Episode 1 element EP01_EL161 to Episode 7 element EP07_EL069.",
+        "Layer rising bass swell into sharp transition hit.",
+        "Resume playback at full dialogue volume on Episode 7."
+      ],
+      "hook_timestamp_offset_seconds": 0.3,
+      "hook_description": "Immediate visceral hook initiates within 0.3s in EP01_EL156: Harvey Dent displays his two-headed lucky silver dollar to R.",
+      "cliffhanger_description": "Cuts at peak dramatic tension right before reaction at EP07_EL070.",
+      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 1 setup to Episode 7 payoff.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 51.9,
+      "total_duration_cs": 5190,
+      "retrieval_method": "3_check_compatibility",
+      "semantic_similarity_score": 1.0,
+      "shared_characters": [],
+      "shared_props_or_clues": [],
+      "scene_range": null
+    },
+    {
+      "start_element_id": "EP05_EL087",
+      "end_element_id": "EP05_EL095",
+      "scene_num": 24,
+      "scene_heading": "INT. INTERROGATION ROOM, MCU, GOTHAM CENTRAL -- NIGHT",
+      "hook_timestamp_offset_seconds": 1.5,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "The Joker laughs through a bloody mouth while Batman ruthlessly interrogates him, slamming him into walls.",
+      "cliffhanger_description": "The Joker gives Batman two simultaneous locations for Rachel and Dent, forcing him into a sadistic Sophie's choice with only minutes left.",
+      "standalone_coherence_explanation": "An unhinged villain with nothing to lose reveals that two innocent hostages are trapped with timers running out and forces the vigilante to pick only one.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Look at you go... does Harvey know about you and his-?",
+        "exact_ending_dialogue": "He's at 250 52nd Boulevard. And she's on avenue X at Cicero.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 46.6,
+      "calculated_duration_cs": 4660,
+      "overall_score": 20
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_02",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "progression_type": "revelation_or_twist",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 4,
+          "scene_num": 71,
+          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
+          "start_element_id": "EP04_EL205",
+          "end_element_id": "EP04_EL207",
+          "start_raw": "16:46.40",
+          "end_raw": "17:18.60",
+          "duration_seconds": 32.2,
+          "duration_cs": 3220,
+          "purpose_in_promo": "Hook / Context from Episode/Part 4",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
+            "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 7,
+          "scene_num": 22,
+          "scene_heading": "INT. PENTHOUSE, PREWITT BUILDING -- CONTINUOUS",
+          "start_element_id": "EP07_EL069",
+          "end_element_id": "EP07_EL070",
+          "start_raw": "04:56.30",
+          "end_raw": "05:23.30",
+          "duration_seconds": 27.0,
+          "duration_cs": 2700,
+          "purpose_in_promo": "Climax / Escalation from Episode/Part 7",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
+            "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut from Episode 4 element EP04_EL207 to Episode 7 element EP07_EL069.",
+        "Layer rising bass swell into sharp transition hit.",
+        "Resume playback at full dialogue volume on Episode 7."
+      ],
+      "hook_timestamp_offset_seconds": 0.3,
+      "hook_description": "Immediate visceral hook initiates within 0.3s in EP04_EL205: After the Batmobile is crippled by an RPG, Batman triggers s.",
+      "cliffhanger_description": "Cuts at peak dramatic tension right before reaction at EP07_EL070.",
+      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 4 setup to Episode 7 payoff.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 59.2,
+      "total_duration_cs": 5920,
+      "retrieval_method": "3_check_compatibility",
+      "semantic_similarity_score": 1.0,
+      "shared_characters": [],
+      "shared_props_or_clues": [],
+      "scene_range": null
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "composition_mode": "multi_episode",
+      "archetype": "emotional_reversal_turning_point",
       "relationship_type": "thematic",
       "progression_type": "power_inversion",
-      "duration_seconds": 57.1,
-      "hook_offset": 0.3,
-      "is_valid": true,
-      "errors": []
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 37,
+          "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
+          "start_element_id": "EP01_EL156",
+          "end_element_id": "EP01_EL161",
+          "start_raw": "15:46.80",
+          "end_raw": "16:11.70",
+          "duration_seconds": 24.9,
+          "duration_cs": 2490,
+          "purpose_in_promo": "Hook / Context from Episode/Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
+            "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 4,
+          "scene_num": 71,
+          "scene_heading": "EXT. LOWER LEVEL STREET -- CONTINUOUS",
+          "start_element_id": "EP04_EL205",
+          "end_element_id": "EP04_EL207",
+          "start_raw": "16:46.40",
+          "end_raw": "17:18.60",
+          "duration_seconds": 32.2,
+          "duration_cs": 3220,
+          "purpose_in_promo": "Climax / Escalation from Episode/Part 4",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
+            "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut from Episode 1 element EP01_EL161 to Episode 4 element EP04_EL205.",
+        "Layer rising bass swell into sharp transition hit.",
+        "Resume playback at full dialogue volume on Episode 4."
+      ],
+      "hook_timestamp_offset_seconds": 0.3,
+      "hook_description": "Immediate visceral hook initiates within 0.3s in EP01_EL156: Harvey Dent displays his two-headed lucky silver dollar to R.",
+      "cliffhanger_description": "Cuts at peak dramatic tension right before reaction at EP04_EL207.",
+      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 1 setup to Episode 4 payoff.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 4
+      },
+      "overall_score": 19,
+      "total_duration_seconds": 57.1,
+      "total_duration_cs": 5710,
+      "retrieval_method": "3_check_compatibility",
+      "semantic_similarity_score": 0.0,
+      "shared_characters": [],
+      "shared_props_or_clues": [],
+      "scene_range": null
+    },
+    {
+      "start_element_id": "EP03_EL161",
+      "end_element_id": "EP03_EL166",
+      "scene_num": 30,
+      "scene_heading": "INT. LIVING ROOM, WAYNE'S PENTHOUSE -- NIGHT",
+      "hook_timestamp_offset_seconds": 2.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Batman bursts into the penthouse confrontation with 'Then you're going to love me' and takes down the Joker's thugs with brutal CQC.",
+      "cliffhanger_description": "The Joker dangles Rachel Dawes out of a shattered skyscraper window and drops her into freefall, with Batman diving off the ledge after her.",
+      "standalone_coherence_explanation": "A superhero ambushes a terrorist holding party guests hostage, culminating in the villain dropping the hero's love interest out of a penthouse window.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "A little fight in you. I like that.",
+        "exact_ending_dialogue": "Very poor choice of words...",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 50.9,
+      "calculated_duration_cs": 5090,
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP06_EL005",
+      "end_element_id": "EP06_EL012",
+      "scene_num": 2,
+      "scene_heading": "INT. RUSTED HULK -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "The Joker suddenly splashes gasoline across a thirty-foot pyramid containing a billion dollars in mob cash and sticks a gun in the Chechen's face.",
+      "cliffhanger_description": "The Joker proclaims he is only burning his half and tosses a lit cigar directly onto the gasoline-soaked billion-dollar cash pile, leaving the mob's empire going up in flames.",
+      "standalone_coherence_explanation": "A criminal boss confronts an eccentric clown over their shared money, only for the clown to douse the billion-dollar fortune in gasoline and ignite it on principle.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "More for us.  What you do with all your money, Mr.Joker?",
+        "exact_ending_dialogue": "The Chechen watches the money catch fire.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 34.2,
+      "calculated_duration_cs": 3420,
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP06_EL129",
+      "end_element_id": "EP06_EL137",
+      "scene_num": 38,
+      "scene_heading": "INT. BAR, GOTHAM HEIGHTS -- DAY",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Detective Wuertz gets a gun shoved directly into his face in an empty dive bar by Harvey Dent, who leans out of the shadows to expose his hideous half-destroyed face.",
+      "cliffhanger_description": "Dent flips his scarred silver dollar to decide Wuertz's life; it lands scarred side up and a deafening gunshot rings out in the bar.",
+      "standalone_coherence_explanation": "A vengeful disfigured former prosecutor interrogates a corrupt cop who betrayed him, leaving the cop's execution entirely to a 50/50 coin flip.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "What?  You need me to shake it for-",
+        "exact_ending_dialogue": "The drunk at the bar STIRS at the GUNSHOT.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 50.2,
+      "calculated_duration_cs": 5020,
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP07_EL110",
+      "end_element_id": "EP07_EL114",
+      "scene_num": 44,
+      "scene_heading": "INT. PREWITT BUILDING -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "The Joker crouches over a pinned Batman with a bomb remote in hand, mocking him and preparing to blow up hundreds of citizens himself.",
+      "cliffhanger_description": "Batman fires his gauntlet scallop blades into the Joker and kicks him off the high-rise ledge, catching him upside-down midair with his grapple line.",
+      "standalone_coherence_explanation": "A costumed superhero pinned under a structural beam fights back against a cackling terrorist with a detonator and flings him off a skyscraper.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "You're alone.",
+        "exact_ending_dialogue": "The Joker HOLLERS in pain as Batman HAULS him up.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 37.5,
+      "calculated_duration_cs": 3750,
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP02_EL086",
+      "end_element_id": "EP02_EL090",
+      "scene_num": 9,
+      "scene_heading": "INT. SOCIAL CLUB, DOWNTOWN -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.5,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Gambol threatens to have the Joker decapitated, and the Joker counters instantly with a deadly pencil magic trick.",
+      "cliffhanger_description": "After brutally killing Gambol's bodyguard with the pencil, the Joker demands respect as the mobsters tense up on the edge of a shootout.",
+      "standalone_coherence_explanation": "A colorful psychopathic criminal crashes a high-level mob summit and performs an execution in broad daylight to prove his dominance.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Give me one reason I shouldn't have my boy here pull your head off.",
+        "exact_ending_dialogue": "Sit. I wanna hear proposition.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 4,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 34.8,
+      "calculated_duration_cs": 3480,
+      "overall_score": 19
+    },
+    {
+      "start_element_id": "EP04_EL126",
+      "end_element_id": "EP04_EL131",
+      "scene_num": 30,
+      "scene_heading": "INT. PRESS ROOM, SUPERIOR COURT -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 1.0,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "Harvey Dent addresses a panicked mob with 'The night is darkest just before the dawn' before making a stunning confession.",
+      "cliffhanger_description": "Dent unexpectedly holds out his own wrists and announces to the media 'I am the Batman,' leaving Bruce Wayne stunned in the back row.",
+      "standalone_coherence_explanation": "Under immense public pressure to unmask a vigilante, a crusading district attorney falsely claims he is the vigilante to take the heat.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Yes. They are. But the night is darkest just before the dawn.",
+        "exact_ending_dialogue": "I am the Batman.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 35.7,
+      "calculated_duration_cs": 3570,
+      "overall_score": 19
+    },
+    {
+      "start_element_id": "EP05_EL215",
+      "end_element_id": "EP05_EL225",
+      "scene_num": 70,
+      "scene_heading": "INT. HOSPITAL ROOM -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 2.0,
+      "archetype": "visual_anomaly_mystery_escalation",
+      "hook_description": "Gordon enters a hospital room to apologize, only for Dent to aggressively demand Gordon recite his vicious IA nickname.",
+      "cliffhanger_description": "Dent turns his destroyed, half-burned face to Gordon, declaring himself 'Two-Face' and rejecting Gordon's apology with a chilling warning: 'Not yet.'",
+      "standalone_coherence_explanation": "A fallen public champion wakes up horribly disfigured and bitter after losing the love of his life, turning on his former police ally.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "I'm sorry about Rachel. The Doctor says you're in agonizing pain but you won't accept medication.",
+        "exact_ending_dialogue": "No. No you're not. Not yet.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 53.6,
+      "calculated_duration_cs": 5360,
+      "overall_score": 19
+    },
+    {
+      "start_element_id": "EP07_EL164",
+      "end_element_id": "EP07_EL168",
+      "scene_num": 49,
+      "scene_heading": "INT. SECOND FLOOR, BURNT WAREHOUSE -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Two-Face points a revolver at Batman, flips his scarred coin to tails, and instantly shoots Batman in the stomach.",
+      "cliffhanger_description": "After sparing himself on a coin flip, Dent levels the gun at Gordon's terrified young son and orders Gordon to lie to his boy before the final toss.",
+      "standalone_coherence_explanation": "A corrupted vigilante executes summary coin-toss justice, shooting Batman and turning the barrel toward an innocent child while the helpless father pleads for mercy.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "You first. He points the gun at Batman.  FLIPS the coin.  TAILS.  He SHOOTS.",
+        "exact_ending_dialogue": "Tell your son it's going to be all right, Gordon.  Lie. Like I lied.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 27.1,
+      "calculated_duration_cs": 2710,
+      "overall_score": 20
     }
   ]
 }
