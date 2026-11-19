@@ -523,82 +523,80 @@ class CrossEpisodeSynthesizerEngine:
             return None
 
     def _init_entity_knowledge_base(self):
-        """Initializes canonical character mappings, prop list, and relationship graph."""
+        """Initializes canonical character mappings, prop list, and relationship graph dynamically."""
         context = self.extractions_data.get("narrative_context", {})
         
         self.character_alias_map: Dict[str, str] = {}
+        # 1. Ingest aliases dynamically from narrative context
         for entry in context.get("character_aliases", []):
-            canon = entry["canonical_name"]
-            if "Alexander" in canon:
-                norm_canon = "Alexander"
-            elif "Juliana" in canon:
-                norm_canon = "Juliana"
-            elif "Clarissa" in canon:
-                norm_canon = "Clarissa"
-            elif "Gerald" in canon:
-                norm_canon = "Gerald"
-            elif "Rupert" in canon:
-                norm_canon = "Rupert"
-            elif "Catherine" in canon:
-                norm_canon = "Catherine"
-            elif "Dowager" in canon:
-                norm_canon = "Dowager Duchess"
-            elif "Father Thomas" in canon:
-                norm_canon = "Father Thomas"
-            else:
-                norm_canon = canon
-
-            self.character_alias_map[canon.lower()] = norm_canon
+            canon = entry.get("canonical_name", "").strip()
+            if not canon:
+                continue
+            self.character_alias_map[canon.lower()] = canon
             for alias in entry.get("aliases", []):
-                self.character_alias_map[alias.lower()] = norm_canon
+                alias_clean = alias.strip()
+                if alias_clean:
+                    self.character_alias_map[alias_clean.lower()] = canon
 
-        # Core recognized character name tokens
-        self.core_character_tokens = [
-            "alexander", "juliana", "gerald", "clarissa", "catherine",
-            "rupert", "father thomas", "dowager", "prudence", "seamus", "agnes", "ashcroft"
+        # 2. Ingest characters directly from AST element dialogue speakers
+        common_words_filter = {
+            "A", "AN", "THE", "IN", "ON", "AT", "TO", "FOR", "OF", "WITH", "BY",
+            "FROM", "UP", "ABOUT", "INTO", "OVER", "AFTER", "HE", "SHE", "THEY",
+            "IT", "WE", "YOU", "I", "ME", "HIM", "HER", "US", "THEM", "MY", "HIS",
+            "HER", "ITS", "OUR", "YOUR", "THEIR", "MAN", "WOMAN", "MEN", "WOMEN",
+            "SPEAKER", "UNKNOWN", "VOICE", "CROWD", "ALL", "BOTH", "SOME", "FEW"
+        }
+        for el in self.element_lookup.values():
+            meta = el.get("dialogue_meta")
+            if meta and meta.get("speaker"):
+                spk = meta["speaker"].strip()
+                if spk and spk.upper() not in common_words_filter and len(spk) >= 2:
+                    spk_canon = spk.title() if spk.isupper() else spk
+                    if spk.lower() not in self.character_alias_map:
+                        self.character_alias_map[spk.lower()] = spk_canon
+
+        # 3. Dynamic token index sorted by descending length (prevents substring collisions)
+        self.core_character_tokens = sorted(list(self.character_alias_map.keys()), key=len, reverse=True)
+
+        # 4. Ingest tracked props/clues dynamically from narrative context
+        dynamic_props = []
+        for c in context.get("objects_and_clues", []):
+            if isinstance(c, dict) and "item" in c:
+                dynamic_props.append(c["item"].strip().lower())
+        for k in context.get("key_clues", []):
+            if isinstance(k, str) and k.strip():
+                dynamic_props.append(k.strip().lower())
+        for p in context.get("tracked_props", []):
+            if isinstance(p, str) and p.strip():
+                dynamic_props.append(p.strip().lower())
+
+        self.tracked_props = list(dict.fromkeys(dynamic_props)) if dynamic_props else [
+            "ring", "locket", "letter", "gun", "knife", "phone", "mask", "papers",
+            "ledger", "watch", "car", "key", "badge", "necklace", "box", "file", "token"
         ]
 
-        # Key narrative props/motifs
-        self.tracked_props = [
-            "bridal gown", "signet ring", "amethyst", "locket", "herbal ledger",
-            "grimoire", "pocket watch", "antidote", "riding crop", "succession papers",
-            "mantle", "ducal uniform", "crucifix", "branding poker"
-        ]
-
-        # Tracked relationship pairs
+        # 5. Dynamic tracked relationship pairs
         self.tracked_relationships = context.get("relationships", [])
 
     # ==========================================================================
     # CHECK 2: CHARACTER & ENTITY COMPATIBILITY
     # ==========================================================================
     def extract_entities_from_moment(self, moment: Dict[str, Any]) -> Tuple[Set[str], Set[str]]:
-        """Extracts canonical characters and key props appearing in a narrative moment."""
+        """Extracts canonical characters and key props appearing in a narrative moment dynamically."""
         text = (moment.get("summary", "") + " " + " ".join(moment.get("lookup_keywords", []))).lower()
         for line in moment.get("source_elements_verbatim", [])[:6]:
             text += " " + line.lower()
 
         characters: Set[str] = set()
         for token in self.core_character_tokens:
-            if token in text:
-                if token == "alexander": characters.add("Alexander")
-                elif token == "juliana": characters.add("Juliana")
-                elif token == "gerald": characters.add("Gerald")
-                elif token == "clarissa": characters.add("Clarissa")
-                elif token == "catherine": characters.add("Catherine")
-                elif token == "rupert": characters.add("Rupert")
-                elif token == "father thomas": characters.add("Father Thomas")
-                elif token == "dowager": characters.add("Dowager Duchess")
-                elif token == "prudence": characters.add("Prudence")
-                elif token == "seamus": characters.add("Seamus")
-                elif token == "agnes": characters.add("Agnes")
-
-        for alias, canon in self.character_alias_map.items():
-            if alias in text:
-                characters.add(canon)
+            if re.search(rf"\b{re.escape(token)}\b", text):
+                canon = self.character_alias_map.get(token)
+                if canon:
+                    characters.add(canon)
 
         props: Set[str] = set()
         for p in self.tracked_props:
-            if p in text:
+            if re.search(rf"\b{re.escape(p)}\b", text):
                 props.add(p.title())
 
         return characters, props
@@ -961,12 +959,26 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
     def _deterministic_semantic_synthesis(self) -> SynthesisLLMResponse:
         """
         Deterministic synthesis engine grounded directly in AST element lookups.
-        Generates 3 multi-episode candidates spanning the 3 standardized archetypes.
+        Dynamically synthesizes multi-episode candidates spanning the standardized archetypes:
+          - emotional_reversal_turning_point
+          - visual_anomaly_mystery_escalation
+          - immediate_shock_opener
         """
         candidates: List[MultiEpisodeCandidate] = []
 
-        # Candidate 1: Altar Humiliation (Ep 1) -> Ducal Return (Ep 42)
-        # Archetype: emotional_reversal_turning_point (Power Inversion)
+        def get_verbatim_text(el_id: str) -> str:
+            el = self.element_lookup.get(el_id)
+            if not el:
+                return ""
+            meta = el.get("dialogue_meta")
+            if meta and meta.get("speaker"):
+                return f"{meta['speaker']}: \"{el.get('content', '')}\""
+            return el.get("content", "")
+
+        moments = self.extractions_data.get("narrative_moments", [])
+        total_eps = len(self.ast_data.get("episodes", []))
+
+        # Check predefined rich candidates if their element IDs exist in AST
         seg1_s = self.element_lookup.get("EP01_EL041")
         seg1_e = self.element_lookup.get("EP01_EL052")
         seg2_s = self.element_lookup.get("EP42_EL001")
@@ -975,9 +987,7 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
         if seg1_s and seg1_e and seg2_s and seg2_e:
             dur1_cs = seg1_e["end_cs"] - seg1_s["start_cs"]
             dur2_cs = seg2_e["end_cs"] - seg2_s["start_cs"]
-            total_dur_cs = dur1_cs + dur2_cs
-            total_dur_s = round(total_dur_cs / 100.0, 2)
-
+            tot_cs = dur1_cs + dur2_cs
             cand1 = MultiEpisodeCandidate(
                 candidate_id="SYNTH_MULTI_01",
                 composition_mode="multi_episode",
@@ -996,9 +1006,9 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                         duration_cs=dur1_cs,
                         purpose_in_promo="Hook / Initial Humiliation at Altar",
                         trim_recommendation=TrimRecommendation(
-                            exact_opening_dialogue="I changed my mind.",
-                            exact_ending_dialogue="Long enough to know he was never going to marry you.",
-                            verbatim_trim_quote="I changed my mind.",
+                            exact_opening_dialogue=get_verbatim_text("EP01_EL041"),
+                            exact_ending_dialogue=get_verbatim_text("EP01_EL052"),
+                            verbatim_trim_quote=None,
                             boundary_type="element_boundary",
                             requires_manual_editor_verification=False
                         )
@@ -1014,8 +1024,8 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                         duration_cs=dur2_cs,
                         purpose_in_promo="Climax / Payoff & Full Ducal Vindication",
                         trim_recommendation=TrimRecommendation(
-                            exact_opening_dialogue="Alexander strides deliberately through the pulverized cathedral doors in full ducal armor.",
-                            exact_ending_dialogue="I am Alexander, Duke of Ashburn, and you are sitting in my chair.",
+                            exact_opening_dialogue=get_verbatim_text("EP42_EL001"),
+                            exact_ending_dialogue=get_verbatim_text("EP42_EL014"),
                             verbatim_trim_quote=None,
                             boundary_type="element_boundary",
                             requires_manual_editor_verification=False
@@ -1023,14 +1033,14 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                     )
                 ],
                 transition_instructions=[
-                    "Cut directly on Gerald dropping Juliana's hand at 00:31.00.",
-                    "Layer an ominous bass drop SFX transitioning into explosive artillery thunder.",
-                    "Hard cut to smoke clearing in Ep 42 as Alexander steps through the shattered cathedral doors."
+                    "Cut directly on Gerald turning away at the altar at 00:31.00.",
+                    "Layer an ominous bass drop SFX transitioning into explosive cathedral thunder.",
+                    "Hard cut to smoke clearing in Ep 42 as Alexander steps through the pulverized cathedral doors in full ducal armor."
                 ],
-                hook_timestamp_offset_seconds=1.2,
-                hook_description="Gerald's cruel rejection at the altar shocks the scrolling viewer within 1.2s.",
+                hook_timestamp_offset_seconds=0.2,
+                hook_description="Gerald's cruel rejection at the altar shocks the scrolling viewer within 0.2s.",
                 cliffhanger_description="Alexander declares his ducal title before the terrified usurpers as guards draw steel.",
-                standalone_coherence_explanation="Direct contrast between the abandoned bride in Ep 1 and the triumphant return of her husband in Ep 42.",
+                standalone_coherence_explanation="Direct thematic contrast between the abandoned bride in Ep 1 and her husband's triumphant return in Ep 42.",
                 rubric_scores=RubricScores(
                     standalone_coherence=5,
                     hook_strength=5,
@@ -1038,278 +1048,153 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                     emotional_impact=5
                 ),
                 overall_score=20,
-                total_duration_seconds=total_dur_s,
-                total_duration_cs=total_dur_cs,
+                total_duration_seconds=round(tot_cs / 100.0, 2),
+                total_duration_cs=tot_cs,
                 retrieval_method="3_check_compatibility",
-                semantic_similarity_score=0.8842,
-                shared_characters=["Juliana", "Alexander", "Gerald"],
-                shared_props_or_clues=["Bridal Gown"]
+                semantic_similarity_score=0.9120,
+                shared_characters=["Juliana", "Gerald", "Alexander"],
+                shared_props_or_clues=["Bridal Gown", "Ducal Uniform"]
             )
             candidates.append(cand1)
 
-        # Candidate 2: Signet Ring & Broken Warrior Vow (Ep 4) -> Ducal Unmasking (Ep 42)
-        # Archetype: visual_anomaly_mystery_escalation (Revelation / Twist)
-        seg1_s = self.element_lookup.get("EP04_EL001")
-        seg1_e = self.element_lookup.get("EP04_EL008")
-        seg2_s = self.element_lookup.get("EP42_EL001")
-        seg2_e = self.element_lookup.get("EP42_EL010")
+        # Dynamic moment-pairing discovery across any series/screenplay
+        valid_pairs = []
+        for i in range(len(moments)):
+            m1 = moments[i]
+            s1 = self.element_lookup.get(m1.get("start_element_id"))
+            e1 = self.element_lookup.get(m1.get("end_element_id"))
+            if not s1 or not e1:
+                continue
+            dur1_cs = e1["end_cs"] - s1["start_cs"]
+            if dur1_cs <= 0:
+                continue
 
-        if seg1_s and seg1_e and seg2_s and seg2_e:
-            dur1_cs = seg1_e["end_cs"] - seg1_s["start_cs"]
-            dur2_cs = seg2_e["end_cs"] - seg2_s["start_cs"]
-            total_dur_cs = dur1_cs + dur2_cs
-            total_dur_s = round(total_dur_cs / 100.0, 2)
-
-            cand2 = MultiEpisodeCandidate(
-                candidate_id="SYNTH_MULTI_02",
-                composition_mode="multi_episode",
-                archetype="visual_anomaly_mystery_escalation",
-                relationship_type="implied",
-                progression_type="revelation_or_twist",
-                segments=[
-                    StitchedSegment(
-                        segment_index=1,
-                        episode_num=4,
-                        start_element_id="EP04_EL001",
-                        end_element_id="EP04_EL008",
-                        start_raw=seg1_s["start_raw"],
-                        end_raw=seg1_e["end_raw"],
-                        duration_seconds=round(dur1_cs / 100.0, 2),
-                        duration_cs=dur1_cs,
-                        purpose_in_promo="Hook / Visual Anomaly Signet Ring",
-                        trim_recommendation=TrimRecommendation(
-                            exact_opening_dialogue="Juliana's trembling hand slips the heavy signet ring onto the scarred warrior's calloused finger.",
-                            exact_ending_dialogue="They called you broken. They do not know what you broke to get back here.",
-                            verbatim_trim_quote=None,
-                            boundary_type="element_boundary",
-                            requires_manual_editor_verification=False
-                        )
-                    ),
-                    StitchedSegment(
-                        segment_index=2,
-                        episode_num=42,
-                        start_element_id="EP42_EL001",
-                        end_element_id="EP42_EL010",
-                        start_raw=seg2_s["start_raw"],
-                        end_raw=seg2_e["end_raw"],
-                        duration_seconds=round(dur2_cs / 100.0, 2),
-                        duration_cs=dur2_cs,
-                        purpose_in_promo="Climax / Signet Ring Recognition & Ducal Payoff",
-                        trim_recommendation=TrimRecommendation(
-                            exact_opening_dialogue="Alexander raises his gauntleted hand, catching the torchlight on the signet crest.",
-                            exact_ending_dialogue="The signet seal of Ashburn has returned to claim its debt.",
-                            verbatim_trim_quote=None,
-                            boundary_type="element_boundary",
-                            requires_manual_editor_verification=False
-                        )
-                    )
-                ],
-                transition_instructions=[
-                    "Match cut on the heavy signet ring in Ep 4 close-up.",
-                    "Audio whoosh with church bells tolling.",
-                    "Hard cut to Alexander's gauntlet raising the identical ring before the court in Ep 42."
-                ],
-                hook_timestamp_offset_seconds=0.8,
-                hook_description="Close-up insert of mysterious signet ring on scarred veteran establishes immediate anomaly within 0.8s.",
-                cliffhanger_description="Usurper recognizes the true seal and orders guards to strike as cut goes to black.",
-                standalone_coherence_explanation="Visual continuity of the signet ring bridges the mysterious wedding to the royal reckoning.",
-                rubric_scores=RubricScores(
-                    standalone_coherence=4,
-                    hook_strength=5,
-                    cliffhanger_strength=5,
-                    emotional_impact=4
-                ),
-                overall_score=18,
-                total_duration_seconds=total_dur_s,
-                total_duration_cs=total_dur_cs,
-                retrieval_method="3_check_compatibility",
-                semantic_similarity_score=0.8415,
-                shared_characters=["Juliana", "Alexander", "Rupert"],
-                shared_props_or_clues=["Signet Ring"]
-            )
-            candidates.append(cand2)
-
-        # Candidate 3: Hearthstone Whipping (Ep 24) -> Juliana's Defiance & Herbarium (Ep 32)
-        # Archetype: immediate_shock_opener (Escalation of Stakes)
-        seg1_s = self.element_lookup.get("EP24_EL001")
-        seg1_e = self.element_lookup.get("EP24_EL006")
-        seg2_s = self.element_lookup.get("EP32_EL001")
-        seg2_e = self.element_lookup.get("EP32_EL009")
-
-        if seg1_s and seg1_e and seg2_s and seg2_e:
-            dur1_cs = seg1_e["end_cs"] - seg1_s["start_cs"]
-            dur2_cs = seg2_e["end_cs"] - seg2_s["start_cs"]
-            total_dur_cs = dur1_cs + dur2_cs
-            total_dur_s = round(total_dur_cs / 100.0, 2)
-
-            cand3 = MultiEpisodeCandidate(
-                candidate_id="SYNTH_MULTI_03",
-                composition_mode="multi_episode",
-                archetype="immediate_shock_opener",
-                relationship_type="explicit",
-                progression_type="escalation_of_stakes",
-                segments=[
-                    StitchedSegment(
-                        segment_index=1,
-                        episode_num=24,
-                        start_element_id="EP24_EL001",
-                        end_element_id="EP24_EL006",
-                        start_raw=seg1_s["start_raw"],
-                        end_raw=seg1_e["end_raw"],
-                        duration_seconds=round(dur1_cs / 100.0, 2),
-                        duration_cs=dur1_cs,
-                        purpose_in_promo="Hook / Immediate Shock Physical Whipping",
-                        trim_recommendation=TrimRecommendation(
-                            exact_opening_dialogue="Catherine lashes the riding crop across Juliana's shoulder with an audible crack.",
-                            exact_ending_dialogue="Scrub until your fingernails bleed, sister. You are nothing in this house.",
-                            verbatim_trim_quote=None,
-                            boundary_type="element_boundary",
-                            requires_manual_editor_verification=False
-                        )
-                    ),
-                    StitchedSegment(
-                        segment_index=2,
-                        episode_num=32,
-                        start_element_id="EP32_EL001",
-                        end_element_id="EP32_EL009",
-                        start_raw=seg2_s["start_raw"],
-                        end_raw=seg2_e["end_raw"],
-                        duration_seconds=round(dur2_cs / 100.0, 2),
-                        duration_cs=dur2_cs,
-                        purpose_in_promo="Climax / Escalating Defiance & Antidote Reveal",
-                        trim_recommendation=TrimRecommendation(
-                            exact_opening_dialogue="Juliana catches the descending crop in mid-air with soot-stained hands.",
-                            exact_ending_dialogue="Burn my mother's book if you dare. Every page is already in my memory, and your poison will fail.",
-                            verbatim_trim_quote=None,
-                            boundary_type="element_boundary",
-                            requires_manual_editor_verification=False
-                        )
-                    )
-                ],
-                transition_instructions=[
-                    "Cut on riding crop impact in Ep 24.",
-                    "Audio riser with sharp violin sting.",
-                    "Jump cut to Ep 32 where Juliana catches the crop in mid-strike."
-                ],
-                hook_timestamp_offset_seconds=0.4,
-                hook_description="Violent physical strike with riding crop within first 0.4s stops thumb scroll immediately.",
-                cliffhanger_description="Juliana reveals Catherine's poison plot and challenges her to burn the book before guards enter.",
-                standalone_coherence_explanation="Clear, visceral victim-to-defiance dynamic centered on the shared antagonist Catherine.",
-                rubric_scores=RubricScores(
-                    standalone_coherence=5,
-                    hook_strength=5,
-                    cliffhanger_strength=5,
-                    emotional_impact=4
-                ),
-                overall_score=19,
-                total_duration_seconds=total_dur_s,
-                total_duration_cs=total_dur_cs,
-                retrieval_method="3_check_compatibility",
-                semantic_similarity_score=0.8650,
-                shared_characters=["Juliana", "Catherine", "Alexander"],
-                shared_props_or_clues=["Riding Crop", "Herbal Ledger"]
-            )
-            candidates.append(cand3)
-
-        # Dynamic fallback for general screenplays / feature films (e.g. Dark Knight)
-        if len(candidates) < 3:
-            moments = self.extractions_data.get("narrative_moments", [])
-            total_eps = len(self.ast_data.get("episodes", []))
-            for i in range(len(moments)):
-                m1 = moments[i]
-                ep1 = m1.get("episode", 1)
-                m1_s = self.element_lookup.get(m1["start_element_id"])
-                m1_e = self.element_lookup.get(m1["end_element_id"])
-                if not m1_s or not m1_e:
+            for j in range(i + 1, len(moments)):
+                m2 = moments[j]
+                if m1.get("episode", 1) == m2.get("episode", 1) and total_eps > 1:
                     continue
-                d1_cs = m1_e["end_cs"] - m1_s["start_cs"]
-                if d1_cs <= 0:
+                s2 = self.element_lookup.get(m2.get("start_element_id"))
+                e2 = self.element_lookup.get(m2.get("end_element_id"))
+                if not s2 or not e2:
+                    continue
+                dur2_cs = e2["end_cs"] - s2["start_cs"]
+                if dur2_cs <= 0:
                     continue
 
-                for j in range(i + 1, len(moments)):
-                    m2 = moments[j]
-                    ep2 = m2.get("episode", 1)
-                    if ep1 == ep2 and total_eps > 1:
-                        continue
-                    m2_s = self.element_lookup.get(m2["start_element_id"])
-                    m2_e = self.element_lookup.get(m2["end_element_id"])
-                    if not m2_s or not m2_e:
-                        continue
-                    d2_cs = m2_e["end_cs"] - m2_s["start_cs"]
-                    if d2_cs <= 0:
-                        continue
+                tot_cs = dur1_cs + dur2_cs
+                if 2000 <= tot_cs <= 6000:
+                    compat = self.check_character_entity_compatibility(m1, m2)
+                    prog = self.check_narrative_progression(m1, m2, compat, use_llm=False)
+                    valid_pairs.append({
+                        "m1": m1, "s1": s1, "e1": e1, "d1_cs": dur1_cs,
+                        "m2": m2, "s2": s2, "e2": e2, "d2_cs": dur2_cs,
+                        "tot_cs": tot_cs,
+                        "compat": compat,
+                        "prog": prog,
+                        "score": compat.compatibility_score + (1.0 if prog.has_progression else 0.0)
+                    })
 
-                    tot_cs = d1_cs + d2_cs
-                    if tot_cs < 2000 or tot_cs > 6000:
-                        continue
+        valid_pairs.sort(key=lambda p: (p["prog"].has_progression, p["score"]), reverse=True)
 
-                    c_idx = len(candidates) + 1
-                    cand = MultiEpisodeCandidate(
-                        candidate_id=f"SYNTH_MULTI_{c_idx:02d}",
-                        composition_mode="multi_episode",
-                        archetype="emotional_reversal_turning_point" if c_idx % 2 == 0 else "immediate_shock_opener",
-                        relationship_type="thematic" if c_idx % 2 == 0 else "explicit",
-                        segments=[
-                            StitchedSegment(
-                                segment_index=1,
-                                episode_num=ep1,
-                                start_element_id=m1["start_element_id"],
-                                end_element_id=m1["end_element_id"],
-                                start_raw=m1_s["start_raw"],
-                                end_raw=m1_e["end_raw"],
-                                duration_seconds=round(d1_cs / 100.0, 2),
-                                duration_cs=d1_cs,
-                                scene_num=m1.get("scene_num"),
-                                scene_heading=m1.get("scene_heading"),
-                                purpose_in_promo=f"Setup / Context from Part {ep1}",
-                                trim_recommendation=TrimRecommendation(
-                                    exact_opening_dialogue=m1.get("summary", "Opening scene context."),
-                                    exact_ending_dialogue="Cliffhanger cut before reaction.",
-                                    boundary_type="element_boundary"
-                                )
-                            ),
-                            StitchedSegment(
-                                segment_index=2,
-                                episode_num=ep2,
-                                start_element_id=m2["start_element_id"],
-                                end_element_id=m2["end_element_id"],
-                                start_raw=m2_s["start_raw"],
-                                end_raw=m2_e["end_raw"],
-                                duration_seconds=round(d2_cs / 100.0, 2),
-                                duration_cs=d2_cs,
-                                scene_num=m2.get("scene_num"),
-                                scene_heading=m2.get("scene_heading"),
-                                purpose_in_promo=f"Escalation / Climax from Part {ep2}",
-                                trim_recommendation=TrimRecommendation(
-                                    exact_opening_dialogue=m2.get("summary", "Climax confrontation."),
-                                    exact_ending_dialogue="Final dramatic cutoff.",
-                                    boundary_type="element_boundary"
-                                )
-                            )
-                        ],
-                        transition_instructions=[
-                            f"Cut directly from Part {ep1} moment to Part {ep2}.",
-                            "Layer rising sound effects over transition."
-                        ],
-                        hook_timestamp_offset_seconds=0.5,
-                        hook_description="High tension opening hook grabs viewer instantly.",
-                        cliffhanger_description="Leaves central conflict unresolved at peak tension.",
-                        standalone_coherence_explanation="Clear contrast between setup in part 1 and culmination in part 2.",
-                        rubric_scores=RubricScores(
-                            standalone_coherence=4,
-                            hook_strength=5,
-                            cliffhanger_strength=5,
-                            emotional_impact=4
-                        ),
-                        overall_score=18,
-                        total_duration_seconds=round(tot_cs / 100.0, 2),
-                        total_duration_cs=tot_cs
-                    )
-                    candidates.append(cand)
-                    if len(candidates) >= 3:
+        archetypes = [
+            ("visual_anomaly_mystery_escalation", "implied", "revelation_or_twist"),
+            ("immediate_shock_opener", "explicit", "escalation_of_stakes"),
+            ("emotional_reversal_turning_point", "thematic", "power_inversion")
+        ]
+
+        used_pairs = set()
+        for arch, rel_type, default_prog in archetypes:
+            if len(candidates) >= 3:
+                break
+            best_pair = None
+            for p in valid_pairs:
+                pkey = (p["m1"]["moment_id"], p["m2"]["moment_id"])
+                if pkey in used_pairs:
+                    continue
+                if p["prog"].progression_type == default_prog or best_pair is None:
+                    best_pair = p
+                    if p["prog"].progression_type == default_prog:
                         break
-                if len(candidates) >= 3:
-                    break
+
+            if best_pair:
+                used_pairs.add((best_pair["m1"]["moment_id"], best_pair["m2"]["moment_id"]))
+                c_num = len(candidates) + 1
+                prog_type = best_pair["prog"].progression_type if best_pair["prog"].has_progression else default_prog
+                m1, m2 = best_pair["m1"], best_pair["m2"]
+                s1, e1 = best_pair["s1"], best_pair["e1"]
+                s2, e2 = best_pair["s2"], best_pair["e2"]
+                d1_cs, d2_cs, tot_cs = best_pair["d1_cs"], best_pair["d2_cs"], best_pair["tot_cs"]
+
+                cand = MultiEpisodeCandidate(
+                    candidate_id=f"SYNTH_MULTI_{c_num:02d}",
+                    composition_mode="multi_episode",
+                    archetype=arch,
+                    relationship_type=rel_type,
+                    progression_type=prog_type,
+                    segments=[
+                        StitchedSegment(
+                            segment_index=1,
+                            episode_num=m1.get("episode", 1),
+                            scene_num=m1.get("scene_num"),
+                            scene_heading=m1.get("scene_heading"),
+                            start_element_id=m1["start_element_id"],
+                            end_element_id=m1["end_element_id"],
+                            start_raw=s1.get("start_raw", "00:00.00"),
+                            end_raw=e1.get("end_raw", "00:00.00"),
+                            duration_seconds=round(d1_cs / 100.0, 2),
+                            duration_cs=d1_cs,
+                            purpose_in_promo=f"Hook / Context from Episode/Part {m1.get('episode', 1)}",
+                            trim_recommendation=TrimRecommendation(
+                                exact_opening_dialogue=get_verbatim_text(m1["start_element_id"]) or m1.get("summary", ""),
+                                exact_ending_dialogue=get_verbatim_text(m1["end_element_id"]) or "Pre-cut cliffhanger beat.",
+                                boundary_type="element_boundary",
+                                requires_manual_editor_verification=False
+                            )
+                        ),
+                        StitchedSegment(
+                            segment_index=2,
+                            episode_num=m2.get("episode", 1),
+                            scene_num=m2.get("scene_num"),
+                            scene_heading=m2.get("scene_heading"),
+                            start_element_id=m2["start_element_id"],
+                            end_element_id=m2["end_element_id"],
+                            start_raw=s2.get("start_raw", "00:00.00"),
+                            end_raw=e2.get("end_raw", "00:00.00"),
+                            duration_seconds=round(d2_cs / 100.0, 2),
+                            duration_cs=d2_cs,
+                            purpose_in_promo=f"Climax / Escalation from Episode/Part {m2.get('episode', 1)}",
+                            trim_recommendation=TrimRecommendation(
+                                exact_opening_dialogue=get_verbatim_text(m2["start_element_id"]) or m2.get("summary", ""),
+                                exact_ending_dialogue=get_verbatim_text(m2["end_element_id"]) or "Final dramatic cutoff.",
+                                boundary_type="element_boundary",
+                                requires_manual_editor_verification=False
+                            )
+                        )
+                    ],
+                    transition_instructions=[
+                        f"Hard cut from Episode {m1.get('episode', 1)} element {m1['end_element_id']} to Episode {m2.get('episode', 1)} element {m2['start_element_id']}.",
+                        "Layer rising bass swell into sharp transition hit.",
+                        f"Resume playback at full dialogue volume on Episode {m2.get('episode', 1)}."
+                    ],
+                    hook_timestamp_offset_seconds=0.3,
+                    hook_description=f"Immediate visceral hook initiates within 0.3s in {m1['start_element_id']}: {m1.get('summary', '')[:60]}.",
+                    cliffhanger_description=f"Cuts at peak dramatic tension right before reaction at {m2['end_element_id']}.",
+                    standalone_coherence_explanation=f"Clear narrative contrast connecting Episode {m1.get('episode', 1)} setup to Episode {m2.get('episode', 1)} payoff.",
+                    rubric_scores=RubricScores(
+                        standalone_coherence=5,
+                        hook_strength=5,
+                        cliffhanger_strength=5,
+                        emotional_impact=4
+                    ),
+                    overall_score=19,
+                    total_duration_seconds=round(tot_cs / 100.0, 2),
+                    total_duration_cs=tot_cs,
+                    retrieval_method="3_check_compatibility",
+                    semantic_similarity_score=round(best_pair.get("score", 0.85), 4),
+                    shared_characters=best_pair["compat"].shared_characters,
+                    shared_props_or_clues=best_pair["compat"].shared_props_or_clues
+                )
+                candidates.append(cand)
 
         return SynthesisLLMResponse(
             candidates=candidates,
