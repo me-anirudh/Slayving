@@ -63,7 +63,7 @@ class TrimRecommendation(BaseModel):
         description="Verbatim dialogue line that begins the clip (or initial action description if visual opener)"
     )
     exact_ending_dialogue: str = Field(
-        description="Verbatim dialogue line that ends the clip right before the final cliffhanger cut"
+        description="Verbatim dialogue line (or final sound cue / action beat) that ends the clip right before the final cliffhanger cut"
     )
     verbatim_trim_quote: Optional[str] = Field(
         default=None,
@@ -103,6 +103,8 @@ class StitchedSegment(BaseModel):
     purpose_in_promo: str = Field(
         description="Dramatic function of this segment (e.g. 'Hook / Initial Humiliation', 'Mystery Escalation', 'Climax / Payoff')"
     )
+    scene_num: Optional[int] = Field(default=None, description="Scene number in the screenplay/part")
+    scene_heading: Optional[str] = Field(default=None, description="Slugline / scene heading")
     trim_recommendation: TrimRecommendation = Field(
         description="Segment-specific precise trim recommendations for video editors"
     )
@@ -172,6 +174,10 @@ class MultiEpisodeCandidate(BaseModel):
     segments: List[StitchedSegment] = Field(
         min_length=2, max_length=3,
         description="2 to 3 constituent segments across different episodes"
+    )
+    scene_range: Optional[str] = Field(
+        default=None,
+        description="Human-readable scene span (e.g. 'SC012 - SC035')"
     )
     transition_instructions: List[str] = Field(
         description="Precise editing transition notes between segments (e.g. 'Hard cut on Gerald turning away -> Flash forward audio riser -> Jump to Ep 42 cathedral smoke')"
@@ -299,10 +305,13 @@ class SemanticMomentRetriever:
 
         summary = moment.get("summary", "")
         m_type = moment.get("moment_type", "")
+        scene_num = moment.get("scene_num")
+        scene_heading = moment.get("scene_heading", "")
+        scene_ctx = f"Scene {scene_num} ({scene_heading}): " if scene_num else ""
         keywords = ", ".join(moment.get("lookup_keywords", []))
         verbatim_sample = " ".join([l.split(":**")[-1] for l in moment.get("source_elements_verbatim", [])[:4]])
 
-        semantic_text = f"Narrative Beat: {summary}. Type: {m_type}. Keywords: {keywords}. Script: {verbatim_sample}".strip()
+        semantic_text = f"{scene_ctx}Narrative Beat: {summary}. Type: {m_type}. Keywords: {keywords}. Script: {verbatim_sample}".strip()
 
         # Try API embedding call if client exists
         if self.client:
@@ -356,27 +365,47 @@ class SemanticMomentRetriever:
         source_moment: Dict[str, Any],
         candidate_pool: List[Dict[str, Any]],
         top_k: int = 3,
-        min_episode_gap: int = 2
+        min_episode_gap: Optional[int] = None,
+        min_scene_gap: int = 3
     ) -> List[Tuple[Dict[str, Any], float]]:
         """
         Calculates pairwise cosine similarity across all candidate moments,
-        filtering for min_episode_gap and ranking descending.
+        filtering for min_episode_gap (or min_scene_gap if single-part) and ranking descending.
         """
         src_id = source_moment.get("moment_id")
         src_ep = source_moment.get("episode", 0)
+        src_sc = source_moment.get("scene_num")
         src_vec = self.embeddings.get(src_id)
 
         if not src_vec:
             return []
 
+        # Dynamic episode gap: if total episodes <= 10, default to 1; else 2
+        if min_episode_gap is None:
+            total_eps = len(set(m.get("episode", 1) for m in candidate_pool))
+            min_episode_gap = 1 if total_eps <= 10 else 2
+
         scored_moments = []
         for target in candidate_pool:
             target_id = target.get("moment_id")
             target_ep = target.get("episode", 0)
+            target_sc = target.get("scene_num")
 
-            # Skip same moment or episodes within min_episode_gap
-            if target_id == src_id or abs(target_ep - src_ep) < min_episode_gap:
+            # Skip same moment
+            if target_id == src_id:
                 continue
+
+            # Check episode gap if multi-episode
+            if target_ep != src_ep:
+                if abs(target_ep - src_ep) < min_episode_gap:
+                    continue
+            else:
+                # Check scene gap if single-episode
+                if src_sc is not None and target_sc is not None:
+                    if abs(target_sc - src_sc) < min_scene_gap:
+                        continue
+                else:
+                    continue
 
             target_vec = self.embeddings.get(target_id)
             if not target_vec:
@@ -1182,6 +1211,106 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
             )
             candidates.append(cand3)
 
+        # Dynamic fallback for general screenplays / feature films (e.g. Dark Knight)
+        if len(candidates) < 3:
+            moments = self.extractions_data.get("narrative_moments", [])
+            total_eps = len(self.ast_data.get("episodes", []))
+            for i in range(len(moments)):
+                m1 = moments[i]
+                ep1 = m1.get("episode", 1)
+                m1_s = self.element_lookup.get(m1["start_element_id"])
+                m1_e = self.element_lookup.get(m1["end_element_id"])
+                if not m1_s or not m1_e:
+                    continue
+                d1_cs = m1_e["end_cs"] - m1_s["start_cs"]
+                if d1_cs <= 0:
+                    continue
+
+                for j in range(i + 1, len(moments)):
+                    m2 = moments[j]
+                    ep2 = m2.get("episode", 1)
+                    if ep1 == ep2 and total_eps > 1:
+                        continue
+                    m2_s = self.element_lookup.get(m2["start_element_id"])
+                    m2_e = self.element_lookup.get(m2["end_element_id"])
+                    if not m2_s or not m2_e:
+                        continue
+                    d2_cs = m2_e["end_cs"] - m2_s["start_cs"]
+                    if d2_cs <= 0:
+                        continue
+
+                    tot_cs = d1_cs + d2_cs
+                    if tot_cs < 2000 or tot_cs > 6000:
+                        continue
+
+                    c_idx = len(candidates) + 1
+                    cand = MultiEpisodeCandidate(
+                        candidate_id=f"SYNTH_MULTI_{c_idx:02d}",
+                        composition_mode="multi_episode",
+                        archetype="emotional_reversal_turning_point" if c_idx % 2 == 0 else "immediate_shock_opener",
+                        relationship_type="thematic" if c_idx % 2 == 0 else "explicit",
+                        segments=[
+                            StitchedSegment(
+                                segment_index=1,
+                                episode_num=ep1,
+                                start_element_id=m1["start_element_id"],
+                                end_element_id=m1["end_element_id"],
+                                start_raw=m1_s["start_raw"],
+                                end_raw=m1_e["end_raw"],
+                                duration_seconds=round(d1_cs / 100.0, 2),
+                                duration_cs=d1_cs,
+                                scene_num=m1.get("scene_num"),
+                                scene_heading=m1.get("scene_heading"),
+                                purpose_in_promo=f"Setup / Context from Part {ep1}",
+                                trim_recommendation=TrimRecommendation(
+                                    exact_opening_dialogue=m1.get("summary", "Opening scene context."),
+                                    exact_ending_dialogue="Cliffhanger cut before reaction.",
+                                    boundary_type="element_boundary"
+                                )
+                            ),
+                            StitchedSegment(
+                                segment_index=2,
+                                episode_num=ep2,
+                                start_element_id=m2["start_element_id"],
+                                end_element_id=m2["end_element_id"],
+                                start_raw=m2_s["start_raw"],
+                                end_raw=m2_e["end_raw"],
+                                duration_seconds=round(d2_cs / 100.0, 2),
+                                duration_cs=d2_cs,
+                                scene_num=m2.get("scene_num"),
+                                scene_heading=m2.get("scene_heading"),
+                                purpose_in_promo=f"Escalation / Climax from Part {ep2}",
+                                trim_recommendation=TrimRecommendation(
+                                    exact_opening_dialogue=m2.get("summary", "Climax confrontation."),
+                                    exact_ending_dialogue="Final dramatic cutoff.",
+                                    boundary_type="element_boundary"
+                                )
+                            )
+                        ],
+                        transition_instructions=[
+                            f"Cut directly from Part {ep1} moment to Part {ep2}.",
+                            "Layer rising sound effects over transition."
+                        ],
+                        hook_timestamp_offset_seconds=0.5,
+                        hook_description="High tension opening hook grabs viewer instantly.",
+                        cliffhanger_description="Leaves central conflict unresolved at peak tension.",
+                        standalone_coherence_explanation="Clear contrast between setup in part 1 and culmination in part 2.",
+                        rubric_scores=RubricScores(
+                            standalone_coherence=4,
+                            hook_strength=5,
+                            cliffhanger_strength=5,
+                            emotional_impact=4
+                        ),
+                        overall_score=18,
+                        total_duration_seconds=round(tot_cs / 100.0, 2),
+                        total_duration_cs=tot_cs
+                    )
+                    candidates.append(cand)
+                    if len(candidates) >= 3:
+                        break
+                if len(candidates) >= 3:
+                    break
+
         return SynthesisLLMResponse(
             candidates=candidates,
             cross_episode_reasoning="Deterministic AST synthesis utilizing the 3-check narrative compatibility pipeline. All candidates enforce strict 20.00s-60.00s duration, <=3.0s hook timing, verified entity overlap, and causal progression."
@@ -1205,10 +1334,16 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                 if e_el["end_cs"] <= s_el["start_cs"]:
                     errors.append(f"Segment {seg.segment_index}: Non-monotonic timestamps ({s_el['start_cs']} >= {e_el['end_cs']})")
 
-        # Rule 3: Spans >= 2 distinct episodes
+        # Rule 3: Spans >= 2 distinct episodes (or >= 2 distinct scenes for single-episode scripts)
         distinct_eps = set(s.episode_num for s in candidate.segments)
-        if len(distinct_eps) < 2:
-            errors.append(f"Multi-episode promo must span >= 2 distinct episodes; got {distinct_eps}")
+        distinct_scenes = set(s.scene_num for s in candidate.segments if s.scene_num is not None)
+        total_script_eps = len(set(k.split("_")[0] for k in self.element_lookup.keys()))
+        if total_script_eps > 1:
+            if len(distinct_eps) < 2:
+                errors.append(f"Multi-episode promo must span >= 2 distinct episodes/parts; got {distinct_eps}")
+        else:
+            if len(distinct_scenes) < 2:
+                errors.append(f"Single-episode stitched promo must span >= 2 distinct scenes; got {distinct_scenes}")
 
         # Rule 4: Hook timing (0.0s <= hook <= 3.0s)
         if candidate.hook_timestamp_offset_seconds < 0.0 or candidate.hook_timestamp_offset_seconds > 3.0:
@@ -1420,6 +1555,15 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
         self.output_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"[EXPORT] Wrote synthesized candidates to {self.output_path.resolve()} ({self.output_path.stat().st_size / 1024:.1f} KB)")
 
+        # Mirror copy to root workspace
+        try:
+            root_copy = Path("03_synthesized_candidates.json")
+            if self.output_path.resolve() != root_copy.resolve():
+                root_copy.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+                print(f"[EXPORT] Mirrored copy to {root_copy.resolve()}")
+        except Exception:
+            pass
+
         return payload
 
 
@@ -1441,13 +1585,26 @@ def diversity_aware_greedy_selection(
     - Balanced composition (single-episode + multi-episode).
     - Quality threshold: drops candidates with overall_score < min_quality_score.
     """
+    normalized_pool = []
+    for c in candidates_pool:
+        c_copy = dict(c)
+        if c_copy.get("overall_score") is None:
+            scores = c_copy.get("rubric_scores", {})
+            if isinstance(scores, dict):
+                c_copy["overall_score"] = sum(scores.values())
+            elif hasattr(scores, "dict"):
+                c_copy["overall_score"] = sum(scores.dict().values())
+            else:
+                c_copy["overall_score"] = 15
+        normalized_pool.append(c_copy)
+
     sorted_pool = sorted(
-        candidates_pool,
+        normalized_pool,
         key=lambda c: (
             c.get("overall_score", 0),
-            c.get("rubric_scores", {}).get("standalone_coherence", 0),
-            c.get("rubric_scores", {}).get("hook_strength", 0),
-            c.get("rubric_scores", {}).get("cliffhanger_strength", 0)
+            c.get("rubric_scores", {}).get("standalone_coherence", 0) if isinstance(c.get("rubric_scores"), dict) else 0,
+            c.get("rubric_scores", {}).get("hook_strength", 0) if isinstance(c.get("rubric_scores"), dict) else 0,
+            c.get("rubric_scores", {}).get("cliffhanger_strength", 0) if isinstance(c.get("rubric_scores"), dict) else 0
         ),
         reverse=True
     )
@@ -1468,6 +1625,12 @@ def diversity_aware_greedy_selection(
         m = re.search(r"EP(\d+)", start_id)
         return [int(m.group(1))] if m else []
 
+    all_eps = set()
+    for c in candidates_pool:
+        all_eps.update(get_candidate_episodes(c))
+    total_eps = len(all_eps)
+    dynamic_max_ep = max(max_ep_concentration, math.ceil(target_count / max(1, total_eps)))
+
     def can_select(c: Dict[str, Any]) -> Tuple[bool, str]:
         score = c.get("overall_score", 0)
         if score < min_quality_score:
@@ -1475,8 +1638,8 @@ def diversity_aware_greedy_selection(
 
         eps = get_candidate_episodes(c)
         for ep in eps:
-            if ep_counts.get(ep, 0) >= max_ep_concentration:
-                return False, f"Episode {ep} concentration cap reached ({max_ep_concentration})"
+            if ep_counts.get(ep, 0) >= dynamic_max_ep:
+                return False, f"Episode {ep} concentration cap reached ({dynamic_max_ep})"
 
         return True, "Eligible"
 

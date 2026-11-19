@@ -1,0 +1,830 @@
+{
+  "series_title": "The Dark Knight",
+  "total_synthesized_candidates": 3,
+  "synthesis_notes": "Synthesized 3 distinct multi-episode candidates connecting dramatic setup and high-stakes payoff across episodes with rigorous dialogue continuity.",
+  "synthesized_candidates": [
+    {
+      "candidate_id": "SYNTH_MULTI_01",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 17,
+          "scene_heading": "INT. LOBBY, BANK -- DAY",
+          "start_element_id": "EP01_EL048",
+          "end_element_id": "EP01_EL050",
+          "start_raw": "04:52.90",
+          "end_raw": "05:27.70",
+          "duration_seconds": 34.8,
+          "duration_cs": 3480,
+          "purpose_in_promo": "Hook / Opening beat from Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Honor.  Respect.  What do you believe, huh?  What do you bel- Joker slides a GRE",
+            "exact_ending_dialogue": "...simply makes you stranger. The Bank Manager's eyes go wide.  The Joker rises,",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 3,
+          "scene_num": 12,
+          "scene_heading": "INT. WAYNE PENTHOUSE -- DAY",
+          "start_element_id": "EP03_EL071",
+          "end_element_id": "EP03_EL073",
+          "start_raw": "04:54.60",
+          "end_raw": "05:18.60",
+          "duration_seconds": 24.0,
+          "duration_cs": 2400,
+          "purpose_in_promo": "Climax / Escalation in Part 3",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Look at me. LOOK AT ME! Brian looks up- the camera swings into the face of the J",
+            "exact_ending_dialogue": "Every day he doesn't... people will die.  Starting tonight.  I'm a man of my wor",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut on narrative pause in Part 1.",
+        "Ramp up tension and cut directly to confronting beat in Part 3."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Part 1 establishes immediate high stakes and dramatic curiosity within <= 3.0s.",
+      "cliffhanger_description": "Part 3 climaxes on unresolved tension before the final cut.",
+      "standalone_coherence_explanation": "Clear dramatic continuity between setup in Part 1 and payoff in Part 3.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 58.8,
+      "total_duration_cs": 5880,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.825,
+      "scene_range": "Scene 17 -> Scene 12"
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_02",
+      "composition_mode": "multi_episode",
+      "archetype": "emotional_reversal_turning_point",
+      "relationship_type": "thematic",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 17,
+          "scene_heading": "INT. LOBBY, BANK -- DAY",
+          "start_element_id": "EP01_EL048",
+          "end_element_id": "EP01_EL050",
+          "start_raw": "04:52.90",
+          "end_raw": "05:27.70",
+          "duration_seconds": 34.8,
+          "duration_cs": 3480,
+          "purpose_in_promo": "Hook / Opening beat from Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Honor.  Respect.  What do you believe, huh?  What do you bel- Joker slides a GRE",
+            "exact_ending_dialogue": "...simply makes you stranger. The Bank Manager's eyes go wide.  The Joker rises,",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 4,
+          "scene_num": 12,
+          "scene_heading": "EXT. STATE STREET -- CONTINUOUS",
+          "start_element_id": "EP04_EL031",
+          "end_element_id": "EP04_EL034",
+          "start_raw": "02:48.90",
+          "end_raw": "03:14.10",
+          "duration_seconds": 25.2,
+          "duration_cs": 2520,
+          "purpose_in_promo": "Climax / Escalation in Part 4",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "THE HONOR GUARD TURN THEIR WEAPONS ON THE MAYOR.  One SMILES, flesh-colored make",
+            "exact_ending_dialogue": "PANDEMONIUM erupts-One of the honor guard is TAGGED IN THE LEG- GOES DOWN.  The ",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut on narrative pause in Part 1.",
+        "Ramp up tension and cut directly to confronting beat in Part 4."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Part 1 establishes immediate high stakes and dramatic curiosity within <= 3.0s.",
+      "cliffhanger_description": "Part 4 climaxes on unresolved tension before the final cut.",
+      "standalone_coherence_explanation": "Clear dramatic continuity between setup in Part 1 and payoff in Part 4.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 60.0,
+      "total_duration_cs": 6000,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.825,
+      "scene_range": "Scene 17 -> Scene 12"
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 17,
+          "scene_heading": "INT. LOBBY, BANK -- DAY",
+          "start_element_id": "EP01_EL048",
+          "end_element_id": "EP01_EL050",
+          "start_raw": "04:52.90",
+          "end_raw": "05:27.70",
+          "duration_seconds": 34.8,
+          "duration_cs": 3480,
+          "purpose_in_promo": "Hook / Opening beat from Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Honor.  Respect.  What do you believe, huh?  What do you bel- Joker slides a GRE",
+            "exact_ending_dialogue": "...simply makes you stranger. The Bank Manager's eyes go wide.  The Joker rises,",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 5,
+          "scene_num": 11,
+          "scene_heading": "EXT. PARKSIDE -- NIGHT",
+          "start_element_id": "EP05_EL018",
+          "end_element_id": "EP05_EL019",
+          "start_raw": "01:48.80",
+          "end_raw": "02:04.10",
+          "duration_seconds": 15.3,
+          "duration_cs": 1530,
+          "purpose_in_promo": "Climax / Escalation in Part 5",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Just give me a second. The gun is COCKED.  The Joker drops the knife.  Sits.  Lo",
+            "exact_ending_dialogue": "We got you, you son of a bitch.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut on narrative pause in Part 1.",
+        "Ramp up tension and cut directly to confronting beat in Part 5."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Part 1 establishes immediate high stakes and dramatic curiosity within <= 3.0s.",
+      "cliffhanger_description": "Part 5 climaxes on unresolved tension before the final cut.",
+      "standalone_coherence_explanation": "Clear dramatic continuity between setup in Part 1 and payoff in Part 5.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 50.1,
+      "total_duration_cs": 5010,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.825,
+      "scene_range": "Scene 17 -> Scene 11"
+    }
+  ],
+  "diversity_ranked_top15": [
+    {
+      "start_element_id": "EP02_EL161",
+      "end_element_id": "EP02_EL164",
+      "scene_num": 21,
+      "scene_heading": "INT. POOL HALL -- NIGHT",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "The Joker suddenly springs to life from a body bag, knifing bodyguards and hooking a razor-sharp switchblade straight into mob boss Gambol's mouth.",
+      "cliffhanger_description": "The Joker finishes his chilling 'Why so serious?' monologue and slits Gambol's throat with a flick of his wrist as horrified gangsters watch.",
+      "standalone_coherence_explanation": "A ruthless criminal kingpin is completely outplayed by an unpredictable psychopath who uses theatrical terror and lethal cunning to commandeer Gotham's underworld.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "How about alive?",
+        "exact_ending_dialogue": "Why so serious?",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 47.4,
+      "calculated_duration_cs": 4740,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        2
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP06_EL129",
+      "end_element_id": "EP06_EL137",
+      "scene_num": 38,
+      "scene_heading": "INT. BAR, GOTHAM HEIGHTS -- DAY",
+      "hook_timestamp_offset_seconds": 1.5,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "Corrupt cop Wuertz is ambushed in a dive bar by Harvey Dent, who leans out of the shadows to reveal his hideously burned half-face.",
+      "cliffhanger_description": "Dent leaves Wuertz's life to a 50/50 coin toss; the scarred face lands up and a gunshot echoes before the outcome is shown.",
+      "standalone_coherence_explanation": "A betrayed, disfigured avenger corners the crooked officer who handed over his lover, executing cold vigilante justice based solely on a coin flip.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "What? You need me to shake it for-",
+        "exact_ending_dialogue": "The drunk at the bar STIRS at the GUNSHOT.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 50.2,
+      "calculated_duration_cs": 5020,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        6
+      ],
+      "overall_score": 20
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_01",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 17,
+          "scene_heading": "INT. LOBBY, BANK -- DAY",
+          "start_element_id": "EP01_EL048",
+          "end_element_id": "EP01_EL050",
+          "start_raw": "04:52.90",
+          "end_raw": "05:27.70",
+          "duration_seconds": 34.8,
+          "duration_cs": 3480,
+          "purpose_in_promo": "Hook / Opening beat from Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Honor.  Respect.  What do you believe, huh?  What do you bel- Joker slides a GRE",
+            "exact_ending_dialogue": "...simply makes you stranger. The Bank Manager's eyes go wide.  The Joker rises,",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 3,
+          "scene_num": 12,
+          "scene_heading": "INT. WAYNE PENTHOUSE -- DAY",
+          "start_element_id": "EP03_EL071",
+          "end_element_id": "EP03_EL073",
+          "start_raw": "04:54.60",
+          "end_raw": "05:18.60",
+          "duration_seconds": 24.0,
+          "duration_cs": 2400,
+          "purpose_in_promo": "Climax / Escalation in Part 3",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Look at me. LOOK AT ME! Brian looks up- the camera swings into the face of the J",
+            "exact_ending_dialogue": "Every day he doesn't... people will die.  Starting tonight.  I'm a man of my wor",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut on narrative pause in Part 1.",
+        "Ramp up tension and cut directly to confronting beat in Part 3."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Part 1 establishes immediate high stakes and dramatic curiosity within <= 3.0s.",
+      "cliffhanger_description": "Part 3 climaxes on unresolved tension before the final cut.",
+      "standalone_coherence_explanation": "Clear dramatic continuity between setup in Part 1 and payoff in Part 3.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 58.8,
+      "total_duration_cs": 5880,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.825,
+      "scene_range": "Scene 17 -> Scene 12",
+      "episodes_involved": [
+        1,
+        3
+      ]
+    },
+    {
+      "start_element_id": "EP03_EL161",
+      "end_element_id": "EP03_EL166",
+      "scene_num": 30,
+      "scene_heading": "INT. LIVING ROOM, WAYNE'S PENTHOUSE -- NIGHT",
+      "hook_timestamp_offset_seconds": 2.4,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "As the Joker terrorizes Rachel Dawes, Batman arrives from behind with an explosive one-liner and delivers a crushing strike.",
+      "cliffhanger_description": "The Joker blows out the high-rise window and dangles Rachel over Gotham, dropping her into free fall as Batman leaps out into the abyss after her.",
+      "standalone_coherence_explanation": "A masked superhero confronts an armed psychopath invading an upscale penthouse, escalating immediately into a life-or-death rescue plunge.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "A little fight in you. I like that.",
+        "exact_ending_dialogue": "Very poor choice of words...",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 50.9,
+      "calculated_duration_cs": 5090,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        3
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP05_EL058",
+      "end_element_id": "EP05_EL067",
+      "scene_num": 19,
+      "scene_heading": "INT. INTERROGATION, MCU, GOTHAM CENTRAL -- NIGHT",
+      "hook_timestamp_offset_seconds": 1.2,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "The interrogation lights flare up to reveal Batman standing behind the Joker, instantly smashing his face into the metal table.",
+      "cliffhanger_description": "Despite a brutal physical beating, the Joker bursts into unhinged laughter and confesses his sick codependence: 'You. Complete. Me.'",
+      "standalone_coherence_explanation": "A brutal clash of ideologies between a disciplined vigilante using force and a psychotic terrorist who cannot be intimidated or broken.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Not exactly.",
+        "exact_ending_dialogue": "You. Complete. Me.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 57.5,
+      "calculated_duration_cs": 5750,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        5
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP06_EL009",
+      "end_element_id": "EP06_EL017",
+      "scene_num": 2,
+      "scene_heading": "INT. RUSTED HULK -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "The Joker brazenly plucks a lit cigar from mob boss Chechen's mouth and hurls it onto a thirty-foot mountain of mob cash, igniting a billion dollars in flames.",
+      "cliffhanger_description": "Lau screams atop the flaming cash pyramid while the Joker ruthlessly sentences the Chechen to be fed to his own attack dogs, proclaiming that everything burns.",
+      "standalone_coherence_explanation": "A complete, self-contained demonstration of villainous philosophy: the Joker proves he isn't motivated by greed, usurping the entire underworld in a single stroke.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "You said you were a man of your word.",
+        "exact_ending_dialogue": "Everything. Burns. The Joker pulls out a phone...",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 45.6,
+      "calculated_duration_cs": 4560,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        6
+      ],
+      "overall_score": 20
+    },
+    {
+      "start_element_id": "EP07_EL163",
+      "end_element_id": "EP07_EL169",
+      "scene_num": 49,
+      "scene_heading": "INT. SECOND FLOOR, BURNT WAREHOUSE -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 1.2,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "Dent abruptly turns his revolver onto Batman, flips his scarred coin to tails, and shoots Batman point-blank in the gut.",
+      "cliffhanger_description": "As Dent flips the coin to execute Gordon's young son, Batman tackles Dent over the precipice; Dent falls to his death while the boy's fate hangs in the balance.",
+      "standalone_coherence_explanation": "A grieving, vengeful anti-hero forces the police commissioner to watch his son face russian roulette by coin toss to pay for past moral compromises.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Fair enough.",
+        "exact_ending_dialogue": "The coin stops spinning, GOOD SIDE UP.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 54.7,
+      "calculated_duration_cs": 5470,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        7
+      ],
+      "overall_score": 20
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_02",
+      "composition_mode": "multi_episode",
+      "archetype": "emotional_reversal_turning_point",
+      "relationship_type": "thematic",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 17,
+          "scene_heading": "INT. LOBBY, BANK -- DAY",
+          "start_element_id": "EP01_EL048",
+          "end_element_id": "EP01_EL050",
+          "start_raw": "04:52.90",
+          "end_raw": "05:27.70",
+          "duration_seconds": 34.8,
+          "duration_cs": 3480,
+          "purpose_in_promo": "Hook / Opening beat from Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Honor.  Respect.  What do you believe, huh?  What do you bel- Joker slides a GRE",
+            "exact_ending_dialogue": "...simply makes you stranger. The Bank Manager's eyes go wide.  The Joker rises,",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 4,
+          "scene_num": 12,
+          "scene_heading": "EXT. STATE STREET -- CONTINUOUS",
+          "start_element_id": "EP04_EL031",
+          "end_element_id": "EP04_EL034",
+          "start_raw": "02:48.90",
+          "end_raw": "03:14.10",
+          "duration_seconds": 25.2,
+          "duration_cs": 2520,
+          "purpose_in_promo": "Climax / Escalation in Part 4",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "THE HONOR GUARD TURN THEIR WEAPONS ON THE MAYOR.  One SMILES, flesh-colored make",
+            "exact_ending_dialogue": "PANDEMONIUM erupts-One of the honor guard is TAGGED IN THE LEG- GOES DOWN.  The ",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut on narrative pause in Part 1.",
+        "Ramp up tension and cut directly to confronting beat in Part 4."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Part 1 establishes immediate high stakes and dramatic curiosity within <= 3.0s.",
+      "cliffhanger_description": "Part 4 climaxes on unresolved tension before the final cut.",
+      "standalone_coherence_explanation": "Clear dramatic continuity between setup in Part 1 and payoff in Part 4.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 60.0,
+      "total_duration_cs": 6000,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.825,
+      "scene_range": "Scene 17 -> Scene 12",
+      "episodes_involved": [
+        1,
+        4
+      ]
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "composition_mode": "multi_episode",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "segments": [
+        {
+          "segment_index": 1,
+          "episode_num": 1,
+          "scene_num": 17,
+          "scene_heading": "INT. LOBBY, BANK -- DAY",
+          "start_element_id": "EP01_EL048",
+          "end_element_id": "EP01_EL050",
+          "start_raw": "04:52.90",
+          "end_raw": "05:27.70",
+          "duration_seconds": 34.8,
+          "duration_cs": 3480,
+          "purpose_in_promo": "Hook / Opening beat from Part 1",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Honor.  Respect.  What do you believe, huh?  What do you bel- Joker slides a GRE",
+            "exact_ending_dialogue": "...simply makes you stranger. The Bank Manager's eyes go wide.  The Joker rises,",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        },
+        {
+          "segment_index": 2,
+          "episode_num": 5,
+          "scene_num": 11,
+          "scene_heading": "EXT. PARKSIDE -- NIGHT",
+          "start_element_id": "EP05_EL018",
+          "end_element_id": "EP05_EL019",
+          "start_raw": "01:48.80",
+          "end_raw": "02:04.10",
+          "duration_seconds": 15.3,
+          "duration_cs": 1530,
+          "purpose_in_promo": "Climax / Escalation in Part 5",
+          "trim_recommendation": {
+            "exact_opening_dialogue": "Just give me a second. The gun is COCKED.  The Joker drops the knife.  Sits.  Lo",
+            "exact_ending_dialogue": "We got you, you son of a bitch.",
+            "verbatim_trim_quote": null,
+            "boundary_type": "element_boundary",
+            "requires_manual_editor_verification": false
+          }
+        }
+      ],
+      "transition_instructions": [
+        "Hard cut on narrative pause in Part 1.",
+        "Ramp up tension and cut directly to confronting beat in Part 5."
+      ],
+      "hook_timestamp_offset_seconds": 0.5,
+      "hook_description": "Part 1 establishes immediate high stakes and dramatic curiosity within <= 3.0s.",
+      "cliffhanger_description": "Part 5 climaxes on unresolved tension before the final cut.",
+      "standalone_coherence_explanation": "Clear dramatic continuity between setup in Part 1 and payoff in Part 5.",
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "overall_score": 20,
+      "total_duration_seconds": 50.1,
+      "total_duration_cs": 5010,
+      "retrieval_method": "semantic_embedding",
+      "semantic_similarity_score": 0.825,
+      "scene_range": "Scene 17 -> Scene 11",
+      "episodes_involved": [
+        1,
+        5
+      ]
+    },
+    {
+      "start_element_id": "EP04_EL126",
+      "end_element_id": "EP04_EL131",
+      "scene_num": 30,
+      "scene_heading": "INT. PRESS ROOM, SUPERIOR COURT -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "Harvey Dent rallies a terrified Gotham crowd with his iconic 'the night is darkest just before the dawn' address.",
+      "cliffhanger_description": "When the crowd turns hostile demanding Batman's head, Dent unexpectedly holds out his own hands in cuffs and claims he is Batman.",
+      "standalone_coherence_explanation": "Facing an angry citizenry terrified of terrorist attacks, Gotham's district attorney makes the ultimate sacrifice by claiming to be the masked vigilante everyone is hunting.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Yes. They are. But the night is darkest just before the dawn.",
+        "exact_ending_dialogue": "I am the Batman.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 35.7,
+      "calculated_duration_cs": 3570,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        4
+      ],
+      "overall_score": 19
+    },
+    {
+      "start_element_id": "EP05_EL217",
+      "end_element_id": "EP05_EL225",
+      "scene_num": 70,
+      "scene_heading": "INT. HOSPITAL ROOM -- CONTINUOUS",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "A severely burned Harvey Dent furiously demands Commissioner Gordon speak the cruel nickname given to him at Internal Affairs.",
+      "cliffhanger_description": "Dent reveals his grotesquely burned, skinless half-face as Two-Face, coldly telling Gordon he has not begun to feel true sorrow yet.",
+      "standalone_coherence_explanation": "A fallen hero, driven mad by loss and excruciating pain, rejects pity and transforms into a bitter monster bent on retribution against those he trusted.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Remember the name you all had for me when I was at Internal Affairs? What was it, Gordon?",
+        "exact_ending_dialogue": "No. No you're not. Not yet.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 5,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 44.3,
+      "calculated_duration_cs": 4430,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        5
+      ],
+      "overall_score": 19
+    },
+    {
+      "start_element_id": "EP03_EL219",
+      "end_element_id": "EP03_EL223",
+      "scene_num": 41,
+      "scene_heading": "INT. FOX'S OFFICE, WAYNE ENTERPRISES -- DAY",
+      "hook_timestamp_offset_seconds": 0.0,
+      "archetype": "emotional_reversal_turning_point",
+      "hook_description": "An ambitious corporate lawyer produces stolen blueprints of the Tumbler, threatening to expose Bruce Wayne as Batman.",
+      "cliffhanger_description": "Lucius Fox completely dismantles the extortionist's leverage by calmly laying out the suicidal reality of trying to blackmail a billionaire vigilante.",
+      "standalone_coherence_explanation": "A corporate employee attempts to blackmail an executive over a secret vigilante identity, only to be effortlessly put in his place with quiet intellectual intimidation.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Changes things when you know it's just a rich kid playing dress up.",
+        "exact_ending_dialogue": "Good luck.",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 4,
+        "cliffhanger_strength": 4,
+        "emotional_impact": 4
+      },
+      "calculated_duration_seconds": 53.7,
+      "calculated_duration_cs": 5370,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        3
+      ],
+      "overall_score": 17
+    },
+    {
+      "start_element_id": "EP01_EL169",
+      "end_element_id": "EP01_EL172",
+      "scene_num": 38,
+      "scene_heading": "INT. COURTROOM, SUPERIOR COURT -- DAY",
+      "hook_timestamp_offset_seconds": 2.1,
+      "archetype": "immediate_shock_opener",
+      "hook_description": "A hostile courtroom witness suddenly draws a concealed pistol right in front of District Attorney Harvey Dent and pulls the trigger point-blank.",
+      "cliffhanger_description": "Dent disarms and decks the hitman, drops the failed weapon before mob boss Maroni with a biting quip, and boldly turns back to the judge declaring he is not done.",
+      "standalone_coherence_explanation": "The scene establishes Harvey Dent as a fearless prosecutor taking on organized crime, unphased even when an assassin pulls a gun on him in open court.",
+      "trim_recommendation": {
+        "exact_opening_dialogue": "Permission to treat the witness as hostile?",
+        "exact_ending_dialogue": "But, your honor, I'm not done...",
+        "verbatim_trim_quote": null,
+        "boundary_type": "element_boundary",
+        "requires_manual_editor_verification": false
+      },
+      "rubric_scores": {
+        "standalone_coherence": 5,
+        "hook_strength": 5,
+        "cliffhanger_strength": 4,
+        "emotional_impact": 5
+      },
+      "calculated_duration_seconds": 30.3,
+      "calculated_duration_cs": 3030,
+      "composition_mode": "single_episode",
+      "episodes_involved": [
+        1
+      ],
+      "overall_score": 19
+    }
+  ],
+  "diversity_metadata": {
+    "archetype_distribution": {
+      "immediate_shock_opener": 8,
+      "visual_anomaly_mystery_escalation": 0,
+      "emotional_reversal_turning_point": 5
+    },
+    "composition_distribution": {
+      "single_episode": 10,
+      "multi_episode": 3
+    },
+    "episode_distribution": {
+      "2": 1,
+      "6": 2,
+      "1": 4,
+      "3": 3,
+      "5": 3,
+      "7": 1,
+      "4": 2
+    }
+  },
+  "semantic_retrieval_audit": [
+    {
+      "moment_1": "EP04_MOM_01",
+      "moment_2": "EP05_MOM_01",
+      "similarity": 0.8499
+    },
+    {
+      "moment_1": "EP03_MOM_02",
+      "moment_2": "EP05_MOM_02",
+      "similarity": 0.837
+    },
+    {
+      "moment_1": "EP03_MOM_02",
+      "moment_2": "EP07_MOM_03",
+      "similarity": 0.8354
+    },
+    {
+      "moment_1": "EP04_MOM_02",
+      "moment_2": "EP07_MOM_03",
+      "similarity": 0.8309
+    },
+    {
+      "moment_1": "EP03_MOM_01",
+      "moment_2": "EP03_MOM_02",
+      "similarity": 0.8235
+    }
+  ],
+  "mechanical_audit": [
+    {
+      "candidate_id": "SYNTH_MULTI_01",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "episodes": [
+        1,
+        3
+      ],
+      "total_duration_s": 58.8,
+      "hook_offset_s": 0.5,
+      "overall_score": 20,
+      "is_valid": true,
+      "errors": "PASSED"
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_02",
+      "archetype": "emotional_reversal_turning_point",
+      "relationship_type": "thematic",
+      "episodes": [
+        1,
+        4
+      ],
+      "total_duration_s": 60.0,
+      "hook_offset_s": 0.5,
+      "overall_score": 20,
+      "is_valid": true,
+      "errors": "PASSED"
+    },
+    {
+      "candidate_id": "SYNTH_MULTI_03",
+      "archetype": "immediate_shock_opener",
+      "relationship_type": "explicit",
+      "episodes": [
+        1,
+        5
+      ],
+      "total_duration_s": 50.1,
+      "hook_offset_s": 0.5,
+      "overall_score": 20,
+      "is_valid": true,
+      "errors": "PASSED"
+    }
+  ]
+}

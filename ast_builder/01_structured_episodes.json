@@ -6415,8 +6415,8 @@
               "content": "\"...husband and wife!\"",
               "dialogue_meta": {
                 "speaker": "THE PRIEST",
-                "modifier": null,
-                "delivery": "Off-Screen, Booming",
+                "modifier": "Off-Screen, Booming",
+                "delivery": null,
                 "raw_tag": "THE PRIEST (Off-Screen, Booming)"
               },
               "raw_tag": "THE PRIEST (Off-Screen, Booming)"
@@ -7103,8 +7103,8 @@
               "content": "\"Your dowry is revoked.\"",
               "dialogue_meta": {
                 "speaker": "LORD ASHCROFT",
-                "modifier": null,
-                "delivery": "O.S. / Continues",
+                "modifier": "O.S. / Continues",
+                "delivery": null,
                 "raw_tag": "LORD ASHCROFT (O.S. / Continues)"
               },
               "raw_tag": "LORD ASHCROFT (O.S. / Continues)"
@@ -7123,8 +7123,8 @@
               "content": "\"Your inheritance is revoked.\"",
               "dialogue_meta": {
                 "speaker": "LORD ASHCROFT",
-                "modifier": null,
-                "delivery": "O.S. / Continues",
+                "modifier": "O.S. / Continues",
+                "delivery": null,
                 "raw_tag": "LORD ASHCROFT (O.S. / Continues)"
               },
               "raw_tag": "LORD ASHCROFT (O.S. / Continues)"
@@ -7158,8 +7158,8 @@
               "content": "\"From this moment, you are dead to the Ashcroft family.\"",
               "dialogue_meta": {
                 "speaker": "LORD ASHCROFT",
-                "modifier": null,
-                "delivery": "O.S. / Continues",
+                "modifier": "O.S. / Continues",
+                "delivery": null,
                 "raw_tag": "LORD ASHCROFT (O.S. / Continues)"
               },
               "raw_tag": "LORD ASHCROFT (O.S. / Continues)"
@@ -27236,8 +27236,8 @@
               "content": "\"She is dying, Lady Juliana.\"",
               "dialogue_meta": {
                 "speaker": "PRUDENCE",
-                "modifier": null,
-                "delivery": "Solemn, O.S.",
+                "modifier": "Solemn, O.S.",
+                "delivery": null,
                 "raw_tag": "PRUDENCE (Solemn, O.S.)"
               },
               "raw_tag": "PRUDENCE (Solemn, O.S.)"
@@ -27781,8 +27781,8 @@
               "content": "\"Prudence.\"",
               "dialogue_meta": {
                 "speaker": "HOUSEKEEPER",
-                "modifier": null,
-                "delivery": "Sharp, Stern, O.S.",
+                "modifier": "Sharp, Stern, O.S.",
+                "delivery": null,
                 "raw_tag": "HOUSEKEEPER (Sharp, Stern, O.S.)"
               },
               "raw_tag": "HOUSEKEEPER (Sharp, Stern, O.S.)"
@@ -28026,8 +28026,8 @@
               "content": "\"Carry coal?\"",
               "dialogue_meta": {
                 "speaker": "HOUSEKEEPER",
-                "modifier": null,
-                "delivery": "Harsh, O.S.",
+                "modifier": "Harsh, O.S.",
+                "delivery": null,
                 "raw_tag": "HOUSEKEEPER (Harsh, O.S.)"
               },
               "raw_tag": "HOUSEKEEPER (Harsh, O.S.)"
@@ -60802,8 +60802,8 @@
               "content": "\"Careful, girl. You mistake my patience for weakness.\"",
               "dialogue_meta": {
                 "speaker": "HIGH PRIEST",
-                "modifier": null,
-                "delivery": "O.S. / Low, Threatening",
+                "modifier": "O.S. / Low, Threatening",
+                "delivery": null,
                 "raw_tag": "HIGH PRIEST (O.S. / Low, Threatening)"
               },
               "raw_tag": "HIGH PRIEST (O.S. / Low, Threatening)"
