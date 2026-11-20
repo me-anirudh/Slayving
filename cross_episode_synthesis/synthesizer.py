@@ -491,12 +491,17 @@ class CrossEpisodeSynthesizerEngine:
             raise FileNotFoundError(f"Extractions not found at {self.extractions_path}. Run candidate extractor first!")
         self.extractions_data = json.loads(self.extractions_path.read_text(encoding="utf-8"))
 
-        # Build fast AST lookup
+        # Build fast AST lookup and ordered elements per episode
         self.element_lookup: Dict[str, Dict[str, Any]] = {}
+        self.ordered_elements_by_ep: Dict[int, List[Dict[str, Any]]] = {}
         for ep in self.ast_data.get("episodes", []):
+            ep_num = ep.get("episode_num", 1)
+            ep_els = []
             for sc in ep.get("scenes", []):
                 for el in sc.get("elements", []):
                     self.element_lookup[el["element_id"]] = el
+                    ep_els.append(el)
+            self.ordered_elements_by_ep[ep_num] = ep_els
 
         # Initialize Semantic Retriever (Check 1)
         self.retriever = SemanticMomentRetriever(
@@ -577,6 +582,59 @@ class CrossEpisodeSynthesizerEngine:
 
         # 5. Dynamic tracked relationship pairs
         self.tracked_relationships = context.get("relationships", [])
+
+    def get_elements_in_span(self, ep_num: int, start_id: str, end_id: str) -> List[Dict[str, Any]]:
+        els = self.ordered_elements_by_ep.get(ep_num, [])
+        s_idx, e_idx = None, None
+        for i, el in enumerate(els):
+            if el["element_id"] == start_id:
+                s_idx = i
+            if el["element_id"] == end_id:
+                e_idx = i
+                break
+        if s_idx is not None and e_idx is not None and s_idx <= e_idx:
+            return els[s_idx : e_idx + 1]
+        return []
+
+    def trim_segment_span(
+        self,
+        ep_num: int,
+        start_id: str,
+        end_id: str,
+        target_max_cs: int = 2500,
+        align: str = "start"
+    ) -> Tuple[Dict[str, Any], Dict[str, Any], int]:
+        span = self.get_elements_in_span(ep_num, start_id, end_id)
+        if not span:
+            s_el = self.element_lookup.get(start_id)
+            e_el = self.element_lookup.get(end_id)
+            dur = (e_el["end_cs"] - s_el["start_cs"]) if s_el and e_el else 0
+            return s_el, e_el, dur
+
+        total_cs = span[-1]["end_cs"] - span[0]["start_cs"]
+        if total_cs <= target_max_cs:
+            return span[0], span[-1], total_cs
+
+        if align == "start":
+            chosen_end = span[0]
+            start_cs = span[0]["start_cs"]
+            for el in span:
+                cur_dur = el["end_cs"] - start_cs
+                if cur_dur <= target_max_cs or chosen_end == span[0]:
+                    chosen_end = el
+                else:
+                    break
+            return span[0], chosen_end, (chosen_end["end_cs"] - start_cs)
+        else:
+            chosen_start = span[-1]
+            end_cs = span[-1]["end_cs"]
+            for el in reversed(span):
+                cur_dur = end_cs - el["start_cs"]
+                if cur_dur <= target_max_cs or chosen_start == span[-1]:
+                    chosen_start = el
+                else:
+                    break
+            return chosen_start, span[-1], (end_cs - chosen_start["start_cs"])
 
     # ==========================================================================
     # CHECK 2: CHARACTER & ENTITY COMPATIBILITY
@@ -687,19 +745,20 @@ class CrossEpisodeSynthesizerEngine:
         """Calls Gemini with structured Pydantic schema to verify narrative progression."""
         from google.genai import types
 
-        prompt = f"""You are an expert microdrama story editor evaluating cross-episode continuity for a promotional video ad.
+        series_title = self.extractions_data.get("series_title", "Screenplay Drama")
+        prompt = f"""You are an expert story editor evaluating cross-episode / cross-scene continuity for a promotional video ad.
 
-Series: "I Married a Broken Soldier. He was a Duke" (50 Episodes)
+Series: "{series_title}"
 
 QUESTION: Does Moment 2 meaningfully ESCALATE, RESOLVE, INVERT, or PAY OFF the setup established in Moment 1?
 
 CRITICAL EDITORIAL RULE:
 Semantic similarity alone is NOT enough. Two scenes where a character is merely threatened do NOT form a valid promo arc.
 Moment 2 must represent genuine narrative movement:
-- power_inversion: e.g. early humiliation at the altar inverted into triumphant ducal return.
-- revelation_or_twist: e.g. clue or secret identity unmasked before the court.
-- setup_to_payoff: e.g. marriage vow or promise made early is fulfilled in battle.
-- escalation_of_stakes: e.g. domestic dispute escalates to public trial or armed confrontation.
+- power_inversion: e.g. early vulnerability or humiliation inverted into dramatic defiance, authority, or power shift.
+- revelation_or_twist: e.g. clue, secret deal, or identity unmasked before other characters.
+- setup_to_payoff: e.g. premise, rule, vow, or plan established early reaches active payoff or confrontation.
+- escalation_of_stakes: e.g. initial conflict escalates to higher-stakes confrontation or crisis.
 - none: e.g. parallel or redundant events without causal progression or resolution.
 
 MOMENT 1 (Episode {m1.get('episode', 0)}):
@@ -741,80 +800,58 @@ Evaluate whether true narrative progression exists and return the structured JSO
         m2: Dict[str, Any],
         entity_res: EntityCompatibilityResult
     ) -> ProgressionVerdict:
-        """
-        Deterministic progression engine evaluating archetype contrasts, clue payoffs, and power shifts.
-        """
-        ep1 = m1.get("episode", 0)
-        ep2 = m2.get("episode", 0)
-        t1 = m1.get("moment_type", "").lower()
-        t2 = m2.get("moment_type", "").lower()
-        s1 = m1.get("summary", "").lower()
-        s2 = m2.get("summary", "").lower()
+        """Deterministic progression engine evaluating archetype contrasts, clue payoffs, and power shifts."""
+        ep1, ep2 = m1.get("episode", 1), m2.get("episode", 1)
+        sc1, sc2 = m1.get("scene_num", 0), m2.get("scene_num", 0)
+        t1, t2 = m1.get("moment_type", "").lower(), m2.get("moment_type", "").lower()
+        s1, s2 = m1.get("summary", "").lower(), m2.get("summary", "").lower()
 
-        # Rule A: Contrast Baseline / Setup -> Identity Reveal (Classic Power Inversion)
-        if ("contrast_baseline" in t1 or "setup_or_vow" in t1 or "altar" in s1 or "humiliat" in s1) and \
-           ("identity_reveal" in t2 or "ducal" in s2 or "duke" in s2 or "power" in t2):
-            return ProgressionVerdict(
-                has_progression=True,
-                progression_type="power_inversion",
-                causal_link="thematic",
-                explanation=f"Moment in Ep {ep1} establishes initial vulnerability or vow, which Ep {ep2} dramatically inverts through ducal authority."
-            )
-
-        # Rule B: Clue / Prop Setup -> Payoff or Confrontation
-        if ("clue_or_prop" in t1 or entity_res.shared_props_or_clues) and \
-           ("identity_reveal" in t2 or "high_stakes_confrontation" in t2 or "unmask" in s2):
-            props = ", ".join(entity_res.shared_props_or_clues) or "tangible narrative clue"
+        # Rule 1: Secret / Deal / Clue / Prop Setup -> Reveal or Exposure (revelation_or_twist)
+        if ("clue" in t1 or "prop" in t1 or "deal" in s1 or "hire" in s1 or "secret" in s1 or entity_res.shared_props_or_clues) and
+           ("reveal" in t2 or "expos" in s2 or "discov" in s2 or "unmask" in s2 or "twist" in t2):
+            props = ", ".join(entity_res.shared_props_or_clues) or "dramatic clue"
             return ProgressionVerdict(
                 has_progression=True,
                 progression_type="revelation_or_twist",
                 causal_link="implied",
-                explanation=f"Shared prop/motif ({props}) set up in Ep {ep1} serves as critical evidence or weapon in Ep {ep2} climax."
+                explanation=f"Setup or clue ({props}) established early is exposed/unmasked in scene {sc2}."
             )
 
-        # Rule C: Marriage Vow / Alliance -> Battle Payoff
-        if ("marry" in s1 or "vow" in s1 or "rescue" in s1) and \
-           ("confront" in s2 or "protect" in s2 or "regalia" in s2 or "claims" in s2):
+        # Rule 2: Defense / Vulnerability / Humiliation -> Defiance / Breakthrough / Power Shift (power_inversion)
+        if ("contrast" in t1 or "baseline" in t1 or "vulnerab" in s1 or "defense" in s1 or "rule" in s1 or "setup" in t1) and
+           ("contrast" in t2 or "reveal" in t2 or "inversion" in t2 or "defense" in s2 or "vulnerab" in s2 or "tears down" in s2 or "power" in t2):
+            return ProgressionVerdict(
+                has_progression=True,
+                progression_type="power_inversion",
+                causal_link="thematic",
+                explanation=f"Initial emotional barrier or vulnerability in scene {sc1} inverts into dramatic reversal in scene {sc2}."
+            )
+
+        # Rule 3: Premise / Rule / Pact Setup -> Climax / Confrontation Payoff (setup_to_payoff)
+        if ("setup" in t1 or "rule" in s1 or "vow" in t1 or "plan" in s1) and
+           ("confront" in t2 or "payoff" in t2 or "climax" in t2 or "fight" in s2 or "beat" in s2):
             return ProgressionVerdict(
                 has_progression=True,
                 progression_type="setup_to_payoff",
                 causal_link="explicit",
-                explanation=f"Alliance formed in Ep {ep1} pays off in Ep {ep2} when the partners stand together against opposition."
+                explanation=f"Premise or pact established in scene {sc1} reaches active confrontation in scene {sc2}."
             )
 
-        # Rule D: Escalation of Stakes (Early oppression -> Defiant confrontation)
-        if ("crop" in s1 or "whip" in s1 or "servant" in s1 or "scrub" in s1) and \
-           ("defian" in s2 or "burn" in s2 or "refuse" in s2 or "challenge" in s2):
+        # Rule 4: Chronological escalation with shared character continuity (escalation_of_stakes)
+        if (ep2 > ep1 or sc2 > sc1) and entity_res.is_compatible:
+            chars = ", ".join(entity_res.shared_characters) or "central characters"
             return ProgressionVerdict(
                 has_progression=True,
                 progression_type="escalation_of_stakes",
                 causal_link="explicit",
-                explanation=f"Subjugation in Ep {ep1} escalates directly into overt defiance and active retaliation in Ep {ep2}."
-            )
-
-        # Default fallback if moments lack genuine progression
-        if t1 == t2 and not entity_res.shared_props_or_clues and len(entity_res.shared_characters) < 2:
-            return ProgressionVerdict(
-                has_progression=False,
-                progression_type="none",
-                causal_link="none",
-                explanation=f"Both beats are parallel {t1} moments across Ep {ep1} and Ep {ep2} without causal escalation or payoff."
-            )
-
-        # General progression based on character continuity and significant episode span
-        if ep2 - ep1 >= 5 and entity_res.shared_characters:
-            return ProgressionVerdict(
-                has_progression=True,
-                progression_type="escalation_of_stakes",
-                causal_link="implied",
-                explanation=f"Ongoing storyline involving {', '.join(entity_res.shared_characters)} escalates from Ep {ep1} to Ep {ep2}."
+                explanation=f"Conflict involving {chars} escalates from scene {sc1} into higher stakes confrontation in scene {sc2}."
             )
 
         return ProgressionVerdict(
             has_progression=False,
             progression_type="none",
             causal_link="none",
-            explanation="Insufficient narrative contrast or causal connection between the two episode beats."
+            explanation="Insufficient dramatic progression between beats."
         )
 
     # ==========================================================================
@@ -873,15 +910,16 @@ Evaluate whether true narrative progression exists and return the structured JSO
             block.append("-" * 60)
             pairs_blocks.append("\n".join(block))
 
-        prompt = f"""You are the Lead Promo Director and Video Producer for Kuku FM's high-stakes microdrama series.
-Your task is to execute CROSS-EPISODE SYNTHESIS (composition_mode: "multi_episode") by stitching 2-3 segments across different episodes into high-converting promo candidates.
+        series_title = self.extractions_data.get("series_title", "Screenplay Promo Series")
+        prompt = f"""You are the Lead Promo Director and Video Producer for {series_title}.
+Your task is to execute CROSS-EPISODE SYNTHESIS (composition_mode: "multi_episode") by stitching 2-3 segments across different episodes/scenes into high-converting promo candidates.
 
 Every candidate you generate MUST originate from one of the ELIGIBLE COMBINATIONS below, which have passed all three narrative compatibility checks (Semantic Similarity, Character/Entity Compatibility, and Narrative Progression).
 
 ### THE THREE STANDARDIZED PROMO ARCHETYPES:
-1. `immediate_shock_opener`: Segment 1 opens within <= 3.00s on a visceral physical action, slap, betrayal accusation, or explosive threat; Segment 2/3 cuts on an unresolved cliffhanger.
-2. `visual_anomaly_mystery_escalation`: Segment 1 opens within <= 3.00s on a suspicious visual beat in CAMERA or ACTION (e.g. signet ring, royal crest, mysterious scar) that escalates to a confrontation twist across episodes.
-3. `emotional_reversal_turning_point`: Segment 1 establishes a sharp status humiliation or vow (e.g. jilted at altar); Segment 2/3 delivers a dramatic power inversion or vindication (e.g. unmasked as Duke).
+1. `immediate_shock_opener`: Segment 1 opens within <= 3.00s on a visceral physical action, confrontation, betrayal accusation, or explosive threat; Segment 2/3 cuts on an unresolved cliffhanger.
+2. `visual_anomaly_mystery_escalation`: Segment 1 opens within <= 3.00s on a suspicious visual beat or dramatic clue that escalates to a confrontation twist across episodes/scenes.
+3. `emotional_reversal_turning_point`: Segment 1 establishes a sharp status vulnerability, humiliation, or vow; Segment 2/3 delivers a dramatic power inversion, defiance, or vindication.
 
 ### PRECISE TRIM RECOMMENDATIONS (FOR VIDEO EDITORS):
 For every constituent segment, you must provide actionable trim instructions in `trim_recommendation`:
@@ -973,43 +1011,58 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                 return ""
             meta = el.get("dialogue_meta")
             if meta and meta.get("speaker"):
-                c_text = el.get("content", ""); return f"{meta.get('speaker')}: {c_text}"
+                c_text = el.get("content", "")
+                return f"{meta.get('speaker')}: {c_text}"
             return el.get("content", "")
 
         moments = self.extractions_data.get("narrative_moments", [])
         total_eps = len(self.ast_data.get("episodes", []))
 
-        # 1. Discover all pairs meeting duration bounds (20s - 60s)
+        # 1. Discover all pairs meeting duration bounds (20s - 60s) with smart trimming
         valid_pairs = []
         for i in range(len(moments)):
             m1 = moments[i]
-            s1 = self.element_lookup.get(m1.get("start_element_id"))
-            e1 = self.element_lookup.get(m1.get("end_element_id"))
-            if not s1 or not e1:
+            s1_full = self.element_lookup.get(m1.get("start_element_id"))
+            e1_full = self.element_lookup.get(m1.get("end_element_id"))
+            if not s1_full or not e1_full:
                 continue
-            dur1_cs = e1["end_cs"] - s1["start_cs"]
-            if dur1_cs <= 0:
+            dur1_raw = e1_full["end_cs"] - s1_full["start_cs"]
+            if dur1_raw <= 0:
                 continue
 
             for j in range(i + 1, len(moments)):
                 m2 = moments[j]
-                if m1.get("episode", 1) == m2.get("episode", 1) and total_eps > 1:
+                if total_eps > 1 and m1.get("episode", 1) == m2.get("episode", 1):
                     continue
-                s2 = self.element_lookup.get(m2.get("start_element_id"))
-                e2 = self.element_lookup.get(m2.get("end_element_id"))
-                if not s2 or not e2:
-                    continue
-                dur2_cs = e2["end_cs"] - s2["start_cs"]
-                if dur2_cs <= 0:
+                if total_eps == 1 and m1.get("scene_num") == m2.get("scene_num"):
                     continue
 
-                tot_cs = dur1_cs + dur2_cs
+                s2_full = self.element_lookup.get(m2.get("start_element_id"))
+                e2_full = self.element_lookup.get(m2.get("end_element_id"))
+                if not s2_full or not e2_full:
+                    continue
+                dur2_raw = e2_full["end_cs"] - s2_full["start_cs"]
+                if dur2_raw <= 0:
+                    continue
+
+                tot_raw = dur1_raw + dur2_raw
+                if tot_raw > 6000:
+                    target1 = min(dur1_raw, 2400)
+                    target2 = min(dur2_raw, 5400 - target1)
+                    s1, e1, d1_cs = self.trim_segment_span(m1.get("episode", 1), m1["start_element_id"], m1["end_element_id"], target1, align="start")
+                    s2, e2, d2_cs = self.trim_segment_span(m2.get("episode", 1), m2["start_element_id"], m2["end_element_id"], target2, align="end")
+                    tot_cs = d1_cs + d2_cs
+                else:
+                    s1, e1, d1_cs = s1_full, e1_full, dur1_raw
+                    s2, e2, d2_cs = s2_full, e2_full, dur2_raw
+                    tot_cs = tot_raw
+
                 if 2000 <= tot_cs <= 6000:
                     compat = self.check_character_entity_compatibility(m1, m2)
                     prog = self.check_narrative_progression(m1, m2, compat, use_llm=False)
                     valid_pairs.append({
-                        "m1": m1, "s1": s1, "e1": e1, "d1_cs": dur1_cs,
-                        "m2": m2, "s2": s2, "e2": e2, "d2_cs": dur2_cs,
+                        "m1": m1, "s1": s1, "e1": e1, "d1_cs": d1_cs,
+                        "m2": m2, "s2": s2, "e2": e2, "d2_cs": d2_cs,
                         "tot_cs": tot_cs,
                         "compat": compat,
                         "prog": prog,
@@ -1049,20 +1102,18 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                 s2, e2 = best_pair["s2"], best_pair["e2"]
                 d1_cs, d2_cs, tot_cs = best_pair["d1_cs"], best_pair["d2_cs"], best_pair["tot_cs"]
 
-                # Dynamically construct transition instructions from actual scene context
-                heading_1 = m1.get("scene_heading") or f"Episode {m1.get('episode', 1)}"
-                heading_2 = m2.get("scene_heading") or f"Episode {m2.get('episode', 1)}"
+                heading_1 = m1.get("scene_heading") or f"Scene {m1.get('scene_num', 1)}"
+                heading_2 = m2.get("scene_heading") or f"Scene {m2.get('scene_num', 2)}"
                 trans_instructions = [
-                    f"Hard cut on audio boundary from {m1['end_element_id']} in {heading_1}.",
+                    f"Hard cut on audio boundary from {e1['element_id']} in {heading_1}.",
                     f"Layer cinematic impact riser over cross-fade to {heading_2}.",
-                    f"Resume action/dialogue track on {m2['start_element_id']}."
+                    f"Resume action/dialogue track on {s2['element_id']}."
                 ]
 
-                # Dynamic coherence explanation based on real summaries and characters
                 char_str = ", ".join(best_pair["compat"].shared_characters) or "central narrative arc"
                 coherence_text = (
-                    f"Narrative continuity grounded in {char_str}: Episode {m1.get('episode', 1)} establishes "
-                    f"the dramatic premise ({m1.get('summary', '')[:60]}...), resolving into Episode {m2.get('episode', 1)} climax."
+                    f"Narrative continuity grounded in {char_str}: Scene {m1.get('scene_num', 1)} establishes "
+                    f"the dramatic premise ({m1.get('summary', '')[:60]}...), resolving into Scene {m2.get('scene_num', 2)} climax."
                 )
 
                 cand = MultiEpisodeCandidate(
@@ -1077,16 +1128,16 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                             episode_num=m1.get("episode", 1),
                             scene_num=m1.get("scene_num"),
                             scene_heading=m1.get("scene_heading"),
-                            start_element_id=m1["start_element_id"],
-                            end_element_id=m1["end_element_id"],
+                            start_element_id=s1["element_id"],
+                            end_element_id=e1["element_id"],
                             start_raw=s1.get("start_raw", "00:00.00"),
                             end_raw=e1.get("end_raw", "00:00.00"),
                             duration_seconds=round(d1_cs / 100.0, 2),
                             duration_cs=d1_cs,
-                            purpose_in_promo=f"Setup / Context from Episode {m1.get('episode', 1)}",
+                            purpose_in_promo=f"Setup / Context from Scene {m1.get('scene_num', 1)}",
                             trim_recommendation=TrimRecommendation(
-                                exact_opening_dialogue=get_verbatim_text(m1["start_element_id"]) or m1.get("summary", ""),
-                                exact_ending_dialogue=get_verbatim_text(m1["end_element_id"]) or "Pre-cut beat.",
+                                exact_opening_dialogue=get_verbatim_text(s1["element_id"]) or m1.get("summary", ""),
+                                exact_ending_dialogue=get_verbatim_text(e1["element_id"]) or "Pre-cut beat.",
                                 boundary_type="element_boundary",
                                 requires_manual_editor_verification=False
                             )
@@ -1096,16 +1147,16 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                             episode_num=m2.get("episode", 1),
                             scene_num=m2.get("scene_num"),
                             scene_heading=m2.get("scene_heading"),
-                            start_element_id=m2["start_element_id"],
-                            end_element_id=m2["end_element_id"],
+                            start_element_id=s2["element_id"],
+                            end_element_id=e2["element_id"],
                             start_raw=s2.get("start_raw", "00:00.00"),
                             end_raw=e2.get("end_raw", "00:00.00"),
                             duration_seconds=round(d2_cs / 100.0, 2),
                             duration_cs=d2_cs,
-                            purpose_in_promo=f"Climax / Escalation from Episode {m2.get('episode', 1)}",
+                            purpose_in_promo=f"Climax / Escalation from Scene {m2.get('scene_num', 2)}",
                             trim_recommendation=TrimRecommendation(
-                                exact_opening_dialogue=get_verbatim_text(m2["start_element_id"]) or m2.get("summary", ""),
-                                exact_ending_dialogue=get_verbatim_text(m2["end_element_id"]) or "Cliffhanger cutoff.",
+                                exact_opening_dialogue=get_verbatim_text(s2["element_id"]) or m2.get("summary", ""),
+                                exact_ending_dialogue=get_verbatim_text(e2["element_id"]) or "Cliffhanger cutoff.",
                                 boundary_type="element_boundary",
                                 requires_manual_editor_verification=False
                             )
@@ -1113,8 +1164,8 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                     ],
                     transition_instructions=trans_instructions,
                     hook_timestamp_offset_seconds=0.3,
-                    hook_description=f"Visceral hook initiates within 0.3s in {m1['start_element_id']}: {m1.get('summary', '')[:70]}",
-                    cliffhanger_description=f"Cuts at peak unresolved tension at {m2['end_element_id']}: {m2.get('summary', '')[:70]}",
+                    hook_description=f"Visceral hook initiates within 0.3s in {s1['element_id']}: {m1.get('summary', '')[:70]}",
+                    cliffhanger_description=f"Cuts at peak unresolved tension at {e2['element_id']}: {m2.get('summary', '')[:70]}",
                     standalone_coherence_explanation=coherence_text,
                     rubric_scores=RubricScores(
                         standalone_coherence=5 if best_pair["compat"].shared_characters else 4,
@@ -1189,7 +1240,7 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
     def run_synthesis(
         self,
         top_pairs: int = 5,
-        sim_threshold: float = 0.75,
+        sim_threshold: float = 0.45,
         use_llm: bool = True
     ) -> Dict[str, Any]:
         """
@@ -1218,7 +1269,7 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
                 source_moment=m,
                 candidate_pool=moments,
                 top_k=3,
-                min_episode_gap=2
+                min_episode_gap=None
             )
             for rel_m, sim in related:
                 if sim >= sim_threshold:
@@ -1233,7 +1284,7 @@ Synthesize the optimal multi-episode promo candidates and output structured JSON
         deduped_pairs = []
         for p in raw_semantic_pairs:
             m1, m2 = p["moment_1"], p["moment_2"]
-            if m1["episode"] > m2["episode"]:
+            if m1.get("episode", 1) > m2.get("episode", 1) or (m1.get("episode", 1) == m2.get("episode", 1) and m1.get("scene_num", 0) > m2.get("scene_num", 0)):
                 m1, m2 = m2, m1
             key = (m1["moment_id"], m2["moment_id"])
             if key not in seen_pairs:
@@ -1551,7 +1602,7 @@ def main():
     parser.add_argument("--cache", default="cross_episode_synthesis/embeddings_cache.json", help="Path to embeddings cache JSON")
     parser.add_argument("--model", default="gemini-3.8-flash", help="Gemini model name")
     parser.add_argument("--top-pairs", type=int, default=5, help="Number of eligible combinations to synthesize")
-    parser.add_argument("--sim-threshold", type=float, default=0.75, help="Cosine similarity threshold for Step 1")
+    parser.add_argument("--sim-threshold", type=float, default=0.45, help="Cosine similarity threshold for Step 1")
     parser.add_argument("--no-llm", action="store_true", help="Force deterministic synthesis without external LLM")
     parser.add_argument("--diversity-rank", action="store_true", help="Execute diversity-aware final ranking across all candidates")
     args = parser.parse_args()

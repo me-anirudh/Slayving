@@ -3,27 +3,27 @@
     "promo_id": "PROMO_001",
     "rank": 1,
     "composition_mode": "single_episode",
-    "archetype": "immediate_shock_opener",
+    "archetype": "emotional_reversal_turning_point",
     "relationship_type": null,
-    "total_duration_seconds": 50.9,
-    "total_duration_cs": 5090,
-    "hook_timestamp_offset_seconds": 2.0,
+    "total_duration_seconds": 39.1,
+    "total_duration_cs": 3910,
+    "hook_timestamp_offset_seconds": 1.5,
     "segments": [
       {
         "segment_index": 1,
-        "episode": 3,
-        "scene": 30,
-        "start_element_id": "EP03_EL161",
-        "end_element_id": "EP03_EL166",
-        "start_timestamp": "12:46.60",
-        "end_timestamp": "13:37.50",
-        "duration_seconds": 50.9,
-        "duration_cs": 5090,
+        "episode": 1,
+        "scene": 101,
+        "start_element_id": "EP01_EL1565",
+        "end_element_id": "EP01_EL1576",
+        "start_timestamp": "77:42.00",
+        "end_timestamp": "78:21.10",
+        "duration_seconds": 39.1,
+        "duration_cs": 3910,
         "trim_quote_hint": null,
-        "segment_summary": "Batman bursts into the penthouse confrontation with 'Then you're going to love me' and takes down the Joker's thugs with brutal CQC.",
+        "segment_summary": "Kat rushes down the grand hotel staircase in her formal gown, screaming the explosive revelation that her entire romance was a paid hit by her worst enemy.",
         "trim_recommendation": {
-          "exact_opening_dialogue": "A little fight in you. I like that.",
-          "exact_ending_dialogue": "Very poor choice of words...",
+          "exact_opening_dialogue": "KAT runs down the stairs, Patrick chasing her",
+          "exact_ending_dialogue": "Bianca stands at the top of the stairs, watching.  She's never looked more guilty.",
           "verbatim_trim_quote": null,
           "boundary_type": "element_boundary",
           "requires_manual_editor_verification": false
@@ -38,9 +38,9 @@
       "total_score": 20
     },
     "editorial_rationale": {
-      "hook_explanation": "Batman bursts into the penthouse confrontation with 'Then you're going to love me' and takes down the Joker's thugs with brutal CQC.",
-      "cliffhanger_explanation": "The Joker dangles Rachel Dawes out of a shattered skyscraper window and drops her into freefall, with Batman diving off the ledge after her.",
-      "standalone_coherence_explanation": "A superhero ambushes a terrorist holding party guests hostage, culminating in the villain dropping the hero's love interest out of a penthouse window."
+      "hook_explanation": "Kat rushes down the grand hotel staircase in her formal gown, screaming the explosive revelation that her entire romance was a paid hit by her worst enemy.",
+      "cliffhanger_explanation": "Patrick tries desperately to explain that he genuinely fell for her, but Kat rejects his kiss and flees into the night while her guilty sister watches from above.",
+      "standalone_coherence_explanation": "A cold viewer instantly understands the heartbreak: a guarded girl discovers the boy she finally opened up to was secretly paid cash to seduce her."
     },
     "critic_review": {
       "critic_status": "APPROVE",
@@ -55,28 +55,48 @@
   {
     "promo_id": "PROMO_002",
     "rank": 2,
-    "composition_mode": "single_episode",
+    "composition_mode": "multi_episode",
     "archetype": "emotional_reversal_turning_point",
-    "relationship_type": null,
-    "total_duration_seconds": 46.6,
-    "total_duration_cs": 4660,
-    "hook_timestamp_offset_seconds": 1.5,
+    "relationship_type": "thematic",
+    "total_duration_seconds": 51.8,
+    "total_duration_cs": 5180,
+    "hook_timestamp_offset_seconds": 0.3,
     "segments": [
       {
         "segment_index": 1,
-        "episode": 5,
-        "scene": 24,
-        "start_element_id": "EP05_EL087",
-        "end_element_id": "EP05_EL095",
-        "start_timestamp": "07:33.60",
-        "end_timestamp": "08:20.20",
-        "duration_seconds": 46.6,
-        "duration_cs": 4660,
+        "episode": 1,
+        "scene": 14,
+        "start_element_id": "EP01_EL231",
+        "end_element_id": "EP01_EL238",
+        "start_timestamp": "12:35.40",
+        "end_timestamp": "12:58.90",
+        "duration_seconds": 23.5,
+        "duration_cs": 2350,
         "trim_quote_hint": null,
-        "segment_summary": "The Joker laughs through a bloody mouth while Batman ruthlessly interrogates him, slamming him into walls.",
+        "segment_summary": "Setup / Context from Scene 14",
         "trim_recommendation": {
-          "exact_opening_dialogue": "Look at you go... does Harvey know about you and his-?",
-          "exact_ending_dialogue": "He's at 250 52nd Boulevard. And she's on avenue X at Cicero.",
+          "exact_opening_dialogue": "BIANCA: Now don't get upset. Daddy, but there's this boy... and I think he might ask...",
+          "exact_ending_dialogue": "He pulls out a small tape recorder from his black bag.",
+          "verbatim_trim_quote": null,
+          "boundary_type": "element_boundary",
+          "requires_manual_editor_verification": false
+        }
+      },
+      {
+        "segment_index": 2,
+        "episode": 1,
+        "scene": 100,
+        "start_element_id": "EP01_EL1552",
+        "end_element_id": "EP01_EL1562",
+        "start_timestamp": "77:09.20",
+        "end_timestamp": "77:37.50",
+        "duration_seconds": 28.3,
+        "duration_cs": 2830,
+        "trim_quote_hint": null,
+        "segment_summary": "Climax / Escalation from Scene 100",
+        "trim_recommendation": {
+          "exact_opening_dialogue": "DEREK: Very uncool, my brother",
+          "exact_ending_dialogue": "BIANCA: And that's for me.",
           "verbatim_trim_quote": null,
           "boundary_type": "element_boundary",
           "requires_manual_editor_verification": false
@@ -87,13 +107,13 @@
       "standalone_coherence": 5,
       "hook_strength": 5,
       "cliffhanger_strength": 5,
-      "emotional_impact": 5,
-      "total_score": 20
+      "emotional_impact": 4,
+      "total_score": 19
     },
     "editorial_rationale": {
-      "hook_explanation": "The Joker laughs through a bloody mouth while Batman ruthlessly interrogates him, slamming him into walls.",
-      "cliffhanger_explanation": "The Joker gives Batman two simultaneous locations for Rachel and Dent, forcing him into a sadistic Sophie's choice with only minutes left.",
-      "standalone_coherence_explanation": "An unhinged villain with nothing to lose reveals that two innocent hostages are trapped with timers running out and forces the vigilante to pick only one."
+      "hook_explanation": "Visceral hook initiates within 0.3s in EP01_EL231: Dr. Stratford enforces the family dating rule: sophomore Bianca cannot",
+      "cliffhanger_explanation": "Cuts at peak unresolved tension at EP01_EL1562: Joey Dorsey publicly exposes the cash-for-dates deal at prom, resultin",
+      "standalone_coherence_explanation": "Narrative continuity grounded in Bianca Stratford, Katarina Stratford: Scene 14 establishes the dramatic premise (Dr. Stratford enforces the family dating rule: sophomore Bia...), resolving into Scene 100 climax."
     },
     "critic_review": {
       "critic_status": "APPROVE",
@@ -108,28 +128,48 @@
   {
     "promo_id": "PROMO_003",
     "rank": 3,
-    "composition_mode": "single_episode",
-    "archetype": "immediate_shock_opener",
-    "relationship_type": null,
-    "total_duration_seconds": 34.2,
-    "total_duration_cs": 3420,
-    "hook_timestamp_offset_seconds": 0.0,
+    "composition_mode": "multi_episode",
+    "archetype": "visual_anomaly_mystery_escalation",
+    "relationship_type": "implied",
+    "total_duration_seconds": 51.6,
+    "total_duration_cs": 5160,
+    "hook_timestamp_offset_seconds": 0.3,
     "segments": [
       {
         "segment_index": 1,
-        "episode": 6,
-        "scene": 2,
-        "start_element_id": "EP06_EL005",
-        "end_element_id": "EP06_EL012",
-        "start_timestamp": "00:27.90",
-        "end_timestamp": "01:02.10",
-        "duration_seconds": 34.2,
-        "duration_cs": 3420,
+        "episode": 1,
+        "scene": 24,
+        "start_element_id": "EP01_EL406",
+        "end_element_id": "EP01_EL414",
+        "start_timestamp": "22:27.20",
+        "end_timestamp": "22:50.50",
+        "duration_seconds": 23.3,
+        "duration_cs": 2330,
         "trim_quote_hint": null,
-        "segment_summary": "The Joker suddenly splashes gasoline across a thirty-foot pyramid containing a billion dollars in mob cash and sticks a gun in the Chechen's face.",
+        "segment_summary": "Setup / Context from Scene 24",
         "trim_recommendation": {
-          "exact_opening_dialogue": "More for us.  What you do with all your money, Mr.Joker?",
-          "exact_ending_dialogue": "The Chechen watches the money catch fire.",
+          "exact_opening_dialogue": "JOEY: Yeah, whatever.  I want you to go out with her.",
+          "exact_ending_dialogue": "JOEY: You got it, Verona.  I pick up the tab, you do the honors.",
+          "verbatim_trim_quote": null,
+          "boundary_type": "element_boundary",
+          "requires_manual_editor_verification": false
+        }
+      },
+      {
+        "segment_index": 2,
+        "episode": 1,
+        "scene": 100,
+        "start_element_id": "EP01_EL1552",
+        "end_element_id": "EP01_EL1562",
+        "start_timestamp": "77:09.20",
+        "end_timestamp": "77:37.50",
+        "duration_seconds": 28.3,
+        "duration_cs": 2830,
+        "trim_quote_hint": null,
+        "segment_summary": "Climax / Escalation from Scene 100",
+        "trim_recommendation": {
+          "exact_opening_dialogue": "DEREK: Very uncool, my brother",
+          "exact_ending_dialogue": "BIANCA: And that's for me.",
           "verbatim_trim_quote": null,
           "boundary_type": "element_boundary",
           "requires_manual_editor_verification": false
@@ -140,13 +180,13 @@
       "standalone_coherence": 5,
       "hook_strength": 5,
       "cliffhanger_strength": 5,
-      "emotional_impact": 5,
-      "total_score": 20
+      "emotional_impact": 4,
+      "total_score": 19
     },
     "editorial_rationale": {
-      "hook_explanation": "The Joker suddenly splashes gasoline across a thirty-foot pyramid containing a billion dollars in mob cash and sticks a gun in the Chechen's face.",
-      "cliffhanger_explanation": "The Joker proclaims he is only burning his half and tosses a lit cigar directly onto the gasoline-soaked billion-dollar cash pile, leaving the mob's empire going up in flames.",
-      "standalone_coherence_explanation": "A criminal boss confronts an eccentric clown over their shared money, only for the clown to douse the billion-dollar fortune in gasoline and ignite it on principle."
+      "hook_explanation": "Visceral hook initiates within 0.3s in EP01_EL406: Joey Dorsey hires school delinquent Patrick Verona to take out Kat Str",
+      "cliffhanger_explanation": "Cuts at peak unresolved tension at EP01_EL1562: Joey Dorsey publicly exposes the cash-for-dates deal at prom, resultin",
+      "standalone_coherence_explanation": "Narrative continuity grounded in Bianca Stratford, Joey, Joey Dorsey, Katarina Stratford, Patrick: Scene 24 establishes the dramatic premise (Joey Dorsey hires school delinquent Patrick Verona to take o...), resolving into Scene 100 climax."
     },
     "critic_review": {
       "critic_status": "APPROVE",
@@ -161,28 +201,48 @@
   {
     "promo_id": "PROMO_004",
     "rank": 4,
-    "composition_mode": "single_episode",
+    "composition_mode": "multi_episode",
     "archetype": "immediate_shock_opener",
-    "relationship_type": null,
-    "total_duration_seconds": 50.2,
-    "total_duration_cs": 5020,
-    "hook_timestamp_offset_seconds": 0.0,
+    "relationship_type": "explicit",
+    "total_duration_seconds": 52.1,
+    "total_duration_cs": 5210,
+    "hook_timestamp_offset_seconds": 0.3,
     "segments": [
       {
         "segment_index": 1,
-        "episode": 6,
-        "scene": 38,
-        "start_element_id": "EP06_EL129",
-        "end_element_id": "EP06_EL137",
-        "start_timestamp": "10:37.90",
-        "end_timestamp": "11:28.10",
-        "duration_seconds": 50.2,
-        "duration_cs": 5020,
+        "episode": 1,
+        "scene": 24,
+        "start_element_id": "EP01_EL406",
+        "end_element_id": "EP01_EL414",
+        "start_timestamp": "22:27.20",
+        "end_timestamp": "22:50.50",
+        "duration_seconds": 23.3,
+        "duration_cs": 2330,
         "trim_quote_hint": null,
-        "segment_summary": "Detective Wuertz gets a gun shoved directly into his face in an empty dive bar by Harvey Dent, who leans out of the shadows to expose his hideous half-destroyed face.",
+        "segment_summary": "Setup / Context from Scene 24",
         "trim_recommendation": {
-          "exact_opening_dialogue": "What?  You need me to shake it for-",
-          "exact_ending_dialogue": "The drunk at the bar STIRS at the GUNSHOT.",
+          "exact_opening_dialogue": "JOEY: Yeah, whatever.  I want you to go out with her.",
+          "exact_ending_dialogue": "JOEY: You got it, Verona.  I pick up the tab, you do the honors.",
+          "verbatim_trim_quote": null,
+          "boundary_type": "element_boundary",
+          "requires_manual_editor_verification": false
+        }
+      },
+      {
+        "segment_index": 2,
+        "episode": 1,
+        "scene": 79,
+        "start_element_id": "EP01_EL1206",
+        "end_element_id": "EP01_EL1217",
+        "start_timestamp": "59:58.20",
+        "end_timestamp": "60:27.00",
+        "duration_seconds": 28.8,
+        "duration_cs": 2880,
+        "trim_quote_hint": null,
+        "segment_summary": "Climax / Escalation from Scene 79",
+        "trim_recommendation": {
+          "exact_opening_dialogue": "KAT: What are you doing here?",
+          "exact_ending_dialogue": "She pushes past him and heads out the' door Pat looks down at the book he's been holding in his hand: Taming of the Shrew.",
           "verbatim_trim_quote": null,
           "boundary_type": "element_boundary",
           "requires_manual_editor_verification": false
@@ -193,13 +253,13 @@
       "standalone_coherence": 5,
       "hook_strength": 5,
       "cliffhanger_strength": 5,
-      "emotional_impact": 5,
-      "total_score": 20
+      "emotional_impact": 4,
+      "total_score": 19
     },
     "editorial_rationale": {
-      "hook_explanation": "Detective Wuertz gets a gun shoved directly into his face in an empty dive bar by Harvey Dent, who leans out of the shadows to expose his hideous half-destroyed face.",
-      "cliffhanger_explanation": "Dent flips his scarred silver dollar to decide Wuertz's life; it lands scarred side up and a deafening gunshot rings out in the bar.",
-      "standalone_coherence_explanation": "A vengeful disfigured former prosecutor interrogates a corrupt cop who betrayed him, leaving the cop's execution entirely to a 50/50 coin flip."
+      "hook_explanation": "Visceral hook initiates within 0.3s in EP01_EL406: Joey Dorsey hires school delinquent Patrick Verona to take out Kat Str",
+      "cliffhanger_explanation": "Cuts at peak unresolved tension at EP01_EL1217: Patrick tracks Kat to a bookstore in the feminist section while covert",
+      "standalone_coherence_explanation": "Narrative continuity grounded in Katarina Stratford, Patrick: Scene 24 establishes the dramatic premise (Joey Dorsey hires school delinquent Patrick Verona to take o...), resolving into Scene 79 climax."
     },
     "critic_review": {
       "critic_status": "APPROVE",
@@ -217,25 +277,25 @@
     "composition_mode": "single_episode",
     "archetype": "immediate_shock_opener",
     "relationship_type": null,
-    "total_duration_seconds": 37.5,
-    "total_duration_cs": 3750,
+    "total_duration_seconds": 27.9,
+    "total_duration_cs": 2790,
     "hook_timestamp_offset_seconds": 0.0,
     "segments": [
       {
         "segment_index": 1,
-        "episode": 7,
-        "scene": 44,
-        "start_element_id": "EP07_EL110",
-        "end_element_id": "EP07_EL114",
-        "start_timestamp": "10:03.00",
-        "end_timestamp": "10:40.50",
-        "duration_seconds": 37.5,
-        "duration_cs": 3750,
+        "episode": 1,
+        "scene": 29,
+        "start_element_id": "EP01_EL484",
+        "end_element_id": "EP01_EL493",
+        "start_timestamp": "25:57.80",
+        "end_timestamp": "26:25.70",
+        "duration_seconds": 27.9,
+        "duration_cs": 2790,
         "trim_quote_hint": null,
-        "segment_summary": "The Joker crouches over a pinned Batman with a bomb remote in hand, mocking him and preparing to blow up hundreds of citizens himself.",
+        "segment_summary": "When an arrogant jock blocks Kat's parked vintage car with his luxury Viper, she immediately slams into reverse and violently rams his car.",
         "trim_recommendation": {
-          "exact_opening_dialogue": "You're alone.",
-          "exact_ending_dialogue": "The Joker HOLLERS in pain as Batman HAULS him up.",
+          "exact_opening_dialogue": "She starts to pull out, and is blocked by Joey's Viper, which pulls up perpendicular to her rear and parks.",
+          "exact_ending_dialogue": "Kat pulls forward and backs into his car again.  Smiling sweetly.",
           "verbatim_trim_quote": null,
           "boundary_type": "element_boundary",
           "requires_manual_editor_verification": false
@@ -245,14 +305,14 @@
     "rubric_scores": {
       "standalone_coherence": 5,
       "hook_strength": 5,
-      "cliffhanger_strength": 5,
-      "emotional_impact": 5,
-      "total_score": 20
+      "cliffhanger_strength": 4,
+      "emotional_impact": 4,
+      "total_score": 18
     },
     "editorial_rationale": {
-      "hook_explanation": "The Joker crouches over a pinned Batman with a bomb remote in hand, mocking him and preparing to blow up hundreds of citizens himself.",
-      "cliffhanger_explanation": "Batman fires his gauntlet scallop blades into the Joker and kicks him off the high-rise ledge, catching him upside-down midair with his grapple line.",
-      "standalone_coherence_explanation": "A costumed superhero pinned under a structural beam fights back against a cackling terrorist with a detonator and flings him off a skyscraper."
+      "hook_explanation": "When an arrogant jock blocks Kat's parked vintage car with his luxury Viper, she immediately slams into reverse and violently rams his car.",
+      "cliffhanger_explanation": "Kat pulls forward and deliberately backs into Joey's Viper a second time with a sweet smile, leaving Joey screaming profanities on the sidewalk.",
+      "standalone_coherence_explanation": "Pure visceral petty vengeance with zero exposition required: an arrogant school bully blocks someone in, and she brutally wrecks his car in response."
     },
     "critic_review": {
       "critic_status": "APPROVE",
@@ -270,297 +330,25 @@
     "composition_mode": "single_episode",
     "archetype": "immediate_shock_opener",
     "relationship_type": null,
-    "total_duration_seconds": 27.1,
-    "total_duration_cs": 2710,
-    "hook_timestamp_offset_seconds": 0.0,
-    "segments": [
-      {
-        "segment_index": 1,
-        "episode": 7,
-        "scene": 49,
-        "start_element_id": "EP07_EL164",
-        "end_element_id": "EP07_EL168",
-        "start_timestamp": "15:31.50",
-        "end_timestamp": "15:58.60",
-        "duration_seconds": 27.1,
-        "duration_cs": 2710,
-        "trim_quote_hint": null,
-        "segment_summary": "Two-Face points a revolver at Batman, flips his scarred coin to tails, and instantly shoots Batman in the stomach.",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "You first. He points the gun at Batman.  FLIPS the coin.  TAILS.  He SHOOTS.",
-          "exact_ending_dialogue": "Tell your son it's going to be all right, Gordon.  Lie. Like I lied.",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      }
-    ],
-    "rubric_scores": {
-      "standalone_coherence": 5,
-      "hook_strength": 5,
-      "cliffhanger_strength": 5,
-      "emotional_impact": 5,
-      "total_score": 20
-    },
-    "editorial_rationale": {
-      "hook_explanation": "Two-Face points a revolver at Batman, flips his scarred coin to tails, and instantly shoots Batman in the stomach.",
-      "cliffhanger_explanation": "After sparing himself on a coin flip, Dent levels the gun at Gordon's terrified young son and orders Gordon to lie to his boy before the final toss.",
-      "standalone_coherence_explanation": "A corrupted vigilante executes summary coin-toss justice, shooting Batman and turning the barrel toward an innocent child while the helpless father pleads for mercy."
-    },
-    "critic_review": {
-      "critic_status": "APPROVE",
-      "makes_sense_standalone": true,
-      "compelling_within_3s": true,
-      "leaves_unresolved_cliffhanger": true,
-      "spoiler_free": true,
-      "continuity_preserved": true,
-      "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
-    }
-  },
-  {
-    "promo_id": "PROMO_007",
-    "rank": 7,
-    "composition_mode": "multi_episode",
-    "archetype": "visual_anomaly_mystery_escalation",
-    "relationship_type": "implied",
-    "total_duration_seconds": 51.9,
-    "total_duration_cs": 5190,
-    "hook_timestamp_offset_seconds": 0.3,
+    "total_duration_seconds": 35.3,
+    "total_duration_cs": 3530,
+    "hook_timestamp_offset_seconds": 2.4,
     "segments": [
       {
         "segment_index": 1,
         "episode": 1,
-        "scene": 37,
-        "start_element_id": "EP01_EL156",
-        "end_element_id": "EP01_EL161",
-        "start_timestamp": "15:46.80",
-        "end_timestamp": "16:11.70",
-        "duration_seconds": 24.9,
-        "duration_cs": 2490,
+        "scene": 104,
+        "start_element_id": "EP01_EL1614",
+        "end_element_id": "EP01_EL1626",
+        "start_timestamp": "80:23.70",
+        "end_timestamp": "80:59.00",
+        "duration_seconds": 35.3,
+        "duration_cs": 3530,
         "trim_quote_hint": null,
-        "segment_summary": "Hook / Context from Episode/Part 1",
+        "segment_summary": "Kat marches furiously into an active classroom, yanks her younger sister right out of her seat, and drags her by the hair into the hallway for a physical confrontation.",
         "trim_recommendation": {
-          "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
-          "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      },
-      {
-        "segment_index": 2,
-        "episode": 7,
-        "scene": 22,
-        "start_element_id": "EP07_EL069",
-        "end_element_id": "EP07_EL070",
-        "start_timestamp": "04:56.30",
-        "end_timestamp": "05:23.30",
-        "duration_seconds": 27.0,
-        "duration_cs": 2700,
-        "trim_quote_hint": null,
-        "segment_summary": "Climax / Escalation from Episode/Part 7",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
-          "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      }
-    ],
-    "rubric_scores": {
-      "standalone_coherence": 5,
-      "hook_strength": 5,
-      "cliffhanger_strength": 5,
-      "emotional_impact": 4,
-      "total_score": 19
-    },
-    "editorial_rationale": {
-      "hook_explanation": "Immediate visceral hook initiates within 0.3s in EP01_EL156: Harvey Dent displays his two-headed lucky silver dollar to R.",
-      "cliffhanger_explanation": "Cuts at peak dramatic tension right before reaction at EP07_EL070.",
-      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 1 setup to Episode 7 payoff."
-    },
-    "critic_review": {
-      "critic_status": "APPROVE",
-      "makes_sense_standalone": true,
-      "compelling_within_3s": true,
-      "leaves_unresolved_cliffhanger": true,
-      "spoiler_free": true,
-      "continuity_preserved": true,
-      "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
-    }
-  },
-  {
-    "promo_id": "PROMO_008",
-    "rank": 8,
-    "composition_mode": "multi_episode",
-    "archetype": "immediate_shock_opener",
-    "relationship_type": "explicit",
-    "total_duration_seconds": 59.2,
-    "total_duration_cs": 5920,
-    "hook_timestamp_offset_seconds": 0.3,
-    "segments": [
-      {
-        "segment_index": 1,
-        "episode": 4,
-        "scene": 70,
-        "start_element_id": "EP04_EL205",
-        "end_element_id": "EP04_EL207",
-        "start_timestamp": "16:46.40",
-        "end_timestamp": "17:18.60",
-        "duration_seconds": 32.2,
-        "duration_cs": 3220,
-        "trim_quote_hint": null,
-        "segment_summary": "Hook / Context from Episode/Part 4",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
-          "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      },
-      {
-        "segment_index": 2,
-        "episode": 7,
-        "scene": 22,
-        "start_element_id": "EP07_EL069",
-        "end_element_id": "EP07_EL070",
-        "start_timestamp": "04:56.30",
-        "end_timestamp": "05:23.30",
-        "duration_seconds": 27.0,
-        "duration_cs": 2700,
-        "trim_quote_hint": null,
-        "segment_summary": "Climax / Escalation from Episode/Part 7",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "Batman GRABS the Armed Clown, drops him, silently.  He goes to disarm him- THE WEAPON IS DUCT-TAPED TO THE CLOWN'S HANDS. Batman RIPS off the clown mask: STARING, FRIGHTENED EYES- MOUTH DUCT-TAPED SHUT... it's ENGEL. Batman looks up: Four more clowns line the windows, weapons duct-taped to their hands.  On SONAR: he looks into where the hostages are crouched... the \"PATIENTS\" and \"DOCTORS\" are carrying weapons- these are the Joker's men... Above them SWATS RAPPEL FROM THE ROOFTOP.  ~In the stairwells, two more teams prepping.",
-          "exact_ending_dialogue": "BATMAN: \"Don't.  Move. Engel nods, terrified.\"",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      }
-    ],
-    "rubric_scores": {
-      "standalone_coherence": 5,
-      "hook_strength": 5,
-      "cliffhanger_strength": 5,
-      "emotional_impact": 4,
-      "total_score": 19
-    },
-    "editorial_rationale": {
-      "hook_explanation": "Immediate visceral hook initiates within 0.3s in EP04_EL205: After the Batmobile is crippled by an RPG, Batman triggers s.",
-      "cliffhanger_explanation": "Cuts at peak dramatic tension right before reaction at EP07_EL070.",
-      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 4 setup to Episode 7 payoff."
-    },
-    "critic_review": {
-      "critic_status": "APPROVE",
-      "makes_sense_standalone": true,
-      "compelling_within_3s": true,
-      "leaves_unresolved_cliffhanger": true,
-      "spoiler_free": true,
-      "continuity_preserved": true,
-      "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
-    }
-  },
-  {
-    "promo_id": "PROMO_009",
-    "rank": 9,
-    "composition_mode": "multi_episode",
-    "archetype": "emotional_reversal_turning_point",
-    "relationship_type": "thematic",
-    "total_duration_seconds": 57.1,
-    "total_duration_cs": 5710,
-    "hook_timestamp_offset_seconds": 0.3,
-    "segments": [
-      {
-        "segment_index": 1,
-        "episode": 1,
-        "scene": 37,
-        "start_element_id": "EP01_EL156",
-        "end_element_id": "EP01_EL161",
-        "start_timestamp": "15:46.80",
-        "end_timestamp": "16:11.70",
-        "duration_seconds": 24.9,
-        "duration_cs": 2490,
-        "trim_quote_hint": null,
-        "segment_summary": "Hook / Context from Episode/Part 1",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "RACHEL: \"I know the briefs backwards. Dent pulls a large silver dollar out of his pocket.  Grins.\"",
-          "exact_ending_dialogue": "DENT: \"I don't. I make my own luck. Dent looks across at the defendant- SAL MARONI.\"",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      },
-      {
-        "segment_index": 2,
-        "episode": 4,
-        "scene": 70,
-        "start_element_id": "EP04_EL205",
-        "end_element_id": "EP04_EL207",
-        "start_timestamp": "16:46.40",
-        "end_timestamp": "17:18.60",
-        "duration_seconds": 32.2,
-        "duration_cs": 3220,
-        "trim_quote_hint": null,
-        "segment_summary": "Climax / Escalation from Episode/Part 4",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "BATMOBILE VOICE: \"Damage catastrophic.  Initiate eject and self-destruct. Arm guards GRAB Batman's forearms as EXPLOSIVE BOLTS FIRE all around the pod...\"",
-          "exact_ending_dialogue": "The crowd JUMPS- PANELS of the front of the car BLOW OUT- The crowd stares, OPEN-MOUTHED, as Batman EMERGES, HOISTED UP AND OUT of the flaming car by the FRONT POD- LEVERING OVER the FRONT WHEEL... the pod PUSHES the OTHER WHEEL IN FRONT to form a type of MOTORCYCLE- The BAT-POD SHOOTS FORWARD, bursting free as the Batmobile DETONATES, DYING in a MASSIVE FIREBALL...  Batman's cape SUCKS TOGETHER, forming a TIGHT PACK on his shoulders, clear of the CHURNING REAR TIRE of the bat-pod...",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      }
-    ],
-    "rubric_scores": {
-      "standalone_coherence": 5,
-      "hook_strength": 5,
-      "cliffhanger_strength": 5,
-      "emotional_impact": 4,
-      "total_score": 19
-    },
-    "editorial_rationale": {
-      "hook_explanation": "Immediate visceral hook initiates within 0.3s in EP01_EL156: Harvey Dent displays his two-headed lucky silver dollar to R.",
-      "cliffhanger_explanation": "Cuts at peak dramatic tension right before reaction at EP04_EL207.",
-      "standalone_coherence_explanation": "Clear narrative contrast connecting Episode 1 setup to Episode 4 payoff."
-    },
-    "critic_review": {
-      "critic_status": "APPROVE",
-      "makes_sense_standalone": true,
-      "compelling_within_3s": true,
-      "leaves_unresolved_cliffhanger": true,
-      "spoiler_free": true,
-      "continuity_preserved": true,
-      "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
-    }
-  },
-  {
-    "promo_id": "PROMO_010",
-    "rank": 10,
-    "composition_mode": "single_episode",
-    "archetype": "immediate_shock_opener",
-    "relationship_type": null,
-    "total_duration_seconds": 34.8,
-    "total_duration_cs": 3480,
-    "hook_timestamp_offset_seconds": 0.5,
-    "segments": [
-      {
-        "segment_index": 1,
-        "episode": 2,
-        "scene": 9,
-        "start_element_id": "EP02_EL086",
-        "end_element_id": "EP02_EL090",
-        "start_timestamp": "05:19.40",
-        "end_timestamp": "05:54.20",
-        "duration_seconds": 34.8,
-        "duration_cs": 3480,
-        "trim_quote_hint": null,
-        "segment_summary": "Gambol threatens to have the Joker decapitated, and the Joker counters instantly with a deadly pencil magic trick.",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "Give me one reason I shouldn't have my boy here pull your head off.",
-          "exact_ending_dialogue": "Sit. I wanna hear proposition.",
+          "exact_opening_dialogue": "Kat stomps up the hallway, full of menace",
+          "exact_ending_dialogue": "Ladies?  Shall we take a trip to my office?",
           "verbatim_trim_quote": null,
           "boundary_type": "element_boundary",
           "requires_manual_editor_verification": false
@@ -571,119 +359,13 @@
       "standalone_coherence": 5,
       "hook_strength": 5,
       "cliffhanger_strength": 4,
-      "emotional_impact": 5,
-      "total_score": 19
+      "emotional_impact": 4,
+      "total_score": 18
     },
     "editorial_rationale": {
-      "hook_explanation": "Gambol threatens to have the Joker decapitated, and the Joker counters instantly with a deadly pencil magic trick.",
-      "cliffhanger_explanation": "After brutally killing Gambol's bodyguard with the pencil, the Joker demands respect as the mobsters tense up on the edge of a shootout.",
-      "standalone_coherence_explanation": "A colorful psychopathic criminal crashes a high-level mob summit and performs an execution in broad daylight to prove his dominance."
-    },
-    "critic_review": {
-      "critic_status": "APPROVE",
-      "makes_sense_standalone": true,
-      "compelling_within_3s": true,
-      "leaves_unresolved_cliffhanger": true,
-      "spoiler_free": true,
-      "continuity_preserved": true,
-      "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
-    }
-  },
-  {
-    "promo_id": "PROMO_011",
-    "rank": 11,
-    "composition_mode": "single_episode",
-    "archetype": "emotional_reversal_turning_point",
-    "relationship_type": null,
-    "total_duration_seconds": 35.7,
-    "total_duration_cs": 3570,
-    "hook_timestamp_offset_seconds": 1.0,
-    "segments": [
-      {
-        "segment_index": 1,
-        "episode": 4,
-        "scene": 30,
-        "start_element_id": "EP04_EL126",
-        "end_element_id": "EP04_EL131",
-        "start_timestamp": "10:29.90",
-        "end_timestamp": "11:05.60",
-        "duration_seconds": 35.7,
-        "duration_cs": 3570,
-        "trim_quote_hint": null,
-        "segment_summary": "Harvey Dent addresses a panicked mob with 'The night is darkest just before the dawn' before making a stunning confession.",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "Yes. They are. But the night is darkest just before the dawn.",
-          "exact_ending_dialogue": "I am the Batman.",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      }
-    ],
-    "rubric_scores": {
-      "standalone_coherence": 5,
-      "hook_strength": 4,
-      "cliffhanger_strength": 5,
-      "emotional_impact": 5,
-      "total_score": 19
-    },
-    "editorial_rationale": {
-      "hook_explanation": "Harvey Dent addresses a panicked mob with 'The night is darkest just before the dawn' before making a stunning confession.",
-      "cliffhanger_explanation": "Dent unexpectedly holds out his own wrists and announces to the media 'I am the Batman,' leaving Bruce Wayne stunned in the back row.",
-      "standalone_coherence_explanation": "Under immense public pressure to unmask a vigilante, a crusading district attorney falsely claims he is the vigilante to take the heat."
-    },
-    "critic_review": {
-      "critic_status": "APPROVE",
-      "makes_sense_standalone": true,
-      "compelling_within_3s": true,
-      "leaves_unresolved_cliffhanger": true,
-      "spoiler_free": true,
-      "continuity_preserved": true,
-      "editorial_notes": "Approved: Strong immediate hook, clean cliffhanger cut, cold comprehension validated."
-    }
-  },
-  {
-    "promo_id": "PROMO_012",
-    "rank": 12,
-    "composition_mode": "single_episode",
-    "archetype": "visual_anomaly_mystery_escalation",
-    "relationship_type": null,
-    "total_duration_seconds": 53.6,
-    "total_duration_cs": 5360,
-    "hook_timestamp_offset_seconds": 2.0,
-    "segments": [
-      {
-        "segment_index": 1,
-        "episode": 5,
-        "scene": 70,
-        "start_element_id": "EP05_EL215",
-        "end_element_id": "EP05_EL225",
-        "start_timestamp": "16:36.90",
-        "end_timestamp": "17:30.50",
-        "duration_seconds": 53.6,
-        "duration_cs": 5360,
-        "trim_quote_hint": null,
-        "segment_summary": "Gordon enters a hospital room to apologize, only for Dent to aggressively demand Gordon recite his vicious IA nickname.",
-        "trim_recommendation": {
-          "exact_opening_dialogue": "I'm sorry about Rachel. The Doctor says you're in agonizing pain but you won't accept medication.",
-          "exact_ending_dialogue": "No. No you're not. Not yet.",
-          "verbatim_trim_quote": null,
-          "boundary_type": "element_boundary",
-          "requires_manual_editor_verification": false
-        }
-      }
-    ],
-    "rubric_scores": {
-      "standalone_coherence": 5,
-      "hook_strength": 4,
-      "cliffhanger_strength": 5,
-      "emotional_impact": 5,
-      "total_score": 19
-    },
-    "editorial_rationale": {
-      "hook_explanation": "Gordon enters a hospital room to apologize, only for Dent to aggressively demand Gordon recite his vicious IA nickname.",
-      "cliffhanger_explanation": "Dent turns his destroyed, half-burned face to Gordon, declaring himself 'Two-Face' and rejecting Gordon's apology with a chilling warning: 'Not yet.'",
-      "standalone_coherence_explanation": "A fallen public champion wakes up horribly disfigured and bitter after losing the love of his life, turning on his former police ally."
+      "hook_explanation": "Kat marches furiously into an active classroom, yanks her younger sister right out of her seat, and drags her by the hair into the hallway for a physical confrontation.",
+      "cliffhanger_explanation": "Kat pins Bianca against the lockers demanding to know if she conspired to destroy her life, right as the eccentric guidance counselor intervenes.",
+      "standalone_coherence_explanation": "The sibling rivalry explodes into a public brawl with instant clarity: one sister dragged the other out of class after uncovering a devastating betrayal."
     },
     "critic_review": {
       "critic_status": "APPROVE",
